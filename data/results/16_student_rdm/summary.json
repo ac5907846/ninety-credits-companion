@@ -1,0 +1,602 @@
+{
+ "futures": 20000,
+ "sobol_base": 4096,
+ "ranges": {
+  "construction": {
+   "entry_penalty": [
+    0.0,
+    0.143
+   ],
+   "penalty_fade": [
+    0.0,
+    0.15
+   ],
+   "time_saved_share": [
+    0.5,
+    1.0
+   ],
+   "tuition_passthrough": [
+    0.5,
+    1.0
+   ],
+   "discount_rate": [
+    0.02,
+    0.07
+   ],
+   "late_growth": [
+    0.0,
+    0.02
+   ],
+   "career_years": [
+    10,
+    40
+   ],
+   "completion_change": [
+    -0.05,
+    0.1
+   ],
+   "completion_value_gap": [
+    0.14,
+    0.325
+   ]
+  },
+  "civil": {
+   "entry_penalty": [
+    0.0,
+    0.193
+   ],
+   "penalty_fade": [
+    0.0,
+    0.15
+   ],
+   "time_saved_share": [
+    0.5,
+    1.0
+   ],
+   "tuition_passthrough": [
+    0.5,
+    1.0
+   ],
+   "discount_rate": [
+    0.02,
+    0.07
+   ],
+   "late_growth": [
+    0.0,
+    0.02
+   ],
+   "career_years": [
+    10,
+    40
+   ],
+   "completion_change": [
+    -0.05,
+    0.1
+   ],
+   "completion_value_gap": [
+    0.19,
+    0.325
+   ],
+   "pe_seekers": [
+    0.3,
+    0.7
+   ],
+   "pe_premium": [
+    0.0,
+    0.2
+   ],
+   "pe_delay_years": [
+    0.0,
+    4.0
+   ]
+  }
+ },
+ "construction": {
+  "programs": 150,
+  "graduates_2024": 5941.0,
+  "median_credits_removed": 30.0,
+  "central_median_gain": 33156.99846213982,
+  "central_median_entrant": 28741.755481140077,
+  "zero_penalty_median_gain": 91318.2960608378,
+  "breakeven_entry_penalty_central": 0.1135,
+  "futures_median_gain": {
+   "p10": -29571.95180560291,
+   "median": 35724.30452444665,
+   "p90": 84481.45693959446
+  },
+  "share_futures_median_graduate_loses": 0.2265,
+  "share_futures_median_entrant_loses": 0.18005,
+  "share_futures_majority_of_graduates_lose": 0.23885,
+  "cohort_gain": {
+   "p10": -175945044.3196901,
+   "median": 236860275.14198345,
+   "p90": 533782134.99672896
+  },
+  "prim": [
+   {
+    "label": "median graduate loses",
+    "share_of_futures": 0.2265,
+    "coverage": 0.6527593818984547,
+    "density": 0.8052832244008714,
+    "mass": 0.1836,
+    "box": {
+     "entry_penalty": [
+      0.0832,
+      0.143
+     ],
+     "penalty_fade": [
+      0.0,
+      0.0731
+     ],
+     "career_years": [
+      13.0087,
+      39.9989
+     ]
+    }
+   },
+   {
+    "label": "more than half of graduates lose",
+    "share_of_futures": 0.23885,
+    "coverage": 0.6592003349382458,
+    "density": 0.814536989136058,
+    "mass": 0.1933,
+    "box": {
+     "entry_penalty": [
+      0.0801,
+      0.143
+     ],
+     "penalty_fade": [
+      0.0,
+      0.0731
+     ],
+     "career_years": [
+      13.0087,
+      39.9989
+     ]
+    }
+   },
+   {
+    "label": "median entering student loses",
+    "share_of_futures": 0.18005,
+    "coverage": 0.4643154679255762,
+    "density": 0.8019184652278177,
+    "mass": 0.10425,
+    "box": {
+     "entry_penalty": [
+      0.0834,
+      0.143
+     ],
+     "penalty_fade": [
+      0.0,
+      0.0949
+     ],
+     "career_years": [
+      12.9283,
+      39.9989
+     ],
+     "completion_change": [
+      -0.05,
+      0.0159
+     ]
+    }
+   }
+  ],
+  "sobol_median_gain": [
+   {
+    "factor": "entry_penalty",
+    "S1": 0.547,
+    "S1_conf": 0.034,
+    "ST": 0.648,
+    "ST_conf": 0.039
+   },
+   {
+    "factor": "penalty_fade",
+    "S1": 0.168,
+    "S1_conf": 0.022,
+    "ST": 0.278,
+    "ST_conf": 0.023
+   },
+   {
+    "factor": "time_saved_share",
+    "S1": 0.112,
+    "S1_conf": 0.013,
+    "ST": 0.111,
+    "ST_conf": 0.007
+   },
+   {
+    "factor": "career_years",
+    "S1": 0.027,
+    "S1_conf": 0.01,
+    "ST": 0.052,
+    "ST_conf": 0.008
+   },
+   {
+    "factor": "discount_rate",
+    "S1": 0.01,
+    "S1_conf": 0.008,
+    "ST": 0.03,
+    "ST_conf": 0.004
+   },
+   {
+    "factor": "late_growth",
+    "S1": 0.007,
+    "S1_conf": 0.004,
+    "ST": 0.01,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "tuition_passthrough",
+    "S1": 0.001,
+    "S1_conf": 0.002,
+    "ST": 0.001,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.0,
+    "S1_conf": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "completion_value_gap",
+    "S1": 0.0,
+    "S1_conf": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   }
+  ],
+  "sobol_median_entrant": [
+   {
+    "factor": "entry_penalty",
+    "S1": 0.406,
+    "S1_conf": 0.029,
+    "ST": 0.474,
+    "ST_conf": 0.027
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.238,
+    "S1_conf": 0.019,
+    "ST": 0.274,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "penalty_fade",
+    "S1": 0.12,
+    "S1_conf": 0.018,
+    "ST": 0.198,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "time_saved_share",
+    "S1": 0.082,
+    "S1_conf": 0.013,
+    "ST": 0.081,
+    "ST_conf": 0.004
+   },
+   {
+    "factor": "career_years",
+    "S1": 0.012,
+    "S1_conf": 0.01,
+    "ST": 0.047,
+    "ST_conf": 0.006
+   },
+   {
+    "factor": "discount_rate",
+    "S1": 0.002,
+    "S1_conf": 0.007,
+    "ST": 0.025,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "completion_value_gap",
+    "S1": 0.004,
+    "S1_conf": 0.006,
+    "ST": 0.018,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "late_growth",
+    "S1": 0.009,
+    "S1_conf": 0.004,
+    "ST": 0.011,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "tuition_passthrough",
+    "S1": 0.001,
+    "S1_conf": 0.001,
+    "ST": 0.001,
+    "ST_conf": 0.0
+   }
+  ],
+  "fgcu": [
+   {
+    "UNITID": 433660,
+    "INSTNM": "Florida Gulf Coast University",
+    "STABBR": "FL",
+    "total_semester": 120.0,
+    "k": 30.0,
+    "earn_1yr": 76083.0,
+    "per_credit_in_state": 140.0,
+    "grads": 43.0,
+    "gain_p10": -37239.265,
+    "gain_median": 26167.469,
+    "gain_p90": 71640.054,
+    "share_futures_lose": 0.277
+   }
+  ]
+ },
+ "civil": {
+  "programs": 253,
+  "graduates_2024": 11862.0,
+  "median_credits_removed": 37.0,
+  "central_median_gain": 27324.202352579927,
+  "central_median_entrant": 26755.941445147095,
+  "zero_penalty_median_gain": 108292.54414105334,
+  "breakeven_entry_penalty_central": 0.1323,
+  "futures_median_gain": {
+   "p10": -57526.981870406205,
+   "median": 30336.169863626987,
+   "p90": 90645.91916444199
+  },
+  "share_futures_median_graduate_loses": 0.30995,
+  "share_futures_median_entrant_loses": 0.249,
+  "share_futures_majority_of_graduates_lose": 0.32215,
+  "cohort_gain": {
+   "p10": -707141480.6419902,
+   "median": 372983624.7660301,
+   "p90": 1102972733.059299
+  },
+  "prim": [
+   {
+    "label": "median graduate loses",
+    "share_of_futures": 0.30995,
+    "coverage": 0.7154379738667527,
+    "density": 0.8003970402454431,
+    "mass": 0.27705,
+    "box": {
+     "entry_penalty": [
+      0.0991,
+      0.193
+     ],
+     "penalty_fade": [
+      0.0,
+      0.0899
+     ],
+     "career_years": [
+      11.4622,
+      39.9999
+     ]
+    }
+   },
+   {
+    "label": "more than half of graduates lose",
+    "share_of_futures": 0.32215,
+    "coverage": 0.701381344094366,
+    "density": 0.8155567587078145,
+    "mass": 0.27705,
+    "box": {
+     "entry_penalty": [
+      0.1039,
+      0.193
+     ],
+     "penalty_fade": [
+      0.0,
+      0.09
+     ]
+    }
+   },
+   {
+    "label": "median entering student loses",
+    "share_of_futures": 0.249,
+    "coverage": 0.5678714859437751,
+    "density": 0.8107798165137615,
+    "mass": 0.1744,
+    "box": {
+     "entry_penalty": [
+      0.1124,
+      0.193
+     ],
+     "penalty_fade": [
+      0.0,
+      0.069
+     ],
+     "completion_change": [
+      -0.05,
+      0.0853
+     ]
+    }
+   }
+  ],
+  "sobol_median_gain": [
+   {
+    "factor": "entry_penalty",
+    "S1": 0.548,
+    "S1_conf": 0.036,
+    "ST": 0.641,
+    "ST_conf": 0.039
+   },
+   {
+    "factor": "penalty_fade",
+    "S1": 0.191,
+    "S1_conf": 0.026,
+    "ST": 0.291,
+    "ST_conf": 0.021
+   },
+   {
+    "factor": "time_saved_share",
+    "S1": 0.094,
+    "S1_conf": 0.014,
+    "ST": 0.096,
+    "ST_conf": 0.006
+   },
+   {
+    "factor": "career_years",
+    "S1": 0.016,
+    "S1_conf": 0.011,
+    "ST": 0.057,
+    "ST_conf": 0.008
+   },
+   {
+    "factor": "discount_rate",
+    "S1": 0.014,
+    "S1_conf": 0.008,
+    "ST": 0.033,
+    "ST_conf": 0.004
+   },
+   {
+    "factor": "late_growth",
+    "S1": 0.005,
+    "S1_conf": 0.004,
+    "ST": 0.008,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "pe_delay_years",
+    "S1": 0.004,
+    "S1_conf": 0.003,
+    "ST": 0.005,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "pe_premium",
+    "S1": 0.003,
+    "S1_conf": 0.003,
+    "ST": 0.005,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "tuition_passthrough",
+    "S1": 0.001,
+    "S1_conf": 0.002,
+    "ST": 0.002,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "pe_seekers",
+    "S1": 0.001,
+    "S1_conf": 0.001,
+    "ST": 0.001,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.0,
+    "S1_conf": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "completion_value_gap",
+    "S1": 0.0,
+    "S1_conf": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   }
+  ],
+  "sobol_median_entrant": [
+   {
+    "factor": "entry_penalty",
+    "S1": 0.472,
+    "S1_conf": 0.035,
+    "ST": 0.548,
+    "ST_conf": 0.034
+   },
+   {
+    "factor": "penalty_fade",
+    "S1": 0.157,
+    "S1_conf": 0.022,
+    "ST": 0.241,
+    "ST_conf": 0.018
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.145,
+    "S1_conf": 0.015,
+    "ST": 0.163,
+    "ST_conf": 0.01
+   },
+   {
+    "factor": "time_saved_share",
+    "S1": 0.079,
+    "S1_conf": 0.013,
+    "ST": 0.081,
+    "ST_conf": 0.005
+   },
+   {
+    "factor": "career_years",
+    "S1": 0.005,
+    "S1_conf": 0.01,
+    "ST": 0.05,
+    "ST_conf": 0.007
+   },
+   {
+    "factor": "discount_rate",
+    "S1": 0.004,
+    "S1_conf": 0.008,
+    "ST": 0.027,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "late_growth",
+    "S1": 0.006,
+    "S1_conf": 0.004,
+    "ST": 0.009,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "completion_value_gap",
+    "S1": 0.0,
+    "S1_conf": 0.003,
+    "ST": 0.005,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "pe_delay_years",
+    "S1": 0.004,
+    "S1_conf": 0.003,
+    "ST": 0.004,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "pe_premium",
+    "S1": 0.003,
+    "S1_conf": 0.002,
+    "ST": 0.004,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "tuition_passthrough",
+    "S1": 0.001,
+    "S1_conf": 0.002,
+    "ST": 0.002,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "pe_seekers",
+    "S1": 0.001,
+    "S1_conf": 0.001,
+    "ST": 0.001,
+    "ST_conf": 0.0
+   }
+  ],
+  "fgcu": [
+   {
+    "UNITID": 433660,
+    "INSTNM": "Florida Gulf Coast University",
+    "STABBR": "FL",
+    "total_semester": 122.0,
+    "k": 32.0,
+    "earn_1yr": 69357.0,
+    "per_credit_in_state": 140.0,
+    "grads": 45.0,
+    "gain_p10": -77125.475,
+    "gain_median": 7254.446,
+    "gain_p90": 63469.772,
+    "share_futures_lose": 0.449
+   }
+  ]
+ }
+}

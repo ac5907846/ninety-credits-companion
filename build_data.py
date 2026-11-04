@@ -45,7 +45,7 @@ def records(df, cols):
 s15, s16, s17, s18, s22, s23, s24 = (summary(m) for m in ["15_curriculum_milp", "16_student_rdm", "17_system_rdm", "18_ai_futures", "22_policy_scenarios", "23_scenario_atlas", "24_gen_ed_overlap"])
 s01, s06, s10, s08, s14 = (summary(m) for m in ["01_program_universe", "06_catalog_credits", "10_civil_catalog_and_ledger", "08_stakeholder_ledger", "14_policy_and_debate"])
 head = {
-    "built": "3 November 2026",
+    "built": "4 November 2026",
     "institutions": s01["institutions"], "acce_institutions": s01["institutions_acce_bachelors"],
     "civil_institutions": summary("07_civil_universe_outcomes")["institutions"],
     "catalog_programs_with_total": s06.get("institutions_with_total"), "exactly_120": s06.get("share_exactly_120"), "median_to_cut": s06["median_to_cut"],
@@ -182,3 +182,103 @@ if lon and lat:
                            "rows": records(mp, ["UNITID", "INSTNM", "STABBR", "program", "program_group", "acce_bachelors", "total_semester", "grads_2024", "lon", "lat", "floor_cm"])})
 else:
     print("no coordinates found; programs.json not written")
+
+# ---------------------------------------------------------------- hero tour: the 20 atlas programs through the twelve stories
+ar = pd.read_csv(A / "23_scenario_atlas/results/atlas_results.csv.gz")
+ar["state"] = ar.state.astype(str)
+ar["state_rec"] = ar.state_rec.astype(str).str.lower() == "true"
+stt = pd.read_csv(A / "23_scenario_atlas/results/story_table.csv")
+m15 = pd.read_csv(A / "15_curriculum_milp/results/milp_florida_programs.csv")
+progs = ar[["UNITID", "institution", "field", "published"]].drop_duplicates().sort_values(["field", "institution"]).reset_index(drop=True)
+progs["short"] = progs.institution.map(SHORT).fillna(progs.institution)
+progs["fld"] = progs.field.map(FIELD)
+keep = m15[(m15.design == "KEEP") & (m15.gen_ed == 36) & (m15.gen_ed_structure == "typical university") & m15.college_ready]
+keep_of = {(r.UNITID, r.field): r.min_credits for r in keep.itertuples()}
+stages = [{"key": "published", "title": "Published today", "sub": "The 20 Florida programs as their 2025 to 2027 catalogs print them", "credits": [clean(x) for x in progs.published]},
+          {"key": "keep", "title": "Required core kept", "sub": "Every required course stays, electives go, 36 credits of general education filled with the cheapest eligible courses (Module 15)",
+           "credits": [clean(keep_of.get((r.UNITID, r.field))) for r in progs.itertuples()]}]
+for s in stt.itertuples():
+    sub = ar[(ar.state == str(s.state)) & (ar.state_rec == bool(s.state_rec)) & (ar.accreditor == s.accreditor) & (ar["merge"] == s.merge) & (ar.ai == s.ai) & (ar.ai_literacy == int(s.ai_literacy))]
+    of = {(r.UNITID, r.field): (r.min_credits if r.feasible else None) for r in sub.itertuples()}
+    stages.append({"key": "story:" + s.story, "title": s.story, "state": str(s.state), "state_rec": bool(s.state_rec), "accreditor": s.accreditor, "merge": s.merge, "ai": s.ai, "ai_literacy": int(s.ai_literacy),
+                   "credits": [clean(of.get((r.UNITID, r.field))) for r in progs.itertuples()]})
+dump("hero.json", {"programs": records(progs, ["UNITID", "short", "fld", "published"]), "program_columns": ["unitid", "short", "field", "published"], "stages": stages})
+
+# ---------------------------------------------------------------- sources: the verified references of the manuscript, with their links
+refs = []
+for f in sorted((HERE.parent / "03_manuscript/_source").glob("references_*.json")):
+    for r in json.load(open(f, encoding="utf-8")):
+        if r.get("in_list", True):
+            refs.append({"cite": r["cite"], "apa": r["apa"].replace("*", ""), "url": r.get("url", ""), "type": r.get("type", ""), "group": f.stem.replace("references_", ""), "checks": len(r.get("checks", []))})
+refs.sort(key=lambda r: r["apa"].lower())
+dump("sources.json", {"references": refs, "note": "Every reference was verified two or three times against the source before it was cited (checks counted per entry)."})
+
+# ---------------------------------------------------------------- result files copied beside the page, so every chart can be traced to its module
+import shutil
+RES = OUT / "results"
+RES.mkdir(exist_ok=True)
+COPY = [("15_curriculum_milp", ["summary.json", "milp_florida_programs.csv", "milp_binding_rules.csv", "state_floors.csv", "national_cm_floor.csv", "national_civil_floor.csv", "milp_plans_ge36.csv"]),
+        ("24_gen_ed_overlap", ["summary.json", "overlap_by_program.csv", "overlap_courses.csv", "list_versus_rule.csv", "lever_business_as_gen_ed.csv", "state_floors_business_counted.csv"]),
+        ("22_policy_scenarios", ["summary.json", "lever_main_effects.csv", "threshold_by_program.csv", "fgcu_syllabus_repetition.csv"]),
+        ("23_scenario_atlas", ["summary.json", "story_table.csv", "story_money_all_rules.csv", "reach_by_cell.csv", "lever_main_effects.csv", "atlas_results.csv.gz"]),
+        ("16_student_rdm", ["summary.json", "programs_used.csv", "sobol_construction_median_gain.csv", "sobol_civil_median_gain.csv"]),
+        ("17_system_rdm", ["summary.json", "yearly_bands.csv", "yearly_change_by_accreditor_year.csv"]),
+        ("18_ai_futures", ["summary.json", "curriculum_ai_floors.csv", "credit_share_by_type.csv", "floor_plans_typed.csv"])]
+manifest = []
+for m, files in COPY:
+    (RES / m).mkdir(exist_ok=True)
+    for fn in files:
+        src = A / m / "results" / fn
+        if src.exists():
+            shutil.copy2(src, RES / m / fn)
+            manifest.append({"module": m, "file": fn, "path": f"data/results/{m}/{fn}", "bytes": src.stat().st_size})
+for fn in ["gen_ed_lists_sus_2026-27.csv", "gen_ed_lists_fcs_2026-27.csv"]:
+    src = HERE.parent / "01_raw_data/policy" / fn
+    (RES / "policy").mkdir(exist_ok=True)
+    shutil.copy2(src, RES / "policy" / fn)
+    manifest.append({"module": "01_raw_data/policy", "file": fn, "path": f"data/results/policy/{fn}", "bytes": src.stat().st_size})
+dump("files.json", {"files": manifest, "data_files": ["headline", "hero", "floors", "overlap", "policy", "atlas", "student", "system", "ai", "programs", "sources", "files"]})
+
+# ---------------------------------------------------------------- study.json: the data behind the study (descriptive statistics) and how the models are set up
+s01b, s06b, s07b, s10b, s14b = (summary(m) for m in ["01_program_universe", "06_catalog_credits", "07_civil_universe_outcomes", "10_civil_catalog_and_ledger", "14_policy_and_debate"])
+ip = pd.read_csv(A / "01_program_universe/results/ipeds_construction_bachelors_2014_2024.csv")
+ip_year = ip.groupby("year").CTOTALT.sum().reset_index()
+cv_year = pd.read_csv(A / "07_civil_universe_outcomes/results/civil_national_by_year.csv")
+pu = pd.read_csv(A / "01_program_universe/results/program_universe.csv")
+by_state = pu.groupby("STABBR").agg(institutions=("UNITID", "nunique"), grads_2024=("grads_2024", "sum"), acce=("acce_bachelors", lambda x: int(x.fillna(False).astype(bool).sum()))).reset_index().sort_values("institutions", ascending=False)
+cat = pd.read_csv(A / "06_catalog_credits/results/catalog_programs.csv")
+cat_cols = [c for c in ["INSTNM", "STABBR", "program", "program_group", "catalog_year", "total_semester", "gen_ed", "math_science", "business", "major", "free_electives", "acce_bachelors", "confidence"] if c in cat.columns]
+tot = cat[cat.total_semester.notna()] if "total_semester" in cat.columns else cat
+bind = pd.read_csv(A / "15_curriculum_milp/results/milp_binding_rules.csv")
+m15 = pd.read_csv(A / "15_curriculum_milp/results/milp_florida_programs.csv")
+comp = m15[(m15.gen_ed == 36) & (m15.gen_ed_structure == "typical university") & m15.college_ready]
+comp = comp.assign(short=comp.institution.map(SHORT).fillna(comp.institution), fld=comp.field.map(FIELD))
+params = {}
+for m in ["16_student_rdm", "17_system_rdm", "18_ai_futures"]:
+    p = json.load(open(A / m / "parameters.json", encoding="utf-8"))
+    params[m] = {"n_futures": p.get("n_futures"), "n_sobol_base": p.get("n_sobol_base"), "ranges": p.get("ranges"), "sources": p.get("sources"), "neutral": p.get("neutral"), "status": p.get("status")}
+study = {
+    "universe": {"institutions": s01b["institutions"], "acce_bachelors": s01b["institutions_acce_bachelors"], "programs_by_cip": s01b["programs_by_cip"], "by_state_top": s01b["institutions_by_state_top"],
+                 "by_state": records(by_state, ["STABBR", "institutions", "grads_2024", "acce"]), "by_state_columns": ["state", "institutions", "grads_2024", "acce"],
+                 "cm_grads_by_year": records(ip_year, ["year", "CTOTALT"]), "civil_grads_by_year": records(cv_year, ["year", "CTOTALT", "women_share"]),
+                 "civil": {k: s07b.get(k) for k in ["institutions", "grads_2014", "grads_2024", "change_pct_2014_2024", "women_share_2024", "earn_1yr", "debt", "median_program_size_2024"]}},
+    "catalogs": {"cm": {k: s06b.get(k) for k in ["programs", "institutions_with_total", "total_median", "total_p10", "total_p90", "total_min", "total_max", "share_over_120", "share_exactly_120", "median_to_cut", "gen_ed_median", "math_science_median", "business_median", "major_median", "free_electives_median", "share_with_free_electives", "acce_total_median", "nonacce_total_median", "confidence", "credit_systems", "programs_with_total_count", "over_120_count", "exactly_120_count"]},
+                 "cm_totals_distribution": pd.read_csv(A / "06_catalog_credits/results/totals_distribution.csv").to_dict("records"),
+                 "cm_by_group": pd.read_csv(A / "06_catalog_credits/results/by_program_group.csv").to_dict("records"),
+                 "cm_blocks": pd.read_csv(A / "06_catalog_credits/results/blocks.csv").to_dict("records"),
+                 "cm_programs": records(tot, cat_cols), "cm_program_columns": cat_cols,
+                 "civil": {k: s10b.get(k) for k in ["institutions", "with_total", "total_median", "total_p10", "total_p90", "exactly_120_count", "over_120_count", "below_120_count", "share_over_120", "median_to_cut", "distribution", "gen_ed_median", "math_science_median", "engineering_median", "three_year_mentions"]},
+                 "civil_blocks": pd.read_csv(A / "10_civil_catalog_and_ledger/results/civil_blocks.csv").to_dict("records")},
+    "discourse": {"news_by_year": pd.read_csv(A / "14_policy_and_debate/results/news_by_year_stance.csv").to_dict("records"),
+                  "state_status": pd.read_csv(A / "14_policy_and_debate/results/state_policy_status.csv").to_dict("records"),
+                  "voices": pd.read_csv(A / "14_policy_and_debate/results/voices_by_type_stance.csv").to_dict("records"),
+                  "actors": s14b.get("news_actor_2024_2026"), "news_relevant": s14b.get("news_relevant"), "news_2026": s14b.get("news_2026"), "peak_month": s14b.get("news_peak_month"), "peak_count": s14b.get("news_peak_count"),
+                  "states_with_statewide_gen_ed": s14b.get("states_with_statewide_gen_ed"), "gen_ed_median": s14b.get("gen_ed_median"), "events_total": s14b.get("events_total"), "events_2026": s14b.get("events_2026")},
+    "florida_model": {"programs": s15.get("programs"), "construction_programs": s15.get("construction_programs"), "civil_programs": s15.get("civil_programs"),
+                      "binding": records(bind, list(bind.columns)), "binding_columns": list(bind.columns),
+                      "composition": records(comp, ["UNITID", "short", "fld", "design", "published_total", "min_credits", "gen_ed_only", "ms", "eng", "con", "bm", "topics_kept", "courses"]),
+                      "composition_columns": ["unitid", "short", "field", "design", "published", "credits", "gen_ed_only", "math_science", "engineering", "construction", "business", "topics_kept", "courses"],
+                      "policy_grid": {k: s22["ms"].get(k) for k in ["programs", "solves"]}, "atlas": {k: s23["ms"].get(k) for k in ["programs", "solves", "combinations", "rows"]}},
+    "parameters": params,
+}
+dump("study.json", study)

@@ -1,0 +1,2007 @@
+{
+ "futures": 20000,
+ "ranges": {
+  "policy_start": [
+   2027,
+   2030
+  ],
+  "accreditor_year": [
+   2027,
+   2050
+  ],
+  "unaccredited_share": [
+   0.0,
+   0.5
+  ],
+  "bass_p": [
+   0.005,
+   0.05
+  ],
+  "bass_q": [
+   0.1,
+   1.5
+  ],
+  "program_potential": [
+   0.1,
+   0.8
+  ],
+  "student_uptake": [
+   0.1,
+   0.6
+  ],
+  "demand_elasticity": [
+   0.0,
+   0.6
+  ],
+  "completion_change": [
+   -0.05,
+   0.1
+  ],
+  "baseline_growth": [
+   -0.01,
+   0.04
+  ],
+  "marginal_cost_share": [
+   0.15,
+   0.55
+  ],
+  "funding_follows_enrollment": [
+   0.0,
+   1.0
+  ]
+ },
+ "inputs": {
+  "United States|construction": {
+   "graduates_2024": 6940.0,
+   "c150": 0.6148,
+   "c100": 0.441,
+   "tuition_per_fte": 10813.257925072046,
+   "approp_per_fte": 8224.459345054998,
+   "instruction_per_fte": 11569.480259365993,
+   "total_credits": 120.0,
+   "public_share": 0.8972622478386167,
+   "earn_1yr": 77458.16988472623,
+   "openings": 49700
+  },
+  "Florida|construction": {
+   "graduates_2024": 471.0,
+   "c150": 0.6851,
+   "c100": 0.5276,
+   "tuition_per_fte": 10167.785562632696,
+   "approp_per_fte": 8096.268797257597,
+   "instruction_per_fte": 10117.84288747346,
+   "total_credits": 120.0,
+   "public_share": 0.7346072186836518,
+   "earn_1yr": 77615.4331210191,
+   "openings": 4443.939951624777
+  },
+  "United States|civil": {
+   "graduates_2024": 13406.0,
+   "c150": 0.71,
+   "c100": 0.5431,
+   "tuition_per_fte": 13934.082351186036,
+   "approp_per_fte": 9038.726337051503,
+   "instruction_per_fte": 15937.524765030583,
+   "total_credits": 126.0,
+   "public_share": 0.850589288378338,
+   "earn_1yr": 72958.64172758466,
+   "openings": 22700
+  },
+  "Florida|civil": {
+   "graduates_2024": 728.0,
+   "c150": 0.7785,
+   "c100": 0.639,
+   "tuition_per_fte": 6699.159340659341,
+   "approp_per_fte": 10975.398140291916,
+   "instruction_per_fte": 12056.642857142857,
+   "total_credits": 128.0,
+   "public_share": 0.9739010989010989,
+   "earn_1yr": 71803.59203296703,
+   "openings": 1465.650826446281
+  }
+ },
+ "United States|construction": {
+  "extra_graduates_2027_2040": {
+   "p10": 94.8092149582615,
+   "median": 715.1152624631632,
+   "p90": 3057.9785539429517
+  },
+  "extra_graduates_share_2027_2040": {
+   "p10": 0.0008493458667478859,
+   "median": 0.00636693232445025,
+   "p90": 0.02642950955403972
+  },
+  "peak_surge_share": {
+   "p10": 0.011472198200580016,
+   "median": 0.057371757910674004,
+   "p90": 0.1705971100584715
+  },
+  "student_years_change_share_2027_2050": {
+   "p10": -0.01481292549577178,
+   "median": -0.0035169466497104833,
+   "p90": -6.152064529104242e-05
+  },
+  "institution_net_pv": {
+   "p10": -116052951.8917942,
+   "median": -24102879.157404207,
+   "p90": 42162.14782747416
+  },
+  "state_savings_pv": {
+   "p10": -5029.590357179264,
+   "median": 7170279.425734543,
+   "p90": 45926890.80938837
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.13367274498465623,
+   "median": 0.16863722616941793,
+   "p90": 0.21152988298764802
+  },
+  "graduates_per_opening_2035_base": {
+   "p10": 0.13176805677543724,
+   "median": 0.16591300539928583,
+   "p90": 0.20800618843193305
+  },
+  "adoption_2035": {
+   "p10": 0.01618077250685101,
+   "median": 0.1132051707445187,
+   "p90": 0.48084448410078157
+  },
+  "share_90_track_2035": {
+   "p10": 0.004511565693172396,
+   "median": 0.035412485479971334,
+   "p90": 0.16505252332926995
+  },
+  "share_futures_institutions_lose": 0.89885,
+  "share_futures_fewer_graduates_2027_2040": 0.0,
+  "prim": [
+   {
+    "label": "institutions break even or gain (present value 2027 to 2050)",
+    "share_of_futures": 0.10115,
+    "coverage": 0.52743450321305,
+    "density": 0.8138825324180016,
+    "box": {
+     "demand_elasticity": [
+      0.4753,
+      0.6
+     ],
+     "completion_change": [
+      0.0526,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "graduates 2027 to 2040 rise by more than 2%",
+    "share_of_futures": 0.16375,
+    "coverage": 0.6326717557251909,
+    "density": 0.8087431693989071,
+    "box": {
+     "accreditor_year": [
+      2027.0011,
+      2037.1623
+     ],
+     "bass_q": [
+      0.3714,
+      1.5
+     ],
+     "program_potential": [
+      0.3577,
+      0.8
+     ],
+     "student_uptake": [
+      0.2896,
+      0.6
+     ],
+     "completion_change": [
+      -0.0349,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "a graduate surge of more than 10% in one year",
+    "share_of_futures": 0.2829,
+    "coverage": 0.7449628844114529,
+    "density": 0.8008740262207866,
+    "box": {
+     "accreditor_year": [
+      2030.9332,
+      2047.8485
+     ],
+     "bass_q": [
+      0.1698,
+      1.5
+     ],
+     "program_potential": [
+      0.384,
+      0.8
+     ],
+     "student_uptake": [
+      0.286,
+      0.6
+     ]
+    }
+   }
+  ],
+  "sobol_institution_net_pv": [
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.152,
+    "ST": 0.293,
+    "ST_conf": 0.041
+   },
+   {
+    "factor": "program_potential",
+    "S1": 0.112,
+    "ST": 0.272,
+    "ST_conf": 0.042
+   },
+   {
+    "factor": "accreditor_year",
+    "S1": 0.113,
+    "ST": 0.268,
+    "ST_conf": 0.043
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.091,
+    "ST": 0.242,
+    "ST_conf": 0.039
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.071,
+    "ST": 0.141,
+    "ST_conf": 0.022
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.04,
+    "ST": 0.106,
+    "ST_conf": 0.015
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.002,
+    "ST": 0.072,
+    "ST_conf": 0.013
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.013,
+    "ST": 0.047,
+    "ST_conf": 0.009
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.01,
+    "ST": 0.03,
+    "ST_conf": 0.008
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.009,
+    "ST": 0.023,
+    "ST_conf": 0.004
+   },
+   {
+    "factor": "bass_p",
+    "S1": -0.0,
+    "ST": 0.007,
+    "ST_conf": 0.002
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.003,
+    "ST": 0.004,
+    "ST_conf": 0.001
+   }
+  ],
+  "sobol_extra_graduates_2027_2040": [
+   {
+    "factor": "accreditor_year",
+    "S1": 0.249,
+    "ST": 0.461,
+    "ST_conf": 0.064
+   },
+   {
+    "factor": "program_potential",
+    "S1": 0.145,
+    "ST": 0.296,
+    "ST_conf": 0.037
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.132,
+    "ST": 0.253,
+    "ST_conf": 0.037
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.031,
+    "ST": 0.1,
+    "ST_conf": 0.019
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.032,
+    "ST": 0.099,
+    "ST_conf": 0.017
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.041,
+    "ST": 0.091,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.023,
+    "ST": 0.048,
+    "ST_conf": 0.012
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.015,
+    "ST": 0.034,
+    "ST_conf": 0.005
+   },
+   {
+    "factor": "bass_p",
+    "S1": 0.001,
+    "ST": 0.012,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.002,
+    "ST": 0.006,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   }
+  ]
+ },
+ "Florida|construction": {
+  "extra_graduates_2027_2040": {
+   "p10": 6.485079410060649,
+   "median": 48.65146387911636,
+   "p90": 207.1256790142882
+  },
+  "extra_graduates_share_2027_2040": {
+   "p10": 0.0008471753344598814,
+   "median": 0.006356606300954709,
+   "p90": 0.026239673350504894
+  },
+  "peak_surge_share": {
+   "p10": 0.011764437589736493,
+   "median": 0.06013666848872816,
+   "p90": 0.18125590334289282
+  },
+  "student_years_change_share_2027_2050": {
+   "p10": -0.016671988419944033,
+   "median": -0.004380293739278978,
+   "p90": -0.0004582464945520558
+  },
+  "institution_net_pv": {
+   "p10": -8276997.574614012,
+   "median": -1905284.819940516,
+   "p90": -170525.99289317426
+  },
+  "state_savings_pv": {
+   "p10": 24414.12128143045,
+   "median": 582208.8599196605,
+   "p90": 3306403.957424796
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.10140179532588528,
+   "median": 0.12813982047266748,
+   "p90": 0.16098858083071024
+  },
+  "graduates_per_opening_2035_base": {
+   "p10": 0.09997398709141067,
+   "median": 0.12607784405456945,
+   "p90": 0.15830362387957803
+  },
+  "adoption_2035": {
+   "p10": 0.01618077250685101,
+   "median": 0.1132051707445187,
+   "p90": 0.48084448410078157
+  },
+  "share_90_track_2035": {
+   "p10": 0.004511565693172396,
+   "median": 0.035412485479971334,
+   "p90": 0.16505252332926995
+  },
+  "share_futures_institutions_lose": 0.94555,
+  "share_futures_fewer_graduates_2027_2040": 0.0,
+  "prim": [
+   {
+    "label": "institutions break even or gain (present value 2027 to 2050)",
+    "share_of_futures": 0.05445,
+    "coverage": 0.4995408631772268,
+    "density": 0.5380811078140455,
+    "box": {
+     "accreditor_year": [
+      2039.7849,
+      2049.9994
+     ],
+     "unaccredited_share": [
+      0.0,
+      0.4499
+     ],
+     "demand_elasticity": [
+      0.4419,
+      0.6
+     ],
+     "completion_change": [
+      0.029,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "graduates 2027 to 2040 rise by more than 2%",
+    "share_of_futures": 0.1625,
+    "coverage": 0.6421538461538462,
+    "density": 0.8145979703356753,
+    "box": {
+     "accreditor_year": [
+      2027.0011,
+      2037.646
+     ],
+     "bass_q": [
+      0.3714,
+      1.5
+     ],
+     "program_potential": [
+      0.4043,
+      0.8
+     ],
+     "student_uptake": [
+      0.2897,
+      0.6
+     ],
+     "completion_change": [
+      -0.0418,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "a graduate surge of more than 10% in one year",
+    "share_of_futures": 0.3042,
+    "coverage": 0.7421104536489151,
+    "density": 0.8148348673524635,
+    "box": {
+     "accreditor_year": [
+      2030.8916,
+      2047.8393
+     ],
+     "bass_q": [
+      0.1703,
+      1.5
+     ],
+     "program_potential": [
+      0.384,
+      0.8
+     ],
+     "student_uptake": [
+      0.2694,
+      0.6
+     ]
+    }
+   }
+  ],
+  "sobol_institution_net_pv": [
+   {
+    "factor": "program_potential",
+    "S1": 0.134,
+    "ST": 0.289,
+    "ST_conf": 0.041
+   },
+   {
+    "factor": "accreditor_year",
+    "S1": 0.128,
+    "ST": 0.282,
+    "ST_conf": 0.044
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.111,
+    "ST": 0.258,
+    "ST_conf": 0.039
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.122,
+    "ST": 0.237,
+    "ST_conf": 0.033
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.049,
+    "ST": 0.114,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.051,
+    "ST": 0.101,
+    "ST_conf": 0.015
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.008,
+    "ST": 0.077,
+    "ST_conf": 0.013
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.015,
+    "ST": 0.049,
+    "ST_conf": 0.01
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.01,
+    "ST": 0.031,
+    "ST_conf": 0.008
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.008,
+    "ST": 0.019,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "bass_p",
+    "S1": -0.0,
+    "ST": 0.007,
+    "ST_conf": 0.002
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.003,
+    "ST": 0.004,
+    "ST_conf": 0.001
+   }
+  ],
+  "sobol_extra_graduates_2027_2040": [
+   {
+    "factor": "accreditor_year",
+    "S1": 0.253,
+    "ST": 0.463,
+    "ST_conf": 0.063
+   },
+   {
+    "factor": "program_potential",
+    "S1": 0.148,
+    "ST": 0.298,
+    "ST_conf": 0.036
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.134,
+    "ST": 0.255,
+    "ST_conf": 0.036
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.031,
+    "ST": 0.099,
+    "ST_conf": 0.019
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.042,
+    "ST": 0.093,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.027,
+    "ST": 0.085,
+    "ST_conf": 0.014
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.022,
+    "ST": 0.047,
+    "ST_conf": 0.012
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.015,
+    "ST": 0.035,
+    "ST_conf": 0.006
+   },
+   {
+    "factor": "bass_p",
+    "S1": 0.001,
+    "ST": 0.012,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.002,
+    "ST": 0.006,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   }
+  ]
+ },
+ "United States|civil": {
+  "extra_graduates_2027_2040": {
+   "p10": 207.7726208563287,
+   "median": 1546.8088326850248,
+   "p90": 6531.697847667507
+  },
+  "extra_graduates_share_2027_2040": {
+   "p10": 0.0009707120226046335,
+   "median": 0.007142109240002798,
+   "p90": 0.029228230202194772
+  },
+  "peak_surge_share": {
+   "p10": 0.012637534342246964,
+   "median": 0.061530430750336707,
+   "p90": 0.1816061615182436
+  },
+  "student_years_change_share_2027_2050": {
+   "p10": -0.021096010096173682,
+   "median": -0.0061391544680830315,
+   "p90": -0.0010484589552767556
+  },
+  "institution_net_pv": {
+   "p10": -370895387.18994665,
+   "median": -95107831.48551722,
+   "p90": -14642230.205687953
+  },
+  "state_savings_pv": {
+   "p10": 2288332.261107732,
+   "median": 27668715.4159632,
+   "p90": 138125918.84123543
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.5666594228875731,
+   "median": 0.7133422928921094,
+   "p90": 0.8924770866248082
+  },
+  "graduates_per_opening_2035_base": {
+   "p10": 0.5576488036548798,
+   "median": 0.7003643003096516,
+   "p90": 0.875891538179874
+  },
+  "adoption_2035": {
+   "p10": 0.01618077250685101,
+   "median": 0.1132051707445187,
+   "p90": 0.48084448410078157
+  },
+  "share_90_track_2035": {
+   "p10": 0.004511565693172396,
+   "median": 0.035412485479971334,
+   "p90": 0.16505252332926995
+  },
+  "share_futures_institutions_lose": 0.9787,
+  "share_futures_fewer_graduates_2027_2040": 0.0,
+  "prim": [
+   {
+    "label": "institutions break even or gain (present value 2027 to 2050)",
+    "share_of_futures": 0.0213,
+    "coverage": 0.7887323943661971,
+    "density": 0.3323442136498516,
+    "box": {
+     "accreditor_year": [
+      2044.2389,
+      2049.7196
+     ],
+     "unaccredited_share": [
+      0.0,
+      0.1714
+     ],
+     "demand_elasticity": [
+      0.1821,
+      0.6
+     ],
+     "completion_change": [
+      -0.0323,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "graduates 2027 to 2040 rise by more than 2%",
+    "share_of_futures": 0.18965,
+    "coverage": 0.7092011600316372,
+    "density": 0.8119529127678841,
+    "box": {
+     "accreditor_year": [
+      2027.0011,
+      2037.6351
+     ],
+     "bass_q": [
+      0.3085,
+      1.5
+     ],
+     "program_potential": [
+      0.3575,
+      0.8
+     ],
+     "student_uptake": [
+      0.2707,
+      0.6
+     ]
+    }
+   },
+   {
+    "label": "a graduate surge of more than 10% in one year",
+    "share_of_futures": 0.309,
+    "coverage": 0.7326860841423948,
+    "density": 0.8171810142573542,
+    "box": {
+     "accreditor_year": [
+      2030.9111,
+      2047.8204
+     ],
+     "bass_q": [
+      0.2392,
+      1.5
+     ],
+     "program_potential": [
+      0.3613,
+      0.8
+     ],
+     "student_uptake": [
+      0.2689,
+      0.6
+     ]
+    }
+   }
+  ],
+  "sobol_institution_net_pv": [
+   {
+    "factor": "program_potential",
+    "S1": 0.161,
+    "ST": 0.309,
+    "ST_conf": 0.041
+   },
+   {
+    "factor": "accreditor_year",
+    "S1": 0.151,
+    "ST": 0.303,
+    "ST_conf": 0.044
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.136,
+    "ST": 0.276,
+    "ST_conf": 0.039
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.073,
+    "ST": 0.148,
+    "ST_conf": 0.021
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.06,
+    "ST": 0.122,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.011,
+    "ST": 0.07,
+    "ST_conf": 0.011
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.032,
+    "ST": 0.061,
+    "ST_conf": 0.009
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.019,
+    "ST": 0.055,
+    "ST_conf": 0.011
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.017,
+    "ST": 0.035,
+    "ST_conf": 0.005
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.011,
+    "ST": 0.033,
+    "ST_conf": 0.008
+   },
+   {
+    "factor": "bass_p",
+    "S1": 0.0,
+    "ST": 0.008,
+    "ST_conf": 0.002
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.003,
+    "ST": 0.004,
+    "ST_conf": 0.001
+   }
+  ],
+  "sobol_extra_graduates_2027_2040": [
+   {
+    "factor": "accreditor_year",
+    "S1": 0.262,
+    "ST": 0.47,
+    "ST_conf": 0.062
+   },
+   {
+    "factor": "program_potential",
+    "S1": 0.152,
+    "ST": 0.3,
+    "ST_conf": 0.036
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.137,
+    "ST": 0.258,
+    "ST_conf": 0.036
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.031,
+    "ST": 0.099,
+    "ST_conf": 0.019
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.043,
+    "ST": 0.094,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.02,
+    "ST": 0.065,
+    "ST_conf": 0.011
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.022,
+    "ST": 0.047,
+    "ST_conf": 0.011
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.013,
+    "ST": 0.029,
+    "ST_conf": 0.005
+   },
+   {
+    "factor": "bass_p",
+    "S1": 0.001,
+    "ST": 0.012,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.002,
+    "ST": 0.006,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   }
+  ]
+ },
+ "Florida|civil": {
+  "extra_graduates_2027_2040": {
+   "p10": 11.823220728589105,
+   "median": 87.45967807646196,
+   "p90": 367.4300289461022
+  },
+  "extra_graduates_share_2027_2040": {
+   "p10": 0.0010179670857170299,
+   "median": 0.007428782899047521,
+   "p90": 0.03028555862663685
+  },
+  "peak_surge_share": {
+   "p10": 0.013251127594531835,
+   "median": 0.06523386155089869,
+   "p90": 0.19365399860899452
+  },
+  "student_years_change_share_2027_2050": {
+   "p10": -0.02467199955547277,
+   "median": -0.007517243418810735,
+   "p90": -0.0014641823585218143
+  },
+  "institution_net_pv": {
+   "p10": -14631793.004154896,
+   "median": -3506844.645041138,
+   "p90": -518773.9758121174
+  },
+  "state_savings_pv": {
+   "p10": 211084.95964418046,
+   "median": 2176590.986421561,
+   "p90": 10444988.931038694
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.4767311517277921,
+   "median": 0.6005239759675661,
+   "p90": 0.7515008911435674
+  },
+  "graduates_per_opening_2035_base": {
+   "p10": 0.4689760457069032,
+   "median": 0.5891961805120315,
+   "p90": 0.73709055745543
+  },
+  "adoption_2035": {
+   "p10": 0.01618077250685101,
+   "median": 0.1132051707445187,
+   "p90": 0.48084448410078157
+  },
+  "share_90_track_2035": {
+   "p10": 0.004511565693172396,
+   "median": 0.035412485479971334,
+   "p90": 0.16505252332926995
+  },
+  "share_futures_institutions_lose": 0.98675,
+  "share_futures_fewer_graduates_2027_2040": 0.0,
+  "prim": [
+   {
+    "label": "institutions break even or gain (present value 2027 to 2050)",
+    "share_of_futures": 0.01325,
+    "coverage": 0.9358490566037736,
+    "density": 0.24530168150346193,
+    "box": {
+     "accreditor_year": [
+      2044.4797,
+      2049.6674
+     ],
+     "unaccredited_share": [
+      0.0,
+      0.1364
+     ],
+     "demand_elasticity": [
+      0.1098,
+      0.6
+     ]
+    }
+   },
+   {
+    "label": "graduates 2027 to 2040 rise by more than 2%",
+    "share_of_futures": 0.1984,
+    "coverage": 0.7404233870967742,
+    "density": 0.8001089324618736,
+    "box": {
+     "accreditor_year": [
+      2027.0011,
+      2037.6351
+     ],
+     "bass_q": [
+      0.2466,
+      1.5
+     ],
+     "program_potential": [
+      0.333,
+      0.8
+     ],
+     "student_uptake": [
+      0.2705,
+      0.6
+     ]
+    }
+   },
+   {
+    "label": "a graduate surge of more than 10% in one year",
+    "share_of_futures": 0.3359,
+    "coverage": 0.7460553736231021,
+    "density": 0.8162866449511401,
+    "box": {
+     "accreditor_year": [
+      2030.8678,
+      2047.8094
+     ],
+     "bass_q": [
+      0.2373,
+      1.5
+     ],
+     "program_potential": [
+      0.3132,
+      0.8
+     ],
+     "student_uptake": [
+      0.2689,
+      0.6
+     ]
+    }
+   }
+  ]
+ },
+ "us_construction": {
+  "extra_graduates_2027_2040": {
+   "p10": 94.8092149582615,
+   "median": 715.1152624631632,
+   "p90": 3057.9785539429517
+  },
+  "extra_graduates_share_2027_2040": {
+   "p10": 0.0008493458667478859,
+   "median": 0.00636693232445025,
+   "p90": 0.02642950955403972
+  },
+  "peak_surge_share": {
+   "p10": 0.011472198200580016,
+   "median": 0.057371757910674004,
+   "p90": 0.1705971100584715
+  },
+  "student_years_change_share_2027_2050": {
+   "p10": -0.01481292549577178,
+   "median": -0.0035169466497104833,
+   "p90": -6.152064529104242e-05
+  },
+  "institution_net_pv": {
+   "p10": -116052951.8917942,
+   "median": -24102879.157404207,
+   "p90": 42162.14782747416
+  },
+  "state_savings_pv": {
+   "p10": -5029.590357179264,
+   "median": 7170279.425734543,
+   "p90": 45926890.80938837
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.13367274498465623,
+   "median": 0.16863722616941793,
+   "p90": 0.21152988298764802
+  },
+  "graduates_per_opening_2035_base": {
+   "p10": 0.13176805677543724,
+   "median": 0.16591300539928583,
+   "p90": 0.20800618843193305
+  },
+  "adoption_2035": {
+   "p10": 0.01618077250685101,
+   "median": 0.1132051707445187,
+   "p90": 0.48084448410078157
+  },
+  "share_90_track_2035": {
+   "p10": 0.004511565693172396,
+   "median": 0.035412485479971334,
+   "p90": 0.16505252332926995
+  },
+  "share_futures_institutions_lose": 0.89885,
+  "share_futures_fewer_graduates_2027_2040": 0.0,
+  "prim": [
+   {
+    "label": "institutions break even or gain (present value 2027 to 2050)",
+    "share_of_futures": 0.10115,
+    "coverage": 0.52743450321305,
+    "density": 0.8138825324180016,
+    "box": {
+     "demand_elasticity": [
+      0.4753,
+      0.6
+     ],
+     "completion_change": [
+      0.0526,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "graduates 2027 to 2040 rise by more than 2%",
+    "share_of_futures": 0.16375,
+    "coverage": 0.6326717557251909,
+    "density": 0.8087431693989071,
+    "box": {
+     "accreditor_year": [
+      2027.0011,
+      2037.1623
+     ],
+     "bass_q": [
+      0.3714,
+      1.5
+     ],
+     "program_potential": [
+      0.3577,
+      0.8
+     ],
+     "student_uptake": [
+      0.2896,
+      0.6
+     ],
+     "completion_change": [
+      -0.0349,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "a graduate surge of more than 10% in one year",
+    "share_of_futures": 0.2829,
+    "coverage": 0.7449628844114529,
+    "density": 0.8008740262207866,
+    "box": {
+     "accreditor_year": [
+      2030.9332,
+      2047.8485
+     ],
+     "bass_q": [
+      0.1698,
+      1.5
+     ],
+     "program_potential": [
+      0.384,
+      0.8
+     ],
+     "student_uptake": [
+      0.286,
+      0.6
+     ]
+    }
+   }
+  ],
+  "sobol_institution_net_pv": [
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.152,
+    "ST": 0.293,
+    "ST_conf": 0.041
+   },
+   {
+    "factor": "program_potential",
+    "S1": 0.112,
+    "ST": 0.272,
+    "ST_conf": 0.042
+   },
+   {
+    "factor": "accreditor_year",
+    "S1": 0.113,
+    "ST": 0.268,
+    "ST_conf": 0.043
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.091,
+    "ST": 0.242,
+    "ST_conf": 0.039
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.071,
+    "ST": 0.141,
+    "ST_conf": 0.022
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.04,
+    "ST": 0.106,
+    "ST_conf": 0.015
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.002,
+    "ST": 0.072,
+    "ST_conf": 0.013
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.013,
+    "ST": 0.047,
+    "ST_conf": 0.009
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.01,
+    "ST": 0.03,
+    "ST_conf": 0.008
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.009,
+    "ST": 0.023,
+    "ST_conf": 0.004
+   },
+   {
+    "factor": "bass_p",
+    "S1": -0.0,
+    "ST": 0.007,
+    "ST_conf": 0.002
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.003,
+    "ST": 0.004,
+    "ST_conf": 0.001
+   }
+  ],
+  "sobol_extra_graduates_2027_2040": [
+   {
+    "factor": "accreditor_year",
+    "S1": 0.249,
+    "ST": 0.461,
+    "ST_conf": 0.064
+   },
+   {
+    "factor": "program_potential",
+    "S1": 0.145,
+    "ST": 0.296,
+    "ST_conf": 0.037
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.132,
+    "ST": 0.253,
+    "ST_conf": 0.037
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.031,
+    "ST": 0.1,
+    "ST_conf": 0.019
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.032,
+    "ST": 0.099,
+    "ST_conf": 0.017
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.041,
+    "ST": 0.091,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.023,
+    "ST": 0.048,
+    "ST_conf": 0.012
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.015,
+    "ST": 0.034,
+    "ST_conf": 0.005
+   },
+   {
+    "factor": "bass_p",
+    "S1": 0.001,
+    "ST": 0.012,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.002,
+    "ST": 0.006,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   }
+  ]
+ },
+ "fl_construction": {
+  "extra_graduates_2027_2040": {
+   "p10": 6.485079410060649,
+   "median": 48.65146387911636,
+   "p90": 207.1256790142882
+  },
+  "extra_graduates_share_2027_2040": {
+   "p10": 0.0008471753344598814,
+   "median": 0.006356606300954709,
+   "p90": 0.026239673350504894
+  },
+  "peak_surge_share": {
+   "p10": 0.011764437589736493,
+   "median": 0.06013666848872816,
+   "p90": 0.18125590334289282
+  },
+  "student_years_change_share_2027_2050": {
+   "p10": -0.016671988419944033,
+   "median": -0.004380293739278978,
+   "p90": -0.0004582464945520558
+  },
+  "institution_net_pv": {
+   "p10": -8276997.574614012,
+   "median": -1905284.819940516,
+   "p90": -170525.99289317426
+  },
+  "state_savings_pv": {
+   "p10": 24414.12128143045,
+   "median": 582208.8599196605,
+   "p90": 3306403.957424796
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.10140179532588528,
+   "median": 0.12813982047266748,
+   "p90": 0.16098858083071024
+  },
+  "graduates_per_opening_2035_base": {
+   "p10": 0.09997398709141067,
+   "median": 0.12607784405456945,
+   "p90": 0.15830362387957803
+  },
+  "adoption_2035": {
+   "p10": 0.01618077250685101,
+   "median": 0.1132051707445187,
+   "p90": 0.48084448410078157
+  },
+  "share_90_track_2035": {
+   "p10": 0.004511565693172396,
+   "median": 0.035412485479971334,
+   "p90": 0.16505252332926995
+  },
+  "share_futures_institutions_lose": 0.94555,
+  "share_futures_fewer_graduates_2027_2040": 0.0,
+  "prim": [
+   {
+    "label": "institutions break even or gain (present value 2027 to 2050)",
+    "share_of_futures": 0.05445,
+    "coverage": 0.4995408631772268,
+    "density": 0.5380811078140455,
+    "box": {
+     "accreditor_year": [
+      2039.7849,
+      2049.9994
+     ],
+     "unaccredited_share": [
+      0.0,
+      0.4499
+     ],
+     "demand_elasticity": [
+      0.4419,
+      0.6
+     ],
+     "completion_change": [
+      0.029,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "graduates 2027 to 2040 rise by more than 2%",
+    "share_of_futures": 0.1625,
+    "coverage": 0.6421538461538462,
+    "density": 0.8145979703356753,
+    "box": {
+     "accreditor_year": [
+      2027.0011,
+      2037.646
+     ],
+     "bass_q": [
+      0.3714,
+      1.5
+     ],
+     "program_potential": [
+      0.4043,
+      0.8
+     ],
+     "student_uptake": [
+      0.2897,
+      0.6
+     ],
+     "completion_change": [
+      -0.0418,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "a graduate surge of more than 10% in one year",
+    "share_of_futures": 0.3042,
+    "coverage": 0.7421104536489151,
+    "density": 0.8148348673524635,
+    "box": {
+     "accreditor_year": [
+      2030.8916,
+      2047.8393
+     ],
+     "bass_q": [
+      0.1703,
+      1.5
+     ],
+     "program_potential": [
+      0.384,
+      0.8
+     ],
+     "student_uptake": [
+      0.2694,
+      0.6
+     ]
+    }
+   }
+  ],
+  "sobol_institution_net_pv": [
+   {
+    "factor": "program_potential",
+    "S1": 0.134,
+    "ST": 0.289,
+    "ST_conf": 0.041
+   },
+   {
+    "factor": "accreditor_year",
+    "S1": 0.128,
+    "ST": 0.282,
+    "ST_conf": 0.044
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.111,
+    "ST": 0.258,
+    "ST_conf": 0.039
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.122,
+    "ST": 0.237,
+    "ST_conf": 0.033
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.049,
+    "ST": 0.114,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.051,
+    "ST": 0.101,
+    "ST_conf": 0.015
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.008,
+    "ST": 0.077,
+    "ST_conf": 0.013
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.015,
+    "ST": 0.049,
+    "ST_conf": 0.01
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.01,
+    "ST": 0.031,
+    "ST_conf": 0.008
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.008,
+    "ST": 0.019,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "bass_p",
+    "S1": -0.0,
+    "ST": 0.007,
+    "ST_conf": 0.002
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.003,
+    "ST": 0.004,
+    "ST_conf": 0.001
+   }
+  ],
+  "sobol_extra_graduates_2027_2040": [
+   {
+    "factor": "accreditor_year",
+    "S1": 0.253,
+    "ST": 0.463,
+    "ST_conf": 0.063
+   },
+   {
+    "factor": "program_potential",
+    "S1": 0.148,
+    "ST": 0.298,
+    "ST_conf": 0.036
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.134,
+    "ST": 0.255,
+    "ST_conf": 0.036
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.031,
+    "ST": 0.099,
+    "ST_conf": 0.019
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.042,
+    "ST": 0.093,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.027,
+    "ST": 0.085,
+    "ST_conf": 0.014
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.022,
+    "ST": 0.047,
+    "ST_conf": 0.012
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.015,
+    "ST": 0.035,
+    "ST_conf": 0.006
+   },
+   {
+    "factor": "bass_p",
+    "S1": 0.001,
+    "ST": 0.012,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.002,
+    "ST": 0.006,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   }
+  ]
+ },
+ "us_civil": {
+  "extra_graduates_2027_2040": {
+   "p10": 207.7726208563287,
+   "median": 1546.8088326850248,
+   "p90": 6531.697847667507
+  },
+  "extra_graduates_share_2027_2040": {
+   "p10": 0.0009707120226046335,
+   "median": 0.007142109240002798,
+   "p90": 0.029228230202194772
+  },
+  "peak_surge_share": {
+   "p10": 0.012637534342246964,
+   "median": 0.061530430750336707,
+   "p90": 0.1816061615182436
+  },
+  "student_years_change_share_2027_2050": {
+   "p10": -0.021096010096173682,
+   "median": -0.0061391544680830315,
+   "p90": -0.0010484589552767556
+  },
+  "institution_net_pv": {
+   "p10": -370895387.18994665,
+   "median": -95107831.48551722,
+   "p90": -14642230.205687953
+  },
+  "state_savings_pv": {
+   "p10": 2288332.261107732,
+   "median": 27668715.4159632,
+   "p90": 138125918.84123543
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.5666594228875731,
+   "median": 0.7133422928921094,
+   "p90": 0.8924770866248082
+  },
+  "graduates_per_opening_2035_base": {
+   "p10": 0.5576488036548798,
+   "median": 0.7003643003096516,
+   "p90": 0.875891538179874
+  },
+  "adoption_2035": {
+   "p10": 0.01618077250685101,
+   "median": 0.1132051707445187,
+   "p90": 0.48084448410078157
+  },
+  "share_90_track_2035": {
+   "p10": 0.004511565693172396,
+   "median": 0.035412485479971334,
+   "p90": 0.16505252332926995
+  },
+  "share_futures_institutions_lose": 0.9787,
+  "share_futures_fewer_graduates_2027_2040": 0.0,
+  "prim": [
+   {
+    "label": "institutions break even or gain (present value 2027 to 2050)",
+    "share_of_futures": 0.0213,
+    "coverage": 0.7887323943661971,
+    "density": 0.3323442136498516,
+    "box": {
+     "accreditor_year": [
+      2044.2389,
+      2049.7196
+     ],
+     "unaccredited_share": [
+      0.0,
+      0.1714
+     ],
+     "demand_elasticity": [
+      0.1821,
+      0.6
+     ],
+     "completion_change": [
+      -0.0323,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "graduates 2027 to 2040 rise by more than 2%",
+    "share_of_futures": 0.18965,
+    "coverage": 0.7092011600316372,
+    "density": 0.8119529127678841,
+    "box": {
+     "accreditor_year": [
+      2027.0011,
+      2037.6351
+     ],
+     "bass_q": [
+      0.3085,
+      1.5
+     ],
+     "program_potential": [
+      0.3575,
+      0.8
+     ],
+     "student_uptake": [
+      0.2707,
+      0.6
+     ]
+    }
+   },
+   {
+    "label": "a graduate surge of more than 10% in one year",
+    "share_of_futures": 0.309,
+    "coverage": 0.7326860841423948,
+    "density": 0.8171810142573542,
+    "box": {
+     "accreditor_year": [
+      2030.9111,
+      2047.8204
+     ],
+     "bass_q": [
+      0.2392,
+      1.5
+     ],
+     "program_potential": [
+      0.3613,
+      0.8
+     ],
+     "student_uptake": [
+      0.2689,
+      0.6
+     ]
+    }
+   }
+  ],
+  "sobol_institution_net_pv": [
+   {
+    "factor": "program_potential",
+    "S1": 0.161,
+    "ST": 0.309,
+    "ST_conf": 0.041
+   },
+   {
+    "factor": "accreditor_year",
+    "S1": 0.151,
+    "ST": 0.303,
+    "ST_conf": 0.044
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.136,
+    "ST": 0.276,
+    "ST_conf": 0.039
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.073,
+    "ST": 0.148,
+    "ST_conf": 0.021
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.06,
+    "ST": 0.122,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.011,
+    "ST": 0.07,
+    "ST_conf": 0.011
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.032,
+    "ST": 0.061,
+    "ST_conf": 0.009
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.019,
+    "ST": 0.055,
+    "ST_conf": 0.011
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.017,
+    "ST": 0.035,
+    "ST_conf": 0.005
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.011,
+    "ST": 0.033,
+    "ST_conf": 0.008
+   },
+   {
+    "factor": "bass_p",
+    "S1": 0.0,
+    "ST": 0.008,
+    "ST_conf": 0.002
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.003,
+    "ST": 0.004,
+    "ST_conf": 0.001
+   }
+  ],
+  "sobol_extra_graduates_2027_2040": [
+   {
+    "factor": "accreditor_year",
+    "S1": 0.262,
+    "ST": 0.47,
+    "ST_conf": 0.062
+   },
+   {
+    "factor": "program_potential",
+    "S1": 0.152,
+    "ST": 0.3,
+    "ST_conf": 0.036
+   },
+   {
+    "factor": "student_uptake",
+    "S1": 0.137,
+    "ST": 0.258,
+    "ST_conf": 0.036
+   },
+   {
+    "factor": "bass_q",
+    "S1": 0.031,
+    "ST": 0.099,
+    "ST_conf": 0.019
+   },
+   {
+    "factor": "baseline_growth",
+    "S1": 0.043,
+    "ST": 0.094,
+    "ST_conf": 0.016
+   },
+   {
+    "factor": "completion_change",
+    "S1": 0.02,
+    "ST": 0.065,
+    "ST_conf": 0.011
+   },
+   {
+    "factor": "unaccredited_share",
+    "S1": 0.022,
+    "ST": 0.047,
+    "ST_conf": 0.011
+   },
+   {
+    "factor": "demand_elasticity",
+    "S1": 0.013,
+    "ST": 0.029,
+    "ST_conf": 0.005
+   },
+   {
+    "factor": "bass_p",
+    "S1": 0.001,
+    "ST": 0.012,
+    "ST_conf": 0.003
+   },
+   {
+    "factor": "policy_start",
+    "S1": 0.002,
+    "ST": 0.006,
+    "ST_conf": 0.001
+   },
+   {
+    "factor": "marginal_cost_share",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   },
+   {
+    "factor": "funding_follows_enrollment",
+    "S1": 0.0,
+    "ST": 0.0,
+    "ST_conf": 0.0
+   }
+  ]
+ },
+ "fl_civil": {
+  "extra_graduates_2027_2040": {
+   "p10": 11.823220728589105,
+   "median": 87.45967807646196,
+   "p90": 367.4300289461022
+  },
+  "extra_graduates_share_2027_2040": {
+   "p10": 0.0010179670857170299,
+   "median": 0.007428782899047521,
+   "p90": 0.03028555862663685
+  },
+  "peak_surge_share": {
+   "p10": 0.013251127594531835,
+   "median": 0.06523386155089869,
+   "p90": 0.19365399860899452
+  },
+  "student_years_change_share_2027_2050": {
+   "p10": -0.02467199955547277,
+   "median": -0.007517243418810735,
+   "p90": -0.0014641823585218143
+  },
+  "institution_net_pv": {
+   "p10": -14631793.004154896,
+   "median": -3506844.645041138,
+   "p90": -518773.9758121174
+  },
+  "state_savings_pv": {
+   "p10": 211084.95964418046,
+   "median": 2176590.986421561,
+   "p90": 10444988.931038694
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.4767311517277921,
+   "median": 0.6005239759675661,
+   "p90": 0.7515008911435674
+  },
+  "graduates_per_opening_2035_base": {
+   "p10": 0.4689760457069032,
+   "median": 0.5891961805120315,
+   "p90": 0.73709055745543
+  },
+  "adoption_2035": {
+   "p10": 0.01618077250685101,
+   "median": 0.1132051707445187,
+   "p90": 0.48084448410078157
+  },
+  "share_90_track_2035": {
+   "p10": 0.004511565693172396,
+   "median": 0.035412485479971334,
+   "p90": 0.16505252332926995
+  },
+  "share_futures_institutions_lose": 0.98675,
+  "share_futures_fewer_graduates_2027_2040": 0.0,
+  "prim": [
+   {
+    "label": "institutions break even or gain (present value 2027 to 2050)",
+    "share_of_futures": 0.01325,
+    "coverage": 0.9358490566037736,
+    "density": 0.24530168150346193,
+    "box": {
+     "accreditor_year": [
+      2044.4797,
+      2049.6674
+     ],
+     "unaccredited_share": [
+      0.0,
+      0.1364
+     ],
+     "demand_elasticity": [
+      0.1098,
+      0.6
+     ]
+    }
+   },
+   {
+    "label": "graduates 2027 to 2040 rise by more than 2%",
+    "share_of_futures": 0.1984,
+    "coverage": 0.7404233870967742,
+    "density": 0.8001089324618736,
+    "box": {
+     "accreditor_year": [
+      2027.0011,
+      2037.6351
+     ],
+     "bass_q": [
+      0.2466,
+      1.5
+     ],
+     "program_potential": [
+      0.333,
+      0.8
+     ],
+     "student_uptake": [
+      0.2705,
+      0.6
+     ]
+    }
+   },
+   {
+    "label": "a graduate surge of more than 10% in one year",
+    "share_of_futures": 0.3359,
+    "coverage": 0.7460553736231021,
+    "density": 0.8162866449511401,
+    "box": {
+     "accreditor_year": [
+      2030.8678,
+      2047.8094
+     ],
+     "bass_q": [
+      0.2373,
+      1.5
+     ],
+     "program_potential": [
+      0.3132,
+      0.8
+     ],
+     "student_uptake": [
+      0.2689,
+      0.6
+     ]
+    }
+   }
+  ]
+ }
+}

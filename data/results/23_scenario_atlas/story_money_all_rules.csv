@@ -1,0 +1,97 @@
+story,field,pricing,state_funding,credits_cut,student,institution,state
+Nobody moves,civil,per_credit,follows_credits,26.0,48722.05,-10269.688,8580.0
+Nobody moves,construction management,per_credit,follows_credits,25.0,51051.875,-9874.7,8250.0
+Nobody moves,civil,per_credit,held_harmless,26.0,48722.05,-1689.688,0.0
+Nobody moves,construction management,per_credit,held_harmless,25.0,51051.875,-1624.7,0.0
+Nobody moves,civil,per_degree,follows_credits,26.0,45082.05,-6629.688,8580.0
+Nobody moves,construction management,per_degree,follows_credits,25.0,47551.875,-6374.7,8250.0
+Nobody moves,civil,per_degree,held_harmless,26.0,45082.05,1950.312,0.0
+Nobody moves,construction management,per_degree,held_harmless,25.0,47551.875,1875.3,0.0
+Programs merge courses,civil,per_credit,follows_credits,27.0,50595.975000000006,-10664.676,8910.0
+Programs merge courses,construction management,per_credit,follows_credits,25.0,51051.875,-9874.7,8250.0
+Programs merge courses,civil,per_credit,held_harmless,27.0,50595.975000000006,-1754.6760000000002,0.0
+Programs merge courses,construction management,per_credit,held_harmless,25.0,51051.875,-1624.7,0.0
+Programs merge courses,civil,per_degree,follows_credits,27.0,46815.975000000006,-6884.676,8910.0
+Programs merge courses,construction management,per_degree,follows_credits,25.0,47551.875,-6374.7,8250.0
+Programs merge courses,civil,per_degree,held_harmless,27.0,46815.975000000006,2025.3239999999998,0.0
+Programs merge courses,construction management,per_degree,held_harmless,25.0,47551.875,1875.3,0.0
+State: 12 major credits count,civil,per_credit,follows_credits,27.0,50595.975000000006,-10664.676,8910.0
+State: 12 major credits count,construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+State: 12 major credits count,civil,per_credit,held_harmless,27.0,50595.975000000006,-1754.6760000000002,0.0
+State: 12 major credits count,construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+State: 12 major credits count,civil,per_degree,follows_credits,27.0,46815.975000000006,-6884.676,8910.0
+State: 12 major credits count,construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+State: 12 major credits count,civil,per_degree,held_harmless,27.0,46815.975000000006,2025.3239999999998,0.0
+State: 12 major credits count,construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0
+State: general education 30,civil,per_credit,follows_credits,27.0,50595.975000000006,-10664.676,8910.0
+State: general education 30,construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+State: general education 30,civil,per_credit,held_harmless,27.0,50595.975000000006,-1754.6760000000002,0.0
+State: general education 30,construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+State: general education 30,civil,per_degree,follows_credits,27.0,46815.975000000006,-6884.676,8910.0
+State: general education 30,construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+State: general education 30,civil,per_degree,held_harmless,27.0,46815.975000000006,2025.3239999999998,0.0
+State: general education 30,construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0
+Accreditor: number 20% lower,civil,per_credit,follows_credits,32.0,59965.600000000006,-12639.616,10560.0
+Accreditor: number 20% lower,construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+Accreditor: number 20% lower,civil,per_credit,held_harmless,32.0,59965.600000000006,-2079.616,0.0
+Accreditor: number 20% lower,construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+Accreditor: number 20% lower,civil,per_degree,follows_credits,32.0,55485.600000000006,-8159.616,10560.0
+Accreditor: number 20% lower,construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+Accreditor: number 20% lower,civil,per_degree,held_harmless,32.0,55485.600000000006,2400.384,0.0
+Accreditor: number 20% lower,construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0
+Accreditor: counts competence,civil,per_credit,follows_credits,32.0,59965.600000000006,-12639.616,10560.0
+Accreditor: counts competence,construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+Accreditor: counts competence,civil,per_credit,held_harmless,32.0,59965.600000000006,-2079.616,0.0
+Accreditor: counts competence,construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+Accreditor: counts competence,civil,per_degree,follows_credits,32.0,55485.600000000006,-8159.616,10560.0
+Accreditor: counts competence,construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+Accreditor: counts competence,civil,per_degree,held_harmless,32.0,55485.600000000006,2400.384,0.0
+Accreditor: counts competence,construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0
+State and accreditor (central),civil,per_credit,follows_credits,32.0,59965.600000000006,-12639.616,10560.0
+State and accreditor (central),construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+State and accreditor (central),civil,per_credit,held_harmless,32.0,59965.600000000006,-2079.616,0.0
+State and accreditor (central),construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+State and accreditor (central),civil,per_degree,follows_credits,32.0,55485.600000000006,-8159.616,10560.0
+State and accreditor (central),construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+State and accreditor (central),civil,per_degree,held_harmless,32.0,55485.600000000006,2400.384,0.0
+State and accreditor (central),construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0
+"Central, AI as an incremental tool",civil,per_credit,follows_credits,32.0,59965.600000000006,-12639.616,10560.0
+"Central, AI as an incremental tool",construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+"Central, AI as an incremental tool",civil,per_credit,held_harmless,32.0,59965.600000000006,-2079.616,0.0
+"Central, AI as an incremental tool",construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+"Central, AI as an incremental tool",civil,per_degree,follows_credits,32.0,55485.600000000006,-8159.616,10560.0
+"Central, AI as an incremental tool",construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+"Central, AI as an incremental tool",civil,per_degree,held_harmless,32.0,55485.600000000006,2400.384,0.0
+"Central, AI as an incremental tool",construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0
+"Central, AI tutor revolution",civil,per_credit,follows_credits,32.0,59965.600000000006,-12639.616,10560.0
+"Central, AI tutor revolution",construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+"Central, AI tutor revolution",civil,per_credit,held_harmless,32.0,59965.600000000006,-2079.616,0.0
+"Central, AI tutor revolution",construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+"Central, AI tutor revolution",civil,per_degree,follows_credits,32.0,55485.600000000006,-8159.616,10560.0
+"Central, AI tutor revolution",construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+"Central, AI tutor revolution",civil,per_degree,held_harmless,32.0,55485.600000000006,2400.384,0.0
+"Central, AI tutor revolution",construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0
+"Central, AI tutor revolution, AI course added",civil,per_credit,follows_credits,32.0,59965.600000000006,-12639.616,10560.0
+"Central, AI tutor revolution, AI course added",construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+"Central, AI tutor revolution, AI course added",civil,per_credit,held_harmless,32.0,59965.600000000006,-2079.616,0.0
+"Central, AI tutor revolution, AI course added",construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+"Central, AI tutor revolution, AI course added",civil,per_degree,follows_credits,32.0,55485.600000000006,-8159.616,10560.0
+"Central, AI tutor revolution, AI course added",construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+"Central, AI tutor revolution, AI course added",civil,per_degree,held_harmless,32.0,55485.600000000006,2400.384,0.0
+"Central, AI tutor revolution, AI course added",construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0
+Everything moves,civil,per_credit,follows_credits,32.0,59965.600000000006,-12639.616,10560.0
+Everything moves,construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+Everything moves,civil,per_credit,held_harmless,32.0,59965.600000000006,-2079.616,0.0
+Everything moves,construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+Everything moves,civil,per_degree,follows_credits,32.0,55485.600000000006,-8159.616,10560.0
+Everything moves,construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+Everything moves,civil,per_degree,held_harmless,32.0,55485.600000000006,2400.384,0.0
+Everything moves,construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0
+Program leaves accreditation,civil,per_credit,follows_credits,32.0,59965.600000000006,-12639.616,10560.0
+Program leaves accreditation,construction management,per_credit,follows_credits,30.0,61262.25,-11849.64,9900.0
+Program leaves accreditation,civil,per_credit,held_harmless,32.0,59965.600000000006,-2079.616,0.0
+Program leaves accreditation,construction management,per_credit,held_harmless,30.0,61262.25,-1949.6400000000003,0.0
+Program leaves accreditation,civil,per_degree,follows_credits,32.0,55485.600000000006,-8159.616,10560.0
+Program leaves accreditation,construction management,per_degree,follows_credits,30.0,57062.25,-7649.64,9900.0
+Program leaves accreditation,civil,per_degree,held_harmless,32.0,55485.600000000006,2400.384,0.0
+Program leaves accreditation,construction management,per_degree,held_harmless,30.0,57062.25,2250.3599999999997,0.0

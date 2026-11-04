@@ -1,0 +1,149 @@
+UNITID,INSTNM,STABBR,total_semester,acce_bachelors,state_abbr,G_used,floor_cm
+100654,Alabama A & M University,AL,128.0,False,AL,41.0,100.0
+100858,Auburn University,AL,120.0,True,AL,41.0,100.0
+102377,Tuskegee University,AL,128.0,True,AL,41.0,100.0
+102553,University of Alaska Anchorage,AK,120.0,True,AK,34.0,93.0
+104151,Arizona State University Campus Immersion,AZ,120.0,True,AZ,32.0,91.0
+105330,Northern Arizona University,AZ,120.0,True,AZ,32.0,91.0
+106245,University of Arkansas at Little Rock,AR,120.0,True,AR,35.0,94.0
+106458,Arkansas State University,AR,120.0,False,AR,35.0,94.0
+107141,John Brown University,AR,120.0,True,AR,35.0,94.0
+110361,California Baptist University,CA,124.0,True,CA,43.0,102.0
+110422,California Polytechnic State University-San Luis Obispo,CA,123.0,True,CA,43.0,102.0
+110538,California State University-Chico,CA,,True,CA,43.0,102.0
+110556,California State University-Fresno,CA,120.0,True,CA,43.0,102.0
+110574,California State University-East Bay,CA,120.0,False,CA,43.0,102.0
+110583,California State University-Long Beach,CA,120.0,True,CA,43.0,102.0
+110608,California State University-Northridge,CA,124.0,False,CA,43.0,102.0
+110617,California State University-Sacramento,CA,134.0,True,CA,43.0,102.0
+119605,National University,CA,120.0,False,CA,43.0,102.0
+119775,Newschool of Architecture and Design,CA,120.0,False,CA,43.0,102.0
+122409,San Diego State University,CA,,False,CA,43.0,102.0
+122685,San Joaquin Valley College-Visalia,CA,123.0,False,CA,43.0,102.0
+126562,University of Colorado Denver/Anschutz Medical Campus,CO,120.0,False,CO,31.0,90.0
+126818,Colorado State University-Fort Collins,CO,120.0,True,CO,31.0,90.0
+127556,Colorado Mesa University,CO,120.0,False,CO,31.0,90.0
+127565,Metropolitan State University of Denver,CO,120.0,False,CO,31.0,90.0
+128106,Colorado State University Pueblo,CO,120.0,False,CO,31.0,90.0
+128771,Central Connecticut State University,CT,120.0,True,CT,30.0,89.0
+133881,Florida Institute of Technology,FL,122.0,True,FL,36.0,95.0
+133951,Florida International University,FL,120.0,True,FL,36.0,95.0
+134130,University of Florida,FL,120.0,True,FL,36.0,95.0
+136172,University of North Florida,FL,120.0,True,FL,36.0,95.0
+137209,Seminole State College of Florida,FL,126.0,True,FL,36.0,95.0
+138354,University of West Florida,FL,120.0,False,FL,36.0,95.0
+139700,Georgia Highlands College,GA,124.0,False,GA,42.0,101.0
+139755,Georgia Institute of Technology-Main Campus,GA,122.0,False,GA,42.0,101.0
+139931,Georgia Southern University,GA,,True,GA,42.0,101.0
+142115,Boise State University,ID,120.0,True,ID,36.0,95.0
+142522,Brigham Young University-Idaho,ID,120.0,False,ID,36.0,95.0
+143358,Bradley University,IL,,True,IL,30.0,89.0
+144892,Eastern Illinois University,IL,120.0,False,IL,30.0,89.0
+145813,Illinois State University,IL,120.0,True,IL,30.0,89.0
+149231,Southern Illinois University Edwardsville,IL,129.0,True,IL,30.0,89.0
+149772,Western Illinois University,IL,120.0,False,IL,30.0,89.0
+150136,Ball State University,IN,120.0,True,IN,30.0,89.0
+151102,Purdue University Fort Wayne,IN,,False,IN,30.0,89.0
+151324,Indiana State University,IN,,True,IN,30.0,89.0
+153250,Dordt University,IA,124.0,False,IA,30.0,89.0
+154095,University of Northern Iowa,IA,120.0,False,IA,30.0,89.0
+155399,Kansas State University,KS,120.0,True,KS,34.0,93.0
+156620,Eastern Kentucky University,KY,120.0,True,KY,30.0,89.0
+157447,Northern Kentucky University,KY,120.0,True,KY,30.0,89.0
+157951,Western Kentucky University,KY,120.0,False,KY,30.0,89.0
+159391,Louisiana State University and Agricultural & Mechanical College,LA,123.0,True,LA,39.0,98.0
+159939,University of New Orleans,LA,120.0,False,LA,39.0,98.0
+159993,University of Louisiana at Monroe,LA,,True,LA,39.0,98.0
+162061,Capitol Technology University,MD,121.0,False,MD,38.0,97.0
+163338,University of Maryland Eastern Shore,MD,125.0,True,MD,38.0,97.0
+163453,Morgan State University,MD,120.0,False,MD,38.0,97.0
+165820,Fitchburg State University,MA,120.0,False,MA,30.0,89.0
+168227,Wentworth Institute of Technology,MA,134.0,True,MA,30.0,89.0
+169798,Eastern Michigan University,MI,120.0,True,MI,30.0,89.0
+169910,Ferris State University,MI,,True,MI,30.0,89.0
+171100,Michigan State University,MI,,True,MI,30.0,89.0
+171128,Michigan Technological University,MI,125.0,True,MI,30.0,89.0
+171456,Northern Michigan University,MI,120.0,False,MI,30.0,89.0
+172644,Wayne State University,MI,120.0,False,MI,30.0,89.0
+173920,Minnesota State University-Mankato,MN,120.0,True,MN,30.0,89.0
+174066,University of Minnesota-Twin Cities,MN,120.0,False,MN,30.0,89.0
+174358,Minnesota State University Moorhead,MN,120.0,True,MN,30.0,89.0
+175227,Dunwoody College of Technology,MN,121.0,True,MN,30.0,89.0
+176080,Mississippi State University,MS,120.0,True,MS,30.0,89.0
+176372,University of Southern Mississippi,MS,,True,MS,30.0,89.0
+176965,University of Central Missouri,MO,122.0,False,MO,30.0,89.0
+178721,Park University,MO,120.0,False,MO,30.0,89.0
+179566,Missouri State University-Springfield,MO,125.0,True,MO,30.0,89.0
+181215,University of Nebraska at Kearney,NE,120.0,False,NE,30.0,89.0
+181464,University of Nebraska-Lincoln,NE,120.0,False,NE,30.0,89.0
+182281,University of Nevada-Las Vegas,NV,122.0,True,NV,21.0,80.0
+182564,Western Nevada College,NV,120.0,False,NV,21.0,80.0
+183026,Southern New Hampshire University,NH,,False,NH,30.0,89.0
+183062,Keene State College,NH,,False,NH,30.0,89.0
+184782,Rowan University,NJ,120.0,False,NJ,30.0,89.0
+185828,New Jersey Institute of Technology,NJ,120.0,False,NJ,30.0,89.0
+196006,SUNY College of Technology at Alfred,NY,122.0,True,NY,30.0,89.0
+196024,SUNY College of Technology at Delhi,NY,,False,NY,30.0,89.0
+196103,SUNY College of Environmental Science and Forestry,NY,122.0,True,NY,30.0,89.0
+197045,Utica University,NY,124.0,True,NY,30.0,89.0
+197869,Appalachian State University,NC,,False,NC,30.0,89.0
+198464,East Carolina University,NC,120.0,True,NC,30.0,89.0
+200004,Western Carolina University,NC,120.0,False,NC,30.0,89.0
+200217,University of Mary,ND,,False,ND,30.0,89.0
+200332,North Dakota State University-Main Campus,ND,123.0,True,ND,30.0,89.0
+201441,Bowling Green State University-Main Campus,OH,,True,OH,36.0,95.0
+201885,University of Cincinnati-Main Campus,OH,122.0,False,OH,36.0,95.0
+203517,Kent State University at Kent,OH,120.0,True,OH,36.0,95.0
+204635,Ohio Northern University,OH,120.0,False,OH,36.0,95.0
+204796,Ohio State University-Main Campus,OH,130.0,True,OH,36.0,95.0
+207500,University of Oklahoma-Norman Campus,OK,120.0,True,OK,40.0,99.0
+212054,Drexel University,PA,124.66666666666669,True,PA,40.0,99.0
+213826,Marywood University,PA,120.0,False,PA,40.0,99.0
+216366,Thomas Jefferson University,PA,121.0,False,PA,40.0,99.0
+216852,Widener University,PA,,False,PA,40.0,99.0
+217518,Roger Williams University,RI,120.0,True,RI,30.0,89.0
+217882,Clemson University,SC,124.0,True,SC,30.0,89.0
+219204,National American University-Rapid City,SD,120.0,False,SD,30.0,89.0
+219356,South Dakota State University,SD,120.0,False,SD,30.0,89.0
+220978,Middle Tennessee State University,TN,120.0,False,TN,41.0,100.0
+221661,Southern Adventist University,TN,124.0,False,TN,41.0,100.0
+221759,The University of Tennessee-Knoxville,TN,120.0,False,TN,41.0,100.0
+221768,The University of Tennessee-Martin,TN,,False,TN,41.0,100.0
+225511,University of Houston,TX,120.0,True,TX,42.0,101.0
+226091,Lamar University,TX,120.0,True,TX,42.0,101.0
+227216,University of North Texas,TX,120.0,True,TX,42.0,101.0
+227526,Prairie View A & M University,TX,120.0,True,TX,42.0,101.0
+227881,Sam Houston State University,TX,120.0,False,TX,42.0,101.0
+228431,Stephen F Austin State University,TX,,False,TX,42.0,101.0
+228459,Texas State University,TX,120.0,True,TX,42.0,101.0
+228529,Tarleton State University,TX,120.0,False,TX,42.0,101.0
+228723,Texas A&M University-College Station,TX,120.0,True,TX,42.0,101.0
+228769,The University of Texas at Arlington,TX,120.0,False,TX,42.0,101.0
+228802,The University of Texas at Tyler,TX,120.0,False,TX,42.0,101.0
+229027,The University of Texas at San Antonio,TX,120.0,True,TX,42.0,101.0
+230038,Brigham Young University,UT,120.0,False,UT,27.0,86.0
+230603,Southern Utah University,UT,120.0,False,UT,27.0,86.0
+230737,Utah Valley University,UT,120.0,False,UT,27.0,86.0
+230782,Weber State University,UT,120.0,False,UT,27.0,86.0
+230995,Norwich University,VT,,False,VT,30.0,89.0
+231165,Vermont State University,VT,,False,VT,30.0,89.0
+233921,Virginia Polytechnic Institute and State University,VA,120.0,True,VA,30.0,89.0
+234827,Central Washington University,WA,120.0,True,WA,30.0,89.0
+235237,Pierce College District,WA,,False,WA,30.0,89.0
+236939,Washington State University,WA,120.0,True,WA,30.0,89.0
+236948,University of Washington-Seattle Campus,WA,120.0,True,WA,30.0,89.0
+237950,West Virginia University Institute of Technology,WV,121.0,False,WV,30.0,89.0
+238616,Concordia University-Wisconsin,WI,120.0,False,WI,30.0,89.0
+239080,Marian University,WI,120.0,False,WI,30.0,89.0
+239318,Milwaukee School of Engineering,WI,120.0,False,WI,30.0,89.0
+240417,University of Wisconsin-Stout,WI,,True,WI,30.0,89.0
+240462,University of Wisconsin-Platteville,WI,120.0,False,WI,30.0,89.0
+240727,University of Wyoming,WY,120.0,True,WY,30.0,89.0
+242972,NUC University,PR,122.66666666666669,False,,,89.0
+243780,Purdue University-Main Campus,IN,,True,IN,30.0,89.0
+247834,Collin County Community College District,TX,120.0,False,TX,42.0,101.0
+366252,Pennsylvania College of Technology,PA,128.0,True,PA,40.0,99.0
+385619,Everglades University,FL,120.0,False,FL,36.0,95.0
+433660,Florida Gulf Coast University,FL,120.0,True,FL,36.0,95.0
+486840,Kennesaw State University,GA,120.0,True,GA,42.0,101.0
+500139,Purdue University - Indianapolis,IN,,True,IN,30.0,89.0

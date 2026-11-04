@@ -1,0 +1,45 @@
+field,lever,level,share_reaching_90,runs
+construction management,state,15,0.9821428571428571,1344
+construction management,state,21,0.8965773809523809,1344
+construction management,state,30,0.8541666666666666,1344
+construction management,state,36,0.7224702380952381,1344
+construction management,state,36_major12,0.8965773809523809,1344
+construction management,state_rec,False,0.8514880952380952,3360
+construction management,state_rec,True,0.8892857142857142,3360
+construction management,accreditor,competence,0.9008928571428572,1120
+construction management,accreditor,half,0.9160714285714285,1120
+construction management,accreditor,leave,0.9625,1120
+construction management,accreditor,minus20,0.9053571428571429,1120
+construction management,accreditor,minus20_competence,0.9205357142857142,1120
+construction management,accreditor,none,0.6169642857142857,1120
+construction management,ai,F1,0.9552083333333333,960
+construction management,ai,F2,0.890625,960
+construction management,ai,F3,0.725,960
+construction management,ai,F4,0.9479166666666666,960
+construction management,ai,F5,0.871875,960
+construction management,ai,ceiling,0.9770833333333333,960
+construction management,ai,none,0.725,960
+construction management,ai_literacy,0,0.9044642857142857,3360
+construction management,ai_literacy,3,0.8363095238095238,3360
+civil,state,15,0.9206349206349206,2016
+civil,state,21,0.8501984126984127,2016
+civil,state,30,0.8482142857142857,2016
+civil,state,36,0.8015873015873016,2016
+civil,state,36_major12,0.8501984126984127,2016
+civil,state_rec,False,0.8375,5040
+civil,state_rec,True,0.8708333333333333,5040
+civil,accreditor,competence,0.8672619047619048,1680
+civil,accreditor,half,0.9839285714285714,1680
+civil,accreditor,leave,0.9839285714285714,1680
+civil,accreditor,minus20,0.9738095238095238,1680
+civil,accreditor,minus20_competence,0.9839285714285714,1680
+civil,accreditor,none,0.33214285714285713,1680
+civil,ai,F1,0.9069444444444444,1440
+civil,ai,F2,0.8645833333333334,1440
+civil,ai,F3,0.7680555555555556,1440
+civil,ai,F4,0.8854166666666666,1440
+civil,ai,F5,0.8513888888888889,1440
+civil,ai,ceiling,0.9347222222222222,1440
+civil,ai,none,0.7680555555555556,1440
+civil,ai_literacy,0,0.8978174603174603,5040
+civil,ai_literacy,3,0.810515873015873,5040

@@ -1,0 +1,760 @@
+UNITID,institution,field,code,title,credits,role,kind,on_official_list,list_area,state_core,counted_in_keep_solution
+132903,University of Central Florida,civil,ENC 1101,Composition I,3.0,required,communication,True,comm,True,True
+132903,University of Central Florida,civil,ENC 1102,Composition II,3.0,required,communication,True,comm,False,True
+132903,University of Central Florida,civil,MAC 2311C,Calculus with Analytic Geometry I,4.0,required,mathematics and science,True,math,True,True
+132903,University of Central Florida,civil,MAC 2312,Calculus with Analytic Geometry II,4.0,required,mathematics and science,False,,False,False
+132903,University of Central Florida,civil,CGN 3700C,Civil Engineering Measurements,2.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CGN 3090,Engineering Reports & Liability,2.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CGN 3405,Applied Numerical Methods for Civil Engineering,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CWR 3201,Engineering Fluid Mechanics,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,STA 3032,Probability and Statistics for Engineers,3.0,required,mathematics and science,False,,False,False
+132903,University of Central Florida,civil,EGN 3613,Engineering Economic Analysis,2.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,EGN 3331C,Mechanics of Materials,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,EGN 3310,Engineering Analysis-Statics,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,EGN 1007C,Engineering Concepts and Methods,1.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,EGS 1006C,Introduction to the Engineering Profession,1.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,MAP 2302,Ordinary Differential Equations I,3.0,required,mathematics and science,False,,False,False
+132903,University of Central Florida,civil,MAC 2313,Calculus with Analytic Geometry III,4.0,required,mathematics and science,False,,False,False
+132903,University of Central Florida,civil,EGN 3321,Engineering Analysis-Dynamics,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,ENV 3001,Environmental Engineering,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CCE 4003,Introduction to the Construction Industry,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CGN 3501C,Civil Engineering Materials,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CWR 4202C,Hydraulics,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,TTE 3810,Highway Engineering,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CES 4100C,Structural Analysis I and Lab,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CEG 4011C,Geotechnical Engineering I,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CGN 4808C,CECE Capstone Design,3.0,required,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CHS 1440C,Principles of Chemistry,4.0,alternative,mathematics and science,True,nat,False,False
+132903,University of Central Florida,civil,PHY 2048,General Physics Using Calculus I,3.0,alternative,mathematics and science,True,nat,True,False
+132903,University of Central Florida,civil,PHY 2048L,General Physics Using Calculus I Laboratory,1.0,alternative,mathematics and science,True,nat,False,False
+132903,University of Central Florida,civil,GLY 1030,Geology and its Applications,3.0,alternative,mathematics and science,True,nat,False,False
+132903,University of Central Florida,civil,GEO 2370,Resources Geography,3.0,alternative,mathematics and science,True,nat,False,False
+132903,University of Central Florida,civil,GEO 1200,Physical Geography,3.0,alternative,mathematics and science,True,nat,False,False
+132903,University of Central Florida,civil,EVR 1001,Introduction to Environmental Science,3.0,alternative,mathematics and science,True,nat,True,False
+132903,University of Central Florida,civil,CHM 2045C,Chemistry Fundamentals I,4.0,alternative,mathematics and science,True,nat,True,True
+132903,University of Central Florida,civil,PHY 2049C,General Physics Using Calculus II Studio,4.0,alternative,mathematics and science,False,,False,False
+132903,University of Central Florida,civil,PHY 2049,General Physics Using Calculus II,3.0,alternative,mathematics and science,False,,False,False
+132903,University of Central Florida,civil,PHY 2049L,General Physics Using Calculus II Laboratory,1.0,alternative,mathematics and science,False,,False,False
+132903,University of Central Florida,civil,PHY 2048C,General Physics Using Calculus I Studio,4.0,alternative,mathematics and science,True,nat,True,True
+132903,University of Central Florida,civil,CEG 4801C,Geotechnical Engineering Design,3.0,alternative,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CWR 4812C,Water Resources Design,3.0,alternative,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,CES 4743C,Structural Design,3.0,alternative,construction or engineering,False,,False,False
+132903,University of Central Florida,civil,TTE 4601C,Urban Systems Design,3.0,alternative,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,EGN 1004L,First Year Engineering Laboratory,1.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,MAC 2311,CALCULUS I,4.0,required,mathematics and science,True,math,True,True
+133650,Florida Agricultural and Mechanical University,civil,MAC 2312,CALCULUS II,4.0,required,mathematics and science,True,math,False,True
+133650,Florida Agricultural and Mechanical University,civil,MAC 2313,Calculus with Analytic Geometry III,5.0,required,mathematics and science,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CHM 1045L,GENERAL CHEMISTRY I LABORATORY,1.0,required,mathematics and science,True,nat,False,True
+133650,Florida Agricultural and Mechanical University,civil,CHM 1045,GENERAL CHEMISTRY I,3.0,required,mathematics and science,True,nat,True,True
+133650,Florida Agricultural and Mechanical University,civil,PHY 2049C,General Physics II w/Lab,5.0,required,mathematics and science,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,PHY 2048C,General Physics I W/ Lab,5.0,required,mathematics and science,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CEG 2202,Intro to Geomatics,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CEG 2202L,Intro to Geomatics Lab,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,ENC 1101,FRESHMAN COMMUNICATION SKILLS I,3.0,required,communication,True,comm,True,True
+133650,Florida Agricultural and Mechanical University,civil,ENC 1102,FRESHMAN COMMUNICATION SKILLS II,3.0,required,communication,True,comm,False,True
+133650,Florida Agricultural and Mechanical University,civil,EGM 3512,Engineering Mechanics,4.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CGN 3326,CE Graphics & Design Tools,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,EGN 3331,Strength of Materials,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,STA 3034,Mathematical Statistics,3.0,required,mathematics and science,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,EES 3040,Introduction to Environmental Engineering Science,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CWR 3201,Hydraulics,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,EGN 3613,Principles of Engineering Economy,2.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CWR 3200L,Environ & Hydraul Eng -lab,1.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CGN 3508L,Civil Engineer Material - Lab,1.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CES 3100,Structural Analysis,4.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CCE 3101,Construction Materials,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CEG 3011,Soil Mechanics,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CGN 4800,Pre-Senior Design Prof Issues,2.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CGN 4802,Senior Design Project,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CEG 4801,Geotechnical Design,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,TTE 3004,Transportation Engineering,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,MAP 2032,Differential Equations,3.0,alternative,mathematics and science,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,MAP 3305,Engineering Mathematics I,3.0,alternative,mathematics and science,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,EEL 3003,Introduction To Electrical Engineering,3.0,alternative,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,EML 3100,Thermodynamics,2.0,alternative,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CES 4702,Concrete Design,3.0,alternative,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,CES 4605,Steel Design,3.0,alternative,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,civil,ENV 4001,Environmental Engineering,3.0,alternative,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 1221C,Building Construction I,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 2230,Materials and Methods of Construction 1,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,EGN 1110C,Engineering Graphics I,2.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,EGS 1000,Introduction to Engineering Technology I,1.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ENC 1101,FRESHMAN COMMUNICATION SKILLS I,3.0,required,communication,True,comm,True,True
+133650,Florida Agricultural and Mechanical University,construction technology,MAC 1114,ALGEBRAIC AND TRIGONOMETRIC FUNCTIONS,3.0,required,other required course,True,math,False,True
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 2231,Materials and Methods of Construction 2,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,CHM 1030,INTRO CHEMISTRY FOR NON-SCIENCE MAJORS,3.0,required,mathematics and science,True,nat,False,True
+133650,Florida Agricultural and Mechanical University,construction technology,EGN 1112C,Engineering Graphics II,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ENC 1102,FRESHMAN COMMUNICATION SKILLS II,3.0,required,communication,True,comm,False,True
+133650,Florida Agricultural and Mechanical University,construction technology,PHY 2053,COLLEGE PHYSICS I,3.0,required,mathematics and science,True,nat,True,True
+133650,Florida Agricultural and Mechanical University,construction technology,PHY 2053L,COLLEGE PHYSICS I–LABORATORY,1.0,required,mathematics and science,True,nat,False,True
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 3271,Construction Documents I,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ENC 3243,Technical Writing,3.0,required,other required course,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,STA 2023,INTRODUCTION TO PROBABILITY AND STATISTICS I,3.0,required,mathematics and science,True,math,True,True
+133650,Florida Agricultural and Mechanical University,construction technology,SUR 2140C,Elementary Surveying,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,SUR 2140L,Elementary Surveying Laboratory,1.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 3240,Construction Equip & Operation,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 3731C,Construction Safety & OSHA Certification,1.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,MAC 2311,CALCULUS I,4.0,required,mathematics and science,True,math,True,True
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 3562C,Electrical Systems In Construction,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 3720,Constr Plan & Schedu,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 4617,Construction Estimating I,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,CET 2365C,C Programming Engineering & Technology,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETG 2502,Statics,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 3566C,Electromechanical Systems,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 4619,Construction Estimating II,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 4782,Computer Applications For Construction Management,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETC 3211,Soil Mechanics,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETC 3211L,Soil Mechanics and Foundations Lab,1.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETG 2530,Strength of Materials,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETG 2530L,Strength of Materials Lab,1.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETG 4939,Professional Seminar & Developement,1.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 3797,Construction Management I,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 4705,"Contracts, Codes & Laws",3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETC 4454,Reinf Concrete I,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETC 4454L,Reinforced Concrete I Lab,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 3253,Construction Accounting,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,BCN 3939,,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETC 4455,Reinforced Concrete II,3.0,required,construction or engineering,False,,False,False
+133650,Florida Agricultural and Mechanical University,construction technology,ETI 4671,Principles of Engineering Economics,2.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,MAC 2311,Calculus with Analytic Geometry 1,4.0,required,mathematics and science,True,math,True,True
+133669,Florida Atlantic University,civil,MAC 2312,Calculus with Analytic Geometry 2,4.0,required,mathematics and science,True,math,False,True
+133669,Florida Atlantic University,civil,CHM 2045,General Chemistry 1,3.0,required,mathematics and science,True,nat,True,True
+133669,Florida Atlantic University,civil,CHM 2045L,General Chemistry Lab 1,1.0,required,mathematics and science,True,nat,True,True
+133669,Florida Atlantic University,civil,PHY 2048,General Physics 1,3.0,required,mathematics and science,True,nat,True,True
+133669,Florida Atlantic University,civil,PHY 2048L,General Physics Laboratory 1 (Science version),1.0,required,mathematics and science,True,nat,True,True
+133669,Florida Atlantic University,civil,CWR 3201C,Applied Hydraulics,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CGN 3501C,Civil Engineering Materials,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,EGN 3331,Strength of Materials,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,SUR 3103C,Geomatics,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CES 3102C,Analysis of Structures,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CEG 3011C,Soil Mechanics,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,EGN 3321,Dynamics,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,EGN 3311,Statics,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,EGN 1002,Fundamentals of Engineering,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CGN 2327,Computer-Aided Design,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CGN 4803C,"RI: Civil, Environmental and Geomatics Engineering Design 1",3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CGN 4804C,"RI: Civil, Environmental and Geomatics Engineering Design 2",3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,TTE 3004C,Introduction to Transportation Engineering,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,SUR 4463,RI: Subdivision Design,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,ENV 3001C,Environmental Science and Engineering,3.0,required,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,MAP 3305,Engineering Mathematics 1,3.0,alternative,mathematics and science,False,,False,False
+133669,Florida Atlantic University,civil,COP 2220C,Programming 1,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,MAP 2302,Differential Equations 1,3.0,alternative,mathematics and science,False,,False,False
+133669,Florida Atlantic University,civil,CCE 5036,Civil Engineering Project Management,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,EEL 2161,C for Engineers,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CCE 4031,RI: Construction Project Management,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,EGN 2213,Computer Applications in Engineering  1,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,COP 3035C,Introduction to Programming in Python,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,STA 4032,Probability and Statistics for Engineers,3.0,alternative,mathematics and science,False,,False,False
+133669,Florida Atlantic University,civil,STA 4821,Stochastic Models for Computer Science,3.0,alternative,mathematics and science,False,,False,False
+133669,Florida Atlantic University,civil,STA 4442,Probability and Statistics 1,3.0,alternative,mathematics and science,False,,False,False
+133669,Florida Atlantic University,civil,SUR 3205C,Engineering and Construction Surveying,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CGN 4523,Sustainable Construction Materials and Methods,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CCE 4033,Construction Mgmt Assessment,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CGN 4610,Introduction to Infrastructure Management,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,ENV 5510,Water and Wastewater Treatment,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CEG 4126,Pavement Design,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CEG 4012,Foundation Engineering,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CEG 4122,Ground Improvement Design,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,TTE 4005C,Transportation Planning and Logistics,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,TTE 4105,Transportation Operations and Logistics Management,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,TTE 4810,Highway Engineering,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CWR 4202,Hydrologic Engineering,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CWR 4307,Stormwater Modeling and Management,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CES 4702,Reinforced Concrete Design,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CES 4605,Structural Steel Design,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CES 4830,Masonry Design,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,CGN 6616,Infrastructure Maintenance and Management,3.0,alternative,construction or engineering,False,,False,False
+133669,Florida Atlantic University,civil,ENV 4514,RI: Water and Wastewater Treatment Systems,3.0,alternative,construction or engineering,False,,False,False
+133881,Florida Institute of Technology,civil,CHM 1101,General Chemistry 1,3.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,civil,CHM 1111,General Chemistry Laboratory 1,1.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,civil,COM 1101,Composition and Rhetoric,3.0,required,communication,,comm,,True
+133881,Florida Institute of Technology,civil,CVE 1000,Introduction to Civil Engineering,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 1001,Computer Applications Lab,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,FYE 1000,University Experience,1.0,required,other required course,,,,False
+133881,Florida Institute of Technology,civil,CVE 2080,Construction Measurements,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,COM 1102,Writing About Literature,3.0,required,communication,,comm,,True
+133881,Florida Institute of Technology,civil,COM 2223,Scientific and Technical Communication,3.0,required,communication,,comm,,True
+133881,Florida Institute of Technology,civil,PHY 2091,Physics Laboratory 1,1.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,civil,CVE 2083,Construction Measurements Lab,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,PHY 1001,Physics 1,4.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,civil,PHY 2092,Physics Laboratory 2,1.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,civil,AEE 3083,Mechanics of Materials,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,PHY 2002,Physics 2,4.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,civil,MEE 2081,Applied Mechanics: Statics,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,MEE 2082,Applied Mechanics: Dynamics,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 3021,Soil Mechanics Lab,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,MTH 2401,Probability and Statistics,3.0,required,mathematics and science,,math,,True
+133881,Florida Institute of Technology,civil,CVE 3033,Hydraulics Lab,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 3015,Structural Analysis and Design,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 3030,Fluid Mechanics,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4060,Transportation Engineering,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4032,Hydraulics and Hydrology,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 3020,Soils and Foundations,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 3013,Civil Engineering Materials Lab,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 3012,Engineering Materials,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4092,Design Project 2,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4074,Leading Construction Operations,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4000,Engineering Economy and Planning,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4091,Design Project 1,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4070,Construction Engineering,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,MTH 2201,Differential Equations/Linear Algebra,4.0,alternative,other required course,,math,,False
+133881,Florida Institute of Technology,civil,MTH 2010,Honors Calculus 3,4.0,alternative,mathematics and science,,math,,False
+133881,Florida Institute of Technology,civil,CVE 3042,Water and Wastewater Systems for Land Development,3.0,alternative,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4013,Steel Structures,3.0,alternative,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 3052,Municipal Water and Wastewater Systems,3.0,alternative,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4016,Reinforced Concrete Structures,3.0,alternative,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,CVE 4019,Timber Structures,3.0,alternative,construction or engineering,,,,False
+133881,Florida Institute of Technology,civil,MTH 3200,Honors Differential Equations,4.0,alternative,mathematics and science,,,,False
+133881,Florida Institute of Technology,civil,MTH 1020,Honors Calculus 2,4.0,alternative,mathematics and science,,math,,False
+133881,Florida Institute of Technology,civil,MTH 2001,Calculus 3,4.0,alternative,mathematics and science,,math,,False
+133881,Florida Institute of Technology,civil,MTH 1001,Calculus 1,4.0,alternative,mathematics and science,,math,,False
+133881,Florida Institute of Technology,civil,MTH 1002,Calculus 2,4.0,alternative,mathematics and science,,math,,False
+133881,Florida Institute of Technology,civil,MTH 1010,Honors Calculus 1,4.0,alternative,mathematics and science,,math,,False
+133881,Florida Institute of Technology,construction management,COM 1101,Composition and Rhetoric,3.0,required,communication,,comm,,True
+133881,Florida Institute of Technology,construction management,CON 1005,Construction Plan Reading and BIM Applications,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CVE 1000,Introduction to Civil Engineering,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CVE 1001,Computer Applications Lab,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,FYE 1000,University Experience,1.0,required,other required course,,,,False
+133881,Florida Institute of Technology,construction management,MTH 1000,Precalculus,4.0,required,other required course,,math,,True
+133881,Florida Institute of Technology,construction management,BUS 1301,Basic Economics,3.0,required,economics or business,,,,False
+133881,Florida Institute of Technology,construction management,CHM 1101,General Chemistry 1,3.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,construction management,CHM 1111,General Chemistry Laboratory 1,1.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,construction management,COM 1102,Writing About Literature,3.0,required,communication,,comm,,True
+133881,Florida Institute of Technology,construction management,COM 2223,Scientific and Technical Communication,3.0,required,communication,,comm,,True
+133881,Florida Institute of Technology,construction management,BUS 2211,Introduction to Financial Accounting,3.0,required,economics or business,,,,False
+133881,Florida Institute of Technology,construction management,CON 2001,Construction Methods and Operations,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,PHY 1999,Physical Concepts for Construction,4.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,construction management,BUS 2601,Legal and Social Environments of Business,3.0,required,economics or business,,,,False
+133881,Florida Institute of Technology,construction management,PHY 2091,Physics Laboratory 1,1.0,required,mathematics and science,,nat,,True
+133881,Florida Institute of Technology,construction management,CVE 3012,Engineering Materials,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CVE 3013,Civil Engineering Materials Lab,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,BUS 2212,Introduction to Managerial Accounting,3.0,required,economics or business,,,,False
+133881,Florida Institute of Technology,construction management,CVE 2080,Construction Measurements,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CVE 2083,Construction Measurements Lab,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,BUS 2703,Business Statistics,3.0,required,economics or business,,,,False
+133881,Florida Institute of Technology,construction management,BUS 3501,Management Principles,3.0,required,economics or business,,,,False
+133881,Florida Institute of Technology,construction management,CON 2000,Statics and Mechanics for Construction,4.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CON 3001,Building Structures and Structural Systems,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CON 3002,Building Mechanical and HVAC Systems,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,BUS 3705,Managing Small Business,3.0,required,economics or business,,,,False
+133881,Florida Institute of Technology,construction management,CON 3000,Construction Soils,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CVE 4000,Engineering Economy and Planning,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CON 4000,"Construction Controls: Budget, Schedule and Quality",3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CON 4003,"Construction Estimating, Bidding and Value Engineering",3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CON 4001,Building Electrical and Electronic Systems,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CON 4006,Construction Equipment,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CON 4092,Construction Project,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CON 4005,Construction Safety,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CON 4091,Construction Project Proposal,1.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,CVE 4074,Leading Construction Operations,3.0,required,construction or engineering,,,,False
+133881,Florida Institute of Technology,construction management,MTH 1001,Calculus 1,4.0,alternative,mathematics and science,,math,,False
+133881,Florida Institute of Technology,construction management,MTH 1010,Honors Calculus 1,4.0,alternative,mathematics and science,,math,,True
+133951,Florida International University,civil,CHM 1045,General Chemistry I,3.0,required,mathematics and science,True,nat,True,True
+133951,Florida International University,civil,CHM 1045L,General Chemistry Lab I,1.0,required,mathematics and science,False,,False,False
+133951,Florida International University,civil,MAC 2281,Calculus I for Engineering,4.0,required,mathematics and science,False,,False,False
+133951,Florida International University,civil,MAC 2282,Calculus II for Engineering,4.0,required,mathematics and science,False,,False,False
+133951,Florida International University,civil,MAC 2283,Calculus III for Engineering,4.0,required,mathematics and science,False,,False,False
+133951,Florida International University,civil,MAP 2302,Differential Equations,3.0,required,mathematics and science,False,,False,False
+133951,Florida International University,civil,PHY 2048,Physics with Calculus I,4.0,required,mathematics and science,True,nat,True,True
+133951,Florida International University,civil,PHY 2048L,General Physics Laboratory I,1.0,required,mathematics and science,False,,False,False
+133951,Florida International University,civil,PHY 2049,Physics with Calculus II,4.0,required,mathematics and science,True,nat,False,True
+133951,Florida International University,civil,GLY 1010,Physical Geology,3.0,required,mathematics and science,True,nat,True,True
+133951,Florida International University,civil,GLY 1010L,Physical Geology Lab,1.0,required,mathematics and science,False,,False,False
+133951,Florida International University,civil,EGN 1110C,Engineering Drawing,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CWR 3201,Fluid Mechanics,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CGN 2420,Computer Tools for Engineers,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,EGM 3520,Engineering Mechanics of Materials,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CWR 3201L,Fluid Mechanics Laboratory,1.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CCE 4031,Project Planning for Civil Engineers,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CEG 4011,Geotechnical Engineering I,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,EGM 3520L,Materials Testing,1.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,EGN 3311,Statics,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CGN 3300,Dynamics for Civil Engineering Systems,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CGN 2161,Career Orientation in Civil Engineering,1.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,EGS 2030,Ethics and Legal Aspects in Engineering,1.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,EGN 3613,Engineering Economy,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CGN 4802,Civil Engineering Senior Design Project,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CWR 3540,Water Resources Engineering,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CEG 4011L,Geotechnical Testing Laboratory,1.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CES 3100,Structural Analysis,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,ENV 3001,Introduction to Environmental Engineering,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,ENV 3001L,Environmental Laboratory I,1.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,TTE 4201,Transportation and Traffic Engineering,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,SUR 2101C,Geomatics and Surveying,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,CGN 4980,Civil Engineering Seminar,1.0,required,construction or engineering,False,,False,False
+133951,Florida International University,civil,STA 3033,Introduction to Probability and Statistics for CS,3.0,alternative,mathematics and science,False,,False,False
+133951,Florida International University,civil,ESI 3215,Evaluation of Engineering Data I,3.0,alternative,construction or engineering,False,,False,False
+133951,Florida International University,construction management,GLY 1010,Physical Geology,3.0,required,mathematics and science,True,nat,True,True
+133951,Florida International University,construction management,GLY 1010L,Physical Geology Lab,1.0,required,mathematics and science,False,,False,False
+133951,Florida International University,construction management,BCN 1272,Plans Interpretation,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 2210,Construction Materials and Methods,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 2405,Structural Design I,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 2253,Building Construction Drawing,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 2280,Construction Surveying,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BUL 4310,The Legal Environment of Business,3.0,required,economics or business,False,,False,False
+133951,Florida International University,construction management,PHY 2048L,General Physics Laboratory I,1.0,required,mathematics and science,False,,False,False
+133951,Florida International University,construction management,PHY 2053,Physics without Calculus I,4.0,required,mathematics and science,True,nat,True,True
+133951,Florida International University,construction management,BCN 3740,Legal Aspects,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 3730,Construction Safety,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 3027,Principles of Construction Management,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,SPC 2608,Public Speaking,3.0,required,communication,True,comm,False,True
+133951,Florida International University,construction management,STA 2023,Statistical Methods,3.0,required,mathematics and science,True,math,True,True
+133951,Florida International University,construction management,ACG 3024,Introduction to Accounting for Managers and Investors,3.0,required,economics or business,False,,False,False
+133951,Florida International University,construction management,BCN 4431,Structural Design II,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 3611,Construction Cost Estimating I,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 4612,Construction Cost Estimating II,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 3720,Construction Scheduling I,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 4724,Scheduling II,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 3753,Financial Management of Construction Organizations,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 3761,Construction Documentation and Communication,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 3762,Building Codes and Quality Control,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 3727,Construction Sitework and Equipment,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 4465,Temp Structures,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 4703,Management of Construction Projects,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,BCN 4561,Environmental Control in Buildings I,3.0,required,construction or engineering,False,,False,False
+133951,Florida International University,construction management,MAN 3022,Introduction to Management,3.0,required,economics or business,False,,False,False
+133951,Florida International University,construction management,BCN 4910,Senior Project,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,CGN 3508L,Civil Engineering Materials Laboratory,1.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,CWR 3200L,Environmental and Hydraulic Engineering Laboratory,1.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,CWR 3201,Hydraulics,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,EES 3040,Introduction to Environmental Engineering,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,EGN 1004,First-Year Engineering Laboratory,1.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,CEG 3011,Soil Mechanics,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,CGN 3326,CE Graphics & Design Tools,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,EGM 3512,Engineering Mechanics,4.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,CCE 3101,Construction Materials,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,TTE 3004,Transportation Engineering,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,CGN 4800,Senior Design I,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,CGN 4802,Senior Design II,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,CES 3100,Structural Analysis,4.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,EGN 3331,Strength of Materials,3.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,EGN 3613,Principles of Engineering Economy,2.0,required,construction or engineering,False,,False,False
+134097,Florida State University,civil,MAC 2311,Calculus with Analytic Geometry I,4.0,alternative,mathematics and science,True,math,True,True
+134097,Florida State University,civil,CHM 1045,General Chemistry I,3.0,alternative,mathematics and science,True,nat,True,True
+134097,Florida State University,civil,CEG 2202L,Introduction to Geomatics Engineering Lab,1.0,alternative,construction or engineering,False,,False,False
+134097,Florida State University,civil,EEL 3003,Introduction to Electrical Engineering,3.0,alternative,construction or engineering,False,,False,False
+134097,Florida State University,civil,CEG 2202,Introduction to Geomatics Engineering,3.0,alternative,construction or engineering,False,,False,False
+134097,Florida State University,civil,EML 3100,Thermodynamics,2.0,alternative,construction or engineering,False,,False,False
+134097,Florida State University,civil,CHM 1045L,General Chemistry I Laboratory,1.0,alternative,mathematics and science,True,nat,False,True
+134097,Florida State University,civil,CEG 4801,Geotechnical Design,3.0,alternative,construction or engineering,False,,False,False
+134097,Florida State University,civil,CEG 4111,,3.0,alternative,construction or engineering,False,,False,False
+134097,Florida State University,civil,CES 4702,Concrete Design,3.0,alternative,construction or engineering,False,,False,False
+134097,Florida State University,civil,CES 4605,Steel Design,3.0,alternative,construction or engineering,False,,False,False
+134097,Florida State University,civil,MAC 2313,Calculus with Analytic Geometry III,5.0,alternative,mathematics and science,True,math,True,True
+134097,Florida State University,civil,MAC 2312,Calculus with Analytic Geometry II,4.0,alternative,mathematics and science,True,math,True,True
+134097,Florida State University,civil,MAP 3305,Engineering Mathematics I,3.0,alternative,mathematics and science,False,,False,False
+134097,Florida State University,civil,PHY 2048C,General Physics A,5.0,alternative,mathematics and science,True,nat,True,True
+134097,Florida State University,civil,PHY 2049C,Calculus-Based Physics II,5.0,alternative,mathematics and science,True,nat,False,False
+134097,Florida State University,civil,MAP 2032,Ordinary Differential Equations,3.0,alternative,mathematics and science,False,,False,False
+134130,University of Florida,civil,CGN 2002,Introduction to Civil Engineering,1.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,CHM 2045L,General Chemistry Laboratory,1.0,required,mathematics and science,True,nat,False,True
+134130,University of Florida,civil,MAC 2311,Analytic Geometry and Calculus 1,4.0,required,mathematics and science,True,math,True,True
+134130,University of Florida,civil,ENC 1101,Expository and Argumentative Writing,3.0,required,communication,True,comm,True,True
+134130,University of Florida,civil,ENC 2256,Writing in the Disciplines,3.0,required,communication,True,comm,False,True
+134130,University of Florida,civil,MAC 2312,Analytic Geometry and Calculus 2,4.0,required,mathematics and science,True,math,False,True
+134130,University of Florida,civil,PHY 2048L,Laboratory for PHY 2048,1.0,required,mathematics and science,True,nat,False,True
+134130,University of Florida,civil,PHY 2048,Physics with Calculus 1,3.0,required,mathematics and science,True,nat,True,True
+134130,University of Florida,civil,PHY 2049,Physics with Calculus 2,3.0,required,mathematics and science,True,nat,False,True
+134130,University of Florida,civil,CGN 2328,Technical Drawing and Visualization,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,COP 2273,Python Programming for Engineers,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,MAC 2313,Analytic Geometry and Calculus 3,4.0,required,mathematics and science,True,math,False,True
+134130,University of Florida,civil,CGN 3501C,Civil Engineering Materials,4.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,MAP 2302,Elementary Differential Equations,3.0,required,mathematics and science,True,math,False,True
+134130,University of Florida,civil,EGM 2511,Engineering Mechanics: Statics,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,EEL 3003,Elements of Electrical Engineering,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,CEG 4011,Soil Mechanics,4.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,CWR 3201,Hydrodynamics,4.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,EGM 3520,Mechanics of Materials,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,CES 3102,Mechanics of Engineering Structures,4.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,CGN 4160,Civil Engineering Practice,4.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,EIN 3354,Engineering Economy,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,TTE 4004C,Transportation Engineering,4.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,EGM 3400,Elements of Dynamics,2.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,CGN 3421,Computer Methods in Civil Engineering,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,civil,STA 2023,Introduction to Statistics 1,3.0,alternative,mathematics and science,True,math,True,False
+134130,University of Florida,civil,ARC 4310C,Building Information Modeling,3.0,alternative,construction or engineering,False,,False,False
+134130,University of Florida,civil,ARC 4511,Structural Modeling,3.0,alternative,construction or engineering,False,,False,False
+134130,University of Florida,civil,SWS 4720C,GIS in Soil and Water Science,3.0,alternative,other required course,False,,False,False
+134130,University of Florida,civil,STA 3032,Engineering Statistics,3.0,alternative,mathematics and science,False,,False,False
+134130,University of Florida,civil,CHM 2095,Applied General Chemistry 1,3.0,alternative,mathematics and science,True,nat,False,False
+134130,University of Florida,civil,CHM 2045,General Chemistry 1,3.0,alternative,mathematics and science,True,nat,True,False
+134130,University of Florida,civil,URP 4273,Survey of Planning Information Systems,3.0,alternative,other required course,False,,False,False
+134130,University of Florida,civil,GIS 3072C,Geographic Information Systems,3.0,alternative,other required course,False,,False,False
+134130,University of Florida,civil,SUR 3103C,Geomatics,3.0,alternative,construction or engineering,False,,False,False
+134130,University of Florida,civil,CGN 4910,Structures-Geotechnical-Construction Comprehensive System Design,3.0,alternative,construction or engineering,False,,False,False
+134130,University of Florida,civil,CGN 4806,Transportation-Water-Materials Design,3.0,alternative,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 1210,Construction Materials,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,ENC 1101,Expository and Argumentative Writing,3.0,required,communication,True,comm,True,True
+134130,University of Florida,construction management,STA 2023,Introduction to Statistics 1,3.0,required,mathematics and science,True,math,True,True
+134130,University of Florida,construction management,PHY 2053,Physics 1,4.0,required,mathematics and science,True,nat,True,True
+134130,University of Florida,construction management,ECO 2013,Principles of Macroeconomics,4.0,required,economics or business,True,soc,True,True
+134130,University of Florida,construction management,ENC 1102,Argument and Persuasion,3.0,required,communication,True,comm,False,True
+134130,University of Florida,construction management,BCN 2405C,Construction Mechanics,4.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 1251C,Construction Drawing,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BUL 4310,The Legal Environment of Business,4.0,required,economics or business,False,,False,False
+134130,University of Florida,construction management,ENC 2256,Writing in the Disciplines,3.0,required,communication,True,comm,False,True
+134130,University of Florida,construction management,MAC 2233,Survey of Calculus 1,3.0,required,mathematics and science,True,math,False,True
+134130,University of Florida,construction management,ACG 2021,Introduction to Financial Accounting,4.0,required,economics or business,False,,False,False
+134130,University of Florida,construction management,BCN 3027C,Principles of Construction Management,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 3224C,Construction Techniques,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 3431C,Structures,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 3255C,Graphic Communication in Construction,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 4510C,Mechanical Systems,4.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 4612C,Construction Estimating 2,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 3730,"Construction, Safety, Health and the Environment",3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 3223C,Soils and Concrete,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 3521C,Electrical Systems,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 3611C,Construction Estimating 1,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 4423C,Temporary Structures,4.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,MAN 3025,Principles of Management,4.0,required,economics or business,True,soc,False,True
+134130,University of Florida,construction management,BCN 3700,Construction Contracts,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 4709C,Construction Project Management,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 4720,Construction Planning and Control,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 4753,Construction Finance,3.0,required,construction or engineering,False,,False,False
+134130,University of Florida,construction management,BCN 4787C,Construction Capstone Project,3.0,required,construction or engineering,False,,False,False
+135726,University of Miami,civil,CAE 115,Introduction to Engineering II: Geospatial Data (Surveying and GIS),2.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 210,Mechanics of Solids I,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 211,Mechanics of Solids II,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 212,Structural Laboratory,1.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 310,Structural Analysis,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 320,Concrete Structures,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 321,Steel Structures,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 330,Fluid Mechanics,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 350,Transportation Engineering I,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 361,Building Information Modeling I,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 370,Geotechnical Engineering I,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 371,Geotechnical Laboratory,1.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 401,Civil and Architectural Engineering Seminars,1.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 402,Professional Engineering Practice,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 403,Senior Design Project I - Engineering Design,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 404,Senior Design Project II - Integrated Engineering Documents,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 430,Water-Resources Engineering I,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 470,Foundations and Earth Retaining Systems,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CET 340,Introduction to Environmental Engineering,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,CET 440,Water Quality Control Systems,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,ECE 205,Principles of Electrical Engineering--I,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,EGN 114,Global Challenges Addressed by Engineering and Technology,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,ISE 311,Applied Probability and Statistics,3.0,required,mathematics and science,,,,False
+135726,University of Miami,civil,MAE 303,Thermodynamics,3.0,required,construction or engineering,,,,False
+135726,University of Miami,civil,MTH 311,Introduction to Ordinary Differential Equations,3.0,required,mathematics and science,,,,False
+135726,University of Miami,civil,MTH 211,Calculus III,3.0,required,mathematics and science,,math,,True
+135726,University of Miami,civil,MTH 162,Calculus II,4.0,required,mathematics and science,,math,,True
+135726,University of Miami,civil,MTH 151,Calculus I for Engineers,5.0,required,mathematics and science,,math,,True
+135726,University of Miami,civil,PHY 222,University Physics II,3.0,required,mathematics and science,,nat,,True
+135726,University of Miami,civil,PHY 221,University Physics I,3.0,required,mathematics and science,,nat,,True
+135726,University of Miami,civil,CHM 153,Chemistry Laboratory for Engineers,1.0,required,mathematics and science,,nat,,True
+135726,University of Miami,civil,CHM 151,Chemistry for Engineers,3.0,required,mathematics and science,,nat,,True
+135726,University of Miami,civil,PHY 106,Physics Laboratory 1,1.0,required,mathematics and science,,nat,,True
+135726,University of Miami,civil,WRS 105,First-Year Writing I,3.0,required,communication,,comm,,True
+135726,University of Miami,civil,WRS 107,First-Year Writing II: STEM,3.0,required,communication,,comm,,True
+135726,University of Miami,civil,CAE 570,Advanced Foundation Engineering,3.0,alternative,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 520,Advanced Design of Concrete Structures,3.0,alternative,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 521,Advanced Design of Steel Structures,3.0,alternative,construction or engineering,,,,False
+135726,University of Miami,civil,CAE 530,Water Resources Engineering II,3.0,alternative,construction or engineering,,,,False
+136172,University of North Florida,civil,CHM 2045,General Chemistry I,3.0,required,mathematics and science,False,,False,False
+136172,University of North Florida,civil,CHM 2045L,General Chemistry I Laboratory,1.0,required,mathematics and science,False,,False,False
+136172,University of North Florida,civil,MAC 2311,(GM) Calculus I,4.0,required,mathematics and science,True,math,True,True
+136172,University of North Florida,civil,MAC 2312,(GM) Calculus II,4.0,required,mathematics and science,True,math,False,True
+136172,University of North Florida,civil,MAC 2313,(GM) Calculus III,4.0,required,mathematics and science,False,,False,False
+136172,University of North Florida,civil,MAP 2302,(GM) Ordinary Differential Equations,3.0,required,mathematics and science,False,,False,False
+136172,University of North Florida,civil,PHY 2048C,Calculus-based Physics I,4.0,required,mathematics and science,True,nat,True,True
+136172,University of North Florida,civil,PHY 2049,Calculus-based Physics II,3.0,required,mathematics and science,False,,False,False
+136172,University of North Florida,civil,PHY 2049L,Calculus-based Physics II Lab,1.0,required,mathematics and science,False,,False,False
+136172,University of North Florida,civil,EGN 1001C,Introduction to Engineering I,2.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,EGN 3311,Statics,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,STA 3032,(GM) Probability and Statistics for Engineers,3.0,required,mathematics and science,False,,False,False
+136172,University of North Florida,civil,ENC 2240,(GW)Professional Communication,3.0,required,communication,True,comm,False,True
+136172,University of North Florida,civil,CGN 3322C,Civil Engineering Geomatics,4.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,EGN 3331,Strength of Materials,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CES 3100,Analysis of Structures,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CGN 4935,FE Exam Review Seminar,1.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CGN 4151,Engineering Management,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CGN 4803,Senior Capstone Design I,2.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CWR 3201,Fluid Mechanics,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CEG 3011C,Geotechnical Engineering,4.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,EGN 3321,Dynamics,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CES 4702C,Design of Reinforced Concrete,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CGN 3501C,Civil Engineering Materials,4.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CWR 4001,Introduction to Coastal and Port Engineering,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CWR 3561,Numerical Methods and Computing in Civil and Coastal Engineering,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CWR 4202C,Hydraulic Engineering,4.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,CGN 4804,Senior Capstone Design II,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,TTE 4004,Transportation Engineering,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,ENV 3001C,Environmental Engineering,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,civil,ESC 2000,Discovering Earth Science,3.0,alternative,mathematics and science,True,nat,True,True
+136172,University of North Florida,civil,BSC 3057,Introduction to Environmental Studies,3.0,alternative,mathematics and science,False,,False,False
+136172,University of North Florida,civil,GLY 2010,Physical Geology,3.0,alternative,mathematics and science,False,,False,False
+136172,University of North Florida,civil,BSC 1010C,General Biology I,4.0,alternative,mathematics and science,True,nat,True,False
+136172,University of North Florida,construction management,ACG 2021,Principles of Financial Accounting,3.0,required,economics or business,False,,False,False
+136172,University of North Florida,construction management,ACG 2071,Principles of Managerial Accounting,3.0,required,economics or business,False,,False,False
+136172,University of North Florida,construction management,STA 2023,(GM) Introductory Statistics,3.0,required,mathematics and science,True,math,True,True
+136172,University of North Florida,construction management,ECO 2013,Principles of Macroeconomics,3.0,required,economics or business,True,soc,True,True
+136172,University of North Florida,construction management,ECO 2023,Principles of Microeconomics,3.0,required,economics or business,False,,False,False
+136172,University of North Florida,construction management,CGS 1100,Computer Applications for Business,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,MAC 2233,(GM) Survey of Calculus,3.0,required,mathematics and science,True,math,False,True
+136172,University of North Florida,construction management,BCN 1210C,Construction Materials,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 1251,Construction Drawing,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 2405,Introduction to Structures,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 2280C,Surveying: Construction Layout,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,PHY 2053C,Algebra-based Physics I,4.0,required,mathematics and science,True,nat,True,True
+136172,University of North Florida,construction management,BCN 1005C,Introduction to Construction Management,1.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 3762,Building Construction Design and Codes,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 3223C,Soils and Foundations,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 3782C,Introduction to Construction Computing,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 4431,Structural Systems,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 4709,Construction Project Management Capstone,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 4720,Construction Project Planning and Scheduling,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 3611C,Construction Cost Estimating,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 4753,Construction Finance and Cost Controls,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 4591C,Mechanical and Electrical Systems,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 3224,Construction Techniques,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 4708,Construction Documents and Contracts,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 4730,Construction Safety,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BCN 4944,Construction Management Internship,2.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,BUL 3130,The Legal Environment of Business,3.0,required,economics or business,False,,False,False
+136172,University of North Florida,construction management,BCN 4612,Advanced Construction Estimating,3.0,required,construction or engineering,False,,False,False
+136172,University of North Florida,construction management,MAN 3025,Principles of Management,3.0,required,economics or business,False,,False,False
+136172,University of North Florida,construction management,MAR 3023,Principles of Marketing,3.0,required,economics or business,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 1221,Introduction to Building Construction,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 1270C,Graphic Communication in Construction,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 1303C,Introduction to Building Information Modeling,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 2230,Construction Materials and Methods I,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 2231,Construction Materials and Methods II,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 2251C,Building Construction Documents,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 2272,Construction Plan Reading,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 2280C,Surveying and Construction Layout,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 2721,Construction Scheduling and Planning,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCT 2770,Estimating Fundamentals,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 2405C,Applied Statics in Construction,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 3225C,Soil Mechanics and Foundations,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 3451C,Structures,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 3568C,MEPF Systems in Construction,4.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 3708,Construction Laws and Contracts,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 3724C,Advanced Construction Scheduling and Planning,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 3730,Construction Safety Management,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 4612C,Advanced Construction Estimating,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 4753,Construction Financing and Accounting Principles,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 4787C,Construction Capstone Project,6.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,BCN 4709C,Construction Project Management,3.0,required,construction or engineering,False,,False,False
+137209,Seminole State College of Florida,construction management,MAN 2021,Introduction to Management,3.0,required,economics or business,False,,False,False
+137209,Seminole State College of Florida,construction management,MTB 1329,Applied Mathematical Concepts for Engineering Technology,3.0,required,other required course,False,,False,False
+137209,Seminole State College of Florida,construction management,ENC 1101,English I,3.0,required,communication,True,comm,True,True
+137209,Seminole State College of Florida,construction management,PHY 1053C,General Physics I,4.0,required,mathematics and science,True,nat,True,True
+137209,Seminole State College of Florida,construction management,EVR 1001,Introduction to Environmental Science,3.0,required,mathematics and science,True,nat,True,True
+137209,Seminole State College of Florida,construction management,ECO 2013,Principles of Economics (MACRO),3.0,required,economics or business,True,soc,True,True
+137209,Seminole State College of Florida,construction management,MAC 1105,College Algebra,3.0,required,other required course,True,math,True,True
+137209,Seminole State College of Florida,construction management,ENC 1102,English II,3.0,required,communication,True,comm,False,True
+137209,Seminole State College of Florida,construction management,SPC 1608,Speech Communication,3.0,required,communication,True,comm,False,True
+137209,Seminole State College of Florida,construction management,MAC 2233,Concepts of Calculus,3.0,required,mathematics and science,True,math,False,True
+137351,University of South Florida,civil,CHM 2045,General Chemistry I,3.0,required,mathematics and science,True,nat,True,True
+137351,University of South Florida,civil,CHM 2045L,General Chemistry I Laboratory,1.0,required,mathematics and science,False,,False,False
+137351,University of South Florida,civil,MAC 2311,Calculus I,4.0,required,mathematics and science,True,math,True,True
+137351,University of South Florida,civil,MAC 2312,Calculus II,4.0,required,mathematics and science,True,math,False,True
+137351,University of South Florida,civil,MAC 2313,Calculus III,4.0,required,mathematics and science,True,math,False,True
+137351,University of South Florida,civil,PHY 2048,General Physics I - Calculus Based,3.0,required,mathematics and science,True,nat,True,True
+137351,University of South Florida,civil,PHY 2049,General Physics II - Calculus Based,3.0,required,mathematics and science,True,nat,False,True
+137351,University of South Florida,civil,PHY 2048L,General Physics I Laboratory,1.0,required,mathematics and science,False,,False,False
+137351,University of South Florida,civil,EGN 3000L,Foundations of Engineering Lab,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 1113,Introduction to Design Graphics,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,PHY 2049L,General Physics II Laboratory,1.0,required,mathematics and science,False,,False,False
+137351,University of South Florida,civil,EGN 3000,Foundations of Engineering,0.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 3321,Dynamics,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 3331,Mechanics of Materials,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 3343,Thermodynamics I,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 3331L,Mechanics of Materials Laboratory,1.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 3353,Basic Fluid Mechanics,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 3365,Materials Engineering I,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 3373,Electrical Systems I,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 2440,Probability and Statistics with Calculus,3.0,required,mathematics and science,True,math,False,True
+137351,University of South Florida,civil,EGN 2615,Economical Analysis of Systems,3.0,required,construction or engineering,True,soc,False,True
+137351,University of South Florida,civil,EGN 4453,Numerical & Computer Tools I in Civil & Env Eng,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,GLY 3850,Geology For Engineers,3.0,required,mathematics and science,False,,False,False
+137351,University of South Florida,civil,EGN 3311,Statics,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,CES 3102,Structures I,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,CGN 3021L,Civil Engineering Laboratory,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,CEG 4011,Geotechnical Engineering I,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,CEG 4011L,Geotechnical Engineering Laboratory,1.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,CGN 4122,Professional and Ethical Issues in Engineering,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,CWR 4202,Hydraulics,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,ENV 4001,Environmental Systems Engineering,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,EGN 4454,Numerical & Computer Tools II in Civil & Env Eng,2.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,TTE 4004,Transportation Engineering I,3.0,required,construction or engineering,False,,False,False
+137351,University of South Florida,civil,MAP 2302,Differential Equations,3.0,alternative,mathematics and science,True,math,False,False
+137351,University of South Florida,civil,EGN 3433,Modeling and Analysis of Engineering Systems,3.0,alternative,construction or engineering,False,,False,False
+137351,University of South Florida,civil,CES 4750,Capstone Structural/Geotechnical/ Material Design,3.0,alternative,construction or engineering,False,,False,False
+137351,University of South Florida,civil,CEG 4850,Capstone Geotechnical/Transportation Design,3.0,alternative,construction or engineering,False,,False,False
+137351,University of South Florida,civil,CWR 4812,Capstone Water Resources-Environmental Design,3.0,alternative,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,ACG 2021,Principles of Financial Accounting,3.0,required,economics or business,False,,False,False
+138354,University of West Florida,construction management,STA 2023,Elements of Statistics,3.0,required,mathematics and science,True,math,True,True
+138354,University of West Florida,construction management,PHY 2053L,Algebra-Based Physics I Lab,1.0,required,mathematics and science,False,,False,False
+138354,University of West Florida,construction management,PHY 2053,Algebra-Based Physics I,3.0,required,mathematics and science,True,nat,True,True
+138354,University of West Florida,construction management,ECO 2013,Principles of Economics Macro,3.0,required,economics or business,True,soc,True,True
+138354,University of West Florida,construction management,BCN 2405,Statics and Strength of Materials,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 2210,Construction Materials,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 2251C,Construction Drawings,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 4701,Construction Administration,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 4461,Structures II,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 4431,Structures I,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 4258C,Building Information Modeling,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 3762,Building Codes,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 3731,Construction Safety,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 3561,Construction Mechanics,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 3281C,Construction Survey and Building Layout,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 4720C,Scheduling,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 4773,Construction Finance and Controls,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,BCN 4940,Construction Internship/Senior Project,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,ETD 2320,Computer Aided Design,3.0,required,construction or engineering,False,,False,False
+138354,University of West Florida,construction management,ETI 3445,Construction Estimating,3.0,required,construction or engineering,False,,False,False
+385619,Everglades University,construction management,ENC 1101,English Composition I,3.0,required,communication,,comm,,True
+385619,Everglades University,construction management,ENC 2102,English Composition II,3.0,required,communication,,comm,,True
+385619,Everglades University,construction management,CGS 1060C,Introduction to Computer Applications,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,SPC 1017,Speech,3.0,required,communication,,comm,,True
+385619,Everglades University,construction management,AML 1000,American Literature,3.0,required,other required course,,hum,,True
+385619,Everglades University,construction management,STA 2014,Statistics,3.0,required,mathematics and science,,math,,True
+385619,Everglades University,construction management,HUN 1201,Fundamentals of Nutrition,3.0,required,other required course,,,,False
+385619,Everglades University,construction management,POS 2041,American National Government,3.0,required,other required course,,soc,,True
+385619,Everglades University,construction management,BCT 1770,Construction Estimating,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCT 1767,OSHA Standards,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,PSY 1012,Introduction to Psychology,3.0,required,other required course,,soc,,True
+385619,Everglades University,construction management,BCN 1251C,Building Construction Drawing,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCT 1706,Construction Documents,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 2020,Introduction to Construction Techniques,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 3708,Construction Contracts,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 1014,Introduction to Sustainability,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,MAN 3065,Business Ethics,3.0,required,economics or business,,,,False
+385619,Everglades University,construction management,BCN 3223,Soil Mechanics for Construction,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 4703,Managing a Construction Project,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 4612,Construction Cost Estimating,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 3762,Codes and Standards,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 4709,Construction Management Capstone Course,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 3753,Financial Control of Construction Organizations,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 3461,Concrete Masonry Design in Construction,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 4740,Construction Law,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 3411,Statics and Strengths of Materials,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 4590,LEED Green Associate Credential Preparation,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 4730,Construction Safety,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 4284,Construction Layout Planning,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 4720,Construction Scheduling,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 4510,Mechanical Systems: Heating and Cooling,3.0,required,construction or engineering,,,,False
+385619,Everglades University,construction management,BCN 3224,Construction Techniques of Superstructures,3.0,required,construction or engineering,,,,False
+433660,Florida Gulf Coast University,civil,CHM 1045,General Chemistry I,3.0,required,mathematics and science,True,nat,True,True
+433660,Florida Gulf Coast University,civil,CHM 1045L,General Chemistry I Laboratory,1.0,required,mathematics and science,True,nat,False,True
+433660,Florida Gulf Coast University,civil,MAC 2311,Calculus I,4.0,required,mathematics and science,True,math,True,True
+433660,Florida Gulf Coast University,civil,MAC 2312,Calculus II,4.0,required,mathematics and science,True,math,False,True
+433660,Florida Gulf Coast University,civil,MAC 2313,Calculus III,4.0,required,mathematics and science,True,math,False,True
+433660,Florida Gulf Coast University,civil,MAP 2302,Differential Equations,3.0,required,mathematics and science,False,,False,False
+433660,Florida Gulf Coast University,civil,PHY 2048,General Physics I,3.0,required,mathematics and science,True,nat,True,True
+433660,Florida Gulf Coast University,civil,PHY 2048L,General Physics I Laboratory,1.0,required,mathematics and science,True,nat,False,True
+433660,Florida Gulf Coast University,civil,PHY 2049,General Physics II,3.0,required,mathematics and science,True,nat,False,True
+433660,Florida Gulf Coast University,civil,PHY 2049L,General Physics II Laboratory,1.0,required,mathematics and science,True,nat,False,True
+433660,Florida Gulf Coast University,civil,EGM 3420C,Engineering Mechanics,4.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,EGN 1041C,Computational Tools & Data Sci,2.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,EGS 1006L,Intro to the Engineering Prof.,1.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CCE 3101C,Civil Engineering Materials,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CCE 4031C,Project Planning & Regulations,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CEG 3011C,Geotechnical Engineering I,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CES 3100C,Structural Analysis,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CGN 3323C,Surveying and Geomatics,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CGN 4802,Civil Engin Senior Design,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CWR 3201C,Engineering Fluid Mechanics,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CWR 3202C,Hydrology and Hydraulics,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CWR 4540C,Water Resources Design,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,EGN 2111C,Engineering Computer Graphics,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,EGN 3331C,Mechanics of Materials,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,ENV 3006C,Fundamentals of Environ Engrg,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,ENV 4612C,Sustainability in Engineering,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,TTE 3002C,Transportation Engineering,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CES 4605C,Steel Design,3.0,alternative,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CES 4702C,Reinforced Concrete Design,3.0,alternative,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CCE 4204C,Construction Methods & Managmt,3.0,alternative,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,civil,CEG 4012C,Geotechnical Engineering II,3.0,alternative,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,ACG 2021,Intro. to Financial Acctg.,3.0,required,economics or business,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 1210C,Construction Materials,4.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 1251C,Construction Drawing,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 1930,Construction Seminar,1.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 2405C,Construction Mechanics,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BUL 3130,Legal & Ethical Enviro of Bus,3.0,required,economics or business,False,,False,False
+433660,Florida Gulf Coast University,construction management,ECO 2013,Principles of Macroeconomics,3.0,required,economics or business,True,soc,True,True
+433660,Florida Gulf Coast University,construction management,GLY 2030C,Environmental Geology,3.0,required,mathematics and science,True,nat,False,True
+433660,Florida Gulf Coast University,construction management,MAC 1147,Precalculus,5.0,required,other required course,True,math,False,True
+433660,Florida Gulf Coast University,construction management,PHY 2053,College Physics I,3.0,required,mathematics and science,True,nat,True,True
+433660,Florida Gulf Coast University,construction management,PHY 2053L,College Physics I Laboratory,1.0,required,mathematics and science,True,nat,False,True
+433660,Florida Gulf Coast University,construction management,SPC 1608,Effective Speaking,3.0,required,communication,True,comm,False,True
+433660,Florida Gulf Coast University,construction management,STA 2023,Statistical Methods,3.0,required,mathematics and science,True,math,True,True
+433660,Florida Gulf Coast University,construction management,BCN 3218C,Construction Materials II,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 3240C,Construction Methods and Equip,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 3255,Graphic Communication in Const,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 3431C,Structures for Const,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 3521C,Electrical Systems,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 3590,Sustainable Approach to Const,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 3611C,Construction Estimating I,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4252,Building Information Modeling,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4423C,Temporary Structures,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4510C,Mechanical Systems,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4612C,Estimating II,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4709C,Const Project Management,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4720,Const Planning and Control,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4730,Construction Safety Health&Env,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4740,Construction Law & Contracts,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4753C,Construction Finance,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,BCN 4787,Const Capstone,3.0,required,construction or engineering,False,,False,False
+433660,Florida Gulf Coast University,construction management,MAN 3025,Principles of Management,3.0,required,economics or business,False,,False,False
+433660,Florida Gulf Coast University,construction management,ENC 1102,Composition II,3.0,required,communication,True,comm,False,True
+433660,Florida Gulf Coast University,construction management,ENC 1101,Composition I,3.0,required,communication,True,comm,True,True
+433660,Florida Gulf Coast University,construction management,AMH 2010,U.S. History to 1877,3.0,alternative,other required course,True,soc,True,False
+433660,Florida Gulf Coast University,construction management,POS 2041,American National Government,3.0,alternative,other required course,True,soc,True,False
+433660,Florida Gulf Coast University,construction management,AMH 2020,U.S. History Since 1877,3.0,alternative,other required course,True,soc,True,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,MATH 1350,Calculus I,2.6666666666666665,required,mathematics and science,,math,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,MATH 1360,Calculus II,2.6666666666666665,required,mathematics and science,,math,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,MATH 1370,Calculus III,2.6666666666666665,required,mathematics and science,,math,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,MATH 2350,Differential Equations,2.0,required,mathematics and science,,math,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,SCIE 1210,Principles of Chemistry,2.0,required,mathematics and science,,nat,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,SCIE 1211,Principles of Chemistry Laboratory,0.6666666666666666,required,mathematics and science,,nat,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,SCIE 1430,Physics I,2.6666666666666665,required,mathematics and science,,nat,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,SCIE 1431,Physics I Laboratory,0.6666666666666666,required,mathematics and science,,nat,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,SCIE 1440,Physics II,2.6666666666666665,required,mathematics and science,,nat,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,SCIE 1441,Physics II Laboratory,0.6666666666666666,required,mathematics and science,,nat,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ENGL 1020,English Composition I,2.0,required,communication,,comm,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ENGL 1021,English Composition II,2.0,required,communication,,comm,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ENGL 1026,Fundamentals of Speech Communication,2.0,required,communication,,comm,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ETH 2020,Ethics in Engineering,2.0,required,other required course,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,WOHI 2012,World Civilization,2.0,required,other required course,,hum,,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ENGI 2110,Engineering Mechanics-Statics,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ENGI 2120,Mechanics of Materials,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ENGI 2260,Engineering Economics,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ENGI 2410,"Engineering Mechanics, Dynamics",2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ENGI 2420,Fluid Mechanics,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,ENGI 2421,Fluid Mechanics Laboratory,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 1010,Engineering Graphics for Civil and Environmental Engineers,2.6666666666666665,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 2110,Engineering Geology,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 2210,Probability and Statistics for Civil and Environmental Engineers,2.0,required,mathematics and science,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 2310,"Algorithms, Programming, and Numerical Analysis",2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 2311,"Algorithms, Programming, and Numerical Analysis Laboratory",0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 3410,Water Resources and Hydraulic Engineering,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,SURV 2095,Principles of Surveying for Engineers,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 1011,Introduction Civil Engineering,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 2510,Construction Materials,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 2511,Construction Materials Laboratory,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3110,Structural Analysis I,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3120,Structural Analysis II,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3121,Structural Engineering Laboratory,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3130,Steel Structure Design,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3210,Geotechnical Engineering I,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3211,Geotechnical Engineering Laboratory,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3220,Geotechnical Engineering II,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3221,Geomechanics Laboratory,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3310,Route Location and Geometric Design,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3320,Highway Engineering,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3330,Transportation Engineering and Urban Planning,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3331,Highway and Transportation Engineering Laboratory,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 3420,Design of Aqueducts and Sanitary Sewer Systems,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 3520,Construction Project Management,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 4140,Concrete Structures Design,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 4150,Foundation Engineering,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 3430,Water Quality and Treatment,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 3440,Municipal Wastewater Treatment and Disposal,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CEE 4411,Environmental Engineering Laboratory I,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 4530,Construction Methods and Productivity Improvement,2.0,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 4911,Civil Engineering Senior Design Project I,0.6666666666666666,required,construction or engineering,,,,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,CE 4920,Civil Engineering Senior Design Project II,2.0,required,construction or engineering,,,,False

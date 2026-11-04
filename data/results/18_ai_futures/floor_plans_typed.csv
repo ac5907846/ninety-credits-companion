@@ -1,0 +1,671 @@
+UNITID,institution,field,design,code,title,credits,role,gen_ed_area,type,gen_ed
+132903,University of Central Florida,civil,FLOOR,ENC 1101,Composition I,3.0,required,comm,communication,True
+132903,University of Central Florida,civil,FLOOR,ENC 1102,Composition II,3.0,required,comm,communication,True
+132903,University of Central Florida,civil,FLOOR,MAC 2311C,Calculus with Analytic Geometry I,4.0,required,math,math_science,True
+132903,University of Central Florida,civil,FLOOR,MAC 2312,Calculus with Analytic Geometry II,4.0,required,,math_science,False
+132903,University of Central Florida,civil,FLOOR,CGN 3700C,Civil Engineering Measurements,2.0,required,,lab_field,False
+132903,University of Central Florida,civil,FLOOR,CGN 3090,Engineering Reports & Liability,2.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,CGN 3405,Applied Numerical Methods for Civil Engineering,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,CWR 3201,Engineering Fluid Mechanics,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,STA 3032,Probability and Statistics for Engineers,3.0,required,,math_science,False
+132903,University of Central Florida,civil,FLOOR,EGN 3613,Engineering Economic Analysis,2.0,required,,business_construction,False
+132903,University of Central Florida,civil,FLOOR,EGN 3331C,Mechanics of Materials,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,EGN 3310,Engineering Analysis-Statics,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,MAP 2302,Ordinary Differential Equations I,3.0,required,,math_science,False
+132903,University of Central Florida,civil,FLOOR,MAC 2313,Calculus with Analytic Geometry III,4.0,required,,math_science,False
+132903,University of Central Florida,civil,FLOOR,EGN 3321,Engineering Analysis-Dynamics,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,ENV 3001,Environmental Engineering,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,CCE 4003,Introduction to the Construction Industry,3.0,required,,business_construction,False
+132903,University of Central Florida,civil,FLOOR,CGN 3501C,Civil Engineering Materials,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,CWR 4202C,Hydraulics,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,TTE 3810,Highway Engineering,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,CES 4100C,Structural Analysis I and Lab,3.0,required,,lab_field,False
+132903,University of Central Florida,civil,FLOOR,CEG 4011C,Geotechnical Engineering I,3.0,required,,engineering_analysis,False
+132903,University of Central Florida,civil,FLOOR,CGN 4808C,CECE Capstone Design,3.0,required,,design,False
+132903,University of Central Florida,civil,FLOOR,CHM 2045C,Chemistry Fundamentals I,4.0,alternative,nat,math_science,True
+132903,University of Central Florida,civil,FLOOR,PHY 2049C,General Physics Using Calculus II Studio,4.0,alternative,,math_science,False
+132903,University of Central Florida,civil,FLOOR,PHY 2048C,General Physics Using Calculus I Studio,4.0,alternative,nat,math_science,True
+132903,University of Central Florida,civil,FLOOR,MAC 1105C,College Algebra,3.0,prerequisite_of_listed,math,math_science,True
+132903,University of Central Florida,civil,FLOOR,GENERIC SOC 3,General education (soc),3.0,filler,soc,general_education,True
+132903,University of Central Florida,civil,FLOOR,GENERIC HUM 5,General education (hum),3.0,filler,hum,general_education,True
+132903,University of Central Florida,civil,FLOOR,GENERIC HUM 6,General education (hum),3.0,filler,hum,general_education,True
+132903,University of Central Florida,civil,FLOOR,GENERIC ANY 6,General education (any),3.0,filler,hum,general_education,True
+132903,University of Central Florida,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,EGN 1004L,First Year Engineering Laboratory,1.0,required,,lab_field,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,MAC 2311,CALCULUS I,4.0,required,math,math_science,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,MAC 2312,CALCULUS II,4.0,required,math,math_science,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,MAC 2313,Calculus with Analytic Geometry III,5.0,required,,math_science,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CHM 1045,GENERAL CHEMISTRY I,3.0,required,nat,math_science,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,PHY 2048C,General Physics I W/ Lab,5.0,required,,lab_field,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CEG 2202,Intro to Geomatics,3.0,required,,lab_field,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CEG 2202L,Intro to Geomatics Lab,3.0,required,,lab_field,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,ENC 1101,FRESHMAN COMMUNICATION SKILLS I,3.0,required,comm,communication,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,ENC 1102,FRESHMAN COMMUNICATION SKILLS II,3.0,required,comm,communication,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CGN 3326,CE Graphics & Design Tools,3.0,required,,design,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,EGN 3331,Strength of Materials,3.0,required,,engineering_analysis,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,STA 3034,Mathematical Statistics,3.0,required,,math_science,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,EES 3040,Introduction to Environmental Engineering Science,3.0,required,,engineering_analysis,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,EGN 3613,Principles of Engineering Economy,2.0,required,,business_construction,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CWR 3200L,Environ & Hydraul Eng -lab,1.0,required,,lab_field,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CGN 3508L,Civil Engineer Material - Lab,1.0,required,,lab_field,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CES 3100,Structural Analysis,4.0,required,,engineering_analysis,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CCE 3101,Construction Materials,3.0,required,,business_construction,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CEG 3011,Soil Mechanics,3.0,required,,engineering_analysis,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CGN 4800,Pre-Senior Design Prof Issues,2.0,required,,design,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CGN 4802,Senior Design Project,3.0,required,,design,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,TTE 3004,Transportation Engineering,3.0,required,,engineering_analysis,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,MAC 1114,ALGEBRAIC AND TRIGONOMETRIC FUNCTIONS,3.0,prerequisite_of_listed,math,math_science,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,CHM 1020,FUNDAMENTALS OF CHEMISTRY,3.0,prerequisite_of_listed,nat,math_science,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,EGN 3311,Civil Engineering Mechanics,4.0,prerequisite_of_listed,,engineering_analysis,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,EGN 2210,,3.0,prerequisite_of_listed,,engineering_analysis,False
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,hum,general_education,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,GENERIC NAT 3,General education (nat),3.0,filler,nat,math_science,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,GENERIC SOC 3,General education (soc),3.0,filler,hum,general_education,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,GENERIC SOC 4,General education (soc),3.0,filler,soc,general_education,True
+133650,Florida Agricultural and Mechanical University,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+133669,Florida Atlantic University,civil,FLOOR,MAC 2311,Calculus with Analytic Geometry 1,4.0,required,math,math_science,True
+133669,Florida Atlantic University,civil,FLOOR,MAC 2312,Calculus with Analytic Geometry 2,4.0,required,math,math_science,True
+133669,Florida Atlantic University,civil,FLOOR,CHM 2045,General Chemistry 1,3.0,required,nat,math_science,True
+133669,Florida Atlantic University,civil,FLOOR,CHM 2045L,General Chemistry Lab 1,1.0,required,nat,lab_field,True
+133669,Florida Atlantic University,civil,FLOOR,PHY 2048,General Physics 1,3.0,required,nat,math_science,True
+133669,Florida Atlantic University,civil,FLOOR,PHY 2048L,General Physics Laboratory 1 (Science version),1.0,required,,lab_field,False
+133669,Florida Atlantic University,civil,FLOOR,CWR 3201C,Applied Hydraulics,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,CGN 3501C,Civil Engineering Materials,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,EGN 3331,Strength of Materials,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,SUR 3103C,Geomatics,3.0,required,,lab_field,False
+133669,Florida Atlantic University,civil,FLOOR,CES 3102C,Analysis of Structures,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,CEG 3011C,Soil Mechanics,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,EGN 3321,Dynamics,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,EGN 3311,Statics,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,EGN 1002,Fundamentals of Engineering,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,CGN 2327,Computer-Aided Design,3.0,required,,design,False
+133669,Florida Atlantic University,civil,FLOOR,CGN 4803C,"RI: Civil, Environmental and Geomatics Engineering Design 1",3.0,required,,lab_field,False
+133669,Florida Atlantic University,civil,FLOOR,CGN 4804C,"RI: Civil, Environmental and Geomatics Engineering Design 2",3.0,required,,lab_field,False
+133669,Florida Atlantic University,civil,FLOOR,TTE 3004C,Introduction to Transportation Engineering,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,SUR 4463,RI: Subdivision Design,3.0,required,,design,False
+133669,Florida Atlantic University,civil,FLOOR,ENV 3001C,Environmental Science and Engineering,3.0,required,,engineering_analysis,False
+133669,Florida Atlantic University,civil,FLOOR,MAP 2302,Differential Equations 1,3.0,alternative,,math_science,False
+133669,Florida Atlantic University,civil,FLOOR,GLY 2010C,Physical Geology/Evolution of the Earth,4.0,choice_list,,math_science,False
+133669,Florida Atlantic University,civil,FLOOR,MAC 2210,Introduction to Calculus with Applications,4.0,prerequisite_of_listed,,math_science,False
+133669,Florida Atlantic University,civil,FLOOR,CHM 1025,Introductory Chemistry,3.0,prerequisite_of_listed,,math_science,False
+133669,Florida Atlantic University,civil,FLOOR,MAC 1105,College Algebra,3.0,prerequisite_of_listed,math,math_science,True
+133669,Florida Atlantic University,civil,FLOOR,GENERIC COMM 2,General education (comm),3.0,filler,comm,communication,True
+133669,Florida Atlantic University,civil,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,comm,communication,True
+133669,Florida Atlantic University,civil,FLOOR,GENERIC SOC 1,General education (soc),3.0,filler,soc,general_education,True
+133669,Florida Atlantic University,civil,FLOOR,GENERIC SOC 3,General education (soc),3.0,filler,hum,general_education,True
+133669,Florida Atlantic University,civil,FLOOR,GENERIC SOC 4,General education (soc),3.0,filler,hum,general_education,True
+133669,Florida Atlantic University,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+133881,Florida Institute of Technology,civil,FLOOR,CHM 1101,General Chemistry 1,3.0,required,nat,math_science,True
+133881,Florida Institute of Technology,civil,FLOOR,COM 1101,Composition and Rhetoric,3.0,required,comm,communication,True
+133881,Florida Institute of Technology,civil,FLOOR,CVE 1000,Introduction to Civil Engineering,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 1001,Computer Applications Lab,1.0,required,,lab_field,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 2080,Construction Measurements,3.0,required,,lab_field,False
+133881,Florida Institute of Technology,civil,FLOOR,COM 1102,Writing About Literature,3.0,required,comm,communication,True
+133881,Florida Institute of Technology,civil,FLOOR,PHY 1001,Physics 1,4.0,required,nat,math_science,True
+133881,Florida Institute of Technology,civil,FLOOR,AEE 3083,Mechanics of Materials,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,civil,FLOOR,PHY 2002,Physics 2,4.0,required,nat,math_science,True
+133881,Florida Institute of Technology,civil,FLOOR,MEE 2081,Applied Mechanics: Statics,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,civil,FLOOR,MEE 2082,Applied Mechanics: Dynamics,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,civil,FLOOR,MTH 2401,Probability and Statistics,3.0,required,math,math_science,True
+133881,Florida Institute of Technology,civil,FLOOR,CVE 3033,Hydraulics Lab,1.0,required,,lab_field,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 3015,Structural Analysis and Design,3.0,required,,design,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 3030,Fluid Mechanics,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 4060,Transportation Engineering,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 4032,Hydraulics and Hydrology,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 3020,Soils and Foundations,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 3012,Engineering Materials,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 4092,Design Project 2,3.0,required,,design,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 4074,Leading Construction Operations,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 4000,Engineering Economy and Planning,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,civil,FLOOR,CVE 4091,Design Project 1,1.0,required,,design,False
+133881,Florida Institute of Technology,civil,FLOOR,MTH 3200,Honors Differential Equations,4.0,alternative,,math_science,False
+133881,Florida Institute of Technology,civil,FLOOR,MTH 1001,Calculus 1,4.0,alternative,math,math_science,True
+133881,Florida Institute of Technology,civil,FLOOR,MTH 1002,Calculus 2,4.0,alternative,,math_science,False
+133881,Florida Institute of Technology,civil,FLOOR,HUM 2051,Civilization 1: Ancient Through Medieval,3.0,choice_list,hum,general_education,True
+133881,Florida Institute of Technology,civil,FLOOR,HUM 2551,Survey of Ancient and Medieval Philosophy,3.0,choice_list,hum,lab_field,True
+133881,Florida Institute of Technology,civil,FLOOR,MTH 1003,Calculus 2 for Natural Sciences,4.0,prerequisite_of_listed,,math_science,False
+133881,Florida Institute of Technology,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+133881,Florida Institute of Technology,civil,FLOOR,GENERIC BM economics,Business: economics,3.0,filler,soc,general_education,True
+133881,Florida Institute of Technology,construction management,FLOOR,COM 1101,Composition and Rhetoric,3.0,required,comm,communication,True
+133881,Florida Institute of Technology,construction management,FLOOR,CON 1005,Construction Plan Reading and BIM Applications,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CVE 1001,Computer Applications Lab,1.0,required,,lab_field,False
+133881,Florida Institute of Technology,construction management,FLOOR,CHM 1101,General Chemistry 1,3.0,required,nat,math_science,True
+133881,Florida Institute of Technology,construction management,FLOOR,COM 1102,Writing About Literature,3.0,required,comm,communication,True
+133881,Florida Institute of Technology,construction management,FLOOR,COM 2223,Scientific and Technical Communication,3.0,required,comm,communication,True
+133881,Florida Institute of Technology,construction management,FLOOR,BUS 2211,Introduction to Financial Accounting,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 2001,Construction Methods and Operations,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,BUS 2601,Legal and Social Environments of Business,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,PHY 2091,Physics Laboratory 1,1.0,required,nat,lab_field,True
+133881,Florida Institute of Technology,construction management,FLOOR,CVE 3012,Engineering Materials,3.0,required,,engineering_analysis,False
+133881,Florida Institute of Technology,construction management,FLOOR,CVE 3013,Civil Engineering Materials Lab,1.0,required,,lab_field,False
+133881,Florida Institute of Technology,construction management,FLOOR,CVE 2080,Construction Measurements,3.0,required,,lab_field,False
+133881,Florida Institute of Technology,construction management,FLOOR,BUS 3501,Management Principles,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 2000,Statics and Mechanics for Construction,4.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 3001,Building Structures and Structural Systems,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 3002,Building Mechanical and HVAC Systems,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 3000,Construction Soils,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CVE 4000,Engineering Economy and Planning,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 4000,"Construction Controls: Budget, Schedule and Quality",3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 4003,"Construction Estimating, Bidding and Value Engineering",3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 4001,Building Electrical and Electronic Systems,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 4006,Construction Equipment,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 4092,Construction Project,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 4005,Construction Safety,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CON 4091,Construction Project Proposal,1.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,CVE 4074,Leading Construction Operations,3.0,required,,business_construction,False
+133881,Florida Institute of Technology,construction management,FLOOR,MTH 1001,Calculus 1,4.0,alternative,math,math_science,True
+133881,Florida Institute of Technology,construction management,FLOOR,MTH 1002,Calculus 2,4.0,prerequisite_of_listed,math,math_science,True
+133881,Florida Institute of Technology,construction management,FLOOR,PHY 1001,Physics 1,4.0,prerequisite_of_listed,nat,math_science,True
+133881,Florida Institute of Technology,construction management,FLOOR,GENERIC MATH 1,General education (math),3.0,filler,hum,general_education,True
+133881,Florida Institute of Technology,construction management,FLOOR,GENERIC MATH 2,General education (math),3.0,filler,hum,general_education,True
+133881,Florida Institute of Technology,construction management,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+133881,Florida Institute of Technology,construction management,FLOOR,GENERIC BM economics,Business: economics,3.0,filler,soc,general_education,True
+133951,Florida International University,civil,FLOOR,CHM 1045,General Chemistry I,3.0,required,nat,math_science,True
+133951,Florida International University,civil,FLOOR,CHM 1045L,General Chemistry Lab I,1.0,required,,lab_field,False
+133951,Florida International University,civil,FLOOR,MAC 2283,Calculus III for Engineering,4.0,required,,math_science,False
+133951,Florida International University,civil,FLOOR,MAP 2302,Differential Equations,3.0,required,,math_science,False
+133951,Florida International University,civil,FLOOR,PHY 2048,Physics with Calculus I,4.0,required,nat,math_science,True
+133951,Florida International University,civil,FLOOR,CWR 3201,Fluid Mechanics,3.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,CGN 2420,Computer Tools for Engineers,3.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,EGM 3520,Engineering Mechanics of Materials,3.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,CWR 3201L,Fluid Mechanics Laboratory,1.0,required,,lab_field,False
+133951,Florida International University,civil,FLOOR,CEG 4011,Geotechnical Engineering I,3.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,EGM 3520L,Materials Testing,1.0,required,,lab_field,False
+133951,Florida International University,civil,FLOOR,EGN 3311,Statics,3.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,CGN 3300,Dynamics for Civil Engineering Systems,3.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,CGN 2161,Career Orientation in Civil Engineering,1.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,EGS 2030,Ethics and Legal Aspects in Engineering,1.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,EGN 3613,Engineering Economy,3.0,required,,business_construction,False
+133951,Florida International University,civil,FLOOR,CGN 4802,Civil Engineering Senior Design Project,3.0,required,,design,False
+133951,Florida International University,civil,FLOOR,CEG 4011L,Geotechnical Testing Laboratory,1.0,required,,lab_field,False
+133951,Florida International University,civil,FLOOR,CES 3100,Structural Analysis,3.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,ENV 3001,Introduction to Environmental Engineering,3.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,TTE 4201,Transportation and Traffic Engineering,3.0,required,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,SUR 2101C,Geomatics and Surveying,3.0,required,,lab_field,False
+133951,Florida International University,civil,FLOOR,STA 3033,Introduction to Probability and Statistics for CS,3.0,alternative,,math_science,False
+133951,Florida International University,civil,FLOOR,MAC 2311,Calculus I,4.0,prerequisite_of_listed,math,math_science,True
+133951,Florida International University,civil,FLOOR,MAC 2312,Calculus II,4.0,prerequisite_of_listed,math,math_science,True
+133951,Florida International University,civil,FLOOR,EGM 3503,Applied Mechanics,4.0,prerequisite_of_listed,,engineering_analysis,False
+133951,Florida International University,civil,FLOOR,CHM 1046,General Chemistry II,3.0,prerequisite_of_listed,nat,math_science,True
+133951,Florida International University,civil,FLOOR,CHM 1046L,General Chemistry Lab II,1.0,prerequisite_of_listed,,lab_field,False
+133951,Florida International University,civil,FLOOR,GENERIC COMM 2,General education (comm),3.0,filler,comm,communication,True
+133951,Florida International University,civil,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,comm,communication,True
+133951,Florida International University,civil,FLOOR,GENERIC SOC 2,General education (soc),3.0,filler,hum,general_education,True
+133951,Florida International University,civil,FLOOR,GENERIC SOC 3,General education (soc),3.0,filler,hum,general_education,True
+133951,Florida International University,civil,FLOOR,GENERIC SOC 4,General education (soc),3.0,filler,soc,general_education,True
+133951,Florida International University,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+133951,Florida International University,construction management,FLOOR,GLY 1010,Physical Geology,3.0,required,nat,math_science,True
+133951,Florida International University,construction management,FLOOR,BCN 1272,Plans Interpretation,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 2210,Construction Materials and Methods,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 2405,Structural Design I,3.0,required,,design,False
+133951,Florida International University,construction management,FLOOR,BCN 2253,Building Construction Drawing,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 2280,Construction Surveying,3.0,required,,lab_field,False
+133951,Florida International University,construction management,FLOOR,BUL 4310,The Legal Environment of Business,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,PHY 2048L,General Physics Laboratory I,1.0,required,,lab_field,False
+133951,Florida International University,construction management,FLOOR,PHY 2053,Physics without Calculus I,4.0,required,nat,math_science,True
+133951,Florida International University,construction management,FLOOR,BCN 3740,Legal Aspects,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 3730,Construction Safety,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 3027,Principles of Construction Management,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,SPC 2608,Public Speaking,3.0,required,comm,communication,True
+133951,Florida International University,construction management,FLOOR,STA 2023,Statistical Methods,3.0,required,math,math_science,True
+133951,Florida International University,construction management,FLOOR,ACG 3024,Introduction to Accounting for Managers and Investors,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 4431,Structural Design II,3.0,required,,design,False
+133951,Florida International University,construction management,FLOOR,BCN 3611,Construction Cost Estimating I,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 4612,Construction Cost Estimating II,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 3720,Construction Scheduling I,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 4724,Scheduling II,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 3753,Financial Management of Construction Organizations,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 3761,Construction Documentation and Communication,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 3762,Building Codes and Quality Control,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 3727,Construction Sitework and Equipment,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 4465,Temp Structures,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 4703,Management of Construction Projects,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 4561,Environmental Control in Buildings I,3.0,required,,business_construction,False
+133951,Florida International University,construction management,FLOOR,BCN 4910,Senior Project,3.0,required,,design,False
+133951,Florida International University,construction management,FLOOR,ECO 2023,Principles of Microeconomics,3.0,choice_list,soc,general_education,True
+133951,Florida International University,construction management,FLOOR,ECO 2013,Principles of Macroeconomics,3.0,choice_list,soc,general_education,True
+133951,Florida International University,construction management,FLOOR,MAC 1114,Trigonometry,3.0,choice_list,math,math_science,True
+133951,Florida International University,construction management,FLOOR,MAC 2233,Applied Calculus,3.0,choice_list,math,math_science,True
+133951,Florida International University,construction management,FLOOR,BCN 2402,,3.0,prerequisite_of_listed,,business_construction,False
+133951,Florida International University,construction management,FLOOR,GENERIC COMM 1,General education (comm),3.0,filler,comm,communication,True
+133951,Florida International University,construction management,FLOOR,GENERIC COMM 2,General education (comm),3.0,filler,hum,general_education,True
+133951,Florida International University,construction management,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,hum,general_education,True
+133951,Florida International University,construction management,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+134097,Florida State University,civil,FLOOR,CWR 3200L,Environmental and Hydraulic Engineering Laboratory,1.0,required,,lab_field,False
+134097,Florida State University,civil,FLOOR,CWR 3201,Hydraulics,3.0,required,,engineering_analysis,False
+134097,Florida State University,civil,FLOOR,EES 3040,Introduction to Environmental Engineering,3.0,required,,engineering_analysis,False
+134097,Florida State University,civil,FLOOR,CEG 3011,Soil Mechanics,3.0,required,,engineering_analysis,False
+134097,Florida State University,civil,FLOOR,CGN 3326,CE Graphics & Design Tools,3.0,required,,design,False
+134097,Florida State University,civil,FLOOR,EGM 3512,Engineering Mechanics,4.0,required,,engineering_analysis,False
+134097,Florida State University,civil,FLOOR,CCE 3101,Construction Materials,3.0,required,,business_construction,False
+134097,Florida State University,civil,FLOOR,TTE 3004,Transportation Engineering,3.0,required,,engineering_analysis,False
+134097,Florida State University,civil,FLOOR,CGN 4800,Senior Design I,3.0,required,,design,False
+134097,Florida State University,civil,FLOOR,CGN 4802,Senior Design II,3.0,required,,design,False
+134097,Florida State University,civil,FLOOR,CES 3100,Structural Analysis,4.0,required,,engineering_analysis,False
+134097,Florida State University,civil,FLOOR,EGN 3331,Strength of Materials,3.0,required,,engineering_analysis,False
+134097,Florida State University,civil,FLOOR,EGN 3613,Principles of Engineering Economy,2.0,required,,business_construction,False
+134097,Florida State University,civil,FLOOR,MAC 2311,Calculus with Analytic Geometry I,4.0,alternative,math,math_science,True
+134097,Florida State University,civil,FLOOR,CHM 1045,General Chemistry I,3.0,alternative,nat,math_science,True
+134097,Florida State University,civil,FLOOR,CEG 2202L,Introduction to Geomatics Engineering Lab,1.0,alternative,,lab_field,False
+134097,Florida State University,civil,FLOOR,CEG 2202,Introduction to Geomatics Engineering,3.0,alternative,,lab_field,False
+134097,Florida State University,civil,FLOOR,CHM 1045L,General Chemistry I Laboratory,1.0,alternative,nat,lab_field,True
+134097,Florida State University,civil,FLOOR,CES 4605,Steel Design,3.0,alternative,,design,False
+134097,Florida State University,civil,FLOOR,MAC 2313,Calculus with Analytic Geometry III,5.0,alternative,math,math_science,True
+134097,Florida State University,civil,FLOOR,MAC 2312,Calculus with Analytic Geometry II,4.0,alternative,math,math_science,True
+134097,Florida State University,civil,FLOOR,PHY 2048C,General Physics A,5.0,alternative,nat,math_science,True
+134097,Florida State University,civil,FLOOR,PHY 2049C,Calculus-Based Physics II,5.0,alternative,nat,math_science,True
+134097,Florida State University,civil,FLOOR,STA 2122,Introduction to Applied Statistics,3.0,choice_list,math,math_science,True
+134097,Florida State University,civil,FLOOR,MAC 1105,College Algebra,3.0,prerequisite_of_listed,math,math_science,True
+134097,Florida State University,civil,FLOOR,GENERIC COMM 2,General education (comm),3.0,filler,comm,communication,True
+134097,Florida State University,civil,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,comm,communication,True
+134097,Florida State University,civil,FLOOR,GENERIC SOC 4,General education (soc),3.0,filler,soc,general_education,True
+134097,Florida State University,civil,FLOOR,GENERIC HUM 5,General education (hum),3.0,filler,hum,general_education,True
+134097,Florida State University,civil,FLOOR,GENERIC HUM 6,General education (hum),3.0,filler,hum,general_education,True
+134097,Florida State University,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+134130,University of Florida,civil,FLOOR,CGN 2002,Introduction to Civil Engineering,1.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,CHM 2045L,General Chemistry Laboratory,1.0,required,,lab_field,False
+134130,University of Florida,civil,FLOOR,MAC 2311,Analytic Geometry and Calculus 1,4.0,required,math,math_science,True
+134130,University of Florida,civil,FLOOR,ENC 1101,Expository and Argumentative Writing,3.0,required,comm,communication,True
+134130,University of Florida,civil,FLOOR,ENC 2256,Writing in the Disciplines,3.0,required,comm,communication,True
+134130,University of Florida,civil,FLOOR,MAC 2312,Analytic Geometry and Calculus 2,4.0,required,math,math_science,True
+134130,University of Florida,civil,FLOOR,PHY 2048L,Laboratory for PHY 2048,1.0,required,,lab_field,False
+134130,University of Florida,civil,FLOOR,PHY 2048,Physics with Calculus 1,3.0,required,nat,math_science,True
+134130,University of Florida,civil,FLOOR,PHY 2049,Physics with Calculus 2,3.0,required,,math_science,False
+134130,University of Florida,civil,FLOOR,CGN 2328,Technical Drawing and Visualization,3.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,COP 2273,Python Programming for Engineers,3.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,MAC 2313,Analytic Geometry and Calculus 3,4.0,required,math,math_science,True
+134130,University of Florida,civil,FLOOR,CGN 3501C,Civil Engineering Materials,4.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,MAP 2302,Elementary Differential Equations,3.0,required,math,math_science,True
+134130,University of Florida,civil,FLOOR,EGM 2511,Engineering Mechanics: Statics,3.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,CEG 4011,Soil Mechanics,4.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,CWR 3201,Hydrodynamics,4.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,EGM 3520,Mechanics of Materials,3.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,CES 3102,Mechanics of Engineering Structures,4.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,CGN 4160,Civil Engineering Practice,4.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,EIN 3354,Engineering Economy,3.0,required,,business_construction,False
+134130,University of Florida,civil,FLOOR,TTE 4004C,Transportation Engineering,4.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,EGM 3400,Elements of Dynamics,2.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,CGN 3421,Computer Methods in Civil Engineering,3.0,required,,engineering_analysis,False
+134130,University of Florida,civil,FLOOR,PHY 2020,Introduction to Principles of Physics,3.0,prerequisite_of_listed,nat,math_science,True
+134130,University of Florida,civil,FLOOR,MAC 3473,Honors Calculus 2,4.0,prerequisite_of_listed,,math_science,False
+134130,University of Florida,civil,FLOOR,GENERIC SOC 1,General education (soc),3.0,filler,soc,general_education,True
+134130,University of Florida,civil,FLOOR,GENERIC SOC 3,General education (soc),3.0,filler,hum,general_education,True
+134130,University of Florida,civil,FLOOR,GENERIC HUM 6,General education (hum),3.0,filler,hum,general_education,True
+134130,University of Florida,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+134130,University of Florida,construction management,FLOOR,BCN 1210,Construction Materials,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,ENC 1101,Expository and Argumentative Writing,3.0,required,comm,communication,True
+134130,University of Florida,construction management,FLOOR,STA 2023,Introduction to Statistics 1,3.0,required,math,math_science,True
+134130,University of Florida,construction management,FLOOR,PHY 2053,Physics 1,4.0,required,nat,math_science,True
+134130,University of Florida,construction management,FLOOR,BCN 2405C,Construction Mechanics,4.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 1251C,Construction Drawing,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,ENC 2256,Writing in the Disciplines,3.0,required,comm,communication,True
+134130,University of Florida,construction management,FLOOR,MAC 2233,Survey of Calculus 1,3.0,required,math,lab_field,True
+134130,University of Florida,construction management,FLOOR,BCN 3027C,Principles of Construction Management,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 3224C,Construction Techniques,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 3255C,Graphic Communication in Construction,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 4510C,Mechanical Systems,4.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 4612C,Construction Estimating 2,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 3730,"Construction, Safety, Health and the Environment",3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 3223C,Soils and Concrete,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 3611C,Construction Estimating 1,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,MAN 3025,Principles of Management,4.0,required,soc,general_education,True
+134130,University of Florida,construction management,FLOOR,BCN 3700,Construction Contracts,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 4709C,Construction Project Management,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 4720,Construction Planning and Control,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 4753,Construction Finance,3.0,required,,business_construction,False
+134130,University of Florida,construction management,FLOOR,BCN 4787C,Construction Capstone Project,3.0,required,,design,False
+134130,University of Florida,construction management,FLOOR,PHY 2004,Applied Physics 1,3.0,prerequisite_of_listed,nat,math_science,True
+134130,University of Florida,construction management,FLOOR,PHY 2004L,Laboratory for Physics 2004,1.0,prerequisite_of_listed,nat,lab_field,True
+134130,University of Florida,construction management,FLOOR,POS 2041,American Federal Government,3.0,prerequisite_of_listed,soc,general_education,True
+134130,University of Florida,construction management,FLOOR,AEB 2014,"Current Economic Issues, Food and You",3.0,prerequisite_of_listed,soc,general_education,True
+134130,University of Florida,construction management,FLOOR,GENERIC HUM 6,General education (hum),3.0,filler,hum,general_education,True
+134130,University of Florida,construction management,FLOOR,GENERIC ANY 6,General education (any),3.0,filler,hum,general_education,True
+134130,University of Florida,construction management,FLOOR,GENERIC BM accounting,Business: accounting,3.0,filler,,business_construction,False
+134130,University of Florida,construction management,FLOOR,GENERIC BM business law,Business: business law,3.0,filler,,business_construction,False
+135726,University of Miami,civil,FLOOR,CAE 115,Introduction to Engineering II: Geospatial Data (Surveying and GIS),2.0,required,,lab_field,False
+135726,University of Miami,civil,FLOOR,CAE 210,Mechanics of Solids I,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CAE 211,Mechanics of Solids II,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CAE 310,Structural Analysis,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CAE 320,Concrete Structures,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CAE 321,Steel Structures,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CAE 330,Fluid Mechanics,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CAE 350,Transportation Engineering I,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CAE 370,Geotechnical Engineering I,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CAE 401,Civil and Architectural Engineering Seminars,1.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CAE 403,Senior Design Project I - Engineering Design,3.0,required,,design,False
+135726,University of Miami,civil,FLOOR,CAE 430,Water-Resources Engineering I,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CET 340,Introduction to Environmental Engineering,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,CET 440,Water Quality Control Systems,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,ECE 205,Principles of Electrical Engineering--I,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,MAE 303,Thermodynamics,3.0,required,,engineering_analysis,False
+135726,University of Miami,civil,FLOOR,MTH 311,Introduction to Ordinary Differential Equations,3.0,required,,math_science,False
+135726,University of Miami,civil,FLOOR,MTH 211,Calculus III,3.0,required,math,math_science,True
+135726,University of Miami,civil,FLOOR,MTH 162,Calculus II,4.0,required,math,math_science,True
+135726,University of Miami,civil,FLOOR,MTH 151,Calculus I for Engineers,5.0,required,math,math_science,True
+135726,University of Miami,civil,FLOOR,PHY 222,University Physics II,3.0,required,,math_science,False
+135726,University of Miami,civil,FLOOR,PHY 221,University Physics I,3.0,required,nat,math_science,True
+135726,University of Miami,civil,FLOOR,CHM 151,Chemistry for Engineers,3.0,required,nat,math_science,True
+135726,University of Miami,civil,FLOOR,WRS 105,First-Year Writing I,3.0,required,comm,communication,True
+135726,University of Miami,civil,FLOOR,WRS 107,First-Year Writing II: STEM,3.0,required,comm,communication,True
+135726,University of Miami,civil,FLOOR,PHY 230,Honors University Physics II-III,6.0,prerequisite_of_listed,,math_science,False
+135726,University of Miami,civil,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,hum,general_education,True
+135726,University of Miami,civil,FLOOR,GENERIC MATH 1,General education (math),3.0,filler,hum,general_education,True
+135726,University of Miami,civil,FLOOR,GENERIC SOC 4,General education (soc),3.0,filler,soc,general_education,True
+135726,University of Miami,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+136172,University of North Florida,civil,FLOOR,CHM 2045,General Chemistry I,3.0,required,,math_science,False
+136172,University of North Florida,civil,FLOOR,CHM 2045L,General Chemistry I Laboratory,1.0,required,,lab_field,False
+136172,University of North Florida,civil,FLOOR,MAC 2311,(GM) Calculus I,4.0,required,math,math_science,True
+136172,University of North Florida,civil,FLOOR,MAC 2312,(GM) Calculus II,4.0,required,math,math_science,True
+136172,University of North Florida,civil,FLOOR,MAP 2302,(GM) Ordinary Differential Equations,3.0,required,,math_science,False
+136172,University of North Florida,civil,FLOOR,PHY 2048C,Calculus-based Physics I,4.0,required,nat,math_science,True
+136172,University of North Florida,civil,FLOOR,PHY 2049,Calculus-based Physics II,3.0,required,,math_science,False
+136172,University of North Florida,civil,FLOOR,EGN 1001C,Introduction to Engineering I,2.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,EGN 3311,Statics,3.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,STA 3032,(GM) Probability and Statistics for Engineers,3.0,required,,math_science,False
+136172,University of North Florida,civil,FLOOR,ENC 2240,(GW)Professional Communication,3.0,required,comm,communication,True
+136172,University of North Florida,civil,FLOOR,CGN 3322C,Civil Engineering Geomatics,4.0,required,,lab_field,False
+136172,University of North Florida,civil,FLOOR,EGN 3331,Strength of Materials,3.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,CES 3100,Analysis of Structures,3.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,CGN 4935,FE Exam Review Seminar,1.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,CGN 4803,Senior Capstone Design I,2.0,required,,design,False
+136172,University of North Florida,civil,FLOOR,CWR 3201,Fluid Mechanics,3.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,CEG 3011C,Geotechnical Engineering,4.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,CES 4702C,Design of Reinforced Concrete,3.0,required,,design,False
+136172,University of North Florida,civil,FLOOR,CGN 3501C,Civil Engineering Materials,4.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,CWR 3561,Numerical Methods and Computing in Civil and Coastal Engineering,3.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,CWR 4202C,Hydraulic Engineering,4.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,TTE 4004,Transportation Engineering,3.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,ENV 3001C,Environmental Engineering,3.0,required,,engineering_analysis,False
+136172,University of North Florida,civil,FLOOR,ESC 2000,Discovering Earth Science,3.0,alternative,nat,math_science,True
+136172,University of North Florida,civil,FLOOR,CHM 1025,Introduction to Chemistry,2.0,prerequisite_of_listed,,math_science,False
+136172,University of North Florida,civil,FLOOR,MAC 1105,(GM) College Algebra,3.0,prerequisite_of_listed,,math_science,False
+136172,University of North Florida,civil,FLOOR,MAC 1147,(GM) Precalculus,4.0,prerequisite_of_listed,math,math_science,True
+136172,University of North Florida,civil,FLOOR,ENC 1101,(GW) Writing for Audience and Purpose,3.0,prerequisite_of_listed,comm,communication,True
+136172,University of North Florida,civil,FLOOR,ENC 3246,Professional Communication for Engineering,3.0,prerequisite_of_listed,,communication,False
+136172,University of North Florida,civil,FLOOR,GENERIC SOC 1,General education (soc),3.0,filler,hum,general_education,True
+136172,University of North Florida,civil,FLOOR,GENERIC SOC 4,General education (soc),3.0,filler,hum,general_education,True
+136172,University of North Florida,civil,FLOOR,GENERIC SOC 5,General education (soc),3.0,filler,soc,general_education,True
+136172,University of North Florida,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+136172,University of North Florida,construction management,FLOOR,ACG 2021,Principles of Financial Accounting,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,STA 2023,(GM) Introductory Statistics,3.0,required,math,math_science,True
+136172,University of North Florida,construction management,FLOOR,ECO 2013,Principles of Macroeconomics,3.0,required,soc,general_education,True
+136172,University of North Florida,construction management,FLOOR,CGS 1100,Computer Applications for Business,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,MAC 2233,(GM) Survey of Calculus,3.0,required,math,lab_field,True
+136172,University of North Florida,construction management,FLOOR,BCN 1210C,Construction Materials,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 1251,Construction Drawing,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 2405,Introduction to Structures,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 2280C,Surveying: Construction Layout,3.0,required,,lab_field,False
+136172,University of North Florida,construction management,FLOOR,PHY 2053C,Algebra-based Physics I,4.0,required,nat,math_science,True
+136172,University of North Florida,construction management,FLOOR,BCN 3762,Building Construction Design and Codes,3.0,required,,design,False
+136172,University of North Florida,construction management,FLOOR,BCN 3223C,Soils and Foundations,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 3782C,Introduction to Construction Computing,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 4431,Structural Systems,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 4709,Construction Project Management Capstone,3.0,required,,design,False
+136172,University of North Florida,construction management,FLOOR,BCN 4720,Construction Project Planning and Scheduling,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 3611C,Construction Cost Estimating,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 4591C,Mechanical and Electrical Systems,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 3224,Construction Techniques,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 4708,Construction Documents and Contracts,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 4730,Construction Safety,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 4944,Construction Management Internship,2.0,required,,lab_field,False
+136172,University of North Florida,construction management,FLOOR,BUL 3130,The Legal Environment of Business,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,BCN 4612,Advanced Construction Estimating,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,MAN 3025,Principles of Management,3.0,required,,business_construction,False
+136172,University of North Florida,construction management,FLOOR,PHY 2054C,Algebra-based Physics II,4.0,choice_list,nat,math_science,True
+136172,University of North Florida,construction management,FLOOR,MAC 1105,(GM) College Algebra,3.0,prerequisite_of_listed,,math_science,False
+136172,University of North Florida,construction management,FLOOR,MAC 1147,(GM) Precalculus,4.0,prerequisite_of_listed,math,math_science,True
+136172,University of North Florida,construction management,FLOOR,GENERIC COMM 2,General education (comm),3.0,filler,comm,communication,True
+136172,University of North Florida,construction management,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,comm,communication,True
+136172,University of North Florida,construction management,FLOOR,GENERIC MATH 1,General education (math),3.0,filler,hum,general_education,True
+136172,University of North Florida,construction management,FLOOR,GENERIC SOC 5,General education (soc),3.0,filler,hum,general_education,True
+136172,University of North Florida,construction management,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 1221,Introduction to Building Construction,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 1270C,Graphic Communication in Construction,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 1303C,Introduction to Building Information Modeling,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 2230,Construction Materials and Methods I,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 2231,Construction Materials and Methods II,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 2251C,Building Construction Documents,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 2272,Construction Plan Reading,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 2280C,Surveying and Construction Layout,3.0,required,,lab_field,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 2721,Construction Scheduling and Planning,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCT 2770,Estimating Fundamentals,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 2405C,Applied Statics in Construction,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 3225C,Soil Mechanics and Foundations,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 3451C,Structures,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 3568C,MEPF Systems in Construction,4.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 3708,Construction Laws and Contracts,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 3724C,Advanced Construction Scheduling and Planning,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 3730,Construction Safety Management,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 4612C,Advanced Construction Estimating,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 4753,Construction Financing and Accounting Principles,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 4787C,Construction Capstone Project,6.0,required,,design,False
+137209,Seminole State College of Florida,construction management,FLOOR,BCN 4709C,Construction Project Management,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,MAN 2021,Introduction to Management,3.0,required,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,ENC 1101,English I,3.0,required,comm,communication,True
+137209,Seminole State College of Florida,construction management,FLOOR,PHY 1053C,General Physics I,4.0,required,nat,math_science,True
+137209,Seminole State College of Florida,construction management,FLOOR,EVR 1001,Introduction to Environmental Science,3.0,required,nat,math_science,True
+137209,Seminole State College of Florida,construction management,FLOOR,ECO 2013,Principles of Economics (MACRO),3.0,required,soc,general_education,True
+137209,Seminole State College of Florida,construction management,FLOOR,SPC 1608,Speech Communication,3.0,required,comm,communication,True
+137209,Seminole State College of Florida,construction management,FLOOR,MAC 2233,Concepts of Calculus,3.0,required,math,math_science,True
+137209,Seminole State College of Florida,construction management,FLOOR,MAC 1114,Trigonometry,3.0,prerequisite_of_listed,math,math_science,True
+137209,Seminole State College of Florida,construction management,FLOOR,MAC 1140,Precalculus Algebra,3.0,prerequisite_of_listed,,math_science,False
+137209,Seminole State College of Florida,construction management,FLOOR,MAC 2311,Analytic Geometry and Calculus I,5.0,prerequisite_of_listed,math,math_science,True
+137209,Seminole State College of Florida,construction management,FLOOR,GENERIC HUM 5,General education (hum),3.0,filler,hum,general_education,True
+137209,Seminole State College of Florida,construction management,FLOOR,GENERIC HUM 6,General education (hum),3.0,filler,hum,general_education,True
+137209,Seminole State College of Florida,construction management,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+137209,Seminole State College of Florida,construction management,FLOOR,GENERIC BM accounting,Business: accounting,3.0,filler,,business_construction,False
+137209,Seminole State College of Florida,construction management,FLOOR,GENERIC BM business law,Business: business law,3.0,filler,,business_construction,False
+137351,University of South Florida,civil,FLOOR,CHM 2045,General Chemistry I,3.0,required,,math_science,False
+137351,University of South Florida,civil,FLOOR,CHM 2045L,General Chemistry I Laboratory,1.0,required,,lab_field,False
+137351,University of South Florida,civil,FLOOR,MAC 2311,Calculus I,4.0,required,math,math_science,True
+137351,University of South Florida,civil,FLOOR,MAC 2312,Calculus II,4.0,required,math,math_science,True
+137351,University of South Florida,civil,FLOOR,MAC 2313,Calculus III,4.0,required,,math_science,False
+137351,University of South Florida,civil,FLOOR,PHY 2048,General Physics I - Calculus Based,3.0,required,nat,math_science,True
+137351,University of South Florida,civil,FLOOR,PHY 2049,General Physics II - Calculus Based,3.0,required,nat,math_science,True
+137351,University of South Florida,civil,FLOOR,PHY 2048L,General Physics I Laboratory,1.0,required,,lab_field,False
+137351,University of South Florida,civil,FLOOR,PHY 2049L,General Physics II Laboratory,1.0,required,,lab_field,False
+137351,University of South Florida,civil,FLOOR,EGN 3000,Foundations of Engineering,0.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,EGN 3321,Dynamics,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,EGN 3331,Mechanics of Materials,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,EGN 3343,Thermodynamics I,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,EGN 3353,Basic Fluid Mechanics,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,EGN 3365,Materials Engineering I,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,EGN 2440,Probability and Statistics with Calculus,3.0,required,math,math_science,True
+137351,University of South Florida,civil,FLOOR,EGN 2615,Economical Analysis of Systems,3.0,required,soc,general_education,True
+137351,University of South Florida,civil,FLOOR,EGN 4453,Numerical & Computer Tools I in Civil & Env Eng,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,GLY 3850,Geology For Engineers,3.0,required,,math_science,False
+137351,University of South Florida,civil,FLOOR,EGN 3311,Statics,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,CES 3102,Structures I,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,CGN 3021L,Civil Engineering Laboratory,3.0,required,,lab_field,False
+137351,University of South Florida,civil,FLOOR,CEG 4011,Geotechnical Engineering I,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,CGN 4122,Professional and Ethical Issues in Engineering,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,CWR 4202,Hydraulics,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,ENV 4001,Environmental Systems Engineering,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,TTE 4004,Transportation Engineering I,3.0,required,,engineering_analysis,False
+137351,University of South Florida,civil,FLOOR,MAC 1105,College Algebra,3.0,prerequisite_of_listed,math,math_science,True
+137351,University of South Florida,civil,FLOOR,MAC 1147,Precalculus Algebra and Trigonometry,4.0,prerequisite_of_listed,math,math_science,True
+137351,University of South Florida,civil,FLOOR,GENERIC COMM 1,General education (comm),3.0,filler,comm,communication,True
+137351,University of South Florida,civil,FLOOR,GENERIC COMM 2,General education (comm),3.0,filler,comm,communication,True
+137351,University of South Florida,civil,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,hum,general_education,True
+137351,University of South Florida,civil,FLOOR,GENERIC HUM 6,General education (hum),3.0,filler,hum,general_education,True
+137351,University of South Florida,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+138354,University of West Florida,construction management,FLOOR,ACG 2021,Principles of Financial Accounting,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,STA 2023,Elements of Statistics,3.0,required,math,math_science,True
+138354,University of West Florida,construction management,FLOOR,PHY 2053,Algebra-Based Physics I,3.0,required,nat,math_science,True
+138354,University of West Florida,construction management,FLOOR,ECO 2013,Principles of Economics Macro,3.0,required,soc,general_education,True
+138354,University of West Florida,construction management,FLOOR,BCN 2405,Statics and Strength of Materials,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 2210,Construction Materials,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 2251C,Construction Drawings,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 4701,Construction Administration,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 4461,Structures II,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 4431,Structures I,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 4258C,Building Information Modeling,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 3762,Building Codes,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 3731,Construction Safety,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 3561,Construction Mechanics,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 3281C,Construction Survey and Building Layout,3.0,required,,lab_field,False
+138354,University of West Florida,construction management,FLOOR,BCN 4720C,Scheduling,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 4773,Construction Finance and Controls,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 4940,Construction Internship/Senior Project,3.0,required,,lab_field,False
+138354,University of West Florida,construction management,FLOOR,ETD 2320,Computer Aided Design,3.0,required,,design,False
+138354,University of West Florida,construction management,FLOOR,ETI 3445,Construction Estimating,3.0,required,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,MAC 2233,Calculus with Business Applications,3.0,choice_list,math,math_science,True
+138354,University of West Florida,construction management,FLOOR,MAC 1105,College Algebra,3.0,choice_list,math,math_science,True
+138354,University of West Florida,construction management,FLOOR,MAC 1114,Trigonometry,3.0,choice_list,math,math_science,True
+138354,University of West Florida,construction management,FLOOR,MAN 3504,Operations Management,3.0,choice_list,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,PLA 3471,Employment Law,3.0,choice_list,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,BCN 3224,Construction Materials and Method,3.0,prerequisite_of_listed,,business_construction,False
+138354,University of West Florida,construction management,FLOOR,GENERIC COMM 1,General education (comm),3.0,filler,comm,communication,True
+138354,University of West Florida,construction management,FLOOR,GENERIC COMM 2,General education (comm),3.0,filler,comm,communication,True
+138354,University of West Florida,construction management,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,hum,general_education,True
+138354,University of West Florida,construction management,FLOOR,GENERIC NAT 3,General education (nat),3.0,filler,nat,math_science,True
+138354,University of West Florida,construction management,FLOOR,GENERIC SOC 1,General education (soc),3.0,filler,hum,general_education,True
+138354,University of West Florida,construction management,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+385619,Everglades University,construction management,FLOOR,ENC 1101,English Composition I,3.0,required,comm,communication,True
+385619,Everglades University,construction management,FLOOR,ENC 2102,English Composition II,3.0,required,comm,communication,True
+385619,Everglades University,construction management,FLOOR,SPC 1017,Speech,3.0,required,comm,communication,True
+385619,Everglades University,construction management,FLOOR,AML 1000,American Literature,3.0,required,hum,general_education,True
+385619,Everglades University,construction management,FLOOR,STA 2014,Statistics,3.0,required,math,math_science,True
+385619,Everglades University,construction management,FLOOR,POS 2041,American National Government,3.0,required,soc,general_education,True
+385619,Everglades University,construction management,FLOOR,PSY 1012,Introduction to Psychology,3.0,required,soc,general_education,True
+385619,Everglades University,construction management,FLOOR,BCN 1251C,Building Construction Drawing,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCT 1706,Construction Documents,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 3708,Construction Contracts,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 1014,Introduction to Sustainability,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,MAN 3065,Business Ethics,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 3223,Soil Mechanics for Construction,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 4612,Construction Cost Estimating,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 3762,Codes and Standards,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 4709,Construction Management Capstone Course,3.0,required,,design,False
+385619,Everglades University,construction management,FLOOR,BCN 3753,Financial Control of Construction Organizations,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 3461,Concrete Masonry Design in Construction,3.0,required,,design,False
+385619,Everglades University,construction management,FLOOR,BCN 3411,Statics and Strengths of Materials,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 4590,LEED Green Associate Credential Preparation,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 4730,Construction Safety,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 4284,Construction Layout Planning,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 4720,Construction Scheduling,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 4510,Mechanical Systems: Heating and Cooling,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,BCN 3224,Construction Techniques of Superstructures,3.0,required,,business_construction,False
+385619,Everglades University,construction management,FLOOR,ACG 2001,Accounting Principles I,3.0,choice_list,,business_construction,False
+385619,Everglades University,construction management,FLOOR,ECO 2013,Macroeconomics,3.0,choice_list,soc,general_education,True
+385619,Everglades University,construction management,FLOOR,IDS 1021,Interdisciplinary Studies 1,3.0,choice_list,hum,general_education,True
+385619,Everglades University,construction management,FLOOR,MGF 2106,College Math,3.0,choice_list,math,math_science,True
+385619,Everglades University,construction management,FLOOR,GENERIC NAT 2,General education (nat),3.0,filler,nat,math_science,True
+385619,Everglades University,construction management,FLOOR,GENERIC NAT 3,General education (nat),3.0,filler,nat,math_science,True
+385619,Everglades University,construction management,FLOOR,GENERIC BM business law,Business: business law,3.0,filler,,business_construction,False
+433660,Florida Gulf Coast University,civil,FLOOR,CHM 1045,General Chemistry I,3.0,required,nat,math_science,True
+433660,Florida Gulf Coast University,civil,FLOOR,CHM 1045L,General Chemistry I Laboratory,1.0,required,nat,lab_field,True
+433660,Florida Gulf Coast University,civil,FLOOR,MAC 2311,Calculus I,4.0,required,math,math_science,True
+433660,Florida Gulf Coast University,civil,FLOOR,MAC 2312,Calculus II,4.0,required,math,math_science,True
+433660,Florida Gulf Coast University,civil,FLOOR,MAC 2313,Calculus III,4.0,required,,math_science,False
+433660,Florida Gulf Coast University,civil,FLOOR,MAP 2302,Differential Equations,3.0,required,,math_science,False
+433660,Florida Gulf Coast University,civil,FLOOR,PHY 2048,General Physics I,3.0,required,nat,math_science,True
+433660,Florida Gulf Coast University,civil,FLOOR,PHY 2048L,General Physics I Laboratory,1.0,required,nat,lab_field,True
+433660,Florida Gulf Coast University,civil,FLOOR,PHY 2049,General Physics II,3.0,required,nat,math_science,True
+433660,Florida Gulf Coast University,civil,FLOOR,PHY 2049L,General Physics II Laboratory,1.0,required,nat,lab_field,True
+433660,Florida Gulf Coast University,civil,FLOOR,EGM 3420C,Engineering Mechanics,4.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,EGN 1041C,Computational Tools & Data Sci,2.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,EGS 1006L,Intro to the Engineering Prof.,1.0,required,,lab_field,False
+433660,Florida Gulf Coast University,civil,FLOOR,CCE 4031C,Project Planning & Regulations,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,civil,FLOOR,CEG 3011C,Geotechnical Engineering I,3.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,CES 3100C,Structural Analysis,3.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,CGN 3323C,Surveying and Geomatics,3.0,required,,lab_field,False
+433660,Florida Gulf Coast University,civil,FLOOR,CGN 4802,Civil Engin Senior Design,3.0,required,,design,False
+433660,Florida Gulf Coast University,civil,FLOOR,CWR 3201C,Engineering Fluid Mechanics,3.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,CWR 3202C,Hydrology and Hydraulics,3.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,CWR 4540C,Water Resources Design,3.0,required,,design,False
+433660,Florida Gulf Coast University,civil,FLOOR,EGN 2111C,Engineering Computer Graphics,3.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,EGN 3331C,Mechanics of Materials,3.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,ENV 3006C,Fundamentals of Environ Engrg,3.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,TTE 3002C,Transportation Engineering,3.0,required,,engineering_analysis,False
+433660,Florida Gulf Coast University,civil,FLOOR,CES 4605C,Steel Design,3.0,alternative,,design,False
+433660,Florida Gulf Coast University,civil,FLOOR,GENERIC COMM 2,General education (comm),3.0,filler,comm,communication,True
+433660,Florida Gulf Coast University,civil,FLOOR,GENERIC COMM 3,General education (comm),3.0,filler,comm,communication,True
+433660,Florida Gulf Coast University,civil,FLOOR,GENERIC NAT 3,General education (nat),3.0,filler,,general_education,False
+433660,Florida Gulf Coast University,civil,FLOOR,GENERIC SOC 1,General education (soc),3.0,filler,hum,general_education,True
+433660,Florida Gulf Coast University,civil,FLOOR,GENERIC SOC 3,General education (soc),3.0,filler,hum,general_education,True
+433660,Florida Gulf Coast University,civil,FLOOR,GENERIC SOC 5,General education (soc),3.0,filler,soc,general_education,True
+433660,Florida Gulf Coast University,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+433660,Florida Gulf Coast University,construction management,FLOOR,ACG 2021,Intro. to Financial Acctg.,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 1210C,Construction Materials,4.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 1251C,Construction Drawing,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BUL 3130,Legal & Ethical Enviro of Bus,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,ECO 2013,Principles of Macroeconomics,3.0,required,soc,general_education,True
+433660,Florida Gulf Coast University,construction management,FLOOR,GLY 2030C,Environmental Geology,3.0,required,nat,math_science,True
+433660,Florida Gulf Coast University,construction management,FLOOR,MAC 1147,Precalculus,5.0,required,math,math_science,True
+433660,Florida Gulf Coast University,construction management,FLOOR,PHY 2053,College Physics I,3.0,required,nat,math_science,True
+433660,Florida Gulf Coast University,construction management,FLOOR,PHY 2053L,College Physics I Laboratory,1.0,required,nat,lab_field,True
+433660,Florida Gulf Coast University,construction management,FLOOR,SPC 1608,Effective Speaking,3.0,required,comm,communication,True
+433660,Florida Gulf Coast University,construction management,FLOOR,STA 2023,Statistical Methods,3.0,required,math,math_science,True
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 3218C,Construction Materials II,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 3240C,Construction Methods and Equip,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 3255,Graphic Communication in Const,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 3521C,Electrical Systems,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 3590,Sustainable Approach to Const,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 3611C,Construction Estimating I,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 4252,Building Information Modeling,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 4612C,Estimating II,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 4709C,Const Project Management,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 4720,Const Planning and Control,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 4730,Construction Safety Health&Env,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 4740,Construction Law & Contracts,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 4753C,Construction Finance,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 4787,Const Capstone,3.0,required,,design,False
+433660,Florida Gulf Coast University,construction management,FLOOR,MAN 3025,Principles of Management,3.0,required,,business_construction,False
+433660,Florida Gulf Coast University,construction management,FLOOR,ENC 1102,Composition II,3.0,required,comm,communication,True
+433660,Florida Gulf Coast University,construction management,FLOOR,ENC 1101,Composition I,3.0,required,comm,communication,True
+433660,Florida Gulf Coast University,construction management,FLOOR,AMH 2020,U.S. History Since 1877,3.0,alternative,soc,general_education,True
+433660,Florida Gulf Coast University,construction management,FLOOR,BCN 4949,Internship in Const,1.0,choice_list,,lab_field,False
+433660,Florida Gulf Coast University,construction management,FLOOR,LIT 2000,Introduction to Literature,3.0,choice_list,hum,general_education,True
+433660,Florida Gulf Coast University,construction management,FLOOR,THE 2000,Theatre Appreciation,3.0,choice_list,hum,general_education,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,MATH 1350,Calculus I,2.6666666666666665,required,math,math_science,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,MATH 1360,Calculus II,2.6666666666666665,required,math,math_science,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,MATH 1370,Calculus III,2.6666666666666665,required,math,math_science,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,MATH 2350,Differential Equations,2.0,required,math,math_science,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,SCIE 1210,Principles of Chemistry,2.0,required,nat,math_science,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,SCIE 1211,Principles of Chemistry Laboratory,0.6666666666666666,required,nat,lab_field,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,SCIE 1430,Physics I,2.6666666666666665,required,nat,math_science,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGL 1020,English Composition I,2.0,required,comm,communication,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGL 1026,Fundamentals of Speech Communication,2.0,required,comm,communication,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGI 2110,Engineering Mechanics-Statics,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGI 2120,Mechanics of Materials,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGI 2260,Engineering Economics,2.0,required,,business_construction,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGI 2410,"Engineering Mechanics, Dynamics",2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGI 2420,Fluid Mechanics,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CEE 1010,Engineering Graphics for Civil and Environmental Engineers,2.6666666666666665,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CEE 2110,Engineering Geology,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CEE 2210,Probability and Statistics for Civil and Environmental Engineers,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CEE 2310,"Algorithms, Programming, and Numerical Analysis",2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CEE 2311,"Algorithms, Programming, and Numerical Analysis Laboratory",0.6666666666666666,required,,lab_field,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CEE 3410,Water Resources and Hydraulic Engineering,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,SURV 2095,Principles of Surveying for Engineers,0.6666666666666666,required,,lab_field,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 2510,Construction Materials,2.0,required,,business_construction,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 2511,Construction Materials Laboratory,0.6666666666666666,required,,lab_field,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 3110,Structural Analysis I,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 3120,Structural Analysis II,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 3121,Structural Engineering Laboratory,0.6666666666666666,required,,lab_field,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 3130,Steel Structure Design,2.0,required,,design,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 3210,Geotechnical Engineering I,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 3310,Route Location and Geometric Design,2.0,required,,design,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 3320,Highway Engineering,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 3330,Transportation Engineering and Urban Planning,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CEE 3420,Design of Aqueducts and Sanitary Sewer Systems,2.0,required,,design,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 3520,Construction Project Management,2.0,required,,business_construction,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 4140,Concrete Structures Design,2.0,required,,design,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CEE 3430,Water Quality and Treatment,2.0,required,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 4530,Construction Methods and Productivity Improvement,2.0,required,,business_construction,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,CE 4911,Civil Engineering Senior Design Project I,0.6666666666666666,required,,design,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,MATH 1330,Precalculus I,2.0,prerequisite_of_listed,math,math_science,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGL 0110,English Grammar,2.0,prerequisite_of_listed,comm,communication,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGI 2270,Engineering Probability and Statistics,2.0,prerequisite_of_listed,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,SCIE 1214,General Chemistry I,2.0,prerequisite_of_listed,nat,math_science,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENVE 1011,Introduction to Environmental Engineering,0.6666666666666666,prerequisite_of_listed,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENGI 1140,,2.0,prerequisite_of_listed,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,ENVE 3010,Environmental Engineering Operations and Processes,2.0,prerequisite_of_listed,,engineering_analysis,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,GENERIC NAT 1,General education (nat),3.0,filler,,general_education,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,GENERIC NAT 2,General education (nat),3.0,filler,,general_education,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,GENERIC NAT 3,General education (nat),3.0,filler,,general_education,False
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,GENERIC ANY 5,General education (any),3.0,filler,hum,general_education,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,GENERIC ANY 6,General education (any),3.0,filler,hum,general_education,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,GENERIC CIVIC,Civic literacy course,3.0,filler,soc,general_education,True
+456490,Polytechnic University of Puerto Rico-Orlando,civil,FLOOR,GENERIC BM economics,Business: economics,3.0,filler,soc,general_education,True

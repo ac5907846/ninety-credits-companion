@@ -1,0 +1,4762 @@
+{
+ "futures": 20000,
+ "status": "all ranges from 01_raw_data (exposure, learning, labor, workforce preparation, futurists)",
+ "ranges": {
+  "ai_save_math_science": [
+   0.0,
+   0.25
+  ],
+  "ai_save_engineering_analysis": [
+   0.0,
+   0.15
+  ],
+  "ai_save_design": [
+   -0.05,
+   0.1
+  ],
+  "ai_save_lab_field": [
+   0.0,
+   0.05
+  ],
+  "ai_save_communication": [
+   -0.05,
+   0.15
+  ],
+  "ai_save_business_construction": [
+   0.0,
+   0.2
+  ],
+  "ai_save_general_education": [
+   0.0,
+   0.15
+  ],
+  "ai_recognition": [
+   0.0,
+   1.0
+  ],
+  "ai_literacy_credits": [
+   0.0,
+   3.0
+  ],
+  "ai_gap_multiplier": [
+   0.6,
+   1.3
+  ],
+  "ai_offloading_loss": [
+   0.0,
+   0.07
+  ],
+  "ai_entry_shock": [
+   -0.02,
+   0.08
+  ],
+  "ai_completion_change": [
+   -0.01,
+   0.02
+  ],
+  "ai_uptake_multiplier": [
+   1.0,
+   1.5
+  ],
+  "ai_demand_shift": [
+   -0.02,
+   0.01
+  ],
+  "ai_instruction_cost_cut": [
+   -0.05,
+   0.15
+  ],
+  "ai_openings_change": [
+   -0.1,
+   0.02
+  ],
+  "employer_surplus_share": [
+   0.1,
+   0.5
+  ],
+  "extra_training_cost": [
+   3000.0,
+   12500.0
+  ],
+  "ai_training_cost_cut": [
+   0.0,
+   0.4
+  ],
+  "wil_close": [
+   0.25,
+   0.8
+  ],
+  "wil_fail": [
+   0.1,
+   0.5
+  ],
+  "ai_guarded": [
+   0.0,
+   1.0
+  ],
+  "merge_overlap": [
+   0.05,
+   0.15
+  ]
+ },
+ "credit_share_by_type": {
+  "construction": {
+   "math_science": 0.154,
+   "engineering_analysis": 0.004,
+   "design": 0.045,
+   "lab_field": 0.041,
+   "communication": 0.071,
+   "business_construction": 0.553,
+   "general_education": 0.132
+  },
+  "construction_content": {
+   "math_science": 0.012,
+   "engineering_analysis": 0.006,
+   "design": 0.07,
+   "lab_field": 0.047,
+   "communication": 0.0,
+   "business_construction": 0.865,
+   "general_education": 0.0
+  },
+  "construction_gen_ed": {
+   "math_science": 0.407,
+   "engineering_analysis": 0.0,
+   "design": 0.0,
+   "lab_field": 0.031,
+   "communication": 0.197,
+   "business_construction": 0.0,
+   "general_education": 0.366
+  },
+  "civil": {
+   "math_science": 0.305,
+   "engineering_analysis": 0.339,
+   "design": 0.056,
+   "lab_field": 0.067,
+   "communication": 0.065,
+   "business_construction": 0.033,
+   "general_education": 0.135
+  },
+  "civil_content": {
+   "math_science": 0.166,
+   "engineering_analysis": 0.566,
+   "design": 0.093,
+   "lab_field": 0.099,
+   "communication": 0.004,
+   "business_construction": 0.055,
+   "general_education": 0.017
+  },
+  "civil_gen_ed": {
+   "math_science": 0.514,
+   "engineering_analysis": 0.0,
+   "design": 0.0,
+   "lab_field": 0.019,
+   "communication": 0.156,
+   "business_construction": 0.0,
+   "general_education": 0.311
+  }
+ },
+ "merge_share": {
+  "construction": 0.27524972253052166,
+  "civil": 0.16295157571099156
+ },
+ "curriculum": {
+  "civil|accreditor content|full recognition": {
+   "floor_median": 96.0,
+   "ai_floor_median_of_medians": 95.61983831724075,
+   "programs": 12,
+   "programs_majority_futures_le90": 0,
+   "uniform_saving_needed_median": 0.10172413793103449,
+   "uniform_saving_needed_with_literacy_median": 0.15258620689655172
+  },
+  "civil|accreditor content|sampled recognition": {
+   "floor_median": 96.0,
+   "ai_floor_median_of_medians": 96.56528557508383,
+   "programs": 12,
+   "programs_majority_futures_le90": 0,
+   "uniform_saving_needed_median": 0.10172413793103449,
+   "uniform_saving_needed_with_literacy_median": 0.15258620689655172
+  },
+  "civil|all content|full recognition": {
+   "floor_median": 96.0,
+   "ai_floor_median_of_medians": 94.00909929581249,
+   "programs": 12,
+   "programs_majority_futures_le90": 0,
+   "uniform_saving_needed_median": 0.0625,
+   "uniform_saving_needed_with_literacy_median": 0.09375
+  },
+  "civil|all content|sampled recognition": {
+   "floor_median": 96.0,
+   "ai_floor_median_of_medians": 95.98380983767066,
+   "programs": 12,
+   "programs_majority_futures_le90": 0,
+   "uniform_saving_needed_median": 0.0625,
+   "uniform_saving_needed_with_literacy_median": 0.09375
+  },
+  "construction management|accreditor content|full recognition": {
+   "floor_median": 97.0,
+   "ai_floor_median_of_medians": 96.30558571007816,
+   "programs": 8,
+   "programs_majority_futures_le90": 0,
+   "uniform_saving_needed_median": 0.11557377049180328,
+   "uniform_saving_needed_with_literacy_median": 0.1651639344262295
+  },
+  "construction management|accreditor content|sampled recognition": {
+   "floor_median": 97.0,
+   "ai_floor_median_of_medians": 97.42408892327856,
+   "programs": 8,
+   "programs_majority_futures_le90": 0,
+   "uniform_saving_needed_median": 0.11557377049180328,
+   "uniform_saving_needed_with_literacy_median": 0.1651639344262295
+  },
+  "construction management|all content|full recognition": {
+   "floor_median": 97.0,
+   "ai_floor_median_of_medians": 94.70843476047251,
+   "programs": 8,
+   "programs_majority_futures_le90": 1,
+   "uniform_saving_needed_median": 0.07206632653061223,
+   "uniform_saving_needed_with_literacy_median": 0.10299744897959184
+  },
+  "construction management|all content|sampled recognition": {
+   "floor_median": 97.0,
+   "ai_floor_median_of_medians": 96.87653156821213,
+   "programs": 8,
+   "programs_majority_futures_le90": 0,
+   "uniform_saving_needed_median": 0.07206632653061223,
+   "uniform_saving_needed_with_literacy_median": 0.10299744897959184
+  }
+ },
+ "national_cm": [
+  {
+   "recognition": "full recognition",
+   "states_at_or_below_90": {
+    "p10": 2.0,
+    "median": 35.0,
+    "p90": 43.0,
+    "share_positive": 1.0
+   },
+   "without_ai": 34
+  },
+  {
+   "recognition": "sampled recognition",
+   "states_at_or_below_90": {
+    "p10": 2.0,
+    "median": 34.0,
+    "p90": 37.0,
+    "share_positive": 1.0
+   },
+   "without_ai": 34
+  }
+ ],
+ "United States|construction|no_ai": {
+  "students": {
+   "p10": -209819975.17482242,
+   "median": 191034650.67669797,
+   "p90": 1137053044.7968254,
+   "share_positive": 0.77035
+  },
+  "institutions": {
+   "p10": -116365300.98734728,
+   "median": -24539643.030520454,
+   "p90": 142258.4560362186,
+   "share_positive": 0.1025
+  },
+  "states": {
+   "p10": -16384.802738063812,
+   "median": 7335452.8723254595,
+   "p90": 46161054.51908627,
+   "share_positive": 0.8975
+  },
+  "industry": {
+   "p10": 24135276.000834603,
+   "median": 173415052.7281677,
+   "p90": 806476748.7460567,
+   "share_positive": 0.9884
+  },
+  "industry_worker_value": {
+   "p10": 48543368.39739793,
+   "median": 241976193.19756883,
+   "p90": 983407438.6947392,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 12212707.503845146,
+   "median": 55799154.38459341,
+   "p90": 196376202.30954716,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 97.82710279738423,
+   "median": 716.4045631279309,
+   "p90": 3056.1340922976624,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.13372485548258217,
+   "median": 0.16862532626597673,
+   "p90": 0.21138102397641892,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -29615.323135795054,
+   "median": 35655.70545060847,
+   "p90": 84445.80720221577,
+   "share_positive": 0.77035
+  }
+ },
+ "Florida|construction|no_ai": {
+  "students": {
+   "p10": -18631911.89445983,
+   "median": 11641735.17066445,
+   "p90": 75789465.63322455,
+   "share_positive": 0.73065
+  },
+  "institutions": {
+   "p10": -8267761.685879213,
+   "median": -1921923.495459389,
+   "p90": -160085.78570940712,
+   "share_positive": 0.05725
+  },
+  "states": {
+   "p10": 24015.015804837065,
+   "median": 586678.4585735921,
+   "p90": 3323372.0687769013,
+   "share_positive": 0.94275
+  },
+  "industry": {
+   "p10": 1690457.1909539534,
+   "median": 11824166.630448796,
+   "p90": 54315389.968510225,
+   "share_positive": 0.9899
+  },
+  "industry_worker_value": {
+   "p10": 3342576.4760346226,
+   "median": 16498272.61350552,
+   "p90": 66157659.57308326,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 840232.7146359103,
+   "median": 3810260.793839667,
+   "p90": 13352317.319347864,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 6.666712772644582,
+   "median": 48.76116643072868,
+   "p90": 206.62117291105207,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.10142849446707741,
+   "median": 0.12812251371006547,
+   "p90": 0.16087116012246516,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -35565.42268890474,
+   "median": 34042.76263504774,
+   "p90": 83062.6050318775,
+   "share_positive": 0.73065
+  }
+ },
+ "United States|construction|ai": {
+  "students": {
+   "p10": -234230077.89123827,
+   "median": 209422257.70034093,
+   "p90": 1250986478.5451784,
+   "share_positive": 0.77635
+  },
+  "institutions": {
+   "p10": -131005091.07848743,
+   "median": -26684267.87426766,
+   "p90": 720178.0831354819,
+   "share_positive": 0.1118
+  },
+  "states": {
+   "p10": -123166.45774270227,
+   "median": 7761311.327418855,
+   "p90": 51504379.54842949,
+   "share_positive": 0.8882
+  },
+  "industry": {
+   "p10": 34874442.17236608,
+   "median": 218223745.951738,
+   "p90": 1003041489.1237229,
+   "share_positive": 0.99605
+  },
+  "industry_worker_value": {
+   "p10": 54632377.87358273,
+   "median": 280705681.58979,
+   "p90": 1167856126.6647189,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 10541137.097710965,
+   "median": 49833612.89287097,
+   "p90": 182448752.51140553,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 112.85277861179875,
+   "median": 843.1518272423609,
+   "p90": 3612.420028085517,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.12711747725515188,
+   "median": 0.16698310677561545,
+   "p90": 0.21666133622668068,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -29844.2814927616,
+   "median": 35433.77795995897,
+   "p90": 79547.335342468,
+   "share_positive": 0.77635
+  }
+ },
+ "Florida|construction|ai": {
+  "students": {
+   "p10": -20725129.11735671,
+   "median": 12830820.784683697,
+   "p90": 83022182.86809823,
+   "share_positive": 0.742
+  },
+  "institutions": {
+   "p10": -9426008.02167362,
+   "median": -2113903.700536265,
+   "p90": -150749.58238597785,
+   "share_positive": 0.06285
+  },
+  "states": {
+   "p10": 21372.586053376264,
+   "median": 630608.5450725325,
+   "p90": 3734077.4765887703,
+   "share_positive": 0.93715
+  },
+  "industry": {
+   "p10": 2409206.2544256807,
+   "median": 14846487.806858718,
+   "p90": 67280699.28811824,
+   "share_positive": 0.9969
+  },
+  "industry_worker_value": {
+   "p10": 3749379.021577408,
+   "median": 19108910.097047705,
+   "p90": 78540074.75178875,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 720618.1940231556,
+   "median": 3402020.824275737,
+   "p90": 12406582.157098642,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 7.6904626861123635,
+   "median": 57.18838763395041,
+   "p90": 244.88153338069964,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.0963786860319017,
+   "median": 0.12683154866577737,
+   "p90": 0.16480616515201504,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -35792.85342050772,
+   "median": 33717.25102838734,
+   "p90": 78336.41130924443,
+   "share_positive": 0.742
+  }
+ },
+ "United States|construction|ai_wil": {
+  "students": {
+   "p10": 26354141.318448108,
+   "median": 390239554.9759494,
+   "p90": 1641637522.9492748,
+   "share_positive": 0.9299
+  },
+  "institutions": {
+   "p10": -131005091.07848743,
+   "median": -26684267.87426766,
+   "p90": 720178.0831354819,
+   "share_positive": 0.1118
+  },
+  "states": {
+   "p10": -123166.45774270227,
+   "median": 7761311.327418855,
+   "p90": 51504379.54842949,
+   "share_positive": 0.8882
+  },
+  "industry": {
+   "p10": 42641583.62995138,
+   "median": 241636486.390255,
+   "p90": 1067751313.0219352,
+   "share_positive": 0.9994
+  },
+  "industry_worker_value": {
+   "p10": 54632377.87358273,
+   "median": 280705681.58979,
+   "p90": 1167856126.6647189,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 6410116.807023329,
+   "median": 30399265.728951488,
+   "p90": 114941998.79265581,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 112.85277861179875,
+   "median": 843.1518272423609,
+   "p90": 3612.420028085517,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.12711747725515188,
+   "median": 0.16698310677561545,
+   "p90": 0.21666133622668068,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": 8702.278908740249,
+   "median": 54758.49046559809,
+   "p90": 88389.53040234963,
+   "share_positive": 0.9299
+  }
+ },
+ "Florida|construction|ai_wil": {
+  "students": {
+   "p10": 603344.6049441928,
+   "median": 25461760.905862898,
+   "p90": 109568961.31100976,
+   "share_positive": 0.91095
+  },
+  "institutions": {
+   "p10": -9426008.02167362,
+   "median": -2113903.700536265,
+   "p90": -150749.58238597785,
+   "share_positive": 0.06285
+  },
+  "states": {
+   "p10": 21372.586053376264,
+   "median": 630608.5450725325,
+   "p90": 3734077.4765887703,
+   "share_positive": 0.93715
+  },
+  "industry": {
+   "p10": 2940139.8266660194,
+   "median": 16378249.264329052,
+   "p90": 71399752.68372518,
+   "share_positive": 0.99975
+  },
+  "industry_worker_value": {
+   "p10": 3749379.021577408,
+   "median": 19108910.097047705,
+   "p90": 78540074.75178875,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 437841.073683961,
+   "median": 2077766.355917044,
+   "p90": 7830723.542814834,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 7.6904626861123635,
+   "median": 57.18838763395041,
+   "p90": 244.88153338069964,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.0963786860319017,
+   "median": 0.12683154866577737,
+   "p90": 0.16480616515201504,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": 3307.6261934358504,
+   "median": 53858.30837794002,
+   "p90": 86966.18660490861,
+   "share_positive": 0.91095
+  }
+ },
+ "United States|civil|no_ai": {
+  "students": {
+   "p10": -864040839.800066,
+   "median": 290513550.41774446,
+   "p90": 2204106565.4089518,
+   "share_positive": 0.69195
+  },
+  "institutions": {
+   "p10": -370944826.6776808,
+   "median": -95983870.63130394,
+   "p90": -15051338.279206416,
+   "share_positive": 0.0212
+  },
+  "states": {
+   "p10": 2248856.322086662,
+   "median": 27327055.61930227,
+   "p90": 139841447.94987833,
+   "share_positive": 0.9788
+  },
+  "industry": {
+   "p10": 54488572.96314281,
+   "median": 356821193.84666336,
+   "p90": 1589452855.8667004,
+   "share_positive": 0.99395
+  },
+  "industry_worker_value": {
+   "p10": 100041774.08507952,
+   "median": 488418970.66786975,
+   "p90": 1936593947.643344,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 23876441.491935343,
+   "median": 108210574.21570818,
+   "p90": 379306588.4564547,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 213.69710898079938,
+   "median": 1549.685144447939,
+   "p90": 6513.551236602548,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.5668647442625999,
+   "median": 0.7133088795239999,
+   "p90": 0.8921820952622499,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -54479.54757789968,
+   "median": 30167.68898232029,
+   "p90": 90421.5023966386,
+   "share_positive": 0.69195
+  }
+ },
+ "Florida|civil|no_ai": {
+  "students": {
+   "p10": -54959234.87070387,
+   "median": 12668420.231483761,
+   "p90": 113136948.68884695,
+   "share_positive": 0.66055
+  },
+  "institutions": {
+   "p10": -14705233.632877043,
+   "median": -3514383.4388191574,
+   "p90": -527993.2913832298,
+   "share_positive": 0.01305
+  },
+  "states": {
+   "p10": 212517.63096033107,
+   "median": 2169989.2543718726,
+   "p90": 10491812.880533462,
+   "share_positive": 0.98695
+  },
+  "industry": {
+   "p10": 3148826.4620485543,
+   "median": 19928727.15707277,
+   "p90": 88058336.48594794,
+   "share_positive": 0.9955
+  },
+  "industry_worker_value": {
+   "p10": 5600624.521997988,
+   "median": 27083171.773108713,
+   "p90": 106113673.49791421,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 1309325.9667561078,
+   "median": 5915419.073193296,
+   "p90": 20695219.278021164,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 12.122046179849168,
+   "median": 87.6534127566834,
+   "p90": 367.75436466562945,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.4769897422346688,
+   "median": 0.6007464777040932,
+   "p90": 0.7513613283539846,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -61954.009742099974,
+   "median": 25385.782155296467,
+   "p90": 86987.19300901612,
+   "share_positive": 0.66055
+  }
+ },
+ "United States|civil|ai": {
+  "students": {
+   "p10": -963423912.3359007,
+   "median": 327406431.6050345,
+   "p90": 2411507886.8110714,
+   "share_positive": 0.7052
+  },
+  "institutions": {
+   "p10": -426559583.67236316,
+   "median": -107488232.18327239,
+   "p90": -16002352.277830886,
+   "share_positive": 0.0221
+  },
+  "states": {
+   "p10": 2363299.105233415,
+   "median": 30083947.7450241,
+   "p90": 157386528.38873112,
+   "share_positive": 0.9779
+  },
+  "industry": {
+   "p10": 74982386.50142284,
+   "median": 443176237.9650707,
+   "p90": 1963422990.623082,
+   "share_positive": 0.99825
+  },
+  "industry_worker_value": {
+   "p10": 112225743.1548369,
+   "median": 562345132.4053917,
+   "p90": 2273624927.2580357,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 20469125.194603886,
+   "median": 96598833.14975363,
+   "p90": 352147577.0249084,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 246.9678446560287,
+   "median": 1811.5820280073922,
+   "p90": 7651.478709881949,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.5393748014574814,
+   "median": 0.7070769844848162,
+   "p90": 0.9150888365473521,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -55361.95421825323,
+   "median": 30730.76089273347,
+   "p90": 85585.14513472654,
+   "share_positive": 0.7052
+  }
+ },
+ "Florida|civil|ai": {
+  "students": {
+   "p10": -62185716.791612454,
+   "median": 14342440.073907785,
+   "p90": 123220173.74313618,
+   "share_positive": 0.67005
+  },
+  "institutions": {
+   "p10": -16894130.740350947,
+   "median": -3984390.670706123,
+   "p90": -608076.0066111843,
+   "share_positive": 0.01265
+  },
+  "states": {
+   "p10": 225278.2396838433,
+   "median": 2400264.6078947783,
+   "p90": 11921550.385340802,
+   "share_positive": 0.98735
+  },
+  "industry": {
+   "p10": 4247630.028671672,
+   "median": 24582139.96033304,
+   "p90": 107900635.66801108,
+   "share_positive": 0.9987
+  },
+  "industry_worker_value": {
+   "p10": 6243079.679916756,
+   "median": 31003149.072051734,
+   "p90": 124613168.85470784,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 1121909.1086477714,
+   "median": 5273933.13112813,
+   "p90": 19248904.649188258,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 13.928747001430914,
+   "median": 102.04624874660234,
+   "p90": 430.01598376225877,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.4537557455991459,
+   "median": 0.5952648966024512,
+   "p90": 0.7710230736603694,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -62516.423059158995,
+   "median": 25702.477633546914,
+   "p90": 82031.3414362064,
+   "share_positive": 0.67005
+  }
+ },
+ "United States|civil|ai_wil": {
+  "students": {
+   "p10": -36439671.267263785,
+   "median": 719951801.6243484,
+   "p90": 3271761196.509275,
+   "share_positive": 0.8883
+  },
+  "institutions": {
+   "p10": -426559583.67236316,
+   "median": -107488232.18327239,
+   "p90": -16002352.277830886,
+   "share_positive": 0.0221
+  },
+  "states": {
+   "p10": 2363299.105233415,
+   "median": 30083947.7450241,
+   "p90": 157386528.38873112,
+   "share_positive": 0.9779
+  },
+  "industry": {
+   "p10": 90017048.97230925,
+   "median": 487593383.12701625,
+   "p90": 2081284899.317895,
+   "share_positive": 0.9999
+  },
+  "industry_worker_value": {
+   "p10": 112225743.1548369,
+   "median": 562345132.4053917,
+   "p90": 2273624927.2580357,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 12433851.039632313,
+   "median": 58987756.202666886,
+   "p90": 222346509.70996052,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 246.9678446560287,
+   "median": 1811.5820280073922,
+   "p90": 7651.478709881949,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.5393748014574814,
+   "median": 0.7070769844848162,
+   "p90": 0.9150888365473521,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -3539.8628710307116,
+   "median": 54731.2501556333,
+   "p90": 96154.80261099608,
+   "share_positive": 0.8883
+  }
+ },
+ "Florida|civil|ai_wil": {
+  "students": {
+   "p10": -5766575.774245195,
+   "median": 35190174.427487694,
+   "p90": 167336556.13482478,
+   "share_positive": 0.866
+  },
+  "institutions": {
+   "p10": -16894130.740350947,
+   "median": -3984390.670706123,
+   "p90": -608076.0066111843,
+   "share_positive": 0.01265
+  },
+  "states": {
+   "p10": 225278.2396838433,
+   "median": 2400264.6078947783,
+   "p90": 11921550.385340802,
+   "share_positive": 0.98735
+  },
+  "industry": {
+   "p10": 5065101.832677825,
+   "median": 27079164.33259134,
+   "p90": 113981672.63144736,
+   "share_positive": 0.9999
+  },
+  "industry_worker_value": {
+   "p10": 6243079.679916756,
+   "median": 31003149.072051734,
+   "p90": 124613168.85470784,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 682668.9356197063,
+   "median": 3226704.245899779,
+   "p90": 12121546.30256288,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 13.928747001430914,
+   "median": 102.04624874660234,
+   "p90": 430.01598376225877,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.4537557455991459,
+   "median": 0.5952648966024512,
+   "p90": 0.7710230736603694,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -9008.179432797488,
+   "median": 50513.1959776484,
+   "p90": 92920.05842534473,
+   "share_positive": 0.866
+  }
+ },
+ "prim": {
+  "construction": [
+   {
+    "label": "students gain",
+    "share_of_futures": 0.77635,
+    "coverage": 0.9492496940812778,
+    "density": 0.8165650969529086,
+    "mass": 0.9025,
+    "box": {
+     "entry_penalty": [
+      0.0,
+      0.1742
+     ]
+    }
+   },
+   {
+    "label": "institutions break even or gain",
+    "share_of_futures": 0.1118,
+    "coverage": 0.528175313059034,
+    "density": 0.8128011011699932,
+    "mass": 0.07265,
+    "box": {
+     "demand_elasticity": [
+      0.4729,
+      0.6
+     ],
+     "completion_change": [
+      0.0489,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "industry gains",
+    "share_of_futures": 0.99605,
+    "coverage": 1.0,
+    "density": 0.99605,
+    "mass": 1.0,
+    "box": {}
+   },
+   {
+    "label": "students, institutions and industry all gain",
+    "share_of_futures": 0.08685,
+    "coverage": 0.42774899251583187,
+    "density": 0.734915924826904,
+    "mass": 0.05055,
+    "box": {
+     "ai_gap_multiplier": [
+      0.6,
+      1.2587
+     ],
+     "demand_elasticity": [
+      0.4731,
+      0.6
+     ],
+     "completion_change": [
+      0.0489,
+      0.1
+     ],
+     "entry_penalty": [
+      0.0,
+      0.1738
+     ],
+     "penalty_fade": [
+      0.0243,
+      0.15
+     ]
+    }
+   }
+  ],
+  "civil": [
+   {
+    "label": "students gain",
+    "share_of_futures": 0.7052,
+    "coverage": 0.8889676687464549,
+    "density": 0.8102623755977769,
+    "mass": 0.7737,
+    "box": {
+     "entry_penalty": [
+      0.0,
+      0.1493
+     ]
+    }
+   },
+   {
+    "label": "institutions break even or gain",
+    "share_of_futures": 0.0221,
+    "coverage": 0.7307692307692307,
+    "density": 0.31948565776458954,
+    "mass": 0.05055,
+    "box": {
+     "accreditor_year": [
+      2043.2725,
+      2049.9999
+     ],
+     "unaccredited_share": [
+      0.0,
+      0.1432
+     ],
+     "demand_elasticity": [
+      0.203,
+      0.6
+     ],
+     "completion_change": [
+      -0.0342,
+      0.1
+     ]
+    }
+   },
+   {
+    "label": "industry gains",
+    "share_of_futures": 0.99825,
+    "coverage": 1.0,
+    "density": 0.99825,
+    "mass": 1.0,
+    "box": {}
+   },
+   {
+    "label": "students, institutions and industry all gain",
+    "share_of_futures": 0.0159,
+    "coverage": 0.7452830188679245,
+    "density": 0.2344213649851632,
+    "mass": 0.05055,
+    "box": {
+     "merge_overlap": [
+      0.05,
+      0.1449
+     ],
+     "accreditor_year": [
+      2042.9363,
+      2049.9999
+     ],
+     "unaccredited_share": [
+      0.0,
+      0.142
+     ],
+     "demand_elasticity": [
+      0.2024,
+      0.6
+     ],
+     "completion_change": [
+      -0.0347,
+      0.1
+     ]
+    }
+   }
+  ]
+ },
+ "futures_named": {
+  "F1": {
+   "label": "AI tutor revolution",
+   "ranges": {
+    "ai_save_general_education": [
+     0.2,
+     0.35
+    ],
+    "ai_save_communication": [
+     0.2,
+     0.35
+    ],
+    "ai_save_math_science": [
+     0.15,
+     0.3
+    ],
+    "ai_save_engineering_analysis": [
+     0.1,
+     0.25
+    ],
+    "ai_save_business_construction": [
+     0.1,
+     0.25
+    ],
+    "ai_save_design": [
+     0.0,
+     0.1
+    ],
+    "ai_save_lab_field": [
+     0.0,
+     0.1
+    ],
+    "ai_guarded": [
+     0.7,
+     1.0
+    ],
+    "ai_offloading_loss": [
+     0.0,
+     0.01
+    ],
+    "ai_recognition": [
+     0.3,
+     0.7
+    ],
+    "accreditor_year": [
+     2028,
+     2032
+    ],
+    "ai_entry_shock": [
+     0.0,
+     0.033
+    ],
+    "ai_gap_multiplier": [
+     0.5,
+     0.75
+    ],
+    "ai_demand_shift": [
+     0.0,
+     0.02
+    ],
+    "ai_uptake_multiplier": [
+     1.2,
+     1.5
+    ],
+    "ai_instruction_cost_cut": [
+     0.1,
+     0.25
+    ],
+    "ai_training_cost_cut": [
+     0.1,
+     0.2
+    ]
+   },
+   "us_construction_ai": {
+    "students": {
+     "p10": 265090618.58303124,
+     "median": 1176092238.4950857,
+     "p90": 3784229755.0922356,
+     "share_positive": 0.9794
+    },
+    "institutions": {
+     "p10": -291359087.51705766,
+     "median": -75709551.04014544,
+     "p90": -6071397.25878865,
+     "share_positive": 0.068
+    },
+    "states": {
+     "p10": 729835.867717767,
+     "median": 21930859.002369598,
+     "p90": 112703124.20870154,
+     "share_positive": 0.932
+    },
+    "industry": {
+     "p10": 108810185.85888217,
+     "median": 565651802.6125398,
+     "p90": 2143664919.9968984,
+     "share_positive": 0.9964
+    },
+    "industry_worker_value": {
+     "p10": 175563461.50406632,
+     "median": 718304294.9858993,
+     "p90": 2482724530.6390347,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 35530483.49522737,
+     "median": 127821430.80156156,
+     "p90": 383123314.5373154,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 721.3259782143361,
+     "median": 2647.944923198065,
+     "p90": 7803.876432666579,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.1574653450078466,
+     "median": 0.2031044158128306,
+     "p90": 0.2588169933710893,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 27329.942366943433,
+     "median": 63820.382631491804,
+     "p90": 94702.31354734531,
+     "share_positive": 0.9794
+    }
+   },
+   "fl_construction_ai": {
+    "students": {
+     "p10": 16299201.613036476,
+     "median": 77838862.8648641,
+     "p90": 252610257.35828835,
+     "share_positive": 0.9692
+    },
+    "institutions": {
+     "p10": -20752316.84948752,
+     "median": -5769336.001253473,
+     "p90": -1028506.6825555293,
+     "share_positive": 0.0236
+    },
+    "states": {
+     "p10": 161061.289793536,
+     "median": 1716893.5692836926,
+     "p90": 7941047.429208275,
+     "share_positive": 0.9764
+    },
+    "industry": {
+     "p10": 7575904.162781659,
+     "median": 38228922.41949156,
+     "p90": 143687922.41769892,
+     "share_positive": 0.9966
+    },
+    "industry_worker_value": {
+     "p10": 12110486.237142196,
+     "median": 48405853.434038386,
+     "p90": 166360914.81533456,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 2410525.015966684,
+     "median": 8717687.105178878,
+     "p90": 26137260.08630743,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 49.441901770293484,
+     "median": 178.8707636183035,
+     "p90": 523.5061298607147,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.11953230216036766,
+     "median": 0.15425434149211908,
+     "p90": 0.19685313090510387,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 23845.90489442682,
+     "median": 62697.536906537425,
+     "p90": 93276.29703354805,
+     "share_positive": 0.9692
+    }
+   },
+   "us_construction_ai_wil": {
+    "students": {
+     "p10": 403309278.39867526,
+     "median": 1434378548.9958503,
+     "p90": 4234007425.074476,
+     "share_positive": 0.9972
+    },
+    "institutions": {
+     "p10": -291359087.51705766,
+     "median": -75709551.04014544,
+     "p90": -6071397.25878865,
+     "share_positive": 0.068
+    },
+    "states": {
+     "p10": 729835.867717767,
+     "median": 21930859.002369598,
+     "p90": 112703124.20870154,
+     "share_positive": 0.932
+    },
+    "industry": {
+     "p10": 136686649.63678095,
+     "median": 619850117.5002759,
+     "p90": 2262919923.731872,
+     "share_positive": 0.9996
+    },
+    "industry_worker_value": {
+     "p10": 175563461.50406632,
+     "median": 718304294.9858993,
+     "p90": 2482724530.6390347,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 21810939.60060443,
+     "median": 79344733.2160353,
+     "p90": 246984526.31104162,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 721.3259782143361,
+     "median": 2647.944923198065,
+     "p90": 7803.876432666579,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.1574653450078466,
+     "median": 0.2031044158128306,
+     "p90": 0.2588169933710893,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 44867.17947719004,
+     "median": 72866.69627138802,
+     "p90": 100009.0261807171,
+     "share_positive": 0.9972
+    }
+   },
+   "fl_construction_ai_wil": {
+    "students": {
+     "p10": 26076293.896671712,
+     "median": 95430971.51688021,
+     "p90": 278970551.6921529,
+     "share_positive": 0.996
+    },
+    "institutions": {
+     "p10": -20752316.84948752,
+     "median": -5769336.001253473,
+     "p90": -1028506.6825555293,
+     "share_positive": 0.0236
+    },
+    "states": {
+     "p10": 161061.289793536,
+     "median": 1716893.5692836926,
+     "p90": 7941047.429208275,
+     "share_positive": 0.9764
+    },
+    "industry": {
+     "p10": 9417927.545608131,
+     "median": 42040941.67059313,
+     "p90": 151947341.17438686,
+     "share_positive": 0.9998
+    },
+    "industry_worker_value": {
+     "p10": 12110486.237142196,
+     "median": 48405853.434038386,
+     "p90": 166360914.81533456,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 1484128.3752637673,
+     "median": 5416275.164075125,
+     "p90": 16779830.811450668,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 49.441901770293484,
+     "median": 178.8707636183035,
+     "p90": 523.5061298607147,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.11953230216036766,
+     "median": 0.15425434149211908,
+     "p90": 0.19685313090510387,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 43659.746032828574,
+     "median": 71036.30459220527,
+     "p90": 98331.55480885268,
+     "share_positive": 0.996
+    }
+   },
+   "us_civil_ai": {
+    "students": {
+     "p10": 317680399.7069114,
+     "median": 2122562375.679327,
+     "p90": 7481840972.005103,
+     "share_positive": 0.945
+    },
+    "institutions": {
+     "p10": -946044360.2381033,
+     "median": -292392930.03057075,
+     "p90": -76318698.84396228,
+     "share_positive": 0.0
+    },
+    "states": {
+     "p10": 10983698.461949956,
+     "median": 80507078.4072423,
+     "p90": 334305818.8313678,
+     "share_positive": 1.0
+    },
+    "industry": {
+     "p10": 240001842.79747635,
+     "median": 1139965267.428872,
+     "p90": 4154493125.48744,
+     "share_positive": 0.9984
+    },
+    "industry_worker_value": {
+     "p10": 364025727.25514364,
+     "median": 1430034056.3754246,
+     "p90": 4802631012.683536,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 68517090.97546971,
+     "median": 247413840.4733243,
+     "p90": 742306532.2076588,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 1593.4030125586673,
+     "median": 5698.404132817171,
+     "p90": 16380.330265592229,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.6684972987130348,
+     "median": 0.8629145218849059,
+     "p90": 1.0980124787139787,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 15747.582301074643,
+     "median": 63237.21715218134,
+     "p90": 102252.59600776088,
+     "share_positive": 0.945
+    }
+   },
+   "fl_civil_ai": {
+    "students": {
+     "p10": 10928006.61037518,
+     "median": 106798866.35831694,
+     "p90": 385611220.2158593,
+     "share_positive": 0.9302
+    },
+    "institutions": {
+     "p10": -37311526.36013666,
+     "median": -11084591.30782096,
+     "p90": -2879188.3489343813,
+     "share_positive": 0.0
+    },
+    "states": {
+     "p10": 943724.7625897854,
+     "median": 6425830.184683969,
+     "p90": 25124561.190390926,
+     "share_positive": 1.0
+    },
+    "industry": {
+     "p10": 13458007.50479755,
+     "median": 63067204.868339315,
+     "p90": 227616482.42520544,
+     "share_positive": 0.9986
+    },
+    "industry_worker_value": {
+     "p10": 20278902.758155268,
+     "median": 78339329.13672271,
+     "p90": 261200207.3983335,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 3750172.3131695576,
+     "median": 13503950.219097659,
+     "p90": 40336550.517274566,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 90.08266622732923,
+     "median": 320.1047622810659,
+     "p90": 917.3005954925253,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.5635615100884789,
+     "median": 0.7273954760592212,
+     "p90": 0.9264672961031997,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 9363.18901145648,
+     "median": 58803.1105819174,
+     "p90": 98854.90776501433,
+     "share_positive": 0.9302
+    }
+   },
+   "us_civil_ai_wil": {
+    "students": {
+     "p10": 721173915.6459566,
+     "median": 2780584157.3118687,
+     "p90": 8625197519.997267,
+     "share_positive": 0.9906
+    },
+    "institutions": {
+     "p10": -946044360.2381033,
+     "median": -292392930.03057075,
+     "p90": -76318698.84396228,
+     "share_positive": 0.0
+    },
+    "states": {
+     "p10": 10983698.461949956,
+     "median": 80507078.4072423,
+     "p90": 334305818.8313678,
+     "share_positive": 1.0
+    },
+    "industry": {
+     "p10": 290118950.777762,
+     "median": 1253938548.3424954,
+     "p90": 4380469026.545835,
+     "share_positive": 1.0
+    },
+    "industry_worker_value": {
+     "p10": 364025727.25514364,
+     "median": 1430034056.3754246,
+     "p90": 4802631012.683536,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 42077253.14276083,
+     "median": 153547384.7651418,
+     "p90": 476305365.08978665,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 1593.4030125586673,
+     "median": 5698.404132817171,
+     "p90": 16380.330265592229,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.6684972987130348,
+     "median": 0.8629145218849059,
+     "p90": 1.0980124787139787,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 38571.36543389875,
+     "median": 75287.30670779786,
+     "p90": 108756.14378766151,
+     "share_positive": 0.9906
+    }
+   },
+   "fl_civil_ai_wil": {
+    "students": {
+     "p10": 34628644.38529241,
+     "median": 141223807.5759835,
+     "p90": 449597154.68382215,
+     "share_positive": 0.986
+    },
+    "institutions": {
+     "p10": -37311526.36013666,
+     "median": -11084591.30782096,
+     "p90": -2879188.3489343813,
+     "share_positive": 0.0
+    },
+    "states": {
+     "p10": 943724.7625897854,
+     "median": 6425830.184683969,
+     "p90": 25124561.190390926,
+     "share_positive": 1.0
+    },
+    "industry": {
+     "p10": 16290038.460468061,
+     "median": 68971128.49120262,
+     "p90": 239220119.44525978,
+     "share_positive": 1.0
+    },
+    "industry_worker_value": {
+     "p10": 20278902.758155268,
+     "median": 78339329.13672271,
+     "p90": 261200207.3983335,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 2292296.1714998665,
+     "median": 8352936.810546653,
+     "p90": 25909102.315073498,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 90.08266622732923,
+     "median": 320.1047622810659,
+     "p90": 917.3005954925253,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.5635615100884789,
+     "median": 0.7273954760592212,
+     "p90": 0.9264672961031997,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 33606.849670124044,
+     "median": 71193.68270008446,
+     "p90": 105570.63771835752,
+     "share_positive": 0.986
+    }
+   },
+   "floor_cv": 90.03099860856067,
+   "floor_cm": 90.69795749808888,
+   "states_le90": 42.0
+  },
+  "F2": {
+   "label": "Entry-level squeeze",
+   "ranges": {
+    "ai_save_general_education": [
+     0.1,
+     0.25
+    ],
+    "ai_save_communication": [
+     0.1,
+     0.25
+    ],
+    "ai_save_math_science": [
+     0.05,
+     0.2
+    ],
+    "ai_save_engineering_analysis": [
+     0.05,
+     0.15
+    ],
+    "ai_save_business_construction": [
+     0.05,
+     0.2
+    ],
+    "ai_save_design": [
+     0.0,
+     0.05
+    ],
+    "ai_save_lab_field": [
+     0.0,
+     0.05
+    ],
+    "ai_recognition": [
+     0.0,
+     0.1
+    ],
+    "ai_entry_shock": [
+     0.033,
+     0.083
+    ],
+    "ai_gap_multiplier": [
+     1.1,
+     1.3
+    ],
+    "ai_demand_shift": [
+     -0.03,
+     -0.01
+    ],
+    "ai_openings_change": [
+     -0.1,
+     -0.03
+    ],
+    "ai_instruction_cost_cut": [
+     -0.1,
+     0.0
+    ],
+    "ai_training_cost_cut": [
+     -0.3,
+     -0.1
+    ]
+   },
+   "us_construction_ai": {
+    "students": {
+     "p10": -408453921.89312136,
+     "median": 79044269.48039457,
+     "p90": 809178374.7775835,
+     "share_positive": 0.6578
+    },
+    "institutions": {
+     "p10": -93575618.54099616,
+     "median": -19724403.345415294,
+     "p90": 39528.05339247272,
+     "share_positive": 0.1014
+    },
+    "states": {
+     "p10": -9375.659261564226,
+     "median": 5869767.398145893,
+     "p90": 38627043.46993395,
+     "share_positive": 0.8986
+    },
+    "industry": {
+     "p10": 15777569.851630649,
+     "median": 141150925.7723841,
+     "p90": 698709325.3097793,
+     "share_positive": 0.9768
+    },
+    "industry_worker_value": {
+     "p10": 37894042.982988976,
+     "median": 208228664.82917142,
+     "p90": 884722328.8092508,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 11327768.121404994,
+     "median": 55048775.469211735,
+     "p90": 202849178.565492,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 85.91832041062926,
+     "median": 634.6746557812817,
+     "p90": 2879.116636322577,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.11166949306848928,
+     "median": 0.14384912686749451,
+     "p90": 0.18308160408684868,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.015687805081979804,
+     "median": 0.11511868048799268,
+     "p90": 0.4877395704960946,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -55514.73279927954,
+     "median": 21563.309763454825,
+     "p90": 75443.83780900805,
+     "share_positive": 0.6578
+    }
+   },
+   "fl_construction_ai": {
+    "students": {
+     "p10": -31996948.027380634,
+     "median": 4111552.7602518215,
+     "p90": 53267870.55591167,
+     "share_positive": 0.6172
+    },
+    "institutions": {
+     "p10": -6787030.73477125,
+     "median": -1538139.991643311,
+     "p90": -117875.27280996476,
+     "share_positive": 0.0572
+    },
+    "states": {
+     "p10": 18036.713645091564,
+     "median": 476741.85358470614,
+     "p90": 2803656.0143266725,
+     "share_positive": 0.9428
+    },
+    "industry": {
+     "p10": 1103263.7927885687,
+     "median": 9587644.711767906,
+     "p90": 46573889.76471646,
+     "share_positive": 0.9788
+    },
+    "industry_worker_value": {
+     "p10": 2578370.3964737416,
+     "median": 14101156.364113538,
+     "p90": 59327559.12437376,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 777417.985155381,
+     "median": 3755056.147420096,
+     "p90": 13795891.77865793,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 5.875225193293682,
+     "median": 43.200222847871686,
+     "p90": 196.5925484492971,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.08454750129039545,
+     "median": 0.10916098099517227,
+     "p90": 0.1390743264973192,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.015687805081979804,
+     "median": 0.11511868048799268,
+     "p90": 0.4877395704960946,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -61278.23910158185,
+     "median": 17363.71770046631,
+     "p90": 73945.7664745521,
+     "share_positive": 0.6172
+    }
+   },
+   "us_construction_ai_wil": {
+    "students": {
+     "p10": -40250069.228785105,
+     "median": 219391249.9295655,
+     "p90": 1089769870.847876,
+     "share_positive": 0.8652
+    },
+    "institutions": {
+     "p10": -93575618.54099616,
+     "median": -19724403.345415294,
+     "p90": 39528.05339247272,
+     "share_positive": 0.1014
+    },
+    "states": {
+     "p10": -9375.659261564226,
+     "median": 5869767.398145893,
+     "p90": 38627043.46993395,
+     "share_positive": 0.8986
+    },
+    "industry": {
+     "p10": 25342367.590197746,
+     "median": 165537732.74857533,
+     "p90": 766613935.6751196,
+     "share_positive": 0.9968
+    },
+    "industry_worker_value": {
+     "p10": 37894042.982988976,
+     "median": 208228664.82917142,
+     "p90": 884722328.8092508,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 6949933.604246837,
+     "median": 33616655.805252925,
+     "p90": 130942403.64559188,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 85.91832041062926,
+     "median": 634.6746557812817,
+     "p90": 2879.116636322577,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.11166949306848928,
+     "median": 0.14384912686749451,
+     "p90": 0.18308160408684868,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.015687805081979804,
+     "median": 0.11511868048799268,
+     "p90": 0.4877395704960946,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -9474.586571591675,
+     "median": 45824.70465601805,
+     "p90": 83974.8305198377,
+     "share_positive": 0.8652
+    }
+   },
+   "fl_construction_ai_wil": {
+    "students": {
+     "p10": -5270402.668760298,
+     "median": 14036027.958402261,
+     "p90": 72434493.7568248,
+     "share_positive": 0.8388
+    },
+    "institutions": {
+     "p10": -6787030.73477125,
+     "median": -1538139.991643311,
+     "p90": -117875.27280996476,
+     "share_positive": 0.0572
+    },
+    "states": {
+     "p10": 18036.713645091564,
+     "median": 476741.85358470614,
+     "p90": 2803656.0143266725,
+     "share_positive": 0.9428
+    },
+    "industry": {
+     "p10": 1759820.1750013868,
+     "median": 11247783.011168227,
+     "p90": 51124812.19809276,
+     "share_positive": 0.9974
+    },
+    "industry_worker_value": {
+     "p10": 2578370.3964737416,
+     "median": 14101156.364113538,
+     "p90": 59327559.12437376,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 474810.59050638234,
+     "median": 2288327.4043805194,
+     "p90": 8893582.64965364,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 5.875225193293682,
+     "median": 43.200222847871686,
+     "p90": 196.5925484492971,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.08454750129039545,
+     "median": 0.10916098099517227,
+     "p90": 0.1390743264973192,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.015687805081979804,
+     "median": 0.11511868048799268,
+     "p90": 0.4877395704960946,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -15676.270506737656,
+     "median": 44888.96351146081,
+     "p90": 82368.33689564573,
+     "share_positive": 0.8388
+    }
+   },
+   "us_civil_ai": {
+    "students": {
+     "p10": -1317138918.557189,
+     "median": 88299230.84415972,
+     "p90": 1571554650.296519,
+     "share_positive": 0.5854
+    },
+    "institutions": {
+     "p10": -302473645.6800211,
+     "median": -75123128.80641714,
+     "p90": -11642466.724079322,
+     "share_positive": 0.02
+    },
+    "states": {
+     "p10": 1862265.4582693318,
+     "median": 22267793.252581693,
+     "p90": 117763867.17715621,
+     "share_positive": 0.98
+    },
+    "industry": {
+     "p10": 36263057.57895344,
+     "median": 288473325.8494817,
+     "p90": 1376228251.6850014,
+     "share_positive": 0.9854
+    },
+    "industry_worker_value": {
+     "p10": 76963816.18702367,
+     "median": 415459591.25112057,
+     "p90": 1720925900.9910116,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 22103741.523008734,
+     "median": 106770418.78238663,
+     "p90": 391136154.5313738,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 189.70613036814422,
+     "median": 1365.0424779868972,
+     "p90": 6135.343321023447,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.4750212805224142,
+     "median": 0.6101330320560943,
+     "p90": 0.7745179963003587,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.015687805081979804,
+     "median": 0.11511868048799268,
+     "p90": 0.4877395704960946,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -87327.77005933081,
+     "median": 14189.773986087892,
+     "p90": 81367.09990680747,
+     "share_positive": 0.5854
+    }
+   },
+   "fl_civil_ai": {
+    "students": {
+     "p10": -80522395.98714271,
+     "median": 2649287.0476771756,
+     "p90": 78428409.67312065,
+     "share_positive": 0.5496
+    },
+    "institutions": {
+     "p10": -11809026.739312451,
+     "median": -2774713.5633586417,
+     "p90": -389572.1070426866,
+     "share_positive": 0.0118
+    },
+    "states": {
+     "p10": 175768.11794107425,
+     "median": 1777119.6612676485,
+     "p90": 8932423.838377729,
+     "share_positive": 0.9884
+    },
+    "industry": {
+     "p10": 2133741.013852329,
+     "median": 16036282.038512655,
+     "p90": 75187904.01838964,
+     "share_positive": 0.9874
+    },
+    "industry_worker_value": {
+     "p10": 4288457.219308156,
+     "median": 23140505.936825834,
+     "p90": 94165637.43569379,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 1212156.4415532837,
+     "median": 5828461.738236172,
+     "p90": 21336394.68002306,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 10.8345533102756,
+     "median": 76.8033222316923,
+     "p90": 340.4130889715805,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.39950915660914194,
+     "median": 0.5135866169121404,
+     "p90": 0.6527099711536465,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.015687805081979804,
+     "median": 0.11511868048799268,
+     "p90": 0.4877395704960946,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -95137.57596383,
+     "median": 8341.195972792251,
+     "p90": 77600.48299839607,
+     "share_positive": 0.5496
+    }
+   },
+   "us_civil_ai_wil": {
+    "students": {
+     "p10": -274566588.39107937,
+     "median": 383151716.61330044,
+     "p90": 2197105450.2039404,
+     "share_positive": 0.8114
+    },
+    "institutions": {
+     "p10": -302473645.6800211,
+     "median": -75123128.80641714,
+     "p90": -11642466.724079322,
+     "share_positive": 0.02
+    },
+    "states": {
+     "p10": 1862265.4582693318,
+     "median": 22267793.252581693,
+     "p90": 117763867.17715621,
+     "share_positive": 0.98
+    },
+    "industry": {
+     "p10": 54629945.05443764,
+     "median": 336965106.77399445,
+     "p90": 1484134216.2537346,
+     "share_positive": 0.9988
+    },
+    "industry_worker_value": {
+     "p10": 76963816.18702367,
+     "median": 415459591.25112057,
+     "p90": 1720925900.9910116,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 13483357.911309665,
+     "median": 65004070.73700425,
+     "p90": 252708016.87104553,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 189.70613036814422,
+     "median": 1365.0424779868972,
+     "p90": 6135.343321023447,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.4750212805224142,
+     "median": 0.6101330320560943,
+     "p90": 0.7745179963003587,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.015687805081979804,
+     "median": 0.11511868048799268,
+     "p90": 0.4877395704960946,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -26163.735108733315,
+     "median": 44252.137325544885,
+     "p90": 90700.32907408656,
+     "share_positive": 0.8114
+    }
+   },
+   "fl_civil_ai_wil": {
+    "students": {
+     "p10": -20388099.487793315,
+     "median": 18005789.686224356,
+     "p90": 112410763.48123308,
+     "share_positive": 0.7828
+    },
+    "institutions": {
+     "p10": -11809026.739312451,
+     "median": -2774713.5633586417,
+     "p90": -389572.1070426866,
+     "share_positive": 0.0118
+    },
+    "states": {
+     "p10": 175768.11794107425,
+     "median": 1777119.6612676485,
+     "p90": 8932423.838377729,
+     "share_positive": 0.9884
+    },
+    "industry": {
+     "p10": 3058816.3720674086,
+     "median": 18655394.85641419,
+     "p90": 81393015.108744,
+     "share_positive": 0.999
+    },
+    "industry_worker_value": {
+     "p10": 4288457.219308156,
+     "median": 23140505.936825834,
+     "p90": 94165637.43569379,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 735542.3079647175,
+     "median": 3548990.3632327057,
+     "p90": 13767292.9624753,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 10.8345533102756,
+     "median": 76.8033222316923,
+     "p90": 340.4130889715805,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.39950915660914194,
+     "median": 0.5135866169121404,
+     "p90": 0.6527099711536465,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.015687805081979804,
+     "median": 0.11511868048799268,
+     "p90": 0.4877395704960946,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -32345.741862229454,
+     "median": 39709.8213726873,
+     "p90": 87483.28336671593,
+     "share_positive": 0.7828
+    }
+   },
+   "floor_cv": 97.2390188546996,
+   "floor_cm": 98.18726418225961,
+   "states_le90": 2.0
+  },
+  "F3": {
+   "label": "Incremental tool",
+   "ranges": {
+    "ai_save_general_education": [
+     0.0,
+     0.1
+    ],
+    "ai_save_communication": [
+     0.0,
+     0.1
+    ],
+    "ai_save_math_science": [
+     0.0,
+     0.1
+    ],
+    "ai_save_engineering_analysis": [
+     0.0,
+     0.05
+    ],
+    "ai_save_business_construction": [
+     0.0,
+     0.1
+    ],
+    "ai_save_design": [
+     0.0,
+     0.0
+    ],
+    "ai_save_lab_field": [
+     0.0,
+     0.0
+    ],
+    "ai_recognition": [
+     0.0,
+     0.1
+    ],
+    "accreditor_year": [
+     2035,
+     2050
+    ],
+    "ai_entry_shock": [
+     0.0,
+     0.017
+    ],
+    "ai_gap_multiplier": [
+     0.9,
+     1.1
+    ],
+    "ai_demand_shift": [
+     -0.006,
+     0.006
+    ],
+    "ai_openings_change": [
+     -0.02,
+     0.02
+    ],
+    "ai_instruction_cost_cut": [
+     -0.05,
+     0.0
+    ],
+    "ai_training_cost_cut": [
+     -0.05,
+     0.05
+    ]
+   },
+   "us_construction_ai": {
+    "students": {
+     "p10": -284258408.5306194,
+     "median": 163209908.97932076,
+     "p90": 1084300247.981775,
+     "share_positive": 0.7492
+    },
+    "institutions": {
+     "p10": -102125619.42560051,
+     "median": -19858849.155731536,
+     "p90": 2840629.0723919277,
+     "share_positive": 0.1444
+    },
+    "states": {
+     "p10": -726316.0717746845,
+     "median": 5683380.785695781,
+     "p90": 41225064.21494087,
+     "share_positive": 0.8556
+    },
+    "industry": {
+     "p10": 22037889.132915195,
+     "median": 167149607.92359763,
+     "p90": 748318208.4727373,
+     "share_positive": 0.9896
+    },
+    "industry_worker_value": {
+     "p10": 43500472.35906366,
+     "median": 231537438.27979085,
+     "p90": 911795550.8686429,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 11568377.855932737,
+     "median": 54026669.11422117,
+     "p90": 191270261.11106014,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 76.97699789926246,
+     "median": 553.5353030478341,
+     "p90": 2401.54683681218,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.13283497667172847,
+     "median": 0.16769352271967225,
+     "p90": 0.21048184957119928,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.010023484509205228,
+     "median": 0.06518271680394976,
+     "p90": 0.20511393676633044,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -37108.21564734634,
+     "median": 32953.27975527498,
+     "p90": 82447.65275683533,
+     "share_positive": 0.7492
+    }
+   },
+   "fl_construction_ai": {
+    "students": {
+     "p10": -23462316.417381987,
+     "median": 9684608.784764644,
+     "p90": 72472810.50907336,
+     "share_positive": 0.7104
+    },
+    "institutions": {
+     "p10": -7393046.027682275,
+     "median": -1575695.3209858658,
+     "p90": -28310.298230688506,
+     "share_positive": 0.092
+    },
+    "states": {
+     "p10": 2283.313773716454,
+     "median": 470723.1237842151,
+     "p90": 2984035.749540538,
+     "share_positive": 0.908
+    },
+    "industry": {
+     "p10": 1555455.8571891622,
+     "median": 11377423.744994022,
+     "p90": 50206550.75993725,
+     "share_positive": 0.9908
+    },
+    "industry_worker_value": {
+     "p10": 3015283.350884295,
+     "median": 15804799.675799169,
+     "p90": 61623177.02016767,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 793600.5891989407,
+     "median": 3706254.176431369,
+     "p90": 13019125.227373041,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 5.196949136247605,
+     "median": 37.71601881463812,
+     "p90": 163.66884842735286,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.10075856615343902,
+     "median": 0.12739805508800509,
+     "p90": 0.16018016367919197,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.010023484509205228,
+     "median": 0.06518271680394976,
+     "p90": 0.20511393676633044,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -42441.404797202464,
+     "median": 31064.873701123004,
+     "p90": 81037.3686056409,
+     "share_positive": 0.7104
+    }
+   },
+   "us_construction_ai_wil": {
+    "students": {
+     "p10": 9811394.683387414,
+     "median": 323171348.99760157,
+     "p90": 1401531830.7729275,
+     "share_positive": 0.9146
+    },
+    "institutions": {
+     "p10": -102125619.42560051,
+     "median": -19858849.155731536,
+     "p90": 2840629.0723919277,
+     "share_positive": 0.1444
+    },
+    "states": {
+     "p10": -726316.0717746845,
+     "median": 5683380.785695781,
+     "p90": 41225064.21494087,
+     "share_positive": 0.8556
+    },
+    "industry": {
+     "p10": 31983810.852753557,
+     "median": 192461204.7432983,
+     "p90": 807594297.1514254,
+     "share_positive": 0.9988
+    },
+    "industry_worker_value": {
+     "p10": 43500472.35906366,
+     "median": 231537438.27979085,
+     "p90": 911795550.8686429,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 6847063.541553262,
+     "median": 33073837.05712176,
+     "p90": 125289444.0619931,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 76.97699789926246,
+     "median": 553.5353030478341,
+     "p90": 2401.54683681218,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.13283497667172847,
+     "median": 0.16769352271967225,
+     "p90": 0.21048184957119928,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.010023484509205228,
+     "median": 0.06518271680394976,
+     "p90": 0.20511393676633044,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 4221.917952346221,
+     "median": 54213.253965604905,
+     "p90": 90542.8846254051,
+     "share_positive": 0.9146
+    }
+   },
+   "fl_construction_ai_wil": {
+    "students": {
+     "p10": -433736.65150694235,
+     "median": 21226894.611272294,
+     "p90": 93979201.45714164,
+     "share_positive": 0.8922
+    },
+    "institutions": {
+     "p10": -7393046.027682275,
+     "median": -1575695.3209858658,
+     "p90": -28310.298230688506,
+     "share_positive": 0.092
+    },
+    "states": {
+     "p10": 2283.313773716454,
+     "median": 470723.1237842151,
+     "p90": 2984035.749540538,
+     "share_positive": 0.908
+    },
+    "industry": {
+     "p10": 2205879.8516856935,
+     "median": 13012104.174911816,
+     "p90": 54296267.93503722,
+     "share_positive": 0.999
+    },
+    "industry_worker_value": {
+     "p10": 3015283.350884295,
+     "median": 15804799.675799169,
+     "p90": 61623177.02016767,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 471772.37502386956,
+     "median": 2259601.272381869,
+     "p90": 8529372.528247952,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 5.196949136247605,
+     "median": 37.71601881463812,
+     "p90": 163.66884842735286,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.10075856615343902,
+     "median": 0.12739805508800509,
+     "p90": 0.16018016367919197,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.010023484509205228,
+     "median": 0.06518271680394976,
+     "p90": 0.20511393676633044,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -1742.3126548511784,
+     "median": 53712.23714808185,
+     "p90": 89255.64778489895,
+     "share_positive": 0.8922
+    }
+   },
+   "us_civil_ai": {
+    "students": {
+     "p10": -1014556213.9857647,
+     "median": 238379907.00590485,
+     "p90": 2141442284.6970444,
+     "share_positive": 0.674
+    },
+    "institutions": {
+     "p10": -330839783.0707369,
+     "median": -78906178.48515955,
+     "p90": -9636418.566985354,
+     "share_positive": 0.0368
+    },
+    "states": {
+     "p10": 1456813.8409270672,
+     "median": 23081790.79892824,
+     "p90": 125465161.45928764,
+     "share_positive": 0.9632
+    },
+    "industry": {
+     "p10": 49240351.27482881,
+     "median": 343419763.1684784,
+     "p90": 1477822553.6267009,
+     "share_positive": 0.9946
+    },
+    "industry_worker_value": {
+     "p10": 90075116.41633894,
+     "median": 468611276.2040142,
+     "p90": 1790918129.9997118,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 22514956.751786653,
+     "median": 105190645.84368336,
+     "p90": 369589460.2311987,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 165.6594812810221,
+     "median": 1198.8908374245539,
+     "p90": 5086.036498442975,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.5627688730517705,
+     "median": 0.7086641837871199,
+     "p90": 0.8875677915705672,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.010023484509205228,
+     "median": 0.06518271680394976,
+     "p90": 0.20511393676633044,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -62404.80190870975,
+     "median": 27948.378038066257,
+     "p90": 88723.6630073256,
+     "share_positive": 0.674
+    }
+   },
+   "fl_civil_ai": {
+    "students": {
+     "p10": -63666101.14104526,
+     "median": 10047894.982636567,
+     "p90": 109298137.02618966,
+     "share_positive": 0.6416
+    },
+    "institutions": {
+     "p10": -12840021.038443992,
+     "median": -2953299.3020519,
+     "p90": -399885.42873106274,
+     "share_positive": 0.0222
+    },
+    "states": {
+     "p10": 154944.42161968333,
+     "median": 1871406.5286858242,
+     "p90": 9586923.010927578,
+     "share_positive": 0.9776
+    },
+    "industry": {
+     "p10": 2853877.691716964,
+     "median": 19218879.543967396,
+     "p90": 80780569.93077137,
+     "share_positive": 0.995
+    },
+    "industry_worker_value": {
+     "p10": 5109570.004337596,
+     "median": 26000568.649137817,
+     "p90": 99192049.95036902,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 1233620.0451100077,
+     "median": 5769876.918007428,
+     "p90": 20267196.781864867,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 9.387100915112388,
+     "median": 67.35068744013228,
+     "p90": 286.9012492461874,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.47334831822291756,
+     "median": 0.596394240471295,
+     "p90": 0.7472037043766303,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.010023484509205228,
+     "median": 0.06518271680394976,
+     "p90": 0.20511393676633044,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -69532.03675695405,
+     "median": 23008.651897976277,
+     "p90": 85325.39949586192,
+     "share_positive": 0.6416
+    }
+   },
+   "us_civil_ai_wil": {
+    "students": {
+     "p10": -86589403.90704145,
+     "median": 593248370.9044826,
+     "p90": 2832255171.272845,
+     "share_positive": 0.869
+    },
+    "institutions": {
+     "p10": -330839783.0707369,
+     "median": -78906178.48515955,
+     "p90": -9636418.566985354,
+     "share_positive": 0.0368
+    },
+    "states": {
+     "p10": 1456813.8409270672,
+     "median": 23081790.79892824,
+     "p90": 125465161.45928764,
+     "share_positive": 0.9632
+    },
+    "industry": {
+     "p10": 66728892.98115634,
+     "median": 388790553.0927849,
+     "p90": 1594063356.2649114,
+     "share_positive": 1.0
+    },
+    "industry_worker_value": {
+     "p10": 90075116.41633894,
+     "median": 468611276.2040142,
+     "p90": 1790918129.9997118,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 13372838.20431808,
+     "median": 64182734.3955432,
+     "p90": 241559597.08329582,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 165.6594812810221,
+     "median": 1198.8908374245539,
+     "p90": 5086.036498442975,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.5627688730517705,
+     "median": 0.7086641837871199,
+     "p90": 0.8875677915705672,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.010023484509205228,
+     "median": 0.06518271680394976,
+     "p90": 0.20511393676633044,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -9300.747247606525,
+     "median": 53969.4437019859,
+     "p90": 98406.49751212228,
+     "share_positive": 0.869
+    }
+   },
+   "fl_civil_ai_wil": {
+    "students": {
+     "p10": -8474442.72265948,
+     "median": 29328922.86328132,
+     "p90": 145677150.36637768,
+     "share_positive": 0.8506
+    },
+    "institutions": {
+     "p10": -12840021.038443992,
+     "median": -2953299.3020519,
+     "p90": -399885.42873106274,
+     "share_positive": 0.0222
+    },
+    "states": {
+     "p10": 154944.42161968333,
+     "median": 1871406.5286858242,
+     "p90": 9586923.010927578,
+     "share_positive": 0.9776
+    },
+    "industry": {
+     "p10": 3776949.686669683,
+     "median": 21583963.233964104,
+     "p90": 87432921.99995936,
+     "share_positive": 1.0
+    },
+    "industry_worker_value": {
+     "p10": 5109570.004337596,
+     "median": 26000568.649137817,
+     "p90": 99192049.95036902,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 738459.8822922328,
+     "median": 3509524.885248823,
+     "p90": 13159210.989905562,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 9.387100915112388,
+     "median": 67.35068744013228,
+     "p90": 286.9012492461874,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.47334831822291756,
+     "median": 0.596394240471295,
+     "p90": 0.7472037043766303,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.010023484509205228,
+     "median": 0.06518271680394976,
+     "p90": 0.20511393676633044,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -14771.600821361566,
+     "median": 49910.76501721384,
+     "p90": 95267.49332957399,
+     "share_positive": 0.8506
+    }
+   },
+   "floor_cv": 97.4159062488616,
+   "floor_cm": 98.3883804373256,
+   "states_le90": 2.0
+  },
+  "F4": {
+   "label": "Credential unbundling",
+   "ranges": {
+    "ai_save_general_education": [
+     0.2,
+     0.35
+    ],
+    "ai_save_communication": [
+     0.2,
+     0.35
+    ],
+    "ai_save_math_science": [
+     0.15,
+     0.3
+    ],
+    "ai_save_engineering_analysis": [
+     0.1,
+     0.25
+    ],
+    "ai_save_business_construction": [
+     0.1,
+     0.25
+    ],
+    "ai_save_design": [
+     0.0,
+     0.05
+    ],
+    "ai_save_lab_field": [
+     0.0,
+     0.05
+    ],
+    "ai_guarded": [
+     0.5,
+     1.0
+    ],
+    "ai_offloading_loss": [
+     0.02,
+     0.07
+    ],
+    "ai_recognition": [
+     0.5,
+     1.0
+    ],
+    "accreditor_year": [
+     2030,
+     2035
+    ],
+    "ai_entry_shock": [
+     0.017,
+     0.05
+    ],
+    "ai_gap_multiplier": [
+     0.4,
+     0.7
+    ],
+    "ai_demand_shift": [
+     -0.04,
+     -0.01
+    ],
+    "ai_uptake_multiplier": [
+     1.2,
+     1.5
+    ],
+    "ai_instruction_cost_cut": [
+     0.05,
+     0.15
+    ],
+    "ai_training_cost_cut": [
+     -0.25,
+     -0.1
+    ]
+   },
+   "us_construction_ai": {
+    "students": {
+     "p10": 129871236.68593735,
+     "median": 557994246.7749186,
+     "p90": 1792434095.0049229,
+     "share_positive": 0.9838
+    },
+    "institutions": {
+     "p10": -139150301.2877698,
+     "median": -36168976.83940421,
+     "p90": -3932212.5345234983,
+     "share_positive": 0.054
+    },
+    "states": {
+     "p10": 528986.3137969917,
+     "median": 10821369.553188862,
+     "p90": 54864851.219467975,
+     "share_positive": 0.946
+    },
+    "industry": {
+     "p10": 37836674.79963201,
+     "median": 240588869.38512808,
+     "p90": 989974995.0128386,
+     "share_positive": 0.9794
+    },
+    "industry_worker_value": {
+     "p10": 81207923.05514275,
+     "median": 340597373.8622899,
+     "p90": 1199274528.1117616,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 22833332.861901674,
+     "median": 82219300.21052074,
+     "p90": 255640383.6964251,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 381.5009501213339,
+     "median": 1397.7131021043679,
+     "p90": 4208.146844663575,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.10119206230605136,
+     "median": 0.1354064437179765,
+     "p90": 0.17656473330839548,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 29796.561138632333,
+     "median": 62952.870871206746,
+     "p90": 92172.6612192373,
+     "share_positive": 0.9838
+    }
+   },
+   "fl_construction_ai": {
+    "students": {
+     "p10": 8010405.349357177,
+     "median": 36843881.18251732,
+     "p90": 119000650.25328237,
+     "share_positive": 0.9764
+    },
+    "institutions": {
+     "p10": -9923761.720666401,
+     "median": -2740248.4995013988,
+     "p90": -526616.8994698006,
+     "share_positive": 0.016
+    },
+    "states": {
+     "p10": 87306.26259164808,
+     "median": 842408.9629915195,
+     "p90": 3902192.967309787,
+     "share_positive": 0.984
+    },
+    "industry": {
+     "p10": 2631697.344928016,
+     "median": 16209771.876366202,
+     "p90": 66361539.75741615,
+     "share_positive": 0.982
+    },
+    "industry_worker_value": {
+     "p10": 5605878.524810899,
+     "median": 22974352.982997313,
+     "p90": 80949491.65967534,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 1556118.556577006,
+     "median": 5609613.4585742075,
+     "p90": 17345633.489599038,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 26.091312993716183,
+     "median": 94.36821547356848,
+     "p90": 283.049185013099,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.07659783556052159,
+     "median": 0.10271303485715677,
+     "p90": 0.13446043664652363,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 26911.925283057473,
+     "median": 61554.52983261486,
+     "p90": 90433.99109604188,
+     "share_positive": 0.9764
+    }
+   },
+   "us_construction_ai_wil": {
+    "students": {
+     "p10": 185096438.40119776,
+     "median": 667396086.1706665,
+     "p90": 2005098301.0596676,
+     "share_positive": 0.9982
+    },
+    "institutions": {
+     "p10": -139150301.2877698,
+     "median": -36168976.83940421,
+     "p90": -3932212.5345234983,
+     "share_positive": 0.054
+    },
+    "states": {
+     "p10": 528986.3137969917,
+     "median": 10821369.553188862,
+     "p90": 54864851.219467975,
+     "share_positive": 0.946
+    },
+    "industry": {
+     "p10": 55859087.863068126,
+     "median": 281152840.1255406,
+     "p90": 1060776840.4042443,
+     "share_positive": 0.997
+    },
+    "industry_worker_value": {
+     "p10": 81207923.05514275,
+     "median": 340597373.8622899,
+     "p90": 1199274528.1117616,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 13686992.114870481,
+     "median": 51235870.239157155,
+     "p90": 165478764.3576099,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 381.5009501213339,
+     "median": 1397.7131021043679,
+     "p90": 4208.146844663575,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.10119206230605136,
+     "median": 0.1354064437179765,
+     "p90": 0.17656473330839548,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 45791.94590536507,
+     "median": 71733.13427305332,
+     "p90": 97715.32773407831,
+     "share_positive": 0.9982
+    }
+   },
+   "fl_construction_ai_wil": {
+    "students": {
+     "p10": 12108088.253311306,
+     "median": 44390382.03686472,
+     "p90": 133305161.65310705,
+     "share_positive": 0.9968
+    },
+    "institutions": {
+     "p10": -9923761.720666401,
+     "median": -2740248.4995013988,
+     "p90": -526616.8994698006,
+     "share_positive": 0.016
+    },
+    "states": {
+     "p10": 87306.26259164808,
+     "median": 842408.9629915195,
+     "p90": 3902192.967309787,
+     "share_positive": 0.984
+    },
+    "industry": {
+     "p10": 3837689.8462335654,
+     "median": 18811336.44179537,
+     "p90": 71235461.6950151,
+     "share_positive": 0.9978
+    },
+    "industry_worker_value": {
+     "p10": 5605878.524810899,
+     "median": 22974352.982997313,
+     "p90": 80949491.65967534,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 932218.9158100234,
+     "median": 3486925.9679074194,
+     "p90": 11244259.467963347,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 26.091312993716183,
+     "median": 94.36821547356848,
+     "p90": 283.049185013099,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.07659783556052159,
+     "median": 0.10271303485715677,
+     "p90": 0.13446043664652363,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 44533.90762228487,
+     "median": 70057.25708763754,
+     "p90": 96187.11786400757,
+     "share_positive": 0.9968
+    }
+   },
+   "us_civil_ai": {
+    "students": {
+     "p10": 185902611.93916875,
+     "median": 1022981550.0909584,
+     "p90": 3506470705.307423,
+     "share_positive": 0.9602
+    },
+    "institutions": {
+     "p10": -446142397.1009811,
+     "median": -136703655.76106793,
+     "p90": -35540892.513392635,
+     "share_positive": 0.0
+    },
+    "states": {
+     "p10": 5569723.821643083,
+     "median": 39403332.55075838,
+     "p90": 165846701.48231897,
+     "share_positive": 1.0
+    },
+    "industry": {
+     "p10": 86616018.17680709,
+     "median": 488965700.9398458,
+     "p90": 1928239390.9097426,
+     "share_positive": 0.9886
+    },
+    "industry_worker_value": {
+     "p10": 169722902.1293534,
+     "median": 679816723.4106808,
+     "p90": 2351339085.6737986,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 44185536.499505304,
+     "median": 159351617.2913158,
+     "p90": 493601631.46200114,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 846.6118425502626,
+     "median": 3021.5514958014337,
+     "p90": 8879.718563688806,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.43167630964816567,
+     "median": 0.5767086654336602,
+     "p90": 0.7495859635789909,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 19873.153553902954,
+     "median": 63442.14860691772,
+     "p90": 99677.226826566,
+     "share_positive": 0.9602
+    }
+   },
+   "fl_civil_ai": {
+    "students": {
+     "p10": 8004792.550346201,
+     "median": 51486782.077815466,
+     "p90": 180076730.74761832,
+     "share_positive": 0.9494
+    },
+    "institutions": {
+     "p10": -17828421.208686102,
+     "median": -5104454.303772201,
+     "p90": -1288968.227972268,
+     "share_positive": 0.0
+    },
+    "states": {
+     "p10": 460953.9269567408,
+     "median": 3058326.4461452407,
+     "p90": 12399229.362125356,
+     "share_positive": 1.0
+    },
+    "industry": {
+     "p10": 5011879.638787747,
+     "median": 26886309.69272811,
+     "p90": 104436146.42309588,
+     "share_positive": 0.991
+    },
+    "industry_worker_value": {
+     "p10": 9402805.711684633,
+     "median": 37309856.888270825,
+     "p90": 128969192.01481692,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 2406822.125373577,
+     "median": 8698492.310525808,
+     "p90": 26904294.066111963,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 47.83884156487495,
+     "median": 169.16164713693163,
+     "p90": 492.5994180947455,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.36343386428759966,
+     "median": 0.48561623020533623,
+     "p90": 0.6326712721157797,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 14144.632393138165,
+     "median": 58970.85852532473,
+     "p90": 96215.64085487009,
+     "share_positive": 0.9494
+    }
+   },
+   "us_civil_ai_wil": {
+    "students": {
+     "p10": 339392422.0754207,
+     "median": 1317733224.2476125,
+     "p90": 4095848330.3626585,
+     "share_positive": 0.9928
+    },
+    "institutions": {
+     "p10": -446142397.1009811,
+     "median": -136703655.76106793,
+     "p90": -35540892.513392635,
+     "share_positive": 0.0
+    },
+    "states": {
+     "p10": 5569723.821643083,
+     "median": 39403332.55075838,
+     "p90": 165846701.48231897,
+     "share_positive": 1.0
+    },
+    "industry": {
+     "p10": 121370298.8074049,
+     "median": 560148046.163357,
+     "p90": 2075309772.7119384,
+     "share_positive": 0.999
+    },
+    "industry_worker_value": {
+     "p10": 169722902.1293534,
+     "median": 679816723.4106808,
+     "p90": 2351339085.6737986,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 26470078.655659165,
+     "median": 99100789.81060693,
+     "p90": 319118757.6103411,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 846.6118425502626,
+     "median": 3021.5514958014337,
+     "p90": 8879.718563688806,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.43167630964816567,
+     "median": 0.5767086654336602,
+     "p90": 0.7495859635789909,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 41245.531811531175,
+     "median": 74771.92165308679,
+     "p90": 106981.20756521207,
+     "share_positive": 0.9928
+    }
+   },
+   "fl_civil_ai_wil": {
+    "students": {
+     "p10": 16421338.491597142,
+     "median": 67208947.84032765,
+     "p90": 212404335.19995144,
+     "share_positive": 0.9894
+    },
+    "institutions": {
+     "p10": -17828421.208686102,
+     "median": -5104454.303772201,
+     "p90": -1288968.227972268,
+     "share_positive": 0.0
+    },
+    "states": {
+     "p10": 460953.9269567408,
+     "median": 3058326.4461452407,
+     "p90": 12399229.362125356,
+     "share_positive": 1.0
+    },
+    "industry": {
+     "p10": 6729843.506593948,
+     "median": 30864878.134676322,
+     "p90": 112733589.60290417,
+     "share_positive": 0.9992
+    },
+    "industry_worker_value": {
+     "p10": 9402805.711684633,
+     "median": 37309856.888270825,
+     "p90": 128969192.01481692,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 1443085.0337774584,
+     "median": 5404356.544781941,
+     "p90": 17369366.746077273,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 47.83884156487495,
+     "median": 169.16164713693163,
+     "p90": 492.5994180947455,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.36343386428759966,
+     "median": 0.48561623020533623,
+     "p90": 0.6326712721157797,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.10612017488912619,
+     "median": 0.3240039418218888,
+     "p90": 0.6637051997374773,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 36418.639435906334,
+     "median": 70596.96111316064,
+     "p90": 103709.78932620568,
+     "share_positive": 0.9894
+    }
+   },
+   "floor_cv": 87.9103112820373,
+   "floor_cm": 88.38644573836223,
+   "states_le90": 44.0
+  },
+  "F5": {
+   "label": "Build-out boom",
+   "ranges": {
+    "ai_save_general_education": [
+     0.05,
+     0.15
+    ],
+    "ai_save_communication": [
+     0.05,
+     0.15
+    ],
+    "ai_save_math_science": [
+     0.05,
+     0.15
+    ],
+    "ai_save_engineering_analysis": [
+     0.05,
+     0.1
+    ],
+    "ai_save_business_construction": [
+     0.05,
+     0.15
+    ],
+    "ai_save_design": [
+     0.0,
+     0.05
+    ],
+    "ai_save_lab_field": [
+     0.0,
+     0.05
+    ],
+    "ai_recognition": [
+     0.0,
+     0.1
+    ],
+    "accreditor_year": [
+     2032,
+     2050
+    ],
+    "ai_entry_shock": [
+     -0.05,
+     -0.017
+    ],
+    "ai_gap_multiplier": [
+     0.75,
+     0.9
+    ],
+    "ai_demand_shift": [
+     0.01,
+     0.03
+    ],
+    "ai_openings_change": [
+     0.0,
+     0.15
+    ],
+    "ai_instruction_cost_cut": [
+     -0.05,
+     0.0
+    ],
+    "ai_training_cost_cut": [
+     -0.15,
+     -0.05
+    ]
+   },
+   "us_construction_ai": {
+    "students": {
+     "p10": -188099759.24844107,
+     "median": 410358946.25171614,
+     "p90": 2173603376.287208,
+     "share_positive": 0.8306
+    },
+    "institutions": {
+     "p10": -174692203.85334203,
+     "median": -33723382.89912397,
+     "p90": 5126214.885931809,
+     "share_positive": 0.1482
+    },
+    "states": {
+     "p10": -1396894.9228108919,
+     "median": 9640251.740343288,
+     "p90": 71139825.97335438,
+     "share_positive": 0.8518
+    },
+    "industry": {
+     "p10": 34084835.600778565,
+     "median": 271378888.1381117,
+     "p90": 1273157435.2247865,
+     "share_positive": 0.9842
+    },
+    "industry_worker_value": {
+     "p10": 74715748.25767593,
+     "median": 396664200.8714231,
+     "p90": 1592489035.0099947,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 21401620.660100754,
+     "median": 102582042.24182224,
+     "p90": 366450786.01704705,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 127.5083903906867,
+     "median": 954.805573840883,
+     "p90": 4379.41393049909,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.15384451173226243,
+     "median": 0.19659945346788885,
+     "p90": 0.2501555718422265,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.012423030700938437,
+     "median": 0.08334136542351851,
+     "p90": 0.30504866526480495,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -17152.430023094712,
+     "median": 44426.67762193266,
+     "p90": 88896.44365865596,
+     "share_positive": 0.8306
+    }
+   },
+   "fl_construction_ai": {
+    "students": {
+     "p10": -19220076.052201472,
+     "median": 25821989.278551042,
+     "p90": 145672158.90634283,
+     "share_positive": 0.8006
+    },
+    "institutions": {
+     "p10": -12469485.408441074,
+     "median": -2707566.3661820544,
+     "p90": -24856.75752119869,
+     "share_positive": 0.0946
+    },
+    "states": {
+     "p10": 2347.600452231866,
+     "median": 806208.4180885612,
+     "p90": 5176705.022286202,
+     "share_positive": 0.9054
+    },
+    "industry": {
+     "p10": 2362719.0531414957,
+     "median": 18408691.16455163,
+     "p90": 86369587.48906043,
+     "share_positive": 0.9846
+    },
+    "industry_worker_value": {
+     "p10": 5065404.9254626045,
+     "median": 27034233.539073713,
+     "p90": 106925553.31105779,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 1468264.0523538745,
+     "median": 7013588.584966484,
+     "p90": 24949873.357056215,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 8.688531735024162,
+     "median": 64.79710041639458,
+     "p90": 295.6920450761108,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.1168673311954309,
+     "median": 0.1496306546177342,
+     "p90": 0.19064654181139445,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.012423030700938437,
+     "median": 0.08334136542351851,
+     "p90": 0.30504866526480495,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -23795.41725446099,
+     "median": 43678.90048749602,
+     "p90": 87459.40039400772,
+     "share_positive": 0.8006
+    }
+   },
+   "us_construction_ai_wil": {
+    "students": {
+     "p10": 72072748.85808332,
+     "median": 671998159.0137397,
+     "p90": 2720253635.8588305,
+     "share_positive": 0.9528
+    },
+    "institutions": {
+     "p10": -174692203.85334203,
+     "median": -33723382.89912397,
+     "p90": 5126214.885931809,
+     "share_positive": 0.1482
+    },
+    "states": {
+     "p10": -1396894.9228108919,
+     "median": 9640251.740343288,
+     "p90": 71139825.97335438,
+     "share_positive": 0.8518
+    },
+    "industry": {
+     "p10": 52155239.934204735,
+     "median": 317694910.15770817,
+     "p90": 1385073711.9168487,
+     "share_positive": 0.9984
+    },
+    "industry_worker_value": {
+     "p10": 74715748.25767593,
+     "median": 396664200.8714231,
+     "p90": 1592489035.0099947,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 12860347.24281086,
+     "median": 63359237.05286897,
+     "p90": 238053479.15542588,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 127.5083903906867,
+     "median": 954.805573840883,
+     "p90": 4379.41393049909,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.15384451173226243,
+     "median": 0.19659945346788885,
+     "p90": 0.2501555718422265,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.012423030700938437,
+     "median": 0.08334136542351851,
+     "p90": 0.30504866526480495,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 17531.917820362014,
+     "median": 62396.18049466099,
+     "p90": 96466.89525145204,
+     "share_positive": 0.9528
+    }
+   },
+   "fl_construction_ai_wil": {
+    "students": {
+     "p10": 3738339.828733237,
+     "median": 44399184.21886072,
+     "p90": 183284253.8286165,
+     "share_positive": 0.9374
+    },
+    "institutions": {
+     "p10": -12469485.408441074,
+     "median": -2707566.3661820544,
+     "p90": -24856.75752119869,
+     "share_positive": 0.0946
+    },
+    "states": {
+     "p10": 2347.600452231866,
+     "median": 806208.4180885612,
+     "p90": 5176705.022286202,
+     "share_positive": 0.9054
+    },
+    "industry": {
+     "p10": 3640769.385196672,
+     "median": 21677706.047793847,
+     "p90": 93061084.69695681,
+     "share_positive": 0.9988
+    },
+    "industry_worker_value": {
+     "p10": 5065404.9254626045,
+     "median": 27034233.539073713,
+     "p90": 106925553.31105779,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 884890.5705336764,
+     "median": 4325407.625254027,
+     "p90": 16278405.140500138,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 8.688531735024162,
+     "median": 64.79710041639458,
+     "p90": 295.6920450761108,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.1168673311954309,
+     "median": 0.1496306546177342,
+     "p90": 0.19064654181139445,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.012423030700938437,
+     "median": 0.08334136542351851,
+     "p90": 0.30504866526480495,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 13066.301709836656,
+     "median": 61533.60055600809,
+     "p90": 95235.97565502892,
+     "share_positive": 0.9374
+    }
+   },
+   "us_civil_ai": {
+    "students": {
+     "p10": -947686902.9069177,
+     "median": 679159013.6874902,
+     "p90": 4278372428.2063437,
+     "share_positive": 0.7676
+    },
+    "institutions": {
+     "p10": -557125423.6419122,
+     "median": -135477467.0550933,
+     "p90": -16488490.305472622,
+     "share_positive": 0.0398
+    },
+    "states": {
+     "p10": 2169129.367862986,
+     "median": 39817311.72451132,
+     "p90": 214432611.43953058,
+     "share_positive": 0.9602
+    },
+    "industry": {
+     "p10": 77957908.81263195,
+     "median": 556966835.582566,
+     "p90": 2529462402.395576,
+     "share_positive": 0.99
+    },
+    "industry_worker_value": {
+     "p10": 150254959.63184938,
+     "median": 802742804.7573348,
+     "p90": 3145728653.933107,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 41697327.02665374,
+     "median": 199089195.84036365,
+     "p90": 707521659.6187084,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 278.1507793419518,
+     "median": 2039.1734638330418,
+     "p90": 9319.497007923886,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.6498718310412782,
+     "median": 0.8292311555312877,
+     "p90": 1.0525134972131645,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.012423030700938437,
+     "median": 0.08334136542351851,
+     "p90": 0.30504866526480495,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -37438.00261458378,
+     "median": 41186.11932107389,
+     "p90": 95377.28610822221,
+     "share_positive": 0.7676
+    }
+   },
+   "fl_civil_ai": {
+    "students": {
+     "p10": -63857363.774413645,
+     "median": 31581647.01351529,
+     "p90": 219988904.06504977,
+     "share_positive": 0.7382
+    },
+    "institutions": {
+     "p10": -21965567.51688661,
+     "median": -5088376.015158756,
+     "p90": -686537.5237237994,
+     "share_positive": 0.0234
+    },
+    "states": {
+     "p10": 271679.39800170134,
+     "median": 3196988.2994522564,
+     "p90": 16229274.663288713,
+     "share_positive": 0.9764
+    },
+    "industry": {
+     "p10": 4474933.937556463,
+     "median": 31333162.591605306,
+     "p90": 138442253.68787146,
+     "share_positive": 0.9916
+    },
+    "industry_worker_value": {
+     "p10": 8485327.167342732,
+     "median": 44629519.61182308,
+     "p90": 173272088.21394885,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 2287056.8693833766,
+     "median": 10926829.05422589,
+     "p90": 38772250.456978135,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 15.673644209811574,
+     "median": 115.28891408164156,
+     "p90": 519.510908671385,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.5470006660592228,
+     "median": 0.6980254423302876,
+     "p90": 0.886170381288569,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.012423030700938437,
+     "median": 0.08334136542351851,
+     "p90": 0.30504866526480495,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": -43578.71084839616,
+     "median": 37085.47137484579,
+     "p90": 92459.50038260591,
+     "share_positive": 0.7382
+    }
+   },
+   "us_civil_ai_wil": {
+    "students": {
+     "p10": 64341583.00154437,
+     "median": 1286105512.2566676,
+     "p90": 5446606631.785078,
+     "share_positive": 0.9216
+    },
+    "institutions": {
+     "p10": -557125423.6419122,
+     "median": -135477467.0550933,
+     "p90": -16488490.305472622,
+     "share_positive": 0.0398
+    },
+    "states": {
+     "p10": 2169129.367862986,
+     "median": 39817311.72451132,
+     "p90": 214432611.43953058,
+     "share_positive": 0.9602
+    },
+    "industry": {
+     "p10": 109522969.1532876,
+     "median": 644592666.9366632,
+     "p90": 2747672520.981338,
+     "share_positive": 0.9992
+    },
+    "industry_worker_value": {
+     "p10": 150254959.63184938,
+     "median": 802742804.7573348,
+     "p90": 3145728653.933107,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 25132061.178560305,
+     "median": 122736601.53005175,
+     "p90": 462368878.41058666,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 278.1507793419518,
+     "median": 2039.1734638330418,
+     "p90": 9319.497007923886,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.6498718310412782,
+     "median": 0.8292311555312877,
+     "p90": 1.0525134972131645,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.012423030700938437,
+     "median": 0.08334136542351851,
+     "p90": 0.30504866526480495,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 7712.92470115518,
+     "median": 63274.76244374163,
+     "p90": 105372.4947908406,
+     "share_positive": 0.9216
+    }
+   },
+   "fl_civil_ai_wil": {
+    "students": {
+     "p10": 985331.1804219858,
+     "median": 64779522.45020335,
+     "p90": 284492125.4536599,
+     "share_positive": 0.9084
+    },
+    "institutions": {
+     "p10": -21965567.51688661,
+     "median": -5088376.015158756,
+     "p90": -686537.5237237994,
+     "share_positive": 0.0234
+    },
+    "states": {
+     "p10": 271679.39800170134,
+     "median": 3196988.2994522564,
+     "p90": 16229274.663288713,
+     "share_positive": 0.9764
+    },
+    "industry": {
+     "p10": 6198080.385420136,
+     "median": 35996449.41109398,
+     "p90": 151340965.15372637,
+     "share_positive": 0.9994
+    },
+    "industry_worker_value": {
+     "p10": 8485327.167342732,
+     "median": 44629519.61182308,
+     "p90": 173272088.21394885,
+     "share_positive": 1.0
+    },
+    "industry_training_cost": {
+     "p10": 1380351.689794294,
+     "median": 6710598.148685314,
+     "p90": 25280707.530470304,
+     "share_positive": 1.0
+    },
+    "extra_graduates_2027_2040": {
+     "p10": 15.673644209811574,
+     "median": 115.28891408164156,
+     "p90": 519.510908671385,
+     "share_positive": 1.0
+    },
+    "graduates_per_opening_2035": {
+     "p10": 0.5470006660592228,
+     "median": 0.6980254423302876,
+     "p90": 0.886170381288569,
+     "share_positive": 1.0
+    },
+    "adoption_2035": {
+     "p10": 0.012423030700938437,
+     "median": 0.08334136542351851,
+     "p90": 0.30504866526480495,
+     "share_positive": 1.0
+    },
+    "median_gain_per_graduate": {
+     "p10": 2135.0152297870513,
+     "median": 59324.9988877729,
+     "p90": 102604.30701011073,
+     "share_positive": 0.9084
+    }
+   },
+   "floor_cv": 97.31069735208949,
+   "floor_cm": 98.26843143286179,
+   "states_le90": 2.0
+  }
+ },
+ "us_construction_no_ai": {
+  "students": {
+   "p10": -209819975.17482242,
+   "median": 191034650.67669797,
+   "p90": 1137053044.7968254,
+   "share_positive": 0.77035
+  },
+  "institutions": {
+   "p10": -116365300.98734728,
+   "median": -24539643.030520454,
+   "p90": 142258.4560362186,
+   "share_positive": 0.1025
+  },
+  "states": {
+   "p10": -16384.802738063812,
+   "median": 7335452.8723254595,
+   "p90": 46161054.51908627,
+   "share_positive": 0.8975
+  },
+  "industry": {
+   "p10": 24135276.000834603,
+   "median": 173415052.7281677,
+   "p90": 806476748.7460567,
+   "share_positive": 0.9884
+  },
+  "industry_worker_value": {
+   "p10": 48543368.39739793,
+   "median": 241976193.19756883,
+   "p90": 983407438.6947392,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 12212707.503845146,
+   "median": 55799154.38459341,
+   "p90": 196376202.30954716,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 97.82710279738423,
+   "median": 716.4045631279309,
+   "p90": 3056.1340922976624,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.13372485548258217,
+   "median": 0.16862532626597673,
+   "p90": 0.21138102397641892,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -29615.323135795054,
+   "median": 35655.70545060847,
+   "p90": 84445.80720221577,
+   "share_positive": 0.77035
+  }
+ },
+ "fl_construction_no_ai": {
+  "students": {
+   "p10": -18631911.89445983,
+   "median": 11641735.17066445,
+   "p90": 75789465.63322455,
+   "share_positive": 0.73065
+  },
+  "institutions": {
+   "p10": -8267761.685879213,
+   "median": -1921923.495459389,
+   "p90": -160085.78570940712,
+   "share_positive": 0.05725
+  },
+  "states": {
+   "p10": 24015.015804837065,
+   "median": 586678.4585735921,
+   "p90": 3323372.0687769013,
+   "share_positive": 0.94275
+  },
+  "industry": {
+   "p10": 1690457.1909539534,
+   "median": 11824166.630448796,
+   "p90": 54315389.968510225,
+   "share_positive": 0.9899
+  },
+  "industry_worker_value": {
+   "p10": 3342576.4760346226,
+   "median": 16498272.61350552,
+   "p90": 66157659.57308326,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 840232.7146359103,
+   "median": 3810260.793839667,
+   "p90": 13352317.319347864,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 6.666712772644582,
+   "median": 48.76116643072868,
+   "p90": 206.62117291105207,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.10142849446707741,
+   "median": 0.12812251371006547,
+   "p90": 0.16087116012246516,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -35565.42268890474,
+   "median": 34042.76263504774,
+   "p90": 83062.6050318775,
+   "share_positive": 0.73065
+  }
+ },
+ "us_construction_ai": {
+  "students": {
+   "p10": -234230077.89123827,
+   "median": 209422257.70034093,
+   "p90": 1250986478.5451784,
+   "share_positive": 0.77635
+  },
+  "institutions": {
+   "p10": -131005091.07848743,
+   "median": -26684267.87426766,
+   "p90": 720178.0831354819,
+   "share_positive": 0.1118
+  },
+  "states": {
+   "p10": -123166.45774270227,
+   "median": 7761311.327418855,
+   "p90": 51504379.54842949,
+   "share_positive": 0.8882
+  },
+  "industry": {
+   "p10": 34874442.17236608,
+   "median": 218223745.951738,
+   "p90": 1003041489.1237229,
+   "share_positive": 0.99605
+  },
+  "industry_worker_value": {
+   "p10": 54632377.87358273,
+   "median": 280705681.58979,
+   "p90": 1167856126.6647189,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 10541137.097710965,
+   "median": 49833612.89287097,
+   "p90": 182448752.51140553,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 112.85277861179875,
+   "median": 843.1518272423609,
+   "p90": 3612.420028085517,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.12711747725515188,
+   "median": 0.16698310677561545,
+   "p90": 0.21666133622668068,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -29844.2814927616,
+   "median": 35433.77795995897,
+   "p90": 79547.335342468,
+   "share_positive": 0.77635
+  }
+ },
+ "fl_construction_ai": {
+  "students": {
+   "p10": -20725129.11735671,
+   "median": 12830820.784683697,
+   "p90": 83022182.86809823,
+   "share_positive": 0.742
+  },
+  "institutions": {
+   "p10": -9426008.02167362,
+   "median": -2113903.700536265,
+   "p90": -150749.58238597785,
+   "share_positive": 0.06285
+  },
+  "states": {
+   "p10": 21372.586053376264,
+   "median": 630608.5450725325,
+   "p90": 3734077.4765887703,
+   "share_positive": 0.93715
+  },
+  "industry": {
+   "p10": 2409206.2544256807,
+   "median": 14846487.806858718,
+   "p90": 67280699.28811824,
+   "share_positive": 0.9969
+  },
+  "industry_worker_value": {
+   "p10": 3749379.021577408,
+   "median": 19108910.097047705,
+   "p90": 78540074.75178875,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 720618.1940231556,
+   "median": 3402020.824275737,
+   "p90": 12406582.157098642,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 7.6904626861123635,
+   "median": 57.18838763395041,
+   "p90": 244.88153338069964,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.0963786860319017,
+   "median": 0.12683154866577737,
+   "p90": 0.16480616515201504,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -35792.85342050772,
+   "median": 33717.25102838734,
+   "p90": 78336.41130924443,
+   "share_positive": 0.742
+  }
+ },
+ "us_construction_ai_wil": {
+  "students": {
+   "p10": 26354141.318448108,
+   "median": 390239554.9759494,
+   "p90": 1641637522.9492748,
+   "share_positive": 0.9299
+  },
+  "institutions": {
+   "p10": -131005091.07848743,
+   "median": -26684267.87426766,
+   "p90": 720178.0831354819,
+   "share_positive": 0.1118
+  },
+  "states": {
+   "p10": -123166.45774270227,
+   "median": 7761311.327418855,
+   "p90": 51504379.54842949,
+   "share_positive": 0.8882
+  },
+  "industry": {
+   "p10": 42641583.62995138,
+   "median": 241636486.390255,
+   "p90": 1067751313.0219352,
+   "share_positive": 0.9994
+  },
+  "industry_worker_value": {
+   "p10": 54632377.87358273,
+   "median": 280705681.58979,
+   "p90": 1167856126.6647189,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 6410116.807023329,
+   "median": 30399265.728951488,
+   "p90": 114941998.79265581,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 112.85277861179875,
+   "median": 843.1518272423609,
+   "p90": 3612.420028085517,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.12711747725515188,
+   "median": 0.16698310677561545,
+   "p90": 0.21666133622668068,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": 8702.278908740249,
+   "median": 54758.49046559809,
+   "p90": 88389.53040234963,
+   "share_positive": 0.9299
+  }
+ },
+ "fl_construction_ai_wil": {
+  "students": {
+   "p10": 603344.6049441928,
+   "median": 25461760.905862898,
+   "p90": 109568961.31100976,
+   "share_positive": 0.91095
+  },
+  "institutions": {
+   "p10": -9426008.02167362,
+   "median": -2113903.700536265,
+   "p90": -150749.58238597785,
+   "share_positive": 0.06285
+  },
+  "states": {
+   "p10": 21372.586053376264,
+   "median": 630608.5450725325,
+   "p90": 3734077.4765887703,
+   "share_positive": 0.93715
+  },
+  "industry": {
+   "p10": 2940139.8266660194,
+   "median": 16378249.264329052,
+   "p90": 71399752.68372518,
+   "share_positive": 0.99975
+  },
+  "industry_worker_value": {
+   "p10": 3749379.021577408,
+   "median": 19108910.097047705,
+   "p90": 78540074.75178875,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 437841.073683961,
+   "median": 2077766.355917044,
+   "p90": 7830723.542814834,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 7.6904626861123635,
+   "median": 57.18838763395041,
+   "p90": 244.88153338069964,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.0963786860319017,
+   "median": 0.12683154866577737,
+   "p90": 0.16480616515201504,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": 3307.6261934358504,
+   "median": 53858.30837794002,
+   "p90": 86966.18660490861,
+   "share_positive": 0.91095
+  }
+ },
+ "us_civil_no_ai": {
+  "students": {
+   "p10": -864040839.800066,
+   "median": 290513550.41774446,
+   "p90": 2204106565.4089518,
+   "share_positive": 0.69195
+  },
+  "institutions": {
+   "p10": -370944826.6776808,
+   "median": -95983870.63130394,
+   "p90": -15051338.279206416,
+   "share_positive": 0.0212
+  },
+  "states": {
+   "p10": 2248856.322086662,
+   "median": 27327055.61930227,
+   "p90": 139841447.94987833,
+   "share_positive": 0.9788
+  },
+  "industry": {
+   "p10": 54488572.96314281,
+   "median": 356821193.84666336,
+   "p90": 1589452855.8667004,
+   "share_positive": 0.99395
+  },
+  "industry_worker_value": {
+   "p10": 100041774.08507952,
+   "median": 488418970.66786975,
+   "p90": 1936593947.643344,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 23876441.491935343,
+   "median": 108210574.21570818,
+   "p90": 379306588.4564547,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 213.69710898079938,
+   "median": 1549.685144447939,
+   "p90": 6513.551236602548,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.5668647442625999,
+   "median": 0.7133088795239999,
+   "p90": 0.8921820952622499,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -54479.54757789968,
+   "median": 30167.68898232029,
+   "p90": 90421.5023966386,
+   "share_positive": 0.69195
+  }
+ },
+ "fl_civil_no_ai": {
+  "students": {
+   "p10": -54959234.87070387,
+   "median": 12668420.231483761,
+   "p90": 113136948.68884695,
+   "share_positive": 0.66055
+  },
+  "institutions": {
+   "p10": -14705233.632877043,
+   "median": -3514383.4388191574,
+   "p90": -527993.2913832298,
+   "share_positive": 0.01305
+  },
+  "states": {
+   "p10": 212517.63096033107,
+   "median": 2169989.2543718726,
+   "p90": 10491812.880533462,
+   "share_positive": 0.98695
+  },
+  "industry": {
+   "p10": 3148826.4620485543,
+   "median": 19928727.15707277,
+   "p90": 88058336.48594794,
+   "share_positive": 0.9955
+  },
+  "industry_worker_value": {
+   "p10": 5600624.521997988,
+   "median": 27083171.773108713,
+   "p90": 106113673.49791421,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 1309325.9667561078,
+   "median": 5915419.073193296,
+   "p90": 20695219.278021164,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 12.122046179849168,
+   "median": 87.6534127566834,
+   "p90": 367.75436466562945,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.4769897422346688,
+   "median": 0.6007464777040932,
+   "p90": 0.7513613283539846,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -61954.009742099974,
+   "median": 25385.782155296467,
+   "p90": 86987.19300901612,
+   "share_positive": 0.66055
+  }
+ },
+ "us_civil_ai": {
+  "students": {
+   "p10": -963423912.3359007,
+   "median": 327406431.6050345,
+   "p90": 2411507886.8110714,
+   "share_positive": 0.7052
+  },
+  "institutions": {
+   "p10": -426559583.67236316,
+   "median": -107488232.18327239,
+   "p90": -16002352.277830886,
+   "share_positive": 0.0221
+  },
+  "states": {
+   "p10": 2363299.105233415,
+   "median": 30083947.7450241,
+   "p90": 157386528.38873112,
+   "share_positive": 0.9779
+  },
+  "industry": {
+   "p10": 74982386.50142284,
+   "median": 443176237.9650707,
+   "p90": 1963422990.623082,
+   "share_positive": 0.99825
+  },
+  "industry_worker_value": {
+   "p10": 112225743.1548369,
+   "median": 562345132.4053917,
+   "p90": 2273624927.2580357,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 20469125.194603886,
+   "median": 96598833.14975363,
+   "p90": 352147577.0249084,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 246.9678446560287,
+   "median": 1811.5820280073922,
+   "p90": 7651.478709881949,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.5393748014574814,
+   "median": 0.7070769844848162,
+   "p90": 0.9150888365473521,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -55361.95421825323,
+   "median": 30730.76089273347,
+   "p90": 85585.14513472654,
+   "share_positive": 0.7052
+  }
+ },
+ "fl_civil_ai": {
+  "students": {
+   "p10": -62185716.791612454,
+   "median": 14342440.073907785,
+   "p90": 123220173.74313618,
+   "share_positive": 0.67005
+  },
+  "institutions": {
+   "p10": -16894130.740350947,
+   "median": -3984390.670706123,
+   "p90": -608076.0066111843,
+   "share_positive": 0.01265
+  },
+  "states": {
+   "p10": 225278.2396838433,
+   "median": 2400264.6078947783,
+   "p90": 11921550.385340802,
+   "share_positive": 0.98735
+  },
+  "industry": {
+   "p10": 4247630.028671672,
+   "median": 24582139.96033304,
+   "p90": 107900635.66801108,
+   "share_positive": 0.9987
+  },
+  "industry_worker_value": {
+   "p10": 6243079.679916756,
+   "median": 31003149.072051734,
+   "p90": 124613168.85470784,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 1121909.1086477714,
+   "median": 5273933.13112813,
+   "p90": 19248904.649188258,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 13.928747001430914,
+   "median": 102.04624874660234,
+   "p90": 430.01598376225877,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.4537557455991459,
+   "median": 0.5952648966024512,
+   "p90": 0.7710230736603694,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -62516.423059158995,
+   "median": 25702.477633546914,
+   "p90": 82031.3414362064,
+   "share_positive": 0.67005
+  }
+ },
+ "us_civil_ai_wil": {
+  "students": {
+   "p10": -36439671.267263785,
+   "median": 719951801.6243484,
+   "p90": 3271761196.509275,
+   "share_positive": 0.8883
+  },
+  "institutions": {
+   "p10": -426559583.67236316,
+   "median": -107488232.18327239,
+   "p90": -16002352.277830886,
+   "share_positive": 0.0221
+  },
+  "states": {
+   "p10": 2363299.105233415,
+   "median": 30083947.7450241,
+   "p90": 157386528.38873112,
+   "share_positive": 0.9779
+  },
+  "industry": {
+   "p10": 90017048.97230925,
+   "median": 487593383.12701625,
+   "p90": 2081284899.317895,
+   "share_positive": 0.9999
+  },
+  "industry_worker_value": {
+   "p10": 112225743.1548369,
+   "median": 562345132.4053917,
+   "p90": 2273624927.2580357,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 12433851.039632313,
+   "median": 58987756.202666886,
+   "p90": 222346509.70996052,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 246.9678446560287,
+   "median": 1811.5820280073922,
+   "p90": 7651.478709881949,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.5393748014574814,
+   "median": 0.7070769844848162,
+   "p90": 0.9150888365473521,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -3539.8628710307116,
+   "median": 54731.2501556333,
+   "p90": 96154.80261099608,
+   "share_positive": 0.8883
+  }
+ },
+ "fl_civil_ai_wil": {
+  "students": {
+   "p10": -5766575.774245195,
+   "median": 35190174.427487694,
+   "p90": 167336556.13482478,
+   "share_positive": 0.866
+  },
+  "institutions": {
+   "p10": -16894130.740350947,
+   "median": -3984390.670706123,
+   "p90": -608076.0066111843,
+   "share_positive": 0.01265
+  },
+  "states": {
+   "p10": 225278.2396838433,
+   "median": 2400264.6078947783,
+   "p90": 11921550.385340802,
+   "share_positive": 0.98735
+  },
+  "industry": {
+   "p10": 5065101.832677825,
+   "median": 27079164.33259134,
+   "p90": 113981672.63144736,
+   "share_positive": 0.9999
+  },
+  "industry_worker_value": {
+   "p10": 6243079.679916756,
+   "median": 31003149.072051734,
+   "p90": 124613168.85470784,
+   "share_positive": 1.0
+  },
+  "industry_training_cost": {
+   "p10": 682668.9356197063,
+   "median": 3226704.245899779,
+   "p90": 12121546.30256288,
+   "share_positive": 1.0
+  },
+  "extra_graduates_2027_2040": {
+   "p10": 13.928747001430914,
+   "median": 102.04624874660234,
+   "p90": 430.01598376225877,
+   "share_positive": 1.0
+  },
+  "graduates_per_opening_2035": {
+   "p10": 0.4537557455991459,
+   "median": 0.5952648966024512,
+   "p90": 0.7710230736603694,
+   "share_positive": 1.0
+  },
+  "adoption_2035": {
+   "p10": 0.016406740500740525,
+   "median": 0.11462573524982114,
+   "p90": 0.48902789076962766,
+   "share_positive": 1.0
+  },
+  "median_gain_per_graduate": {
+   "p10": -9008.179432797488,
+   "median": 50513.1959776484,
+   "p90": 92920.05842534473,
+   "share_positive": 0.866
+  }
+ },
+ "ms": {
+  "cv_content_full_floor": 95.61983831724075,
+  "cv_content_full_need": 0.10172413793103449,
+  "cv_content_full_need_literacy": 0.15258620689655172,
+  "cv_content_sampled_floor": 96.56528557508383,
+  "cv_content_sampled_need": 0.10172413793103449,
+  "cv_content_sampled_need_literacy": 0.15258620689655172,
+  "cv_all_full_floor": 94.00909929581249,
+  "cv_all_full_need": 0.0625,
+  "cv_all_full_need_literacy": 0.09375,
+  "cv_all_sampled_floor": 95.98380983767066,
+  "cv_all_sampled_need": 0.0625,
+  "cv_all_sampled_need_literacy": 0.09375,
+  "cm_content_full_floor": 96.30558571007816,
+  "cm_content_full_need": 0.11557377049180328,
+  "cm_content_full_need_literacy": 0.1651639344262295,
+  "cm_content_sampled_floor": 97.42408892327856,
+  "cm_content_sampled_need": 0.11557377049180328,
+  "cm_content_sampled_need_literacy": 0.1651639344262295,
+  "cm_all_full_floor": 94.70843476047251,
+  "cm_all_full_need": 0.07206632653061223,
+  "cm_all_full_need_literacy": 0.10299744897959184,
+  "cm_all_sampled_floor": 96.87653156821213,
+  "cm_all_sampled_need": 0.07206632653061223,
+  "cm_all_sampled_need_literacy": 0.10299744897959184,
+  "states_le90_full": 35.0,
+  "states_le90_sampled": 34.0,
+  "states_le90_without_ai": 34,
+  "states_pushed_over_90_by_3_literacy": 32,
+  "construction_no_ai_gain_per_graduate": 35655.70545060847,
+  "construction_no_ai_students_gain_share": 0.77035,
+  "construction_ai_gain_per_graduate": 35433.77795995897,
+  "construction_ai_students_gain_share": 0.77635,
+  "construction_ai_wil_gain_per_graduate": 54758.49046559809,
+  "construction_ai_wil_students_gain_share": 0.9299,
+  "civil_no_ai_gain_per_graduate": 30167.68898232029,
+  "civil_no_ai_students_gain_share": 0.69195,
+  "civil_ai_gain_per_graduate": 30730.76089273347,
+  "civil_ai_students_gain_share": 0.7052,
+  "civil_ai_wil_gain_per_graduate": 54731.2501556333,
+  "civil_ai_wil_students_gain_share": 0.8883
+ }
+}

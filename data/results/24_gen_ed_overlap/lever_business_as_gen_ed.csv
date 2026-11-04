@@ -1,0 +1,127 @@
+UNITID,institution,field,gen_ed,regime,cap,min_credits,counted_as_gen_ed
+132903,University of Central Florida,civil,36,today,0,102.0,0.0
+132903,University of Central Florida,civil,36,business foundations count,9,102.0,0.0
+132903,University of Central Florida,civil,36,any 12 major credits (Louisiana),12,95.0,9.0
+132903,University of Central Florida,civil,30,today,0,96.0,0.0
+132903,University of Central Florida,civil,30,business foundations count,9,96.0,0.0
+132903,University of Central Florida,civil,30,any 12 major credits (Louisiana),12,95.0,3.0
+133650,Florida Agricultural and Mechanical University,civil,36,today,0,94.0,0.0
+133650,Florida Agricultural and Mechanical University,civil,36,business foundations count,9,94.0,0.0
+133650,Florida Agricultural and Mechanical University,civil,36,any 12 major credits (Louisiana),12,90.0,9.0
+133650,Florida Agricultural and Mechanical University,civil,30,today,0,90.0,0.0
+133650,Florida Agricultural and Mechanical University,civil,30,business foundations count,9,90.0,0.0
+133650,Florida Agricultural and Mechanical University,civil,30,any 12 major credits (Louisiana),12,90.0,2.0
+133650,Florida Agricultural and Mechanical University,construction technology,36,today,0,59.0,0.0
+133650,Florida Agricultural and Mechanical University,construction technology,36,business foundations count,9,59.0,0.0
+133650,Florida Agricultural and Mechanical University,construction technology,36,any 12 major credits (Louisiana),12,45.0,12.0
+133650,Florida Agricultural and Mechanical University,construction technology,30,today,0,51.0,0.0
+133650,Florida Agricultural and Mechanical University,construction technology,30,business foundations count,9,51.0,0.0
+133650,Florida Agricultural and Mechanical University,construction technology,30,any 12 major credits (Louisiana),12,43.0,8.0
+133669,Florida Atlantic University,civil,36,today,0,90.0,0.0
+133669,Florida Atlantic University,civil,36,business foundations count,9,90.0,0.0
+133669,Florida Atlantic University,civil,36,any 12 major credits (Louisiana),12,90.0,0.0
+133669,Florida Atlantic University,civil,30,today,0,90.0,0.0
+133669,Florida Atlantic University,civil,30,business foundations count,9,90.0,0.0
+133669,Florida Atlantic University,civil,30,any 12 major credits (Louisiana),12,90.0,0.0
+133881,Florida Institute of Technology,civil,36,today,0,91.0,0.0
+133881,Florida Institute of Technology,civil,36,business foundations count,9,91.0,0.0
+133881,Florida Institute of Technology,civil,36,any 12 major credits (Louisiana),12,91.0,0.0
+133881,Florida Institute of Technology,civil,30,today,0,91.0,0.0
+133881,Florida Institute of Technology,civil,30,business foundations count,9,91.0,0.0
+133881,Florida Institute of Technology,civil,30,any 12 major credits (Louisiana),12,91.0,3.0
+133881,Florida Institute of Technology,construction management,36,today,0,97.0,0.0
+133881,Florida Institute of Technology,construction management,36,business foundations count,9,93.0,9.0
+133881,Florida Institute of Technology,construction management,36,any 12 major credits (Louisiana),12,93.0,7.0
+133881,Florida Institute of Technology,construction management,30,today,0,93.0,0.0
+133881,Florida Institute of Technology,construction management,30,business foundations count,9,93.0,9.0
+133881,Florida Institute of Technology,construction management,30,any 12 major credits (Louisiana),12,93.0,3.0
+133951,Florida International University,civil,36,today,0,94.0,0.0
+133951,Florida International University,civil,36,business foundations count,9,94.0,0.0
+133951,Florida International University,civil,36,any 12 major credits (Louisiana),12,94.0,0.0
+133951,Florida International University,civil,30,today,0,94.0,0.0
+133951,Florida International University,civil,30,business foundations count,9,94.0,0.0
+133951,Florida International University,civil,30,any 12 major credits (Louisiana),12,94.0,0.0
+133951,Florida International University,construction management,36,today,0,110.0,0.0
+133951,Florida International University,construction management,36,business foundations count,9,107.0,9.0
+133951,Florida International University,construction management,36,any 12 major credits (Louisiana),12,107.0,12.0
+133951,Florida International University,construction management,30,today,0,107.0,0.0
+133951,Florida International University,construction management,30,business foundations count,9,107.0,6.0
+133951,Florida International University,construction management,30,any 12 major credits (Louisiana),12,107.0,12.0
+134097,Florida State University,civil,36,today,0,95.0,0.0
+134097,Florida State University,civil,36,business foundations count,9,95.0,0.0
+134097,Florida State University,civil,36,any 12 major credits (Louisiana),12,95.0,0.0
+134097,Florida State University,civil,30,today,0,95.0,0.0
+134097,Florida State University,civil,30,business foundations count,9,95.0,0.0
+134097,Florida State University,civil,30,any 12 major credits (Louisiana),12,95.0,0.0
+134130,University of Florida,civil,36,today,0,91.0,0.0
+134130,University of Florida,civil,36,business foundations count,9,91.0,0.0
+134130,University of Florida,civil,36,any 12 major credits (Louisiana),12,91.0,0.0
+134130,University of Florida,civil,30,today,0,91.0,0.0
+134130,University of Florida,civil,30,business foundations count,9,91.0,0.0
+134130,University of Florida,civil,30,any 12 major credits (Louisiana),12,91.0,0.0
+134130,University of Florida,construction management,36,today,0,92.0,0.0
+134130,University of Florida,construction management,36,business foundations count,9,92.0,4.0
+134130,University of Florida,construction management,36,any 12 major credits (Louisiana),12,90.0,8.0
+134130,University of Florida,construction management,30,today,0,90.0,0.0
+134130,University of Florida,construction management,30,business foundations count,9,90.0,0.0
+134130,University of Florida,construction management,30,any 12 major credits (Louisiana),12,90.0,4.0
+135726,University of Miami,civil,36,today,0,87.0,0.0
+135726,University of Miami,civil,36,business foundations count,9,87.0,0.0
+135726,University of Miami,civil,36,any 12 major credits (Louisiana),12,87.0,6.0
+135726,University of Miami,civil,30,today,0,87.0,0.0
+135726,University of Miami,civil,30,business foundations count,9,87.0,0.0
+135726,University of Miami,civil,30,any 12 major credits (Louisiana),12,87.0,7.0
+136172,University of North Florida,civil,36,today,0,100.0,0.0
+136172,University of North Florida,civil,36,business foundations count,9,100.0,0.0
+136172,University of North Florida,civil,36,any 12 major credits (Louisiana),12,97.0,8.0
+136172,University of North Florida,civil,30,today,0,97.0,0.0
+136172,University of North Florida,civil,30,business foundations count,9,97.0,0.0
+136172,University of North Florida,civil,30,any 12 major credits (Louisiana),12,97.0,0.0
+136172,University of North Florida,construction management,36,today,0,101.0,0.0
+136172,University of North Florida,construction management,36,business foundations count,9,92.0,9.0
+136172,University of North Florida,construction management,36,any 12 major credits (Louisiana),12,91.0,12.0
+136172,University of North Florida,construction management,30,today,0,95.0,0.0
+136172,University of North Florida,construction management,30,business foundations count,9,91.0,9.0
+136172,University of North Florida,construction management,30,any 12 major credits (Louisiana),12,91.0,12.0
+137209,Seminole State College of Florida,construction management,36,today,0,115.0,0.0
+137209,Seminole State College of Florida,construction management,36,business foundations count,9,112.0,3.0
+137209,Seminole State College of Florida,construction management,36,any 12 major credits (Louisiana),12,103.0,12.0
+137209,Seminole State College of Florida,construction management,30,today,0,109.0,0.0
+137209,Seminole State College of Florida,construction management,30,business foundations count,9,106.0,3.0
+137209,Seminole State College of Florida,construction management,30,any 12 major credits (Louisiana),12,103.0,12.0
+137351,University of South Florida,civil,36,today,0,94.0,0.0
+137351,University of South Florida,civil,36,business foundations count,9,94.0,0.0
+137351,University of South Florida,civil,36,any 12 major credits (Louisiana),12,94.0,0.0
+137351,University of South Florida,civil,30,today,0,94.0,0.0
+137351,University of South Florida,civil,30,business foundations count,9,94.0,0.0
+137351,University of South Florida,civil,30,any 12 major credits (Louisiana),12,94.0,0.0
+138354,University of West Florida,construction management,36,today,0,96.0,0.0
+138354,University of West Florida,construction management,36,business foundations count,9,87.0,9.0
+138354,University of West Florida,construction management,36,any 12 major credits (Louisiana),12,84.0,12.0
+138354,University of West Florida,construction management,30,today,0,90.0,0.0
+138354,University of West Florida,construction management,30,business foundations count,9,84.0,9.0
+138354,University of West Florida,construction management,30,any 12 major credits (Louisiana),12,84.0,12.0
+385619,Everglades University,construction management,36,today,0,96.0,0.0
+385619,Everglades University,construction management,36,business foundations count,9,90.0,6.0
+385619,Everglades University,construction management,36,any 12 major credits (Louisiana),12,84.0,12.0
+385619,Everglades University,construction management,30,today,0,90.0,0.0
+385619,Everglades University,construction management,30,business foundations count,9,84.0,6.0
+385619,Everglades University,construction management,30,any 12 major credits (Louisiana),12,84.0,12.0
+433660,Florida Gulf Coast University,civil,36,today,0,96.0,0.0
+433660,Florida Gulf Coast University,civil,36,business foundations count,9,96.0,0.0
+433660,Florida Gulf Coast University,civil,36,any 12 major credits (Louisiana),12,96.0,0.0
+433660,Florida Gulf Coast University,civil,30,today,0,96.0,0.0
+433660,Florida Gulf Coast University,civil,30,business foundations count,9,96.0,0.0
+433660,Florida Gulf Coast University,civil,30,any 12 major credits (Louisiana),12,96.0,0.0
+433660,Florida Gulf Coast University,construction management,36,today,0,95.0,0.0
+433660,Florida Gulf Coast University,construction management,36,business foundations count,9,89.0,9.0
+433660,Florida Gulf Coast University,construction management,36,any 12 major credits (Louisiana),12,89.0,11.0
+433660,Florida Gulf Coast University,construction management,30,today,0,89.0,0.0
+433660,Florida Gulf Coast University,construction management,30,business foundations count,9,89.0,6.0
+433660,Florida Gulf Coast University,construction management,30,any 12 major credits (Louisiana),12,89.0,11.0
+456490,Polytechnic University of Puerto Rico-Orlando,civil,36,today,0,99.0,0.0
+456490,Polytechnic University of Puerto Rico-Orlando,civil,36,business foundations count,9,99.0,0.0
+456490,Polytechnic University of Puerto Rico-Orlando,civil,36,any 12 major credits (Louisiana),12,99.0,0.0
+456490,Polytechnic University of Puerto Rico-Orlando,civil,30,today,0,99.0,0.0
+456490,Polytechnic University of Puerto Rico-Orlando,civil,30,business foundations count,9,99.0,0.0
+456490,Polytechnic University of Puerto Rico-Orlando,civil,30,any 12 major credits (Louisiana),12,99.0,0.0

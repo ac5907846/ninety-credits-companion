@@ -1,0 +1,13 @@
+story,state,state_rec,accreditor,merge,ai,ai_literacy,cm_reach_90,cm_programs,cm_median_credits,fgcu_cm_credits,fgcu_cm_student,fgcu_cm_institution,fgcu_cm_state,cv_reach_90,cv_programs,cv_median_credits,fgcu_cv_credits,fgcu_cv_student,fgcu_cv_institution,fgcu_cv_state
+Nobody moves,36,False,none,none,none,0,0,8,96.5,95.0,51051.875,-9874.7,8250.0,2,12,94.0,96.0,48722.05,-10269.688,8580.0
+Programs merge courses,36,False,none,peer_p25,none,0,0,8,96.0,95.0,51051.875,-9874.7,8250.0,2,12,94.0,95.0,50595.975000000006,-10664.676,8910.0
+State: 12 major credits count,36_major12,False,none,peer_p25,none,0,4,8,90.5,89.0,61262.25,-11849.64,9900.0,3,12,93.0,95.0,50595.975000000006,-10664.676,8910.0
+State: general education 30,30,False,none,peer_p25,none,0,4,8,91.0,89.0,61262.25,-11849.64,9900.0,3,12,93.0,95.0,50595.975000000006,-10664.676,8910.0
+Accreditor: number 20% lower,36,False,minus20,peer_p25,none,0,5,8,87.0,85.0,61262.25,-11849.64,9900.0,10,12,82.0,85.0,59965.600000000006,-12639.616,10560.0
+Accreditor: counts competence,36,False,competence,peer_p25,none,0,5,8,86.0,82.0,61262.25,-11849.64,9900.0,9,12,89.0,89.0,59965.600000000006,-12639.616,10560.0
+State and accreditor (central),36_major12,False,competence,peer_p25,none,0,6,8,82.5,76.0,61262.25,-11849.64,9900.0,10,12,88.5,89.0,59965.600000000006,-12639.616,10560.0
+"Central, AI as an incremental tool",36_major12,True,competence,peer_p25,F3,0,6,8,82.5,76.0,61262.25,-11849.64,9900.0,10,12,88.5,89.0,59965.600000000006,-12639.616,10560.0
+"Central, AI tutor revolution",36_major12,True,competence,peer_p25,F1,0,8,8,68.0,63.0,61262.25,-11849.64,9900.0,12,12,73.5,75.0,59965.600000000006,-12639.616,10560.0
+"Central, AI tutor revolution, AI course added",36_major12,True,competence,peer_p25,F1,3,8,8,71.0,66.0,61262.25,-11849.64,9900.0,12,12,76.5,78.0,59965.600000000006,-12639.616,10560.0
+Everything moves,15,True,minus20_competence,peer_p25,ceiling,0,8,8,54.0,54.0,61262.25,-11849.64,9900.0,12,12,56.0,62.0,59965.600000000006,-12639.616,10560.0
+Program leaves accreditation,36,False,leave,peer_p25,none,0,6,8,77.0,75.0,61262.25,-11849.64,9900.0,11,12,76.5,82.0,59965.600000000006,-12639.616,10560.0
