@@ -90,7 +90,7 @@ overlap = {"ledger": records(led, ["UNITID", "short", "fld", "group", "official_
            "lever": records(lev, ["UNITID", "field", "gen_ed", "regime", "min_credits", "counted_as_gen_ed"]),
            "differences": records(dif, ["institution", "field", "code", "title", "credits", "change", "rule_area", "list_area"]),
            "courses": records(crs, ["UNITID", "field", "code", "title", "credits", "kind", "list_area", "state_core", "counted_in_keep_solution"])}
-lists = pd.read_csv(HERE.parent / "01_raw_data/policy/gen_ed_lists_sus_2026-27.csv", dtype=str).fillna("")
+lists = pd.concat([pd.read_csv(f, dtype=str) for f in sorted((HERE.parent / "01_raw_data/policy").glob("gen_ed_lists_*_2026-27.csv"))]).fillna("")
 overlap["list_counts"] = lists.groupby(["university", "area"]).size().reset_index(name="n").values.tolist()
 overlap["business_on_lists"] = lists[lists.prefix.isin(["ACG", "FIN", "MAN", "BUL", "GEB", "MAR", "QMB", "ENT", "ECO"])][["university", "code", "title", "area", "state_core_area"]].values.tolist()
 dump("overlap.json", overlap)
