@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From 120 to 90 Credits: can accredited construction and civil engineering degrees fit, and who pays</title>
+<meta name="description" content="Interactive companion to a study of 90-credit bachelor’s degrees in construction management and civil engineering: curriculum floors, general education overlap, student and system futures, AI, and the rules each party holds.">
+<link rel="stylesheet" href="css/app.css?v=1">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">From 120 to 90 Credits</a>
+    <nav class="nav" id="nav">
+      <a href="#fit">Can it fit</a>
+      <a href="#overlap">General education</a>
+      <a href="#finder">Floor finder</a>
+      <a href="#agree">Who has to agree</a>
+      <a href="#student">The student</a>
+      <a href="#system">The system</a>
+      <a href="#ai">AI</a>
+      <a href="#notes">Data</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Companion to a study of reduced-credit bachelor’s degrees in accredited construction and civil engineering programs, United States and Florida, catalogs of 2025 to 2027</p>
+      <h1>Can an accredited construction or civil engineering degree fit in 90 credits, who gains, who pays, and who has to agree?</h1>
+      <p class="lede">Every number on this page is read from the saved results of the study’s analysis modules. The charts are interactive: hover for the program, the future or the rule behind each mark, and use the floor finder to test any combination of state, accreditor and program choices on the 21 Florida programs whose course lists were read.</p>
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </section>
+
+  <section id="fit" class="block">
+    <div class="wrap">
+      <h2><span class="num">1</span>Ninety credits fit only where general education gives way</h2>
+      <p class="lede">A mixed-integer program chooses, for each Florida program, the fewest credits that still meet the accreditor’s floors, the state’s general education rule, the program’s own topics and every prerequisite chain. Choose the design and the rule; the chart shows every program against the 90-credit line.</p>
+      <div class="controls" id="fit-controls">
+        <label>Design <select id="fit-design"><option value="FLOOR">Accreditor floor (only the rules bind)</option><option value="KEEP">Required core kept</option></select></label>
+        <label>General education <select id="fit-ge"><option value="36">36 credits (Florida today)</option><option value="30">30 credits</option><option value="24">24 credits</option></select></label>
+        <label>Areas <select id="fit-struct"><option value="typical">Typical university (6 each)</option><option value="minimum">Florida legal minimum (6, 6, 3, 3, 3)</option></select></label>
+        <label>Entrant <select id="fit-ready"><option value="true">Ready for calculus</option><option value="false">Not ready (placement courses added)</option></select></label>
+      </div>
+      <div class="chart tall" id="fit-chart"></div>
+      <p class="note" id="fit-note"></p>
+      <h3>Every state: the construction management floor</h3>
+      <p class="lede">Outside Florida only credit blocks were collected, so the floor is arithmetic: 50 credits of construction, the business foundations that general education does not accept, and the state’s general education minimum (states without a statewide number are counted at 30). Switch the counting rule to see what a state could change on its own.</p>
+      <div class="controls">
+        <label>Counting rule <select id="map-rule"><option value="floor_cm">Today: economics counts, the other business foundations do not</option><option value="floor_cm_business">ACCE’s business foundations count toward general education</option><option value="floor_cm_louisiana">Any 12 major credits count (Louisiana’s rule)</option></select></label>
+        <label><input type="checkbox" id="map-points" checked> Show the 148 construction management programs</label>
+      </div>
+      <div class="chart" id="map-chart"></div>
+      <p class="note" id="map-note"></p>
+    </div>
+  </section>
+
+  <section id="overlap" class="block alt">
+    <div class="wrap">
+      <h2><span class="num">2</span>General education the program teaches anyway</h2>
+      <p class="lede">Florida’s 36 credits of general education and a program’s own requirements overlap: precalculus or statistics, physics or geology, macroeconomics, composition and speech are required by the program and stand on the university’s general education list, so they count once toward both. What the overlap cannot reach is ACCE’s business core: no state university list carries accounting or business law, and only one (University of Florida) lists principles of management. A course counts here only if it stands on the 2026-27 list the Board of Governors approved for that university.</p>
+      <div class="chart tall" id="overlap-chart"></div>
+      <p class="note" id="overlap-note"></p>
+      <div class="two">
+        <div>
+          <h3>The floor if the state counted more of the major</h3>
+          <div class="chart" id="lever-chart"></div>
+          <p class="note">Accreditor floors in full, courses as published, 36 credits of general education over Florida’s area minimums. “Business foundations count” lets accounting, business law and principles of management count toward the 36 (economics already does); “any 12 major credits” is Louisiana’s rule for its 90-hour degree.</p>
+        </div>
+        <div>
+          <h3>What the official lists changed</h3>
+          <p class="small">Before the lists were read, course prefix and level decided eligibility. The lists differ in both directions.</p>
+          <div class="table-wrap"><table id="diff-table"></table></div>
+        </div>
+      </div>
+      <h3>Which required courses stand on the list</h3>
+      <div class="controls"><label>Program <select id="courses-program"></select></label></div>
+      <div class="table-wrap"><table id="courses-table"></table></div>
+    </div>
+  </section>
+
+  <section id="finder" class="block">
+    <div class="wrap">
+      <h2><span class="num">3</span>Floor finder: test a combination of rules</h2>
+      <p class="lede">The policy grid solved every Florida program on every combination of the rules each party controls: what the state does with general education, how much of the accreditor’s floor holds, how the program merges its courses, and whether a merged course carries the credits of what it replaces. Pick a combination; the finder reads the solved floor of every program and, for Florida Gulf Coast University, the money per graduate under each pricing and funding rule.</p>
+      <div class="controls grid4" id="finder-controls">
+        <label>Field <select id="f-field"><option value="CM">Construction management (ACCE)</option><option value="Civil">Civil engineering (ABET)</option></select></label>
+        <label>Design <select id="f-design"><option value="FLOOR">Accreditor floor</option><option value="KEEP">Required core kept</option></select></label>
+        <label>State general education <select id="f-ge"><option value="36">36 credits (today)</option><option value="30">30</option><option value="24">24</option><option value="21">21 (area minimums only)</option><option value="15">15 (state core only)</option></select></label>
+        <label>Major credits counted toward it <select id="f-cap"><option value="0">None (today)</option><option value="12">Up to 12 (Louisiana’s rule)</option></select></label>
+        <label>Accreditor floor that holds <select id="f-share"><option value="1">All of it</option><option value="0.9">90%</option><option value="0.8">80%</option><option value="0.7">70%</option><option value="0.6">60%</option><option value="0.5">Half</option><option value="0">Accreditation given up</option></select></label>
+        <label>Course merging <select id="f-merge"><option value="none">None (courses as published)</option><option value="peer_p25">To the leanest quarter of accredited programs</option><option value="ai_35">AI-supported, 35% fewer credits</option><option value="syllabus">What FGCU syllabi show repeated (FGCU only)</option></select></label>
+        <label>Merged credits <select id="f-rec"><option value="0">Counted as credits</option><option value="1">Competence recognized</option></select></label>
+        <label>Money rule (FGCU) <select id="f-money"><option value="per_credit|follows_credits">Tuition per credit, funding follows credits</option><option value="per_credit|held_harmless">Tuition per credit, funding per degree</option><option value="per_degree|follows_credits">Price per degree, funding follows credits</option><option value="per_degree|held_harmless">Price per degree, funding per degree</option></select></label>
+      </div>
+      <div class="result" id="finder-result"></div>
+      <div class="chart" id="finder-chart"></div>
+      <h3>Any state, by arithmetic</h3>
+      <p class="small">For a construction management program outside Florida: 50 credits of construction, the business foundations the state’s general education does not accept, and the general education the state requires.</p>
+      <div class="controls">
+        <label>State general education, credits <input type="number" id="s-ge" value="36" min="0" max="60" step="1"></label>
+        <label>Major credits the state lets count <input type="number" id="s-cap" value="0" min="0" max="36" step="1"></label>
+        <label><input type="checkbox" id="s-bus"> Business foundations accepted as general education</label>
+      </div>
+      <div class="result" id="state-result"></div>
+    </div>
+  </section>
+
+  <section id="agree" class="block alt">
+    <div class="wrap">
+      <h2><span class="num">4</span>Who has to agree, and what AI adds</h2>
+      <p class="lede">The scenario atlas combines what the state does, what the accreditor does, seven AI futures, merging and a required AI course for the 20 Florida construction management and civil programs. Each cell counts the programs whose fewest credits reach 90; hover for the median.</p>
+      <div class="controls">
+        <label>AI future <select id="a-ai"><option value="none">No AI saving</option><option value="F3">F3 Incremental tool</option><option value="F2">F2 Entry-level squeeze</option><option value="F5">F5 Build-out boom</option><option value="F4">F4 Credential unbundling</option><option value="F1">F1 AI tutor revolution</option><option value="ceiling">AI ceiling</option></select></label>
+        <label>Merging <select id="a-merge"><option value="none">Courses as published</option><option value="peer_p25">Merged as peers do</option></select></label>
+        <label>Required AI course <select id="a-lit"><option value="0">None</option><option value="3">3 credits</option></select></label>
+        <label>State counts competence in general education <select id="a-srec"><option value="0">No</option><option value="1">Yes</option></select></label>
+      </div>
+      <div class="two">
+        <div class="chart" id="atlas-cm"></div>
+        <div class="chart" id="atlas-cv"></div>
+      </div>
+      <h3>Twelve stories, read at Florida Gulf Coast University</h3>
+      <div class="chart" id="story-chart"></div>
+      <div class="table-wrap"><table id="story-table"></table></div>
+    </div>
+  </section>
+
+  <section id="student" class="block">
+    <div class="wrap">
+      <h2><span class="num">5</span>The student gains unless employers pay much less, for long</h2>
+      <p class="lede">Twenty thousand futures draw the unknowns that decide what a 90-credit degree is worth to its graduate: the entry earnings penalty and how fast it fades, the share of the year saved, tuition passed through, the discount rate, career length, completion. The distribution below is the gain of the median graduate across those futures; the slider reads the futures whose entry penalty is near the value you choose.</p>
+      <div class="controls">
+        <label>Field <select id="st-field"><option value="construction">Construction</option><option value="civil">Civil engineering</option></select></label>
+        <label>Entry earnings penalty <input type="range" id="st-pen" min="0" max="0.19" step="0.005" value="0.05"> <span id="st-pen-val"></span></label>
+      </div>
+      <div class="result" id="st-result"></div>
+      <div class="two">
+        <div class="chart" id="st-hist"></div>
+        <div class="chart" id="st-cond"></div>
+      </div>
+      <div class="two">
+        <div class="chart" id="st-grid"></div>
+        <div class="chart" id="st-sobol"></div>
+      </div>
+      <p class="note" id="st-note"></p>
+    </div>
+  </section>
+
+  <section id="system" class="block alt">
+    <div class="wrap">
+      <h2><span class="num">6</span>A slow transition timed by the accreditors, with its cost on institutions</h2>
+      <p class="lede">A stock-flow model of entering cohorts, 2015 to 2050: programs adopt a 90-credit option along a diffusion curve that starts when the state allows it and is held back until the accreditor accepts it. Bands span the 10th to 90th percentile of 20,000 futures.</p>
+      <div class="controls">
+        <label>Region <select id="sy-region"><option>United States</option><option>Florida</option></select></label>
+        <label>Field <select id="sy-field"><option value="construction">Construction</option><option value="civil">Civil engineering</option></select></label>
+      </div>
+      <div class="two">
+        <div class="chart" id="sy-adopt"></div>
+        <div class="chart" id="sy-grads"></div>
+      </div>
+      <div class="table-wrap"><table id="sy-table"></table></div>
+    </div>
+  </section>
+
+  <section id="ai" class="block">
+    <div class="wrap">
+      <h2><span class="num">7</span>AI changes who gains more than whether the degree fits</h2>
+      <p class="lede">The same futures with 24 AI and workforce unknowns added: the study time a guarded tutor saves by course type, whether compressed learning earns credit, junior hiring, training cost. On the evidence from trials the floors move by a few credits; a paid work-integrated year does more for the graduate than AI does.</p>
+      <div class="controls">
+        <label>Field <select id="ai-field"><option value="construction">Construction</option><option value="civil">Civil engineering</option></select></label>
+        <label>Region <select id="ai-region"><option>United States</option><option>Florida</option></select></label>
+      </div>
+      <div class="two">
+        <div class="chart" id="ai-ledger"></div>
+        <div class="chart" id="ai-floors"></div>
+      </div>
+      <p class="note" id="ai-note"></p>
+    </div>
+  </section>
+
+  <section id="notes" class="block alt">
+    <div class="wrap">
+      <h2><span class="num">8</span>Data, method and files</h2>
+      <div class="two">
+        <div>
+          <h3>Where the numbers come from</h3>
+          <ul class="small">
+            <li>Programs and catalogs: IPEDS completions and the ACCE directory for the universe; every catalog saved under a written protocol; course lists and prerequisites read for the 21 Florida programs.</li>
+            <li>Rules: ACCE Document 103 (revised 19 October 2026), ABET EAC and ETAC criteria, Florida statute and Board of Governors regulations, the 2026-27 general education course lists the Board approved for each state university, statewide general education minimums for every state, Louisiana’s accelerated baccalaureate policy.</li>
+            <li>Outcomes and money: College Scorecard, ACS and PUMS earnings by education, BLS projections, SHEF, BEA and QCEW.</li>
+            <li>Method: a course-level mixed-integer program for the curriculum (Module A); Robust Decision Making ensembles for the student (Module B) and the system (Module C) with scenario discovery (PRIM) and Sobol indices; a full factorial of policy levers (Module 22) and a scenario atlas (Module 23).</li>
+            <li>No forecast is made. The ensembles map which futures favor which party; the central case of the atlas is a stated choice, and every alternative is solved.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Files behind this page</h3>
+          <ul class="small" id="files"></ul>
+          <p class="small">Each file is written by <code>build_data.py</code> from the results of the analysis modules; nothing here is typed by hand. Built <span id="built"></span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="foot"><div class="wrap"><p>Companion web app to the study “From 120 to 90 Credits”. Figures in the paper are static; this page carries the same results interactively.</p></div></footer>
+<script src="js/app.js?v=1"></script>
+</body>
+</html>
