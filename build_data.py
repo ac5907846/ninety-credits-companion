@@ -383,12 +383,57 @@ def deep(refs):
         ev("A department that embedded technical writing in five engineering courses ran it by co-teaching with a writing instructor", "McCall & Rayess, 2021"),
     ]
     rows_of = lambda t: {"title": t[0].split("<!--")[0].strip(), "rows": t[1], "notes": t[2]}
-    dump("paper.json", {"abroad": abroad_ctx, "ai_evidence": ai_ev, "people": people,
-                        "strategies": rows_of(T.TABLES["recommendations"](vals)), "ledger_table": rows_of(T.TABLES["ledger"](vals)),
+    # the site cites only what the article cites (6 Nov 2026: the rewritten article dropped a few sources)
+    ai_ev = [e for e in ai_ev if e["cite"] in link]
+    people = [e for e in people if e["cite"] in link]
+    for r in abroad_ctx:
+        for part in ("before", "during", "after"):
+            r[part] = [e for e in r[part] if e["cite"] in link]
+    # the article's tables, numbered as in the article: the order of their first appearance in the content file
+    import re as _re
+    order = [m for m in _re.findall(r"^\[\[TABLE:([a-z_]+)\]\]", (MS / "_content.md").read_text(encoding="utf-8"), _re.M)]
+    tables = {}
+    for i, name in enumerate(order, 1):
+        t = rows_of(T.TABLES[name](vals))
+        t["title"] = _re.sub(r"^Table \d+\.", f"Table {i}.", t["title"])
+        t["number"] = i
+        tables[name] = t
+    tables["actions"] = rows_of(T.TABLES["actions"](vals))
+    dump("paper.json", {"abroad": abroad_ctx, "ai_evidence": ai_ev, "people": people, "tables": tables,
                         "ai_counts": {"tool_hours": s12["by_order"]["general education first"]["redesign first"]["tool_hours"],
                                       "total_hours": s12["by_order"]["general education first"]["redesign first"]["total_hours"]},
                         "exposure": rjson(A / "10_ai_curriculum/results/summary.json")["exposure"]})
 
 
+def refocus():
+    """6 Nov 2026, late evening: the dated actions as Figure 1b spells them, where the balance turns (Figure 2), the decision
+    tree (Figure 3)."""
+    labels = rjson(A / "04_national_landscape/event_labels.json")["labels"]
+    ev_rows = []
+    for e in rcsv(A / "04_national_landscape/results/events.csv"):
+        key = next(k for k in labels if k.startswith(e["date"] + "|") and e["actor"].startswith(k.split("|")[1]))
+        ev_rows.append({"date": e["date"], "level": e["level"], "state": e["state"], "actor": labels[key]["actor"], "action": labels[key]["action"],
+                        "actor_full": e["actor"], "construction_named": e["construction_named"] == "yes", "source": e["source"]})
+    ev_rows.sort(key=lambda r: r["date"])
+    s4 = rjson(A / "04_national_landscape/results/summary.json")
+    dump("timeline.json", {"events": ev_rows, "summary": {k: s4[k] for k in ("events", "events_2026", "events_construction_named", "events_by_level", "states_any_action")}})
+
+    s12 = rjson(A / "12_skills_at_risk/results/summary.json")
+    led = {r["program_id"]: r for r in rcsv(A / "08_stakeholder_ledger/results/ledger_by_program.csv")}
+    inst = []
+    for r in rcsv(A / "12_skills_at_risk/results/institution_break_even.csv"):
+        L = led.get(r["program_id"], {})
+        inst.append([r["program_id"], L.get("institution", ""), L.get("program", ""), L.get("accreditation_group", ""), num(r["credits_removed"]),
+                     num(r["institution_net_per_graduate"]), num(r["net_margin_per_credit"]), num(r["break_even_new_share"]) if r["break_even_new_share"] else None])
+    dump("balance.json", {"curves": [{k: num(v) for k, v in r.items()} for r in rcsv(A / "12_skills_at_risk/results/threshold_curves.csv")],
+                          "institution_curve": [{k: num(v) for k, v in r.items()} for r in rcsv(A / "12_skills_at_risk/results/institution_curve.csv")],
+                          "institution_programs": {"columns": ["program_id", "institution", "program", "accreditation", "credits_removed", "net_per_graduate",
+                                                               "net_margin_per_credit", "break_even_new_share"], "rows": inst},
+                          "summary": {"institution_break_even": s12["institution_break_even"], "level_threshold": s12["level_threshold"],
+                                      "lifecycle_threshold": s12["lifecycle_threshold"], "thresholds_at_5pct": s12["thresholds_at_5pct"]}})
+    dump("tree.json", rjson(A / "13_decision_tree/results/tree.json"))
+
+
 if __name__ == "__main__":
     main()
+    refocus()

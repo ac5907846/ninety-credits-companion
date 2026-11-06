@@ -162,10 +162,6 @@ window.Views = (function () {
       { key: "i_net", label: "Institution net per graduate", num: true, fmt: money, tip: "Instructional spending avoided less net tuition and state appropriations lost." }], Object.entries(L.case).map(([c, v]) => Object.assign({}, v, { institution: K.names[c] ? K.names[c].label : v.institution })));
     survey(V);
     evList("people-ev", PA.people);
-    const T2 = PA.ledger_table;
-    $("ledger-paper-title").textContent = T2.title;
-    $("ledger-paper").innerHTML = `<thead><tr>${T2.rows[0].map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${T2.rows.slice(1).map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody>`;
-    $("ledger-note").textContent = T2.notes.join(" ");
   }
 
   /* ---------------------------------------------------------------- routes */
@@ -203,7 +199,7 @@ window.Views = (function () {
     const S = await load("sources");
     $("refs-list").innerHTML = S.references.map((r) => `<li>${esc(r.apa).replace(/(https?:\/\/[^\s<]+)/g, (u) => `<a href="${u.replace(/\.$/, "")}" target="_blank" rel="noopener">${u}</a>`)}</li>`).join("");
     table("sources-table", [{ key: "what", label: "Source" }, { key: "date", label: "Date" }, { key: "url", label: "Link", fmt: (v) => (v ? `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(v.replace(/^https?:\/\//, "").slice(0, 60))}</a>` : "linked per item") }], S.data);
-    $("files-list").innerHTML = ["atlas", "courses", "states", "rules", "skills", "ledger", "survey", "routes", "abroad", "paper", "sources"].map((f) => `<li><a href="data/${f}.json" target="_blank">data/${f}.json</a></li>`).join("");
+    $("files-list").innerHTML = ["atlas", "courses", "states", "rules", "skills", "ledger", "survey", "routes", "abroad", "paper", "timeline", "balance", "tree", "uk", "hk", "sources"].map((f) => `<li><a href="data/${f}.json" target="_blank">data/${f}.json</a></li>`).join("");
   }
   return { rules, abroad, ledger, routes, sources };
 })();

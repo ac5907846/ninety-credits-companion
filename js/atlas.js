@@ -121,7 +121,7 @@ window.Atlas = (function () {
     const [A, ST] = await Promise.all([load("atlas"), load("states")]);
     P = rows(A); S = ST.states; S.forEach((s) => { stateIdx[s.state] = s; });
     const sm = A.summary;
-    $("atlas-lede").innerHTML = `${n(sm.programs)} bachelor’s programs at ${n(sm.institutions)} institutions in ${n(sm.states_only)} states${sm.territories.includes("PR") ? " and Puerto Rico" : ""}. ${n(sm.programs_with_total)} catalogs state a total; <b>none asks fewer than 120 credits</b> (${n(sm.total_exactly_120)} ask exactly 120), so a 90-credit degree removes ${n(sm.to_cut_for_90.min)} to ${n(sm.to_cut_for_90.max)} credits. Each program links to its catalog, IPEDS, the College Scorecard, its accreditor and its state’s rules.`;
+    $("atlas-lede").innerHTML = `${n(sm.programs)} bachelor’s programs at ${n(sm.institutions)} institutions in ${n(sm.states_only)} states${sm.territories.includes("PR") ? " and Puerto Rico" : ""}. The states that have acted on degrees below 120 credits hold ${n(P.filter((p) => ["programs_approved", "enacted_law", "board_policy_adopted", "pilot"].includes(p.state_reduced_credit_status)).length)} of them, and every one of the ${n(sm.programs_with_total)} catalogs that state a total asks 120 credits or more (${n(sm.total_exactly_120)} exactly 120), so a 90-credit degree would remove ${n(sm.to_cut_for_90.min)} to ${n(sm.to_cut_for_90.max)} credits. Each program links to its catalog, IPEDS, the College Scorecard, its accreditor and its state’s rules.`;
     chips("f-acc", ACC.map(([g, lab, col]) => [g, lab, col]), sel.acc);
     chips("f-group", Object.keys(sm.by_group).map((g) => [g, g]), sel.group);
     chips("f-control", ["public", "private nonprofit", "private for-profit"].map((g) => [g, g]), sel.control);

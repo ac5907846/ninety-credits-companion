@@ -76,9 +76,9 @@ window.Deep = (function () {
   /* ---------------------------------------------------------------- strategies */
   async function strategies() {
     const PA = await load("paper");
-    const S = PA.strategies;
-    $("strat-lede").innerHTML = `The evidence supports five strategies, and their order matters. Institutions and regional accreditors should decide first whether general education can be counted inside co-taught major courses, because without it only one program reaches 90, and only by dropping its earth and soil science, and counting without teaching only moves the loss. Programs should then merge and fold before they cut, and cut to 90 and no further. Transfer routes should be built as two plus one where general education does not bind. Every shortened degree should keep the skills AI does not supply. The first students offered a 90-credit degree should be those whose losses are smallest, with their formation after the degree arranged with employers rather than assumed.`;
-    $("strat-table").innerHTML = `<thead><tr>${S.rows[0].map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${S.rows.slice(1).map((r) => `<tr>${r.map((c, i) => `<td${i === 0 ? ' class="strong"' : ""}>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+    const S = PA.tables.actions;
+    $("strat-lede").innerHTML = `The decision tree orders what to do, because each body’s choice matters only once the choices above it are made. Regional accreditors, states and systems decide first whether up to 12 hours of major courses may count as general education; institutions then decide which count a shorter degree keeps; program faculty merge and fold before they cut and keep the skills AI does not supply; ACCE, ABET and the credential bodies say how a 90-credit design is reviewed and counted; and the first students offered a 90-credit degree should be those whose losses are smallest and whose enrollment is new.`;
+    window.Paper.paperTable("strat", S);
   }
   return { removes, ai, strategies };
 })();

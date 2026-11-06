@@ -112,3 +112,28 @@ th.tip { text-decoration: underline dotted #8a949c; text-underline-offset: 3px; 
 .plist li { margin: 4px 0; }
 .linkish { background: none; border: 0; padding: 0; color: #0b5cad; text-decoration: underline; cursor: pointer; font: inherit; text-align: left; }
 .muted.small { font-size: 12px; margin-top: 2px; }
+
+/* refocused article, 6 Nov 2026 late evening */
+.data.paper td, .data.paper th { vertical-align: top; }
+.data.paper tr.group td { font-style: italic; background: #f7f8f9; }
+h4.sub { font-size: 13.5px; font-weight: 600; margin: 2px 0 4px; }
+ol.timeline { list-style: none; margin: 8px 0 0; padding: 0; font-size: 13.5px; }
+ol.timeline li { display: grid; grid-template-columns: 96px 20px 1fr; gap: 6px; padding: 3px 0; border-bottom: 1px solid #eef0f2; }
+ol.timeline li.tl-year { display: block; font-weight: 600; border-bottom: 0; padding-top: 10px; }
+.tl-date { color: var(--muted); font-variant-numeric: tabular-nums; }
+.tl-mark { text-align: center; }
+.tree-in { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px 22px; margin: 4px 0 10px; }
+.tq-h { font-size: 13.5px; font-weight: 600; margin: 0 0 4px; }
+.tq.off { opacity: .38; pointer-events: none; }
+.who { display: inline-block; font-size: 11.5px; font-weight: 400; border: 1px solid #8c8c8c; border-radius: 10px; padding: 0 8px; margin: 0 6px 0 0; }
+.tree-msg { font-size: 14px; margin: 6px 0 8px; }
+.tree-out { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 900px) { .tree-out { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tcard { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; background: #fff; }
+.tcard.ok { border-color: #2E7D6B; background: #eef6f2; }
+.tcard .tot { font-family: var(--serif); font-size: 28px; line-height: 1.1; margin: 2px 0; }
+.tcard .tname { font-size: 13px; }
+.tbar { display: flex; height: 12px; border: 1px solid #8c8c8c; margin: 6px 0 3px; }
+.tbar span { display: block; height: 100%; border-right: 1px solid rgba(0,0,0,.25); }
+.tree-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; margin: 8px 0 0; color: var(--muted); }
+.tree-legend .sw { display: inline-block; width: 12px; height: 10px; border: 1px solid #8c8c8c; margin-right: 5px; vertical-align: -1px; }
