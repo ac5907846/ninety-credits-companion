@@ -188,6 +188,36 @@ def hk_fee(v):
     return None, ""
 
 
+def uk_credits(r, mods):
+    """Credits of a UK honours degree: stated on the page, else read from a full module list (120 credits for each taught
+    year), else the national minimum (QAA 2024, Annex C: 360 in England, Wales and Northern Ireland, 480 in Scotland).
+    Also the credits a year the module list shows (core and listed options) and the placement year's credits (the
+    largest single placement module where the list offers alternatives)."""
+    years, place = {}, []
+    for y, _code, _title, cr, ty in mods:
+        if cr is None:
+            continue
+        if str(y).isdigit():
+            d = years.setdefault(int(y), {"core": 0.0, "option": 0.0})
+            d["option" if ty == "option" else "core"] += cr
+        elif y == "placement":
+            place.append((cr, ty))
+    stated = num(r.get("total_credits"))
+    full = (r.get("modules_status") == "full_with_credits" and years and all(v["core"] + v["option"] >= 120 for v in years.values()))
+    if stated:
+        total, source = stated, "stated"
+    elif full:
+        total, source = 120 * len(years), "list"
+    else:
+        total, source = (480 if r["country"] == "Scotland" else 360), "framework"
+    pc = None
+    if place:
+        core = [c for c, t in place if t != "option"]
+        pc = sum(core) if core else max(c for c, _ in place)
+    by_year = [[y, years[y]["core"], years[y]["option"]] for y in sorted(years)]
+    return total, source, by_year, pc
+
+
 def world():
     TYPES = ["technical", "judgment", "digital_tool", "field_procedure", "math_science", "breadth", "integrative", "other"]
     comp = {r["id"]: r for r in rcsv(A / "07_international/results/composition.csv")}
@@ -197,17 +227,20 @@ def world():
     for r in U:
         c = cu.get(f"{r['university']}|{r['campus'] or ''}", {})
         po = r.get("placement_option") or {}
+        mods = [[m.get("year"), m.get("code") or "", m.get("title"), num(m.get("credits")), m.get("type")] for m in (r.get("modules") or [])]
+        cd, csrc, cby, pcr = uk_credits(r, mods)
         fh, fi, fp = r.get("fee_home_per_year") or {}, r.get("fee_international_per_year") or {}, r.get("fee_placement_year") or {}
         uk.append({"id": r["id"], "university": r["university"], "campus": r["campus"] or "", "country": r["country"], "program": r["program_title"],
                    "award": r["award"], "ucas": r.get("ucas_code") or "", "years": num(r.get("duration_full_time_years")),
                    "placement": bool(po.get("available")), "placement_note": po.get("description") or "", "years_with_placement": num(po.get("duration_with_placement_years")),
                    "foundation": r.get("foundation_year_option"), "part_time": r.get("part_time_option") or "", "total_credits": num(r.get("total_credits")),
                    "credits_by_level": r.get("credits_by_level"), "accreditation": ", ".join(r.get("accreditations_stated") or []),
+                   "credits_degree": cd, "credits_source": csrc, "credits_by_year": cby, "placement_credits": pcr,
                    "ciob_entry": r.get("ciob_list_entry") or "",
                    "fee_home": amount(fh), "fee_home_year": fh.get("academic_year", "") if isinstance(fh, dict) else "",
                    "fee_int": amount(fi), "fee_placement": amount(fp), "fee_placement_note": fp.get("note", "") if isinstance(fp, dict) else "",
                    "url": r.get("course_page_url") or "", "spec_url": r.get("programme_spec_url") or "",
-                   "modules": [[m.get("year"), m.get("code") or "", m.get("title"), num(m.get("credits")), m.get("type")] for m in (r.get("modules") or [])],
+                   "modules": mods,
                    "modules_status": r.get("modules_status") or "", "notes": r.get("notes") or "", "read_on": r.get("read_on") or "",
                    "lat": c.get("lat"), "lon": c.get("lon"), "place": c.get("place", ""), "geo_query": c.get("query", ""),
                    "comp": {t: num(comp[r["id"]][t]) for t in TYPES} if r["id"] in comp else None})

@@ -11,6 +11,23 @@ window.World = (function () {
   const campusShort = (p) => { const c = p.campus || ""; const m = c.match(/\(([^)]+)\)/); return c.startsWith(p.university.split(" (")[0]) && m ? m[1] : c.replace(/ \(.*\)/, ""); };
   const yearLabel = (y) => { const t = String(y ?? ""); if (!t) return "Courses"; if (/^[0-9]+$/.test(t)) return `Year ${t}`; const h = t.replace(/_/g, " "); return h.charAt(0).toUpperCase() + h.slice(1) + (/year/i.test(h) ? "" : " year"); };
   const codeOf = (p) => { if (p.ucas) return ` (UCAS ${esc(p.ucas)})`; const j = String(p.jupas || ""); const a = j.match(/JS[0-9]{4}/); if (a) return ` (JUPAS ${a[0]})`; const b = j.match(/[0-9]{5}-[A-Z]+/); return b ? ` (programme code ${b[0]})` : ""; };
+  const CSRC = { stated: "stated", list: "module list", framework: "national minimum" };
+  const CSRC_LONG = { stated: "as the course page or specification states", list: "read from the module list, 120 credits a taught year", framework: "the national minimum for an honours degree (QAA, 2024); the page states no total" };
+  const yearCredits = (p, sep = "; ") => {
+    const by = p.credits_by_year || [];
+    if (!by.length) return (p.modules || []).length ? "titles only" : "no module list";
+    return by.map(([y, c, o]) => `<span style="white-space:nowrap">Year ${y}: ${n(c)}${o ? ` + ${n(o)} options` : ""}</span>`).join(sep);
+  };
+  const headCredits = (mods, y) => {
+    const ms = mods.filter((m) => m[0] === y && m[3] != null);
+    if (!ms.length) return "";
+    const core = ms.filter((m) => m[4] !== "option").reduce((a, m) => a + m[3], 0), opt = ms.filter((m) => m[4] === "option");
+    if (y === "placement" || y === "study_abroad_year") {
+      const c = core || Math.max(...opt.map((m) => m[3]));
+      return c ? `: ${n(c)} credits` : ": no credits";
+    }
+    return `: ${n(core)} credits of core modules${opt.length ? `, options listed ${n(opt.reduce((a, m) => a + m[3], 0))}` : ""}`;
+  };
   function openCard(html) {
     $("card").innerHTML = `<button class="close" id="card-close" type="button">Close</button>${html}`;
     $("card-back").hidden = false;
@@ -58,7 +75,7 @@ window.World = (function () {
     plot(id, TYPES.map(([kk, lab, col]) => ({ type: "bar", orientation: "h", name: lab, y: ys, x: R.map((x) => 100 * (x.r.comp[kk] || 0) / x.tot),
       marker: { color: col, line: { color: "#333", width: .4 } }, hovertemplate: `<b>%{y}</b><br>${lab[0].toUpperCase() + lab.slice(1)}: %{x:.0f}% of the credits<extra></extra>` })),
       { barmode: "stack", showlegend: true, legend: { orientation: "h", y: -.08, yanchor: "top", font: { size: 10.5 } }, margin: { l: 230, r: 10, t: 6, b: 10 },
-        xaxis: { range: [0, 100], title: { text: "share of the degree’s credits (%)" }, side: "top" }, yaxis: { autorange: "reversed", tickfont: { size: 10.5 } }, height: Math.max(320, 22 * ys.length + 150) });
+        xaxis: { range: [0, 100], title: { text: "share of the degree’s credits (%)" }, side: "top" }, yaxis: { autorange: "reversed", tickfont: { size: 10.5 }, automargin: true }, height: Math.max(320, 22 * ys.length + 150) });
   }
 
   /* ---------------------------------------------------------------- UK */
@@ -80,9 +97,10 @@ window.World = (function () {
     function draw() {
       const F = filtered();
       const fees = F.map((p) => p.fee_home).filter((v) => v != null), fi = F.map((p) => p.fee_int).filter((v) => v != null);
+      const cr = median(F.map((p) => p.credits_degree).filter((v) => v != null)) || 0;
       const t = [[n(F.length), `programs at ${n(new Set(F.map((p) => p.university)).size)} universities`], [n(F.filter((p) => p.years === 3).length), "take three years full time"],
         [n(F.filter((p) => p.placement).length), "offer a placement year in industry"], [gbp(median(fees)), "median home fee a year"], [gbp(median(fi)), "median international fee a year"],
-        [n(F.filter((p) => p.modules_status === "full_with_credits").length), "publish a full module list with credits"]];
+        [n(cr), `median UK credits for the degree: ${n(10 * cr)} notional hours, about ${n(Math.round(10 * cr / 45))} U.S. semester credits`]];
       $("uk-tiles").innerHTML = t.map(([v, kk]) => `<div class="tile"><div class="v">${v || "n/a"}</div><div class="k">${kk}</div></div>`).join("");
       const dur = (p) => (p.years ? p.years + " years full time" : "duration not stated");
       plot("uk-map", placeTraces(F, [[3, "three years full time", "#E69F00"], [4, "four years full time", "#0072B2"], [null, "duration not stated", "#8C8C8C"]],
@@ -106,7 +124,9 @@ window.World = (function () {
         { key: "country", label: "Country", tip: "Country of the United Kingdom." },
         { key: "program", label: "Program", fmt: (v, r) => esc(progName(r)), tip: "Award and programme title as the course page states them." },
         { key: "years", label: "Full-time years", num: true, tip: "Normal length of the full-time degree, without a placement year." },
-        { key: "placement", label: "Placement year", fmt: (v) => (v ? "offered" : "no"), tip: "Whether an optional year of paid work in industry is offered, which adds a year to the degree." },
+        { key: "credits_degree", label: "Credits for the degree", num: true, fmt: (v, r) => (v == null ? "" : `${n(v)}<br><span class="muted small" style="white-space:nowrap">${CSRC[r.credits_source] || ""}</span>`), tip: "UK credits of the honours degree, 10 notional hours each: stated on the course page or specification; read from a full module list, 120 credits a taught year; or the national minimum (QAA, 2024: 360 in England, Wales and Northern Ireland, 480 in Scotland)." },
+        { key: "credits_by_year", label: "Credits a year in the module list", fmt: (v, r) => yearCredits(r, "<br>"), tip: "Credits of the modules the page lists for each taught year (Year 1, 2, 3 ...); a plus sign adds the option modules listed beyond the core, from which students choose. Titles only: the page lists modules without credits." },
+        { key: "placement", label: "Placement year", fmt: (v, r) => (!v ? "no" : r.placement_credits == null ? "offered, credits not stated" : r.placement_credits === 0 ? "offered, no credits" : `offered, ${n(r.placement_credits)} credits`), tip: "Whether an optional year of paid work in industry is offered, which adds a year to the degree, and the credits the module list gives it (some universities award none)." },
         { key: "fee_home", label: "Home fee a year (pounds)", num: true, fmt: gbp, tip: "Annual tuition fee for students from the United Kingdom, as the university publishes it for the entry year shown in the program card." },
         { key: "fee_int", label: "International fee a year (pounds)", num: true, fmt: gbp, tip: "Annual tuition fee for international students, as the university publishes it." },
         { key: "accreditation", label: "Accreditation stated", tip: "Professional bodies the course page names: CIOB (Chartered Institute of Building), RICS (Royal Institution of Chartered Surveyors), CABE (Chartered Association of Building Engineers) and others." },
@@ -121,14 +141,15 @@ window.World = (function () {
         <dl><dt>Country</dt><dd>${esc(p.country)}</dd><dt>UCAS code</dt><dd>${esc(p.ucas || "not stated")}</dd>
           <dt>Duration</dt><dd>${p.years ? p.years + " years full time" : "not stated"}${p.placement && p.years ? `; ${p.years_with_placement || p.years + 1} years with the placement year` : ""}</dd>
           <dt>Placement year</dt><dd>${esc(p.placement_note || (p.placement ? "offered" : "not offered"))}</dd>
-          <dt>Total credits</dt><dd>${p.total_credits ? n(p.total_credits) + " UK credits" : "not stated"}${p.credits_by_level ? ` (${Object.entries(p.credits_by_level).map(([k2, v]) => `${k2.replace("level_", "level ")}: ${v}`).join(", ")})` : ""}</dd>
+          <dt>Credits for the degree</dt><dd>${p.credits_degree ? `${n(p.credits_degree)} UK credits, ${CSRC_LONG[p.credits_source]}` : "not stated"}${p.credits_by_level ? ` (${Object.entries(p.credits_by_level).map(([k2, v]) => `${k2.replace("level_", "level ")}: ${v}`).join(", ")})` : ""}${p.credits_degree ? `; ${n(10 * p.credits_degree)} notional hours at 10 hours a credit, about ${n(Math.round(10 * p.credits_degree / 45))} U.S. semester credits at 45 hours each` : ""}</dd>
+          <dt>Credits a year</dt><dd>${yearCredits(p)}${p.placement ? `; placement year: ${p.placement_credits == null ? "credits not stated" : p.placement_credits === 0 ? "no credits" : n(p.placement_credits) + " credits"}` : ""}</dd>
           <dt>Accreditation stated</dt><dd>${esc(p.accreditation || "not stated")}</dd><dt>CIOB list entry</dt><dd>${esc(p.ciob_entry)}</dd>
           <dt>Home fee</dt><dd>${gbp(p.fee_home) || "not stated"} a year${p.fee_home_year ? ` (${esc(p.fee_home_year)})` : ""}</dd>
           <dt>International fee</dt><dd>${gbp(p.fee_int) || "not stated"} a year</dd>
           ${p.fee_placement_note ? `<dt>Placement year fee</dt><dd>${esc(p.fee_placement_note)}</dd>` : ""}
           ${p.part_time ? `<dt>Part-time study</dt><dd>${esc(p.part_time)}</dd>` : ""}
           <dt>Read on</dt><dd>${esc(p.read_on)}</dd></dl>
-        ${mods.length ? years.map((y) => `<h4>${esc(yearLabel(y))}</h4><table class="data"><thead><tr><th>Module</th><th class="n">Credits</th><th>Type</th></tr></thead><tbody>${mods.filter((m) => m[0] === y).map((m) => `<tr><td>${esc((m[1] ? m[1] + " " : "") + m[2])}</td><td class="n">${m[3] ?? ""}</td><td>${esc(m[4] || "")}</td></tr>`).join("")}</tbody></table>`).join("") : `<p class="muted">The course page does not publish a full module list.</p>`}
+        ${mods.length ? years.map((y) => `<h4>${esc(yearLabel(y))}${headCredits(mods, y)}</h4><table class="data"><thead><tr><th>Module</th><th class="n">Credits</th><th>Type</th></tr></thead><tbody>${mods.filter((m) => m[0] === y).map((m) => `<tr><td>${esc((m[1] ? m[1] + " " : "") + m[2])}</td><td class="n">${m[3] ?? ""}</td><td>${esc(m[4] || "")}</td></tr>`).join("")}</tbody></table>`).join("") : `<p class="muted">The course page does not publish a full module list.</p>`}
         ${p.notes ? `<h4>Notes</h4><p class="muted">${esc(p.notes)}</p>` : ""}
         <p class="note">Map point: ${esc(p.place || "not located")} (OpenStreetMap).</p>`);
     }
