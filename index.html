@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Ninety credits: U.S. construction bachelor’s degrees, the rules that hold them at 120, and the routes to 90</title>
-<meta name="description" content="Atlas of every U.S. construction bachelor’s program with its credits, courses, costs and state rules, linked to the source pages; the accreditor and general education rules; the UK and Hong Kong comparison; who gains and who loses; and the routes to a 90-credit degree.">
+<title>Ninety credits: what holds the U.S. construction degree at 120, what cutting it would remove, and how it could be cut</title>
+<meta name="description" content="Atlas of every U.S. construction bachelor’s program with its credits, courses, costs and state rules, linked to the source pages; the accreditor and general education rules; what comes before and after the degree in England, Europe and Hong Kong; where a 90-credit version would find its 30 hours; who gains and who loses; what AI changes; and five strategies.">
 <link rel="icon" href="data:,">
-<link rel="preload" href="data/atlas.json?v=5" as="fetch" crossorigin>
-<link rel="preload" href="data/states.json?v=5" as="fetch" crossorigin>
-<link rel="stylesheet" href="css/app.css?v=5">
+<link rel="preload" href="data/atlas.json?v=6" as="fetch" crossorigin>
+<link rel="preload" href="data/states.json?v=6" as="fetch" crossorigin>
+<link rel="stylesheet" href="css/app.css?v=6">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 </head>
 <body>
@@ -20,8 +20,11 @@
       <a href="#atlas" data-view="atlas">Atlas</a>
       <a href="#rules" data-view="rules">Rules</a>
       <a href="#abroad" data-view="abroad">Abroad</a>
+      <a href="#removes" data-view="removes">What 90 removes</a>
       <a href="#ledger" data-view="ledger">Gains and losses</a>
       <a href="#routes" data-view="routes">Routes to 90</a>
+      <a href="#ai" data-view="ai">AI</a>
+      <a href="#strategies" data-view="strategies">Strategies</a>
       <a href="#sources" data-view="sources">Sources</a>
     </nav>
   </div>
@@ -49,7 +52,7 @@
     <div class="panel">
       <h3>Programs <span class="muted" id="table-count"></span></h3>
       <div class="tablewrap"><table class="data sortable" id="atlas-table"></table></div>
-      <p class="note">Credits are semester hours as published (quarter-hour catalogs converted at two thirds). Tuition and fees are IPEDS 2023-24 published amounts; per-credit charges are IPEDS part-time rates; earnings and debt are College Scorecard field-of-study medians (release of 15 October 2026). Select a row for its courses, rules and sources.</p>
+      <p class="note">Credits are semester hours as published (quarter-hour catalogs converted at two thirds). Tuition and fees are IPEDS 2023-24 published amounts; per-credit charges are IPEDS part-time rates; earnings and debt are College Scorecard field-of-study medians (release of 15 October 2026). Each row opens the program’s courses, rules and sources.</p>
     </div>
   </div>
 </section>
@@ -65,26 +68,52 @@
     </div>
     <div class="panel">
       <h3>General education budget calculator</h3>
-      <p class="muted">Floor of a reduced-credit version = construction kept + business kept + mathematics and science kept + general education required, less what those courses already count toward it. Start from one of the five programs read course by course, then move the rules.</p>
+      <p class="muted">Floor of a reduced-credit version = construction kept + business kept + mathematics and science kept + general education required, less what those courses already count toward it. The calculator starts from one of the five programs read course by course.</p>
       <div class="calc">
         <div class="calc-in" id="calc-in"></div>
         <div class="calc-out"><div id="calc-chart" class="chart short"></div><p class="big" id="calc-floor"></p><p class="muted" id="calc-note"></p></div>
       </div>
     </div>
+    <div class="panel"><h3>The transfer student: a different rule binds</h3><div id="transfer-text"></div></div>
   </div>
 </section>
 
 <!-- ============================================================ abroad -->
 <section class="view" id="v-abroad" hidden>
   <div class="wrap">
-    <h1 class="title">Three-year and four-year degrees abroad</h1>
+    <h1 class="title">Three-year and four-year degrees abroad: what comes before and after</h1>
     <p class="lede" id="abroad-lede"></p>
+    <div class="panel"><h3>Before, during and after the degree</h3><div class="tablewrap free"><table class="data ctx" id="ctx-table"></table></div></div>
     <div class="grid2 wide">
-      <div class="panel"><h3>One scale of learning hours</h3><div id="abroad-scale" class="chart"></div></div>
-      <div class="panel"><h3>What the taught credits hold</h3><div id="abroad-comp" class="chart"></div></div>
+      <div class="panel"><h3>One scale of learning hours (notional on both sides)</h3><div id="abroad-scale" class="chart"></div></div>
+      <div class="panel"><h3>What the credits hold</h3><div id="abroad-comp" class="chart"></div></div>
     </div>
     <div class="panel" id="hk-panel" hidden><h3>Hong Kong</h3><div id="hk-text"></div><div class="tablewrap"><table class="data" id="hk-table"></table></div></div>
     <div class="panel"><h3>CIOB-accredited construction management honours degrees in the United Kingdom</h3><div class="tablewrap"><table class="data sortable" id="uk-table"></table></div></div>
+  </div>
+</section>
+
+<!-- ============================================================ removes -->
+<section class="view" id="v-removes" hidden>
+  <div class="wrap">
+    <h1 class="title">What a 90-credit version removes</h1>
+    <p class="lede" id="removes-lede"></p>
+    <div class="panel">
+      <h3>Where each program finds its 30 hours to reach exactly 90 (ACCE route)</h3>
+      <div class="ctrl"><span class="flabel">Order of cutting</span><div class="chips" id="rm-order"></div><span class="flabel">Method</span><div class="chips" id="rm-method"></div></div>
+      <div id="rm-chart" class="chart"></div>
+      <p class="note" id="rm-note"></p>
+    </div>
+    <div class="grid2">
+      <div class="panel"><h3>Professional hours each program must cut to reach 90</h3><div class="tablewrap"><table class="data" id="rm-grid"></table></div><p class="note" id="rm-grid-note"></p></div>
+      <div class="panel"><h3>Standalone general education that leaves or moves inside major courses</h3><div class="tablewrap"><table class="data" id="rm-gened"></table></div><p class="note" id="rm-gened-note"></p></div>
+    </div>
+    <div class="panel">
+      <h3>The courses at stake, program by program</h3>
+      <div class="ctrl"><div class="chips" id="rm-prog"></div><div class="chips" id="rm-var"></div></div>
+      <div class="tablewrap"><table class="data" id="rm-courses"></table></div>
+      <p class="note">Courses are named under stated rules (communication courses kept first; whole professional courses cut from the top of the course list) to show what is at stake; each program would choose for itself. The hours by source above do not depend on these rules.</p>
+    </div>
   </div>
 </section>
 
@@ -94,18 +123,29 @@
     <h1 class="title">Who gains and who loses at 90 credits</h1>
     <p class="lede" id="ledger-lede"></p>
     <div class="grid3" id="party-cards"></div>
-    <div class="grid2">
+    <div class="panel">
+      <h3>How large a pay penalty would offset the student’s gain?</h3>
+      <div class="calc">
+        <div class="calc-in" id="th-in"></div>
+        <div class="calc-out"><p class="big" id="th-out"></p><p class="muted" id="th-note"></p><div id="th-chart" class="chart short"></div></div>
+      </div>
+    </div>
+    <div class="grid2 wide">
       <div class="panel"><h3>Every program: the student’s gain against the institution’s net, per graduate</h3><div id="ledger-scatter" class="chart tall"></div></div>
       <div class="panel"><h3>Medians by group</h3><div class="tablewrap"><table class="data" id="ledger-table"></table></div><h3>The five programs read course by course</h3><div class="tablewrap"><table class="data" id="ledger-case"></table></div></div>
     </div>
-    <p class="note" id="ledger-note"></p>
+    <div class="grid2">
+      <div class="panel"><h3 id="survey-title">Industry advisors of one accredited program</h3><div id="survey"></div></div>
+      <div class="panel"><h3>Evidence on what employers and institutions would lose</h3><ul class="ev" id="people-ev"></ul></div>
+    </div>
+    <div class="panel"><h3 id="ledger-paper-title"></h3><div class="tablewrap"><table class="data" id="ledger-paper"></table></div><p class="note" id="ledger-note"></p></div>
   </div>
 </section>
 
 <!-- ============================================================ routes -->
 <section class="view" id="v-routes" hidden>
   <div class="wrap">
-    <h1 class="title">Routes to 90: overlap, merges and the AI-era curriculum</h1>
+    <h1 class="title">Routes to 90: overlap, merges and the accreditor’s floor</h1>
     <p class="lede" id="routes-lede"></p>
     <div class="panel">
       <h3>Step by step, for one program</h3>
@@ -113,10 +153,29 @@
       <div id="route-chart" class="chart"></div>
       <p class="muted" id="route-note"></p>
     </div>
+    <div class="panel"><h3>Course pairs accredited programs already teach as one course</h3><div class="tablewrap"><table class="data" id="pairs-table"></table></div></div>
+  </div>
+</section>
+
+<!-- ============================================================ ai -->
+<section class="view" id="v-ai" hidden>
+  <div class="wrap">
+    <h1 class="title">What AI changes, and what it does not pay for</h1>
+    <p class="lede" id="ai-lede"></p>
     <div class="grid2 wide">
-      <div class="panel"><h3>Course pairs accredited programs already teach as one course</h3><div class="tablewrap"><table class="data" id="pairs-table"></table></div></div>
-      <div class="panel"><h3>Where the hours go, and how exposed the work is to AI</h3><div id="ai-chart" class="chart"></div><div id="task-chart" class="chart short"></div></div>
+      <div class="panel"><h3>Where accredited programs spend their hours</h3><div id="ai-chart" class="chart"></div></div>
+      <div class="panel"><h3>The work construction managers and estimators do, and how exposed it is to AI</h3><div id="task-chart" class="chart short"></div><p class="note" id="ai-note"></p></div>
     </div>
+    <div class="panel"><h3>Evidence on AI, skill and learning</h3><ul class="ev" id="ai-ev"></ul></div>
+  </div>
+</section>
+
+<!-- ============================================================ strategies -->
+<section class="view" id="v-strategies" hidden>
+  <div class="wrap">
+    <h1 class="title">Five strategies and their order</h1>
+    <p class="lede" id="strat-lede"></p>
+    <div class="panel"><div class="tablewrap"><table class="data" id="strat-table"></table></div><p class="note">Figure, table and section numbers refer to the article.</p></div>
   </div>
 </section>
 
@@ -124,7 +183,8 @@
 <section class="view" id="v-sources" hidden>
   <div class="wrap">
     <h1 class="title">Sources and data</h1>
-    <div class="panel"><div class="tablewrap"><table class="data" id="sources-table"></table></div></div>
+    <div class="panel"><h3>References cited in the article</h3><ol class="refs" id="refs-list"></ol></div>
+    <div class="panel"><h3>Data sources</h3><div class="tablewrap"><table class="data" id="sources-table"></table></div></div>
     <div class="panel"><h3>Data files behind this site</h3><ul id="files-list"></ul></div>
   </div>
 </section>
@@ -134,10 +194,11 @@
   <aside class="card" id="card" role="dialog" aria-modal="true"></aside>
 </div>
 
-<footer class="foot"><div class="wrap">Companion to a study of reduced-credit construction bachelor’s degrees in the United States. Data read 29 October to 6 November 2026; every figure links to its source page.</div></footer>
-<script src="js/util.js?v=5"></script>
-<script src="js/atlas.js?v=5"></script>
-<script src="js/views.js?v=5"></script>
-<script src="js/app.js?v=5"></script>
+<footer class="foot"><div class="wrap">Companion to a study of reduced-credit construction bachelor’s degrees in the United States. Data read 29 October to 6 November 2026; every figure links to its source.</div></footer>
+<script src="js/util.js?v=6"></script>
+<script src="js/atlas.js?v=6"></script>
+<script src="js/views.js?v=6"></script>
+<script src="js/deep.js?v=6"></script>
+<script src="js/app.js?v=6"></script>
 </body>
 </html>

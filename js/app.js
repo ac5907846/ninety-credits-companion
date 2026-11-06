@@ -1,6 +1,6 @@
 /* Hash router: one view at a time; each view builds once, on first visit. */
 (function () {
-  const VIEWS = { atlas: () => window.Atlas.init(), rules: window.Views.rules, abroad: window.Views.abroad, ledger: window.Views.ledger, routes: window.Views.routes, sources: window.Views.sources };
+  const VIEWS = { atlas: () => window.Atlas.init(), rules: window.Views.rules, abroad: window.Views.abroad, removes: window.Deep.removes, ledger: window.Views.ledger, routes: window.Views.routes, ai: window.Deep.ai, strategies: window.Deep.strategies, sources: window.Views.sources };
   const built = {};
   function show() {
     const name = (location.hash || "#atlas").slice(1);

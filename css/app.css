@@ -78,3 +78,25 @@ a { color: var(--accent); }
 .party ul { margin: 4px 0 0 18px; padding: 0; font-size: 13.5px; }
 .party .gain { color: #2f6b2f; } .party .loss { color: #9b2c2c; }
 .foot { color: var(--muted); font-size: 12.5px; padding: 18px 0 30px; }
+
+/* 6 November 2026: views of the rebuilt paper */
+.ctrl { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 2px 0 8px; }
+ul.ev { margin: 4px 0 0 18px; padding: 0; font-size: 13.5px; }
+ul.ev li { margin: 0 0 5px; }
+ul.ev.tight { margin: 0 0 0 16px; font-size: 13px; }
+ul.ev.tight li { margin: 0 0 4px; }
+.cite, a.cite { color: var(--muted); font-size: 12px; white-space: normal; }
+a.cite:hover { color: var(--accent); }
+table.ctx td { min-width: 180px; }
+table.data th.c { text-align: center; }
+table.data td.strong { font-weight: 600; }
+ol.refs { margin: 4px 0 0 20px; padding: 0; font-size: 13px; }
+ol.refs li { margin: 0 0 6px; word-break: break-word; }
+.sq { margin: 0 0 10px; }
+.sqq { font-size: 13px; font-weight: 600; margin: 0 0 3px; }
+.sbar { display: grid; grid-template-columns: minmax(160px, 46%) 1fr 26px; align-items: center; gap: 8px; font-size: 12.5px; margin: 2px 0; }
+.sbl { color: var(--ink); }
+.sbv { background: #eef1f3; border-radius: 3px; height: 12px; position: relative; overflow: hidden; }
+.sbv i { position: absolute; left: 0; top: 0; bottom: 0; background: #9ecae1; border-right: 1px solid #4a90c2; }
+.sbn { text-align: right; font-variant-numeric: tabular-nums; }
+.tablewrap.free { max-height: none; }
