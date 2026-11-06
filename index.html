@@ -7,9 +7,9 @@
 <title>Ninety credits: what holds the U.S. construction degree at 120, what cutting it would remove, and how it could be cut</title>
 <meta name="description" content="Atlas of every U.S. construction bachelor’s program with its credits, courses, costs and state rules, linked to the source pages; the accreditor and general education rules; what comes before and after the degree in England, Europe and Hong Kong; where a 90-credit version would find its 30 hours; who gains and who loses; what AI changes; and five strategies.">
 <link rel="icon" href="data:,">
-<link rel="preload" href="data/atlas.json?v=6" as="fetch" crossorigin>
-<link rel="preload" href="data/states.json?v=6" as="fetch" crossorigin>
-<link rel="stylesheet" href="css/app.css?v=6">
+<link rel="preload" href="data/atlas.json?v=8" as="fetch" crossorigin>
+<link rel="preload" href="data/states.json?v=8" as="fetch" crossorigin>
+<link rel="stylesheet" href="css/app.css?v=8">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 </head>
 <body>
@@ -17,9 +17,11 @@
   <div class="wrap">
     <a class="brand" href="#atlas">Ninety credits</a>
     <nav class="nav" id="nav">
-      <a href="#atlas" data-view="atlas">Atlas</a>
+      <a href="#atlas" data-view="atlas">US Atlas</a>
+      <a href="#uk" data-view="uk">UK Atlas</a>
+      <a href="#hk" data-view="hk">Hong Kong Atlas</a>
       <a href="#rules" data-view="rules">Rules</a>
-      <a href="#abroad" data-view="abroad">Abroad</a>
+      <a href="#abroad" data-view="abroad">Compare</a>
       <a href="#removes" data-view="removes">What 90 removes</a>
       <a href="#ledger" data-view="ledger">Gains and losses</a>
       <a href="#routes" data-view="routes">Routes to 90</a>
@@ -57,6 +59,51 @@
   </div>
 </section>
 
+<!-- ============================================================ UK atlas -->
+<section class="view" id="v-uk" hidden>
+  <div class="wrap">
+    <h1 class="title">UK construction management honours degrees</h1>
+    <p class="lede" id="uk-lede">Loading the atlas…</p>
+    <div class="filters">
+      <div class="fgroup"><span class="flabel">Country</span><div class="chips" id="uk-country"></div></div>
+      <div class="fgroup"><span class="flabel">Full-time length</span><div class="chips" id="uk-years"></div></div>
+      <div class="fgroup"><span class="flabel">Placement year</span><div class="chips" id="uk-place"></div></div>
+      <div class="fgroup grow"><span class="flabel">Search</span><input id="uk-q" type="search" placeholder="University, campus or program"></div>
+      <button class="reset" id="uk-reset" type="button">Reset</button>
+    </div>
+    <div class="tiles" id="uk-tiles"></div>
+    <div class="grid2">
+      <div class="panel"><h3>Where they are, by full-time length</h3><div id="uk-map" class="chart tall"></div></div>
+      <div class="panel"><h3>Annual tuition fee, home and international students</h3><div id="uk-fee" class="chart"></div></div>
+    </div>
+    <div class="panel"><h3>What the credits hold, programs with a full module list</h3><div id="uk-comp" class="chart"></div></div>
+    <div class="panel">
+      <h3>Programs <span class="muted" id="uk-count"></span></h3>
+      <div class="tablewrap"><table class="data sortable" id="uk-atlas-table"></table></div>
+      <p class="note">Programs from the CIOB list of accredited programmes (27 March 2026), read on their course pages and programme specifications; fees as published for the entry year shown in each program’s card. Content types by the same written rules as the U.S. courses. Map points from OpenStreetMap (data © OpenStreetMap contributors, ODbL). Each row opens the program’s modules, fees and sources.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ Hong Kong atlas -->
+<section class="view" id="v-hk" hidden>
+  <div class="wrap">
+    <h1 class="title">Hong Kong construction, surveying and building engineering bachelor’s degrees</h1>
+    <p class="lede" id="hk-lede">Loading the atlas…</p>
+    <div class="tiles" id="hk-tiles"></div>
+    <div class="grid2">
+      <div class="panel"><h3>Where they are, by funding</h3><div id="hk-map" class="chart tall"></div></div>
+      <div class="panel"><h3>The 2012 reform: where the fourth year went</h3><div id="hk-reform" class="chart short"></div><p class="muted" id="hk-reform-text"></p></div>
+    </div>
+    <div class="panel"><h3>What the credits hold, programs with a course list</h3><div id="hk-comp" class="chart"></div></div>
+    <div class="panel">
+      <h3>Programs</h3>
+      <div class="tablewrap"><table class="data sortable" id="hk-atlas-table"></table></div>
+      <p class="note">Programs read on their programme pages and curriculum documents; general education and major credits as each institution counts them. Map points from OpenStreetMap (data © OpenStreetMap contributors, ODbL). Each row opens the program’s courses, requirements and sources.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================ rules -->
 <section class="view" id="v-rules" hidden>
   <div class="wrap">
@@ -81,15 +128,14 @@
 <!-- ============================================================ abroad -->
 <section class="view" id="v-abroad" hidden>
   <div class="wrap">
-    <h1 class="title">Three-year and four-year degrees abroad: what comes before and after</h1>
+    <h1 class="title">Three-year and four-year degrees compared: what comes before and after</h1>
     <p class="lede" id="abroad-lede"></p>
     <div class="panel"><h3>Before, during and after the degree</h3><div class="tablewrap free"><table class="data ctx" id="ctx-table"></table></div></div>
     <div class="grid2 wide">
       <div class="panel"><h3>One scale of learning hours (notional on both sides)</h3><div id="abroad-scale" class="chart"></div></div>
       <div class="panel"><h3>What the credits hold</h3><div id="abroad-comp" class="chart"></div></div>
     </div>
-    <div class="panel" id="hk-panel" hidden><h3>Hong Kong</h3><div id="hk-text"></div><div class="tablewrap"><table class="data" id="hk-table"></table></div></div>
-    <div class="panel"><h3>CIOB-accredited construction management honours degrees in the United Kingdom</h3><div class="tablewrap"><table class="data sortable" id="uk-table"></table></div></div>
+    <p class="note">Every program behind these comparisons is in the <a href="#uk">UK Atlas</a> and the <a href="#hk">Hong Kong Atlas</a>.</p>
   </div>
 </section>
 
@@ -195,10 +241,11 @@
 </div>
 
 <footer class="foot"><div class="wrap">Companion to a study of reduced-credit construction bachelor’s degrees in the United States. Data read 29 October to 6 November 2026; every figure links to its source.</div></footer>
-<script src="js/util.js?v=6"></script>
-<script src="js/atlas.js?v=6"></script>
-<script src="js/views.js?v=6"></script>
-<script src="js/deep.js?v=6"></script>
-<script src="js/app.js?v=6"></script>
+<script src="js/util.js?v=8"></script>
+<script src="js/atlas.js?v=8"></script>
+<script src="js/views.js?v=8"></script>
+<script src="js/deep.js?v=8"></script>
+<script src="js/world.js?v=8"></script>
+<script src="js/app.js?v=8"></script>
 </body>
 </html>

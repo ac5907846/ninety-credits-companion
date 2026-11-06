@@ -1,6 +1,6 @@
 /* Shared helpers: data loading, formatting, sortable tables, Plotly defaults. */
 window.U = (function () {
-  const V = 6;
+  const V = 8;
   const cache = {};
   function load(name) {
     if (!cache[name]) cache[name] = fetch(`data/${name}.json?v=${V}`).then((r) => { if (!r.ok) throw new Error(name); return r.json(); });
@@ -30,7 +30,7 @@ window.U = (function () {
           return (h && h.num ? (Number(x) - Number(y)) : String(x).localeCompare(String(y))) * dir;
         });
       }
-      const th = head.map((h) => `<th data-k="${h.key}" class="${h.num ? "n" : ""} ${sortKey === h.key ? (dir > 0 ? "asc" : "desc") : ""}">${h.label}</th>`).join("");
+      const th = head.map((h) => `<th data-k="${h.key}" class="${h.num ? "n" : ""} ${h.tip ? "tip" : ""} ${sortKey === h.key ? (dir > 0 ? "asc" : "desc") : ""}"${h.tip ? ` data-tip="${esc(h.tip)}"` : ""}>${h.label}</th>`).join("");
       const tb = d.map((r, i) => `<tr class="${opts.onRow ? "click" : ""}" data-i="${data.indexOf(r)}">` + head.map((h) => `<td class="${h.num ? "n" : ""}">${h.fmt ? h.fmt(r[h.key], r) : esc(r[h.key])}</td>`).join("") + "</tr>").join("");
       t.innerHTML = `<thead><tr>${th}</tr></thead><tbody>${tb}</tbody>`;
       if (t.classList.contains("sortable")) t.querySelectorAll("th").forEach((x) => x.addEventListener("click", () => { const kk = x.dataset.k; dir = sortKey === kk ? -dir : 1; sortKey = kk; render(); }));
@@ -40,9 +40,37 @@ window.U = (function () {
   }
   const FONT = { family: "Segoe UI, system-ui, Helvetica, Arial, sans-serif", size: 12, color: "#1f2a37" };
   function plot(id, traces, layout = {}) {
-    const L = Object.assign({ font: FONT, paper_bgcolor: "white", plot_bgcolor: "white", margin: { l: 50, r: 14, t: 10, b: 40 }, showlegend: false, hoverlabel: { font: { size: 12 } } }, layout);
+    if (layout.height) { const el = document.getElementById(id); if (el) el.style.height = layout.height + "px"; }  // a computed height must size the box too
+    const L = Object.assign({ font: FONT, paper_bgcolor: "white", plot_bgcolor: "white", margin: { l: 50, r: 14, t: 10, b: 40 }, showlegend: false, hoverlabel: { align: "left", font: { size: 12 }, namelength: -1 } }, layout);
     return Plotly.react(id, traces, L, { responsive: true, displaylogo: false, displayModeBar: false });
   }
+  /* one tooltip for every element with data-tip: shown at once, follows the pointer, kept inside the window */
+  (function tips() {
+    const box = document.createElement("div");
+    box.id = "tip";
+    box.hidden = true;
+    document.body.appendChild(box);
+    let cur = null;
+    function place(e) {
+      const pad = 14, w = box.offsetWidth, h = box.offsetHeight;
+      let x = e.clientX + pad, y = e.clientY + pad;
+      if (x + w > window.innerWidth - 8) x = e.clientX - w - pad;
+      if (y + h > window.innerHeight - 8) y = e.clientY - h - pad;
+      box.style.left = Math.max(8, x) + "px";
+      box.style.top = Math.max(8, y) + "px";
+    }
+    document.addEventListener("mouseover", (e) => {
+      const el = e.target.closest ? e.target.closest("[data-tip]") : null;
+      if (el === cur) return;
+      cur = el;
+      if (!el) { box.hidden = true; return; }
+      box.textContent = el.dataset.tip;
+      box.hidden = false;
+      place(e);
+    });
+    document.addEventListener("mousemove", (e) => { if (cur) place(e); });
+    window.addEventListener("scroll", () => { box.hidden = true; cur = null; }, true);
+  })();
   const ACC = [
     ["ACCE", "ACCE", "#0072B2", "acce"], ["ACCE and ABET", "ACCE and ABET ANSAC", "#CC79A7", "both"], ["ABET ANSAC", "ABET ANSAC", "#E69F00", "ansac"],
     ["ACCE applicant or candidate", "ACCE applicant or candidate", "#9ECAE1", "appl"], ["neither", "neither", "#BDBDBD", "none"]];

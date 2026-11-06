@@ -160,6 +160,80 @@ def main():
                            "budget_min": rjson(A / "02_whole_course_ledger/results/summary.json")["headline"]["budget_min"],
                            "budget_max": rjson(A / "02_whole_course_ledger/results/summary.json")["headline"]["budget_max"]})
     deep(refs)
+    world()
+
+
+# ---------------------------------------------------------------- 6 November 2026: UK and Hong Kong atlases
+def amount(v, key="amount"):
+    """a fee field may be a number or {amount, currency, academic_year, note}"""
+    if isinstance(v, dict):
+        return num(v.get(key))
+    return num(v)
+
+
+def hk_fee(v):
+    """Hong Kong local fee a year and how it was read: the published annual amount, or the annual figure the collector
+    derived from a fee per credit, a fee per stage or a fee for years 1 and 2 (the same values Module 7 summarizes)."""
+    if not isinstance(v, dict):
+        return num(v), ""
+    if v.get("amount_hkd") is not None:
+        return num(v["amount_hkd"]), ""
+    if v.get("annual_estimate_hkd_derived") is not None:
+        return num(v["annual_estimate_hkd_derived"]), v.get("annual_estimate_note") or "derived from the published fee per credit"
+    if v.get("average_per_year_hkd_derived") is not None:
+        return num(v["average_per_year_hkd_derived"]), (f"average a year of the whole programme: stages 1 and 2 HK${int(v['stage_1_2_total_hkd']):,}, "
+                                                         f"stages 3 and 4 HK${int(v['stage_3_4_total_hkd']):,}")
+    if v.get("year_1_2_hkd") is not None:
+        return num(v["year_1_2_hkd"]), f"years 1 and 2; years 3 and 4 HK${int(v['year_3_4_hkd']):,} a year"
+    return None, ""
+
+
+def world():
+    TYPES = ["technical", "judgment", "digital_tool", "field_procedure", "math_science", "breadth", "integrative", "other"]
+    comp = {r["id"]: r for r in rcsv(A / "07_international/results/composition.csv")}
+    U = rjson(RAW / "international/uk/uk_programs.json")
+    cu = rjson(RAW / "international/uk/campus_coordinates_2026-11-06.json")
+    uk = []
+    for r in U:
+        c = cu.get(f"{r['university']}|{r['campus'] or ''}", {})
+        po = r.get("placement_option") or {}
+        fh, fi, fp = r.get("fee_home_per_year") or {}, r.get("fee_international_per_year") or {}, r.get("fee_placement_year") or {}
+        uk.append({"id": r["id"], "university": r["university"], "campus": r["campus"] or "", "country": r["country"], "program": r["program_title"],
+                   "award": r["award"], "ucas": r.get("ucas_code") or "", "years": num(r.get("duration_full_time_years")),
+                   "placement": bool(po.get("available")), "placement_note": po.get("description") or "", "years_with_placement": num(po.get("duration_with_placement_years")),
+                   "foundation": r.get("foundation_year_option"), "part_time": r.get("part_time_option") or "", "total_credits": num(r.get("total_credits")),
+                   "credits_by_level": r.get("credits_by_level"), "accreditation": ", ".join(r.get("accreditations_stated") or []),
+                   "ciob_entry": r.get("ciob_list_entry") or "",
+                   "fee_home": amount(fh), "fee_home_year": fh.get("academic_year", "") if isinstance(fh, dict) else "",
+                   "fee_int": amount(fi), "fee_placement": amount(fp), "fee_placement_note": fp.get("note", "") if isinstance(fp, dict) else "",
+                   "url": r.get("course_page_url") or "", "spec_url": r.get("programme_spec_url") or "",
+                   "modules": [[m.get("year"), m.get("code") or "", m.get("title"), num(m.get("credits")), m.get("type")] for m in (r.get("modules") or [])],
+                   "modules_status": r.get("modules_status") or "", "notes": r.get("notes") or "", "read_on": r.get("read_on") or "",
+                   "lat": c.get("lat"), "lon": c.get("lon"), "place": c.get("place", ""), "geo_query": c.get("query", ""),
+                   "comp": {t: num(comp[r["id"]][t]) for t in TYPES} if r["id"] in comp else None})
+    dump("uk.json", {"programs": uk, "frameworks": rjson(RAW / "international/uk/uk_frameworks.json"),
+                     "summary": {k: v for k, v in rjson(A / "07_international/results/summary.json").items() if k.startswith("uk_")}})
+
+    H = rjson(RAW / "international/hk/hk_programs.json")["programs"]
+    chk = rjson(RAW / "international/hk/campus_coordinates_2026-11-06.json")
+    hk = []
+    for r in H:
+        c = chk.get(r["id"], {})
+        tl, tn = r.get("tuition_local") or {}, r.get("tuition_nonlocal") or {}
+        hk.append({"id": r["id"], "institution": r["institution"], "funding": r.get("funding") or "", "department": r.get("department") or "",
+                   "program": r["title"], "award": r.get("award") or "", "jupas": r.get("jupas_code") or "", "years": num(r.get("normal_duration_years")),
+                   "credit_system": r.get("credit_system") or "", "total_credits": num(r.get("total_credits")), "gen_ed_credits": num(r.get("gen_ed_credits")),
+                   "gen_ed_definition": r.get("gen_ed_definition") or "", "university_requirements": num(r.get("university_requirements_credits")),
+                   "major_credits": num(r.get("major_credits")), "major_definition": r.get("major_definition") or "", "free_electives": num(r.get("free_elective_credits")),
+                   "wie": r.get("wie_requirement") or "", "accreditation": r.get("accreditation") or "",
+                   "fee_local": hk_fee(tl)[0], "fee_local_note": hk_fee(tl)[1], "fee_local_year": tl.get("year", "") if isinstance(tl, dict) else "",
+                   "fee_nonlocal": amount(tn, "amount_hkd"), "url": r.get("programme_url") or "", "curriculum_url": r.get("curriculum_url") or "",
+                   "curriculum_year": r.get("curriculum_year") or "", "history": r.get("history_note") or "",
+                   "courses": [[m.get("year"), m.get("code") or "", m.get("title"), num(m.get("credits")), m.get("type"), m.get("note") or ""] for m in (r.get("courses") or [])],
+                   "read_on": r.get("read_on") or "", "lat": c.get("lat"), "lon": c.get("lon"), "place": c.get("place", ""),
+                   "comp": {t: num(comp[r["id"]][t]) for t in TYPES} if r["id"] in comp else None})
+    s7 = rjson(A / "07_international/results/summary.json")
+    dump("hk.json", {"programs": hk, "reform": s7.get("hku_reform"), "summary": {k: v for k, v in s7.items() if k.startswith("hk")}})
 
 
 # ---------------------------------------------------------------- 6 November 2026: the rebuilt paper (Modules 11 and 12)

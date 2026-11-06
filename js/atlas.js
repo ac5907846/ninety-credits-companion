@@ -33,13 +33,13 @@ window.Atlas = (function () {
     const scale = Object.values(STATUS).map((v, i, a) => [[i / a.length, v[1]], [(i + 1) / a.length, v[1]]]).flat();
     const choro = { type: "choropleth", locationmode: "USA-states", locations: S.map((s) => s.state), z, zmin: 0, zmax: Object.keys(STATUS).length,
       colorscale: scale, showscale: false, marker: { line: { color: "#7a7a7a", width: .6 } },
-      text: S.map((s) => `<b>${esc(s.name)}</b><br>${esc(STATUS[s.status][0])}<br>general education minimum: ${s.gen_ed_min ?? "none statewide"}<br>ACCE accredited ${s.acce}, applicant or candidate ${s.applicant}, ABET ANSAC ${s.ansac}`),
+      text: S.map((s) => `<b>${esc(s.name)}</b><br>Reduced-credit status: ${esc(STATUS[s.status][0])}<br>General education minimum: ${s.gen_ed_min != null ? s.gen_ed_min + " semester hours" : "none statewide"}<br>ACCE accredited programs: ${s.acce}<br>ACCE applicants and candidates: ${s.applicant}<br>ABET ANSAC programs: ${s.ansac}`),
       hovertemplate: "%{text}<extra></extra>" };
     const pts = ACC.map(([g, lab, col]) => {
       const G = F.filter((p) => p.accreditation_group === g && isNum(p.lat));
       return { type: "scattergeo", locationmode: "USA-states", lat: G.map((p) => p.lat), lon: G.map((p) => p.lon), mode: "markers", name: lab,
         marker: { size: G.map((p) => 5 + Math.sqrt(p.degrees_2024 || 4)), color: col, line: { color: "#222", width: .6 }, opacity: .92 },
-        text: G.map((p) => `<b>${esc(p.institution)}</b><br>${esc(p.program)}<br>${p.total_semester ?? "total not published"} credits; ${esc(lab)}<br>${p.degrees_2024 ?? "n/a"} degrees in 2024`),
+        text: G.map((p) => `<b>${esc(p.institution)}</b><br>${esc(p.program)}<br>Total: ${p.total_semester != null ? p.total_semester + " semester credits" : "not published"}<br>Accreditation: ${esc(lab)}<br>Bachelor’s degrees in 2024: ${p.degrees_2024 ?? "not separately reported"}`),
         customdata: G.map((p) => p.program_id), hovertemplate: "%{text}<extra></extra>" };
     });
     plot("atlas-map", [choro, ...pts], { geo: { scope: "usa", projection: { type: "albers usa" }, showlakes: false, bgcolor: "white" }, margin: { l: 0, r: 0, t: 0, b: 0 },
@@ -50,27 +50,33 @@ window.Atlas = (function () {
   }
   function hist(F) {
     const xs = Array.from(new Set(F.map((p) => isNum(p.total_semester) ? Math.round(p.total_semester) : null).filter((x) => x != null))).sort((a, b) => a - b);
-    const tr = ACC.map(([g, lab, col]) => ({ type: "bar", name: lab, x: xs, y: xs.map((x) => F.filter((p) => p.accreditation_group === g && Math.round(p.total_semester) === x).length), marker: { color: col, line: { color: "#333", width: .4 } }, hovertemplate: `%{y} programs at %{x} credits, ${lab}<extra></extra>` }));
+    const tr = ACC.map(([g, lab, col]) => ({ type: "bar", name: lab, x: xs, y: xs.map((x) => F.filter((p) => p.accreditation_group === g && Math.round(p.total_semester) === x).length), marker: { color: col, line: { color: "#333", width: .4 } }, hovertemplate: `${lab}: %{y} programs at %{x} credits<extra></extra>` }));
     plot("atlas-hist", tr, { barmode: "stack", xaxis: { title: { text: "semester credit hours" }, range: [88, 138], dtick: 10 }, yaxis: { title: { text: "programs" } },
       shapes: [{ type: "line", x0: 90, x1: 90, yref: "paper", y0: 0, y1: 1, line: { dash: "dot", color: "#000", width: 1.2 } }],
       annotations: [{ x: 90, yref: "paper", y: 1, text: "90", showarrow: false, xanchor: "left", font: { size: 11 } }] });
   }
   function blocks(F) {
     const B = [["free_electives", "free electives"], ["business", "business"], ["math_science", "mathematics and science"], ["major", "major"], ["gen_ed", "general education"]];
-    plot("atlas-blocks", B.map(([kk, lab]) => ({ type: "box", x: F.map((p) => p[kk]).filter(isNum), name: lab, boxpoints: "all", jitter: .45, pointpos: 0, orientation: "h",
-      marker: { size: 3, color: "#555", opacity: .55 }, line: { color: "#333", width: 1 }, fillcolor: "#eef1f3", hovertemplate: `${lab}: %{x} credits<extra></extra>` })),
+    plot("atlas-blocks", B.map(([kk, lab]) => { const G = F.filter((p) => isNum(p[kk])); return { type: "box", x: G.map((p) => p[kk]), text: G.map((p) => esc(p.institution)), name: lab, boxpoints: "all", jitter: .45, pointpos: 0, orientation: "h", hoveron: "points",
+      marker: { size: 3, color: "#555", opacity: .55 }, line: { color: "#333", width: 1 }, fillcolor: "#eef1f3", hovertemplate: `<b>%{text}</b><br>${lab[0].toUpperCase() + lab.slice(1)}: %{x} credits<extra></extra>` }; }),
       { margin: { l: 150, r: 14, t: 6, b: 34 }, xaxis: { title: { text: "credits in the block, as published" }, range: [-2, 82] } });
   }
   function tbl(F) {
     $("table-count").textContent = `(${F.length} shown)`;
     table("atlas-table", [
-      { key: "institution", label: "Institution" }, { key: "state", label: "State" }, { key: "program", label: "Program" },
-      { key: "accreditation_group", label: "Accreditation", fmt: (v) => accTag(v) },
-      { key: "total_semester", label: "Total", num: true, fmt: (v) => n(v, 1) }, { key: "gen_ed", label: "Gen. ed.", num: true, fmt: (v) => n(v) },
-      { key: "major", label: "Major", num: true, fmt: (v) => n(v) }, { key: "free_electives", label: "Free el.", num: true, fmt: (v) => n(v) },
-      { key: "state_gen_ed_min", label: "State gen. ed. min.", num: true, fmt: (v) => n(v) },
-      { key: "tuition_fees_in_state_2023_24", label: "In-state tuition", num: true, fmt: money }, { key: "per_credit_in_state", label: "Per credit", num: true, fmt: money },
-      { key: "degrees_2024", label: "Degrees 2024", num: true, fmt: (v) => n(v) }, { key: "earn_1yr", label: "Earnings, 1 yr", num: true, fmt: money },
+      { key: "institution", label: "Institution", tip: "The institution that awards the degree, as named in IPEDS." },
+      { key: "state", label: "State", tip: "State of the campus, as a two-letter postal code." },
+      { key: "program", label: "Program", tip: "The bachelor’s degree program as the catalog names it." },
+      { key: "accreditation_group", label: "Accreditation", fmt: (v) => accTag(v), tip: "Programmatic accreditation: ACCE (American Council for Construction Education), ABET ANSAC (ABET’s Applied and Natural Science Accreditation Commission), both, an ACCE applicant or candidate, or neither. ACCE directory of 29 October 2026; ABET list of 6 November 2026." },
+      { key: "total_semester", label: "Total credits", num: true, fmt: (v) => n(v, 1), tip: "Total semester credit hours the catalog requires for the degree. Quarter-hour catalogs are converted at two thirds. Blank where the catalog states no total." },
+      { key: "gen_ed", label: "General education", num: true, fmt: (v) => n(v), tip: "Semester hours of general education (the institution’s core curriculum of writing, mathematics, science, humanities and social sciences) as the catalog publishes the block. Blank where the catalog does not state it." },
+      { key: "major", label: "Major", num: true, fmt: (v) => n(v), tip: "Semester hours of the major or professional block as the catalog publishes it: construction, business and other required courses of the program. Blank where the catalog does not state it." },
+      { key: "free_electives", label: "Free electives", num: true, fmt: (v) => n(v), tip: "Semester hours the student may take in any subject, as the catalog publishes them. Zero means the plan has no free electives." },
+      { key: "state_gen_ed_min", label: "State general education minimum", num: true, fmt: (v) => n(v), tip: "The minimum semester hours of general education the state requires of bachelor’s degrees at its public universities. Blank where the state sets no statewide minimum." },
+      { key: "tuition_fees_in_state_2023_24", label: "In-state tuition and fees", num: true, fmt: money, tip: "Published in-state tuition and required fees for one full-time academic year, 2023-24 (IPEDS)." },
+      { key: "per_credit_in_state", label: "In-state charge per credit", num: true, fmt: money, tip: "In-state tuition charged per credit hour (IPEDS part-time rate, 2023-24): the price of each credit a shorter degree would remove." },
+      { key: "degrees_2024", label: "Bachelor’s degrees, 2023-24", num: true, fmt: (v) => n(v), tip: "Bachelor’s degrees the program conferred in 2023-24 (IPEDS Completions), under its classification codes." },
+      { key: "earn_1yr", label: "Median earnings, one year after", num: true, fmt: money, tip: "Median earnings of the program’s graduates one year after completion (College Scorecard field-of-study file, release of 15 October 2026)." },
     ], F, { onRow: card, sortKey: "institution" });
   }
   function update() { const F = filtered(); tiles(F); map(F); hist(F); blocks(F); tbl(F); }
