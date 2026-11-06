@@ -4,381 +4,140 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>From 120 to 90 Credits: construction management degrees in Florida</title>
-<meta name="description" content="Companion to a study of 90-credit bachelor’s degrees in construction management, with civil engineering and the other states as comparison: data, models, Florida results, student and system futures, sources.">
+<title>Ninety credits: U.S. construction bachelor’s degrees, the rules that hold them at 120, and the routes to 90</title>
+<meta name="description" content="Atlas of every U.S. construction bachelor’s program with its credits, courses, costs and state rules, linked to the source pages; the accreditor and general education rules; the UK and Hong Kong comparison; who gains and who loses; and the routes to a 90-credit degree.">
 <link rel="icon" href="data:,">
-<link rel="preload" href="data/headline.json" as="fetch" crossorigin>
-<link rel="preload" href="data/hero.json" as="fetch" crossorigin>
-<link rel="stylesheet" href="css/app.css?v=3">
+<link rel="preload" href="data/atlas.json?v=5" as="fetch" crossorigin>
+<link rel="preload" href="data/states.json?v=5" as="fetch" crossorigin>
+<link rel="stylesheet" href="css/app.css?v=5">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#overview">From 120 to 90 Credits</a>
-    <nav class="nav tabs" id="nav">
-      <a href="#overview" data-view="overview">Overview</a>
-      <a href="#data" data-view="data">Data</a>
-      <a href="#model" data-view="model">Models</a>
-      <a href="#florida" data-view="florida">Florida results</a>
-      <a href="#futures" data-view="futures">Student and system</a>
-      <a href="#states" data-view="states">Other states</a>
-      <a href="#sources" data-view="sources">Sources and checks</a>
+    <a class="brand" href="#atlas">Ninety credits</a>
+    <nav class="nav" id="nav">
+      <a href="#atlas" data-view="atlas">Atlas</a>
+      <a href="#rules" data-view="rules">Rules</a>
+      <a href="#abroad" data-view="abroad">Abroad</a>
+      <a href="#ledger" data-view="ledger">Gains and losses</a>
+      <a href="#routes" data-view="routes">Routes to 90</a>
+      <a href="#sources" data-view="sources">Sources</a>
     </nav>
   </div>
 </header>
 
 <main>
-<!-- ============================================================ overview -->
-<section class="view" id="v-overview">
-  <div class="hero">
-    <div class="wrap">
-      <p class="kicker">A study of reduced-credit bachelor’s degrees: construction management in Florida, with civil engineering and the other states as comparison</p>
-      <h1>Can an accredited construction management degree fit in 90 credits, who gains, who pays, and who has to agree?</h1>
-      <div class="hero-fig tour-host" id="hero-fig">
-        <div class="hero-stage" id="hero-stage"></div>
-        <div class="hero-read">
-          <p class="kicker" id="hr-kicker"></p>
-          <p class="t" id="hr-title"></p>
-          <p class="s" id="hr-sub"></p>
-          <div class="hero-nums">
-            <div class="n"><div class="v cm" id="hr-cm"></div><div class="l">construction management programs at or below 90 credits</div></div>
-            <div class="n"><div class="v" id="hr-cv"></div><div class="l">civil engineering programs, for comparison</div></div>
-            <div class="n"><div class="v cm" id="hr-fgcu"></div><div class="l">FGCU construction management, fewest credits</div></div>
-            <div class="n"><div class="v cm" id="hr-med"></div><div class="l">median construction management program</div></div>
-          </div>
-          <div class="hero-steps tour-keep" id="hr-steps"></div>
-        </div>
-      </div>
-      <div class="tiles" id="tiles"></div>
-      <p class="lede" id="why"></p>
+<!-- ============================================================ atlas -->
+<section class="view" id="v-atlas">
+  <div class="wrap">
+    <h1 class="title">U.S. construction bachelor’s programs</h1>
+    <p class="lede" id="atlas-lede">Loading the atlas…</p>
+    <div class="filters" id="filters">
+      <div class="fgroup"><span class="flabel">Accreditation</span><div class="chips" id="f-acc"></div></div>
+      <div class="fgroup"><span class="flabel">Program type</span><div class="chips" id="f-group"></div></div>
+      <div class="fgroup"><span class="flabel">Control</span><div class="chips" id="f-control"></div></div>
+      <div class="fgroup"><span class="flabel">State</span><select id="f-state"><option value="">All states</option></select></div>
+      <div class="fgroup grow"><span class="flabel">Search</span><input id="f-q" type="search" placeholder="Institution, program or city"></div>
+      <button class="reset" id="f-reset" type="button">Reset</button>
     </div>
-  </div>
-  <div class="block">
-    <div class="wrap">
-      <h2>The study at a glance</h2>
-      <p class="trace" id="trace-flow"></p>
-      <div class="flow tour-host" id="flow"></div>
-      <div class="flow-detail" id="flow-detail"></div>
+    <div class="tiles" id="tiles"></div>
+    <div class="grid2">
+      <div class="panel"><h3>Where they are, and what each state has done about 90 credits</h3><div id="atlas-map" class="chart tall"></div></div>
+      <div class="panel"><h3>Published total credits</h3><div id="atlas-hist" class="chart"></div><h3>Published credit blocks</h3><div id="atlas-blocks" class="chart short"></div></div>
+    </div>
+    <div class="panel">
+      <h3>Programs <span class="muted" id="table-count"></span></h3>
+      <div class="tablewrap"><table class="data sortable" id="atlas-table"></table></div>
+      <p class="note">Credits are semester hours as published (quarter-hour catalogs converted at two thirds). Tuition and fees are IPEDS 2023-24 published amounts; per-credit charges are IPEDS part-time rates; earnings and debt are College Scorecard field-of-study medians (release of 15 October 2026). Select a row for its courses, rules and sources.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ data -->
-<section class="view" id="v-data">
-  <div class="block">
-    <div class="wrap">
-      <h2>Construction management programs in the United States</h2>
-      <p class="trace" id="trace-universe"></p>
-      <div class="tiles" id="data-tiles"></div>
-      <div class="two">
-        <div class="chart" id="d-cip"></div>
-        <div class="chart" id="d-states"></div>
-      </div>
-      <div class="two">
-        <div class="chart" id="d-grads"></div>
-        <div class="chart" id="d-civil-grads"></div>
-      </div>
+<!-- ============================================================ rules -->
+<section class="view" id="v-rules" hidden>
+  <div class="wrap">
+    <h1 class="title">The rules that hold a degree at 120</h1>
+    <p class="lede" id="rules-lede"></p>
+    <div class="grid2 wide">
+      <div class="panel"><h3>What each programmatic accreditor’s text requires</h3><div class="tablewrap"><table class="data" id="criteria-table"></table></div></div>
+      <div class="panel"><h3>What their accredited programs carry</h3><div class="tablewrap"><table class="data" id="practice-table"></table></div><div id="practice-chart" class="chart short"></div></div>
     </div>
-  </div>
-  <div class="block alt">
-    <div class="wrap">
-      <h2>What the catalogs say: credits today</h2>
-      <p class="trace" id="trace-catalog"></p>
-      <div class="two">
-        <div class="chart" id="d-totals"></div>
-        <div class="chart" id="d-blocks"></div>
-      </div>
-      <p class="note" id="d-catalog-note"></p>
-      <h3>Every construction program with a stated total</h3>
-      <div class="controls"><label>Group <select id="d-group"><option value="">All</option></select></label><label>State <select id="d-state"><option value="">All</option></select></label></div>
-      <div class="table-wrap tall-table"><table id="d-programs"></table></div>
-    </div>
-  </div>
-  <div class="block">
-    <div class="wrap">
-      <h2>The 21 Florida programs whose course lists were read</h2>
-      <p class="trace" id="trace-florida-data"></p>
-      <div class="table-wrap"><table id="d-florida"></table></div>
-    </div>
-  </div>
-  <div class="block alt">
-    <div class="wrap">
-      <h2>The policy debate, 2014 to 2026</h2>
-      <p class="trace" id="trace-news"></p>
-      <div class="two">
-        <div class="chart" id="d-news"></div>
-        <div class="chart" id="d-actors"></div>
-      </div>
-      <div class="two">
-        <div class="chart" id="d-status"></div>
-        <div class="chart" id="d-voices"></div>
+    <div class="panel">
+      <h3>General education budget calculator</h3>
+      <p class="muted">Floor of a reduced-credit version = construction kept + business kept + mathematics and science kept + general education required, less what those courses already count toward it. Start from one of the five programs read course by course, then move the rules.</p>
+      <div class="calc">
+        <div class="calc-in" id="calc-in"></div>
+        <div class="calc-out"><div id="calc-chart" class="chart short"></div><p class="big" id="calc-floor"></p><p class="muted" id="calc-note"></p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ models -->
-<section class="view" id="v-model">
-  <div class="block">
-    <div class="wrap">
-      <h2>Module A: the fewest credits that meet every rule</h2>
-      <p class="trace" id="trace-m15"></p>
-      <p class="lede">For each Florida program a mixed-integer program chooses the set of courses with the fewest credits that still meets the accreditor’s floors (ACCE: 50 credits of construction and 12 of business; ABET: 30 of mathematics and science and 45 of engineering), the state’s general education rule read from each university’s 2026-27 list, the topics the program covers today and every prerequisite chain. The ledger below builds the FGCU construction management floor credit by credit.</p>
-      <div class="sim">
-        <div class="card tour-host" id="m15-card">
-          <h3>FGCU construction management: the ledger</h3>
-          <div class="controls"><label>Design <select id="m15-design"><option value="FLOOR">Accreditor floor</option><option value="KEEP">Required core kept</option></select></label></div>
-          <div class="chart" id="m15-ledger"></div>
-          <p class="note" id="m15-note"></p>
-        </div>
-        <div class="card">
-          <h3>What binds, program by program</h3>
-          <p class="small">Floor at 36 credits of general education; the same floor without the general education rule and without the accreditor; the burden each rule adds.</p>
-          <div class="chart" id="m15-binding"></div>
-        </div>
-      </div>
-      <p class="note" id="m15-why"></p>
+<!-- ============================================================ abroad -->
+<section class="view" id="v-abroad" hidden>
+  <div class="wrap">
+    <h1 class="title">Three-year and four-year degrees abroad</h1>
+    <p class="lede" id="abroad-lede"></p>
+    <div class="grid2 wide">
+      <div class="panel"><h3>One scale of learning hours</h3><div id="abroad-scale" class="chart"></div></div>
+      <div class="panel"><h3>What the taught credits hold</h3><div id="abroad-comp" class="chart"></div></div>
     </div>
-  </div>
-  <div class="block alt">
-    <div class="wrap">
-      <h2>Modules B and C: twenty thousand futures for the student and the system</h2>
-      <p class="trace" id="trace-rdm"></p>
-      <p class="lede">No forecast is made. Each unknown is drawn from a range read from the evidence (Latin hypercube, 20,000 futures); the model is run once per future; scenario discovery (PRIM) then finds the box of futures in which a party loses and Sobol indices say which unknown matters.</p>
-      <div class="sim">
-        <div class="card tour-host" id="m16-card">
-          <h3>Module B: the graduate, construction</h3>
-          <div class="chart" id="m16-run"></div>
-          <p class="note" id="m16-note"></p>
-          <div class="table-wrap"><table class="param-table" id="m16-params"></table></div>
-        </div>
-        <div class="card tour-host" id="m17-card">
-          <h3>Module C: the system, United States construction</h3>
-          <div class="chart" id="m17-run"></div>
-          <p class="note" id="m17-note"></p>
-          <div class="table-wrap"><table class="param-table" id="m17-params"></table></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="block">
-    <div class="wrap">
-      <h2>The AI unknowns, the policy grid and the scenario atlas</h2>
-      <p class="trace" id="trace-grid"></p>
-      <div class="sim">
-        <div class="card">
-          <h3>Module 18: 24 AI and workforce unknowns</h3>
-          <div class="table-wrap tall-table"><table class="param-table" id="m18-params"></table></div>
-        </div>
-        <div class="card">
-          <h3>Modules 22 and 23: every combination of what each party can do</h3>
-          <div id="grid-text"></div>
-        </div>
-      </div>
-    </div>
+    <div class="panel" id="hk-panel" hidden><h3>Hong Kong</h3><div id="hk-text"></div><div class="tablewrap"><table class="data" id="hk-table"></table></div></div>
+    <div class="panel"><h3>CIOB-accredited construction management honours degrees in the United Kingdom</h3><div class="tablewrap"><table class="data sortable" id="uk-table"></table></div></div>
   </div>
 </section>
 
-<!-- ============================================================ florida results -->
-<section class="view" id="v-florida">
-  <div class="block">
-    <div class="wrap">
-      <h2>Ninety credits fit only where general education gives way</h2>
-      <p class="trace" id="trace-fit"></p>
-      <div class="controls" id="fit-controls">
-        <label>Field <select id="fit-field"><option value="CM">Construction management (ACCE)</option><option value="all">All 21 programs, civil for comparison</option></select></label>
-        <label>Design <select id="fit-design"><option value="FLOOR">Accreditor floor (only the rules bind)</option><option value="KEEP">Required core kept</option></select></label>
-        <label>General education <select id="fit-ge"><option value="36">36 credits (Florida today)</option><option value="30">30 credits</option><option value="24">24 credits</option></select></label>
-        <label>Areas <select id="fit-struct"><option value="typical">Typical university (6 each)</option><option value="minimum">Florida legal minimum (6, 6, 3, 3, 3)</option></select></label>
-        <label>Entrant <select id="fit-ready"><option value="true">Ready for calculus</option><option value="false">Not ready (placement courses added)</option></select></label>
-      </div>
-      <div class="chart" id="fit-chart"></div>
-      <p class="note" id="fit-note"></p>
+<!-- ============================================================ ledger -->
+<section class="view" id="v-ledger" hidden>
+  <div class="wrap">
+    <h1 class="title">Who gains and who loses at 90 credits</h1>
+    <p class="lede" id="ledger-lede"></p>
+    <div class="grid3" id="party-cards"></div>
+    <div class="grid2">
+      <div class="panel"><h3>Every program: the student’s gain against the institution’s net, per graduate</h3><div id="ledger-scatter" class="chart tall"></div></div>
+      <div class="panel"><h3>Medians by group</h3><div class="tablewrap"><table class="data" id="ledger-table"></table></div><h3>The five programs read course by course</h3><div class="tablewrap"><table class="data" id="ledger-case"></table></div></div>
     </div>
-  </div>
-  <div class="block alt">
-    <div class="wrap">
-      <h2>General education the program teaches anyway</h2>
-      <p class="trace" id="trace-overlap"></p>
-      <p class="lede">Precalculus or statistics, physics or geology, macroeconomics, composition and speech are required by the program and stand on the university’s general education list, so they count once toward both. The business core does not: no state university list carries accounting or business law, and only the University of Florida lists principles of management.</p>
-      <div class="controls"><label>Programs <select id="ov-field"><option value="CM">Construction management</option><option value="all">All 21, civil for comparison</option></select></label></div>
-      <div class="chart" id="overlap-chart"></div>
-      <p class="note" id="overlap-note"></p>
-      <div class="two">
-        <div>
-          <h3>The floor if the state counted more of the major</h3>
-          <div class="chart" id="lever-chart"></div>
-          <p class="note">Accreditor floors in full, courses as published, 36 credits of general education over Florida’s area minimums. Business foundations count: accounting, business law and principles of management count toward the 36 (economics already does). Any 12 major credits: Louisiana’s rule for its 90-hour degree.</p>
-        </div>
-        <div>
-          <h3>What the official lists changed</h3>
-          <div class="table-wrap"><table id="diff-table"></table></div>
-        </div>
-      </div>
-      <h3>Which required courses stand on the list</h3>
-      <div class="controls"><label>Program <select id="courses-program"></select></label></div>
-      <div class="table-wrap tall-table"><table id="courses-table"></table></div>
-    </div>
-  </div>
-  <div class="block">
-    <div class="wrap">
-      <h2>Floor finder: test a combination of rules</h2>
-      <p class="trace" id="trace-finder"></p>
-      <div class="controls grid4" id="finder-controls">
-        <label>Field <select id="f-field"><option value="CM">Construction management (ACCE)</option><option value="Civil">Civil engineering (ABET)</option></select></label>
-        <label>Design <select id="f-design"><option value="FLOOR">Accreditor floor</option><option value="KEEP">Required core kept</option></select></label>
-        <label>State general education <select id="f-ge"><option value="36">36 credits (today)</option><option value="30">30</option><option value="24">24</option><option value="21">21 (area minimums only)</option><option value="15">15 (state core only)</option></select></label>
-        <label>Major credits counted toward it <select id="f-cap"><option value="0">None (today)</option><option value="12">Up to 12 (Louisiana’s rule)</option></select></label>
-        <label>Accreditor floor that holds <select id="f-share"><option value="1">All of it</option><option value="0.9">90%</option><option value="0.8">80%</option><option value="0.7">70%</option><option value="0.6">60%</option><option value="0.5">Half</option><option value="0">Accreditation given up</option></select></label>
-        <label>Course merging <select id="f-merge"><option value="none">None (courses as published)</option><option value="peer_p25">To the leanest quarter of accredited programs</option><option value="ai_35">AI-supported, 35% fewer credits</option><option value="syllabus">What FGCU syllabi show repeated (FGCU only)</option></select></label>
-        <label>Merged credits <select id="f-rec"><option value="0">Counted as credits</option><option value="1">Competence recognized</option></select></label>
-        <label>Money rule (FGCU) <select id="f-money"><option value="per_credit|follows_credits">Tuition per credit, funding follows credits</option><option value="per_credit|held_harmless">Tuition per credit, funding per degree</option><option value="per_degree|follows_credits">Price per degree, funding follows credits</option><option value="per_degree|held_harmless">Price per degree, funding per degree</option></select></label>
-      </div>
-      <div class="result" id="finder-result"></div>
-      <div class="chart" id="finder-chart"></div>
-    </div>
-  </div>
-  <div class="block alt">
-    <div class="wrap">
-      <h2>Who has to agree, and what AI adds</h2>
-      <p class="trace" id="trace-atlas"></p>
-      <p class="lede">Each cell counts the construction management programs whose fewest credits reach 90 under one choice of the state and one of the accreditor; the AI future steps on its own clock. Civil engineering is drawn smaller for comparison.</p>
-      <div class="controls">
-        <label>AI future <select id="a-ai"><option value="none">No AI saving</option><option value="F3">F3 Incremental tool</option><option value="F2">F2 Entry-level squeeze</option><option value="F5">F5 Build-out boom</option><option value="F4">F4 Credential unbundling</option><option value="F1">F1 AI tutor revolution</option><option value="ceiling">AI ceiling</option></select></label>
-        <label>Merging <select id="a-merge"><option value="none">Courses as published</option><option value="peer_p25">Merged as peers do</option></select></label>
-        <label>Required AI course <select id="a-lit"><option value="0">None</option><option value="3">3 credits</option></select></label>
-        <label>State counts competence <select id="a-srec"><option value="0">No</option><option value="1">Yes</option></select></label>
-      </div>
-      <div class="atlas-grid tour-host" id="atlas-host">
-        <div class="chart" id="atlas-cm"></div>
-        <div class="chart" id="atlas-cv"></div>
-      </div>
-      <h3>Twelve stories, read at Florida Gulf Coast University</h3>
-      <div class="chart" id="story-chart"></div>
-      <div class="table-wrap"><table id="story-table"></table></div>
-    </div>
+    <p class="note" id="ledger-note"></p>
   </div>
 </section>
 
-<!-- ============================================================ futures -->
-<section class="view" id="v-futures">
-  <div class="block">
-    <div class="wrap">
-      <h2>The student gains unless employers pay much less, for long</h2>
-      <p class="trace" id="trace-student"></p>
-      <div class="controls">
-        <label>Field <select id="st-field"><option value="construction">Construction</option><option value="civil">Civil engineering (comparison)</option></select></label>
-        <label>Entry earnings penalty <input type="range" id="st-pen" min="0" max="0.19" step="0.005" value="0.05"> <span id="st-pen-val"></span></label>
-      </div>
-      <div class="result" id="st-result"></div>
-      <div class="two">
-        <div class="chart" id="st-hist"></div>
-        <div class="chart" id="st-cond"></div>
-      </div>
-      <div class="two">
-        <div class="chart" id="st-grid"></div>
-        <div class="chart" id="st-sobol"></div>
-      </div>
-      <p class="note" id="st-note"></p>
+<!-- ============================================================ routes -->
+<section class="view" id="v-routes" hidden>
+  <div class="wrap">
+    <h1 class="title">Routes to 90: overlap, merges and the AI-era curriculum</h1>
+    <p class="lede" id="routes-lede"></p>
+    <div class="panel">
+      <h3>Step by step, for one program</h3>
+      <div class="chips" id="route-prog"></div>
+      <div id="route-chart" class="chart"></div>
+      <p class="muted" id="route-note"></p>
     </div>
-  </div>
-  <div class="block alt">
-    <div class="wrap">
-      <h2>A slow transition timed by the accreditors, with its cost on institutions</h2>
-      <p class="trace" id="trace-system"></p>
-      <div class="controls">
-        <label>Region <select id="sy-region"><option>Florida</option><option>United States</option></select></label>
-        <label>Field <select id="sy-field"><option value="construction">Construction</option><option value="civil">Civil engineering (comparison)</option></select></label>
-      </div>
-      <div class="two">
-        <div class="chart" id="sy-adopt"></div>
-        <div class="chart" id="sy-grads"></div>
-      </div>
-      <div class="table-wrap"><table id="sy-table"></table></div>
-    </div>
-  </div>
-  <div class="block">
-    <div class="wrap">
-      <h2>AI changes who gains more than whether the degree fits</h2>
-      <p class="trace" id="trace-ai"></p>
-      <div class="controls">
-        <label>Field <select id="ai-field"><option value="construction">Construction</option><option value="civil">Civil engineering (comparison)</option></select></label>
-        <label>Region <select id="ai-region"><option>Florida</option><option>United States</option></select></label>
-      </div>
-      <div class="two">
-        <div class="chart" id="ai-ledger"></div>
-        <div class="chart" id="ai-floors"></div>
-      </div>
-      <p class="note" id="ai-note"></p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ other states -->
-<section class="view" id="v-states">
-  <div class="block">
-    <div class="wrap">
-      <h2>Every state: the construction management floor</h2>
-      <p class="trace" id="trace-states"></p>
-      <p class="lede">Outside Florida only credit blocks were collected, so the floor is arithmetic: 50 credits of construction, the business foundations that general education does not accept, and the state’s general education minimum (states without a statewide number are counted at 30). The counting rule steps on its own clock.</p>
-      <div class="controls">
-        <label>Counting rule <select id="map-rule"><option value="floor_cm">Today: economics counts, the other business foundations do not</option><option value="floor_cm_business">ACCE’s business foundations count toward general education</option><option value="floor_cm_louisiana">Any 12 major credits count (Louisiana’s rule)</option></select></label>
-        <label><input type="checkbox" id="map-points" checked> Show the construction management programs</label>
-      </div>
-      <div class="tour-host" id="map-host"><div class="chart" id="map-chart"></div></div>
-      <p class="note" id="map-note"></p>
-      <div class="two">
-        <div class="chart" id="map-hist"></div>
-        <div>
-          <h3>Any state, by arithmetic</h3>
-          <div class="controls">
-            <label>State general education, credits <input type="number" id="s-ge" value="36" min="0" max="60" step="1"></label>
-            <label>Major credits the state lets count <input type="number" id="s-cap" value="0" min="0" max="36" step="1"></label>
-            <label><input type="checkbox" id="s-bus"> Business foundations accepted as general education</label>
-          </div>
-          <div class="result" id="state-result"></div>
-        </div>
-      </div>
-      <h3>State by state</h3>
-      <div class="table-wrap tall-table"><table id="state-table"></table></div>
+    <div class="grid2 wide">
+      <div class="panel"><h3>Course pairs accredited programs already teach as one course</h3><div class="tablewrap"><table class="data" id="pairs-table"></table></div></div>
+      <div class="panel"><h3>Where the hours go, and how exposed the work is to AI</h3><div id="ai-chart" class="chart"></div><div id="task-chart" class="chart short"></div></div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================ sources -->
-<section class="view" id="v-sources">
-  <div class="block">
-    <div class="wrap">
-      <h2>Numbers check</h2>
-      <p class="small">The page recomputes the study’s published numbers from the row-level result files it loads, in the browser, and compares them with the values the modules wrote.</p>
-      <div class="result" id="check-result"></div>
-      <div class="table-wrap tall-table"><table id="check-table"></table></div>
-    </div>
-  </div>
-  <div class="block alt">
-    <div class="wrap">
-      <h2>Result files behind the page</h2>
-      <p class="small">Each chart reads a JSON file that <code>build_data.py</code> writes from the modules’ result files; the result files themselves are copied here. Built <span id="built"></span>.</p>
-      <div class="two">
-        <div><h3>JSON read by the page</h3><ul class="src-list" id="files-json"></ul></div>
-        <div><h3>Module results and raw lists</h3><ul class="src-list" id="files-results"></ul></div>
-      </div>
-    </div>
-  </div>
-  <div class="block">
-    <div class="wrap">
-      <h2>References</h2>
-      <p class="small" id="refs-note"></p>
-      <div class="controls"><label>Group <select id="ref-group"><option value="">All</option><option value="policy">Policy, accreditors and states</option><option value="methods_ai">Methods and AI</option><option value="history">History</option></select></label></div>
-      <ol class="src-list" id="refs"></ol>
-    </div>
+<section class="view" id="v-sources" hidden>
+  <div class="wrap">
+    <h1 class="title">Sources and data</h1>
+    <div class="panel"><div class="tablewrap"><table class="data" id="sources-table"></table></div></div>
+    <div class="panel"><h3>Data files behind this site</h3><ul id="files-list"></ul></div>
   </div>
 </section>
 </main>
-<script src="js/motion.js?v=3"></script>
-<script src="js/tour.js?v=3"></script>
-<script src="js/hero.js?v=3"></script>
-<script src="js/app.js?v=3"></script>
+
+<div class="card-back" id="card-back" hidden>
+  <aside class="card" id="card" role="dialog" aria-modal="true"></aside>
+</div>
+
+<footer class="foot"><div class="wrap">Companion to a study of reduced-credit construction bachelor’s degrees in the United States. Data read 29 October to 6 November 2026; every figure links to its source page.</div></footer>
+<script src="js/util.js?v=5"></script>
+<script src="js/atlas.js?v=5"></script>
+<script src="js/views.js?v=5"></script>
+<script src="js/app.js?v=5"></script>
 </body>
 </html>
