@@ -4,37 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Reimagining Construction Management Education in the Age of AI: Pathways to a 90-Credit Degree</title>
-<meta name="description" content="Atlas of every U.S. construction bachelor’s program with its credits, courses, costs and state rules, linked to the source pages; what a 90-credit degree must satisfy, state by state and course group by course group; pathways to 90 credits, from merging course pairs to counting major courses as general education; what AI changes by course group and learning outcome; who gains and who loses; and what to do first.">
+<title>Beyond Credit Hours: Accreditation, Curriculum Integration, and Content Preservation in Professional Degrees</title>
+<meta name="description" content="Companion to a study of reduced-credit construction bachelor’s degrees: atlases of construction degrees in the United States, the United Kingdom and Hong Kong, the general education and accreditation requirements that shape a 90-credit degree, course integration, and the course content catalogs document.">
 <link rel="icon" href="data:,">
-<link rel="preload" href="data/atlas.json?v=14" as="fetch" crossorigin>
-<link rel="preload" href="data/states.json?v=14" as="fetch" crossorigin>
-<link rel="stylesheet" href="css/app.css?v=14">
+<link rel="preload" href="data/study.json?v=15" as="fetch" crossorigin>
+<link rel="preload" href="data/atlas.json?v=15" as="fetch" crossorigin>
+<link rel="preload" href="data/states.json?v=15" as="fetch" crossorigin>
+<link rel="stylesheet" href="css/app.css?v=15">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#atlas">Ninety credits</a>
+    <a class="brand" href="#atlas">Beyond Credit Hours</a>
     <nav class="nav" id="nav">
-      <a href="#atlas" data-view="atlas">US Atlas</a>
-      <a href="#uk" data-view="uk">UK Atlas</a>
-      <a href="#hk" data-view="hk">Hong Kong Atlas</a>
-      <a href="#satisfy" data-view="satisfy">What 90 must satisfy</a>
-      <a href="#ledger" data-view="ledger">Gains and losses</a>
-      <a href="#routes" data-view="routes">Pathways to 90</a>
-      <a href="#ai" data-view="ai">AI</a>
-      <a href="#abroad" data-view="abroad">Compare</a>
-      <a href="#strategies" data-view="strategies">What to do</a>
+      <a href="#atlas" data-view="atlas">Atlases</a>
+      <a href="#requirements" data-view="requirements">Requirements</a>
+      <a href="#integration" data-view="integration">Integration</a>
+      <a href="#content" data-view="content">Documented content</a>
+      <a href="#beyond" data-view="beyond">Beyond the curriculum</a>
       <a href="#sources" data-view="sources">Sources</a>
     </nav>
   </div>
 </header>
 
 <main>
-<!-- ============================================================ atlas -->
+<!-- ============================================================ US atlas -->
 <section class="view" id="v-atlas">
   <div class="wrap">
+    <nav class="subnav"><a href="#atlas" data-view="atlas">United States</a><a href="#uk" data-view="uk">United Kingdom</a><a href="#hk" data-view="hk">Hong Kong</a><a href="#au" data-view="au" hidden>Australia</a></nav>
     <h1 class="title">U.S. construction bachelor’s programs</h1>
     <p class="lede" id="atlas-lede">Loading the atlas…</p>
     <div class="filters" id="filters">
@@ -47,15 +45,13 @@
     </div>
     <div class="tiles" id="tiles"></div>
     <div class="grid2">
-      <div class="panel"><h3>Where they are, and what each state has done about degrees below 120 credits</h3><div id="atlas-map" class="chart tall"></div><div class="maplegend" id="atlas-map-legend"></div></div>
+      <div class="panel"><h3>Where they are, and each state’s action on degrees below 120 credits</h3><div id="atlas-map" class="chart tall"></div><div class="maplegend" id="atlas-map-legend"></div></div>
       <div class="panel"><h3>Published total credits</h3><div id="atlas-hist" class="chart"></div><h3>Published credit blocks</h3><div id="atlas-blocks" class="chart short"></div></div>
     </div>
-    <div class="panel"><h3 id="door-title"></h3><div class="tablewrap"><table class="data paper" id="door-table"></table></div><p class="note" id="door-note"></p></div>
-    <div class="panel"><h3>The states’ verified actions on degrees below 120 credits, 6 November 2026</h3><div class="tablewrap"><table class="data sortable" id="actions-table"></table></div><p class="note" id="actions-note"></p></div>
     <div class="panel">
       <h3>Programs <span class="muted" id="table-count"></span></h3>
       <div class="tablewrap"><table class="data sortable" id="atlas-table"></table></div>
-      <p class="note">Credits are semester hours as published (quarter-hour catalogs converted at two thirds). Tuition and fees are IPEDS 2023-24 published amounts; per-credit charges are IPEDS part-time rates; earnings and debt are College Scorecard field-of-study medians (release of 15 October 2026). Each row opens the program’s courses, rules and sources.</p>
+      <p class="note">Credits are semester hours as published (quarter-hour catalogs converted at two thirds). State group: the general education minimum that binds the state’s public universities (Fig. 1a). Each row opens the program’s card with its required courses, its sources and its state’s rule.</p>
     </div>
   </div>
 </section>
@@ -63,6 +59,7 @@
 <!-- ============================================================ UK atlas -->
 <section class="view" id="v-uk" hidden>
   <div class="wrap">
+    <nav class="subnav"><a href="#atlas" data-view="atlas">United States</a><a href="#uk" data-view="uk">United Kingdom</a><a href="#hk" data-view="hk">Hong Kong</a><a href="#au" data-view="au" hidden>Australia</a></nav>
     <h1 class="title">UK construction management honours degrees</h1>
     <p class="lede" id="uk-lede">Loading the atlas…</p>
     <div class="filters">
@@ -81,7 +78,7 @@
     <div class="panel">
       <h3>Programs <span class="muted" id="uk-count"></span></h3>
       <div class="tablewrap"><table class="data sortable" id="uk-atlas-table"></table></div>
-      <p class="note">Programs from the CIOB list of accredited programmes (27 March 2026), read on their course pages and programme specifications; fees as published for the entry year shown in each program’s card. Content types by the same written rules as the U.S. courses. Map points from OpenStreetMap (data © OpenStreetMap contributors, ODbL). Each row opens the program’s modules, fees and sources.</p>
+      <p class="note">Programs from the CIOB list of accredited programmes (27 March 2026), read on their course pages and programme specifications; fees as published for the entry year shown in each program’s card. Map points from OpenStreetMap (data © OpenStreetMap contributors, ODbL). Each row opens the program’s card.</p>
     </div>
   </div>
 </section>
@@ -89,6 +86,7 @@
 <!-- ============================================================ Hong Kong atlas -->
 <section class="view" id="v-hk" hidden>
   <div class="wrap">
+    <nav class="subnav"><a href="#atlas" data-view="atlas">United States</a><a href="#uk" data-view="uk">United Kingdom</a><a href="#hk" data-view="hk">Hong Kong</a><a href="#au" data-view="au" hidden>Australia</a></nav>
     <h1 class="title">Hong Kong construction, surveying and building engineering bachelor’s degrees</h1>
     <p class="lede" id="hk-lede">Loading the atlas…</p>
     <div class="tiles" id="hk-tiles"></div>
@@ -100,128 +98,97 @@
     <div class="panel">
       <h3>Programs</h3>
       <div class="tablewrap"><table class="data sortable" id="hk-atlas-table"></table></div>
-      <p class="note">Programs read on their programme pages and curriculum documents; general education and major credits as each institution counts them. Map points from OpenStreetMap (data © OpenStreetMap contributors, ODbL). Each row opens the program’s courses, requirements and sources.</p>
+      <p class="note">Programs read on their programme pages and curriculum documents; general education and major credits as each institution counts them. Map points from OpenStreetMap (data © OpenStreetMap contributors, ODbL). Each row opens the program’s card.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ who holds 120 -->
-<section class="view" id="v-satisfy" hidden>
+<!-- ============================================================ Australia atlas -->
+<section class="view" id="v-au" hidden>
   <div class="wrap">
-    <h1 class="title">What a 90-credit construction degree must satisfy</h1>
-    <p class="lede" id="holders-lede"></p>
-    <div class="grid2 wide">
-      <div class="panel"><h3>The questions</h3><ol class="plain" id="study-rqs"></ol><h3>The framework</h3><div class="prose" id="study-theory"></div></div>
-      <div class="panel"><h3>Four hypotheses, and what the analysis found</h3><ol class="hyp" id="study-hyp"></ol></div>
+    <nav class="subnav"><a href="#atlas" data-view="atlas">United States</a><a href="#uk" data-view="uk">United Kingdom</a><a href="#hk" data-view="hk">Hong Kong</a><a href="#au" data-view="au" hidden>Australia</a></nav>
+    <h1 class="title">Australian construction management bachelor’s degrees</h1>
+    <p class="lede" id="au-lede">Loading the atlas…</p>
+    <div class="filters">
+      <div class="fgroup"><span class="flabel">State or territory</span><div class="chips" id="au-state"></div></div>
+      <div class="fgroup"><span class="flabel">Full-time length</span><div class="chips" id="au-years"></div></div>
+      <div class="fgroup grow"><span class="flabel">Search</span><input id="au-q" type="search" placeholder="University, campus or program"></div>
+      <button class="reset" id="au-reset" type="button">Reset</button>
     </div>
-    <div class="grid2 wide">
-      <div class="panel"><h3>The count a public reduced-credit degree must carry, and each state’s verified action</h3><div id="tile-map" class="chart tall"></div><div class="maplegend" id="tile-legend"></div></div>
-      <div class="panel"><h3>The state</h3><div class="statecard" id="tile-card"></div></div>
-    </div>
-    <div class="panel"><h3>The credits each requirement claims of a 90-credit degree, by group of states</h3><div class="ctrl" id="claims-ctrl"></div><div class="scrollx"><div id="claims-chart" class="chart"></div></div><div class="maplegend" id="claims-legend"></div><p class="note" id="claims-note"></p></div>
-    <div class="panel"><h3>Where a 90-credit degree would matter most: construction degrees and construction manager jobs by group of states</h3><div class="scrollx"><div id="geo-chart" class="chart"></div></div><div class="tablewrap"><table class="data" id="geo-table"></table></div><p class="note" id="geo-note"></p></div>
-    <div class="panel"><h3 id="holds-title"></h3><div class="tablewrap"><table class="data paper" id="holds-table"></table></div><p class="note" id="holds-note"></p></div>
-    <div class="panel"><h3>The course groups of a construction degree, the requirements each serves, and how they merge</h3><div class="scrollx"><div class="cg-wrap" id="cg-wrap"><svg class="cg-svg" id="cg-svg"></svg><table class="cg-table" id="cg-table"></table></div></div><div class="maplegend" id="cg-legend"></div></div>
-    <div class="panel"><h3 id="groups-title"></h3><div class="tablewrap"><table class="data paper" id="groups-table"></table></div><p class="note" id="groups-note"></p></div>
-    <div class="grid2 wide">
-      <div class="panel"><h3>What each programmatic accreditor’s text requires</h3><div class="tablewrap"><table class="data" id="criteria-table"></table></div></div>
-      <div class="panel"><h3>What their accredited programs carry</h3><div class="tablewrap"><table class="data" id="practice-table"></table></div><div id="practice-chart" class="chart short"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ ledger -->
-<section class="view" id="v-ledger" hidden>
-  <div class="wrap">
-    <h1 class="title">Who gains and who loses at 90 credits</h1>
-    <p class="lede" id="ledger-lede"></p>
-    <div class="grid3" id="party-cards"></div>
-    <div class="panel">
-      <h3>Where the balance turns</h3>
-      <div class="grid2"><div><h4 class="sub">The student: the pay penalty that would cancel the gain</h4><div id="bal-student" class="chart"></div></div>
-        <div><h4 class="sub">The institution: net per 90-credit student by the share of new students</h4><div id="bal-inst" class="chart"></div></div></div>
-      <div class="calc"><div class="calc-in" id="inst-in"></div><div class="calc-out"><p class="big" id="inst-out"></p><p class="muted" id="inst-note"></p></div></div>
-    </div>
-    <div class="panel">
-      <h3>How large a pay penalty would offset the student’s gain?</h3>
-      <div class="calc">
-        <div class="calc-in" id="th-in"></div>
-        <div class="calc-out"><p class="big" id="th-out"></p><p class="muted" id="th-note"></p><div id="th-chart" class="chart short"></div></div>
-      </div>
-    </div>
-    <div class="grid2 wide">
-      <div class="panel"><h3>Every program with a published total: the student’s gain against the institution’s net, per graduate</h3><div id="ledger-scatter" class="chart tall"></div></div>
-      <div class="panel"><h3>Medians by group</h3><div class="tablewrap"><table class="data" id="ledger-table"></table></div></div>
-    </div>
+    <div class="tiles" id="au-tiles"></div>
     <div class="grid2">
-      <div class="panel"><h3 id="survey-title">Industry advisors of one accredited program</h3><div id="survey"></div></div>
-      <div class="panel"><h3>Evidence on what employers and institutions would lose</h3><ul class="ev" id="people-ev"></ul></div>
+      <div class="panel"><h3>Where they are, by full-time length</h3><div id="au-map" class="chart tall"></div></div>
+      <div class="panel"><h3>What sets the length of an Australian degree</h3><ul class="ev" id="au-facts"></ul><h3>Annual fee, domestic and international students</h3><div id="au-fee" class="chart"></div></div>
     </div>
-    <div class="panel"><h3 id="gains-title"></h3><div class="tablewrap"><table class="data paper" id="gains-table"></table></div><p class="note" id="gains-note"></p></div>
-  </div>
-</section>
-
-<!-- ============================================================ routes to 90 -->
-<section class="view" id="v-routes" hidden>
-  <div class="wrap">
-    <h1 class="title">Pathways to a 90-credit degree</h1>
-    <p class="lede" id="routes-lede"></p>
-    <div class="panel"><h3>The pathways, and the programs that fit 90 on each</h3><div class="scrollx"><div class="pt-tree" id="pt-tree"></div></div><p class="pt-msg" id="pt-msg"></p><div class="pt-waffle" id="pt-waffle"></div><p class="note">Each square is one of the modeled programs, grouped by the count its state asks; filled where the program fits 90 on the chosen pathway, faded where the pathway does not apply. Tags name who decides each step.</p></div>
-    <div class="panel"><h3>How the typical program reaches 90, course group by course group</h3><div class="tp-steps" id="tp-steps"></div><div class="scrollx"><div id="tp-chart" class="chart"></div></div><p class="note" id="tp-note"></p></div>
-    <div class="panel"><h3 id="merges-title"></h3><div class="tablewrap"><table class="data paper" id="merges-table"></table></div><p class="note" id="merges-note"></p></div>
     <div class="panel">
-      <h3>The integer program, for every setting</h3>
-      <div class="tool">
-        <div class="tree-in" id="tool-in"></div>
-        <div class="tool-out"><p class="big" id="tool-big"></p><p class="muted" id="tool-sub"></p><div class="gcards" id="tool-groups"></div></div>
-      </div>
-      <h4 class="sub">What the programs look like today and in the design, mean hours by group of states</h4>
-      <div class="scrollx"><div id="tool-shapes" class="chart"></div></div>
-      <p class="note">Designs of the integer program (Online Resource 5 of the article): the smallest degree that keeps whole courses and meets, at once, the general education count, the accreditor’s terms and the program’s choice. Kept mathematics, science and economics courses count toward general education; breadth courses, electives and orientation give way to the count. The minimum is a lower bound: it assumes that any general education course can fill the count, that a title naming an outcome teaches it, and that prerequisites and schedules allow the design.</p>
+      <h3>Programs <span class="muted" id="au-count"></span></h3>
+      <div class="tablewrap"><table class="data sortable" id="au-atlas-table"></table></div>
+      <p class="note">Programs read on their program pages and handbooks; credit points in each university’s own units, not converted (no page states notional hours). Map points from OpenStreetMap (data © OpenStreetMap contributors, ODbL). Each row opens the program’s card.</p>
     </div>
-    <div class="panel"><h3>Programs that fit 90, by the count a state or accreditor asks</h3><div class="scrollx"><div id="carry-chart" class="chart"></div></div><p class="note">For each design, the share of the modeled programs whose largest count that still fits 90 is at least the count on the axis; shaded, the counts the four groups of states ask.</p></div>
-    <div class="panel"><h3>How a 90-credit design meets the programmatic accreditors’ outcomes</h3><div class="scrollx"><div id="cover-chart" class="chart"></div></div><p class="note">Share of the modeled programs whose design (ACCE floors or ABET ANSAC text, binding count, with the overlap) keeps a course of each family whose title names the outcome; at right, the share whose course titles name it at all. An outcome no title names is taken as taught inside other courses and constrains nothing, so a review would ask more of a design than the model does (Online Resource 6 of the article).</p></div>
-    <div class="panel"><h3>Hours of the courses that name the outcomes, against ACCE’s floor and today’s hours</h3><div class="scrollx"><div id="hours-chart" class="chart short"></div></div></div>
-
   </div>
 </section>
 
-<!-- ============================================================ ai -->
-<section class="view" id="v-ai" hidden>
+<!-- ============================================================ RQ1: requirements -->
+<section class="view" id="v-requirements" hidden>
   <div class="wrap">
-    <h1 class="title">What AI changes, and what it does not pay for</h1>
-    <p class="lede" id="ai-lede"></p>
-    <div class="panel"><h3>Where AI touches the construction course groups and ACCE’s 17 learning outcomes</h3><div class="scrollx"><div id="ai-named" class="chart"></div><div id="ai-matrix" class="chart"></div></div><p class="note">Top: the share of programs whose course titles name each outcome at all. Below: each bubble is the share of programs with a course in the group whose title names the outcome; rows run from the group whose work is most exposed to AI (human-rated exposure in parentheses) to the least.</p></div>
-    <div class="grid2 wide">
-      <div class="panel"><h3>What each 90-credit design keeps, by content type</h3><div class="scrollx"><div id="ct-chart" class="chart"></div></div></div>
-      <div class="panel"><h3>Where accredited programs spend their hours</h3><div id="ai-chart" class="chart"></div></div>
+    <h1 class="title">Requirements and the 90-credit threshold</h1>
+    <p class="lede rq" id="rq1-text"></p>
+    <div class="tiles four" id="rq1-tiles"></div>
+    <div class="panel"><h3 id="fig1-title"></h3>
+      <div class="fig1"><div><h4 class="sub">a) Minimum general education credits for public universities</h4><div class="tilemap" id="fig1-map"></div></div><div><h4 class="sub">b) Degree feasibility and national shares</h4><div class="f1rows" id="fig1-rows"></div></div></div>
+      <p class="note" id="fig1-note"></p></div>
+    <div class="grid2">
+      <div class="panel"><h3>ACCE and ANSAC: credit minima against outcomes</h3><div class="tablewrap free"><table class="data" id="acc-table"></table></div><p class="note" id="acc-note"></p></div>
+      <div class="panel"><h3>Credits the requirements claim</h3><div id="floors-chart" class="chart short"></div><div class="eq" id="eq"></div></div>
     </div>
-    <div class="panel"><h3>The work construction managers and estimators do, and how exposed it is to AI</h3><div id="task-chart" class="chart short"></div><p class="note" id="ai-note"></p></div>
-    <div class="panel"><h3 id="aitab-title"></h3><div class="tablewrap"><table class="data paper" id="aitab-table"></table></div><p class="note" id="aitab-note"></p></div>
-    <div class="panel"><h3>Evidence on AI, skill and learning</h3><ul class="ev" id="ai-ev"></ul></div>
+    <div class="panel"><h3 id="t1-title"></h3><div class="tablewrap free"><table class="data paper" id="t1-table"></table></div><p class="note" id="t1-note"></p></div>
+    <div class="panel"><h3 id="ts1-title"></h3><div class="tablewrap free"><table class="data paper" id="ts1-table"></table></div><p class="note" id="ts1-note"></p></div>
   </div>
 </section>
 
-<!-- ============================================================ compare -->
-<section class="view" id="v-abroad" hidden>
+<!-- ============================================================ RQ2: integration -->
+<section class="view" id="v-integration" hidden>
   <div class="wrap">
-    <h1 class="title">Three-year and four-year degrees compared: what comes before and after</h1>
-    <p class="lede" id="abroad-lede"></p>
-    <div class="panel"><h3 id="ctx-title"></h3><div class="tablewrap free"><table class="data paper" id="ctx-table"></table></div><p class="note" id="ctx-note"></p></div>
-    <div class="grid2 wide">
-      <div class="panel"><h3>One scale of learning hours (notional on both sides)</h3><div id="abroad-scale" class="chart"></div></div>
-      <div class="panel"><h3>What the credits hold, England and Hong Kong</h3><div id="abroad-comp" class="chart"></div></div>
-    </div>
-    <p class="note">Every program behind these comparisons is in the <a href="#uk">UK Atlas</a> and the <a href="#hk">Hong Kong Atlas</a>.</p>
+    <h1 class="title">Curriculum integration and credit reduction</h1>
+    <p class="lede rq" id="rq2-text"></p>
+    <div class="panel"><h3 id="fig2-title"></h3>
+      <div class="grid2 even"><div><h4 class="sub">a) Professional topics taught together or separately across programs</h4><div id="fig2a" class="chart"></div><p class="note" id="fig2a-could"></p></div>
+        <div><h4 class="sub">b) General education subjects in construction coursework, and business subjects taught separately</h4><div id="fig2b" class="chart"></div></div></div></div>
+    <div class="panel"><h3 id="fig3-title"></h3><div class="scrollx"><div id="fig3"></div></div><p class="note" id="fig3-note"></p></div>
+    <div class="panel"><h3>Merging and the overlap, alone and together</h3><div class="tiles five" id="levers"></div></div>
+    <div class="panel"><h3 id="fig4-title"></h3><div class="wf" id="fig4"></div><div class="maplegend" id="fig4-key"></div></div>
+    <div class="panel"><h3 id="ts3-title"></h3><div class="tablewrap free"><table class="data paper" id="ts3-table"></table></div><p class="note" id="ts3-note"></p></div>
+    <div class="panel"><h3 id="ts5-title"></h3><div class="tablewrap free"><table class="data paper" id="ts5-table"></table></div><p class="note" id="ts5-note"></p></div>
+    <div class="panel"><h3 id="ts6-title"></h3><div class="tablewrap free"><table class="data paper" id="ts6-table"></table></div><p class="note" id="ts6-note"></p></div>
   </div>
 </section>
 
-<!-- ============================================================ strategies -->
-<section class="view" id="v-strategies" hidden>
+<!-- ============================================================ RQ3: documented content -->
+<section class="view" id="v-content" hidden>
   <div class="wrap">
-    <h1 class="title">What to do, in what order and for whom</h1>
-    <p class="lede" id="strat-lede"></p>
-    <div class="panel"><div class="tablewrap"><table class="data paper" id="strat-table"></table></div><p class="note" id="strat-note"></p></div>
+    <h1 class="title">Documented content and feasibility</h1>
+    <p class="lede rq" id="rq3-text"></p>
+    <div class="tiles four" id="rq3-tiles"></div>
+    <div class="grid2">
+      <div class="panel"><h3>Programs meeting the 90-credit threshold: course titles against documented concepts</h3><div id="ab-chart" class="chart"></div><p class="note" id="ab-note"></p></div>
+      <div class="panel"><h3 id="t2-title"></h3><div class="tablewrap free"><table class="data paper" id="t2-table"></table></div><p class="note" id="t2-note"></p></div>
+    </div>
+    <div class="panel"><h3>What existing merged courses keep, by course pair</h3><div class="chips" id="pair-chips"></div><div class="tiles three" id="pair-head"></div><div id="pair-chart" class="chart"></div><p class="note" id="pair-note"></p></div>
+    <div class="panel"><h3 id="ts4-title"></h3><div class="tablewrap free"><table class="data paper" id="ts4-table"></table></div><p class="note" id="ts4-note"></p></div>
+  </div>
+</section>
+
+<!-- ============================================================ beyond the curriculum -->
+<section class="view" id="v-beyond" hidden>
+  <div class="wrap">
+    <h1 class="title">Beyond the curriculum</h1>
+    <div class="panel"><h3 id="figS1-title"></h3>
+      <div class="grid2 even"><div><h4 class="sub">a) Students: modeled net benefit per graduate against an assumed pay penalty</h4><div id="figS1a" class="chart"></div></div>
+        <div><h4 class="sub">b) Institutions: new students needed to break even</h4><div id="figS1b" class="chart"></div></div></div>
+      <p class="note" id="figS1-note"></p></div>
+    <div class="panel"><h3 id="ts7-title"></h3><div class="tablewrap free"><table class="data paper" id="ts7-table"></table></div><p class="note" id="ts7-note"></p></div>
+    <div class="panel"><h3 id="figS2-title"></h3><div id="figS2" class="chart"></div><p class="note" id="figS2-note"></p></div>
+    <div class="panel"><h3 id="ts2-title"></h3><div class="tablewrap free"><table class="data paper" id="ts2-table"></table></div><p class="note" id="ts2-note"></p><p class="note">Every program behind the comparison is in the <a href="#uk">UK</a> and <a href="#hk">Hong Kong</a> atlases.</p></div>
   </div>
 </section>
 
@@ -229,8 +196,8 @@
 <section class="view" id="v-sources" hidden>
   <div class="wrap">
     <h1 class="title">Sources and data</h1>
-    <div class="panel"><h3>References cited in the article</h3><ol class="refs" id="refs-list"></ol></div>
-    <div class="panel"><h3>Data sources</h3><div class="tablewrap"><table class="data" id="sources-table"></table></div></div>
+    <div class="panel"><h3>References cited in the article and its supplementary material</h3><ol class="refs" id="refs-list"></ol></div>
+    <div class="panel"><h3>Data sources</h3><div class="tablewrap free"><table class="data" id="sources-table"></table></div></div>
     <div class="panel"><h3>Data files behind this site</h3><ul id="files-list"></ul></div>
   </div>
 </section>
@@ -240,15 +207,11 @@
   <aside class="card" id="card" role="dialog" aria-modal="true"></aside>
 </div>
 
-<footer class="foot"><div class="wrap">Companion to a study of reduced-credit construction bachelor’s degrees in the United States. Data read 29 October to 6 November 2026; every figure links to its source. No program is named outside the atlases.</div></footer>
-<script src="js/util.js?v=14"></script>
-<script src="js/atlas.js?v=14"></script>
-<script src="js/views.js?v=14"></script>
-<script src="js/deep.js?v=14"></script>
-<script src="js/world.js?v=14"></script>
-<script src="js/paper.js?v=14"></script>
-<script src="js/model.js?v=14"></script>
-<script src="js/paths.js?v=14"></script>
-<script src="js/app.js?v=14"></script>
+<footer class="foot"><div class="wrap">Companion to <i id="foot-title"></i>. Data read 29 October to 7 November 2026; each program links to its sources. No program is named outside the atlases.</div></footer>
+<script src="js/util.js?v=15"></script>
+<script src="js/atlas.js?v=15"></script>
+<script src="js/world.js?v=15"></script>
+<script src="js/study.js?v=15"></script>
+<script src="js/app.js?v=15"></script>
 </body>
 </html>

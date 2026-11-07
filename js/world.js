@@ -217,5 +217,88 @@ window.World = (function () {
         <p class="note">Map point: ${esc(p.place || "not located")} (OpenStreetMap).</p>`);
     }
   }
-  return { uk, hk };
+
+  /* ---------------------------------------------------------------- Australia (7 November 2026)
+     Credit points stay in each university's own units (no page states notional hours, so nothing is converted); a value
+     not stated prints as "not stated", never as 0; fees carry their year, because 2026 and 2027 figures are mixed. */
+  const NS = "not stated";
+  const aud = (v) => (v == null || v === "" ? "" : "A$" + Number(v).toLocaleString("en-US"));
+  const feeTxt = (f) => (f && f.amount != null ? `${aud(f.amount)}${f.year ? ` (${esc(f.year)})` : ""}` : NS);
+  const yearsTxt = (y) => (y == null ? NS : `${y} years`);
+  const cpTxt = (p) => (p.credit_points == null ? `${NS}${p.credit_unit ? ` (${esc(p.credit_unit)})` : ""}` : `${n(p.credit_points)} ${esc(p.credit_unit)}`);
+  const lenKey = (p) => (p.years == null ? "none" : p.years >= 4 ? "4" : "lt4");
+  async function au() {
+    const D = await load("au");
+    const P = D.programs;
+    const unis = new Set(P.map((p) => p.university)).size;
+    const states = Array.from(new Set(P.map((p) => p.state).filter(Boolean))).sort();
+    $("au-lede").innerHTML = `${P.length} construction management bachelor’s degrees at ${unis} universities in ${states.length} states and territories, from the Australian Institute of Building’s list of accredited courses (June 2024) and the AIQS and CIOB lists, read on their program pages and handbooks.`;
+    $("au-facts").innerHTML = D.facts.map((f) => `<li>${esc(f.text)} <a class="cite" href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.source)}</a></li>`).join("");
+    chips("au-state", states.map((s) => [s, s]), draw);
+    chips("au-years", [["4", "four years"], ["lt4", "fewer than four years"], ["none", "length not stated"]].filter(([k]) => P.some((p) => lenKey(p) === k)), draw);
+    $("au-q").addEventListener("input", draw);
+    $("au-reset").addEventListener("click", () => { ["au-state", "au-years"].forEach((id) => $(id).querySelectorAll(".chip").forEach((c) => c.classList.remove("on"))); $("au-q").value = ""; draw(); });
+    function filtered() {
+      const s = picked("au-state"), y = picked("au-years"), q = $("au-q").value.trim().toLowerCase();
+      return P.filter((p) => (!s.length || s.includes(p.state)) && (!y.length || y.includes(lenKey(p))) && (!q || `${p.university} ${p.campus} ${p.program}`.toLowerCase().includes(q)));
+    }
+    const required = (p) => p.work !== "not required" && p.work !== NS;
+    function draw() {
+      const F = filtered();
+      const t = [[n(F.length), `programs at ${n(new Set(F.map((p) => p.university)).size)} universities`],
+        [n(F.filter((p) => lenKey(p) === "4").length), "take four years full time"], [n(F.filter((p) => lenKey(p) === "lt4").length), "take fewer than four years"],
+        [n(F.filter(required).length), "require industry experience (days, hours or a placement course)"], [n(F.filter((p) => p.work === "not required").length), "state that none is required"],
+        [n(F.filter((p) => p.fee_dom.amount != null).length), "state a domestic fee (2026 or 2027)"]];
+      $("au-tiles").innerHTML = t.map(([v, kk]) => `<div class="tile"><div class="v">${v}</div><div class="k">${kk}</div></div>`).join("");
+      plot("au-map", placeTraces(F, [["4", "four years full time", "#0072B2"], ["lt4", "fewer than four years", "#E69F00"], ["none", "length not stated", "#8C8C8C"]],
+        lenKey, (p) => p.university,
+        (p) => `Campus: ${esc(p.campus || NS)}<br>${esc(progName(p))}<br>Full-time length: ${yearsTxt(p.years)}<br>Credit points: ${cpTxt(p)}<br>Industry experience: ${esc(p.work)}${p.map_note ? `<br>${esc(p.map_note)}` : ""}`,
+        (p) => `${yearsTxt(p.years)}, industry experience ${esc(p.work)}`, 11),
+        { map: { style: "carto-positron", center: { lat: -28.5, lon: 134.5 }, zoom: 2.75 }, margin: { l: 0, r: 0, t: 0, b: 0 }, showlegend: true, legend: { orientation: "h", x: 0, y: 1, bgcolor: "rgba(255,255,255,.85)" } });
+      onPick("au-map", P, card, (p) => p.university);
+      const lab = (p) => `${p.university.replace(/ \(.*\)/, "")}, ${p.campus.replace(/ \(.*\)/, "").split(";")[0]}`;
+      const FF = F.filter((p) => p.fee_int.amount != null || p.fee_dom.amount != null).sort((a, b) => (a.fee_dom.amount ?? 1e9) - (b.fee_dom.amount ?? 1e9));
+      const tr = (key, name, color, symbol) => ({ type: "scatter", mode: "markers", name, y: FF.map(lab), x: FF.map((p) => p[key].amount), marker: { size: 9, color, symbol },
+        customdata: FF.map((p) => [p[key].year || "year not stated", p[key].basis.replace(/_/g, " ")]), hovertemplate: `<b>%{y}</b><br>${name}: A$%{x:,} (%{customdata[0]})<br>%{customdata[1]}<extra></extra>` });
+      plot("au-fee", [tr("fee_dom", "domestic fee a year", "#0072B2", "circle"), tr("fee_int", "international fee a year", "#E69F00", "diamond")],
+        { showlegend: true, legend: { orientation: "h", y: 1.02, yanchor: "bottom" }, margin: { l: 230, r: 14, t: 30, b: 40 }, xaxis: { title: { text: "Australian dollars a year, as stated for 2026 or 2027" }, tickformat: ",", rangemode: "tozero" },
+          yaxis: { autorange: "reversed", tickfont: { size: 10.5 }, automargin: true }, height: Math.max(300, 22 * FF.length + 110) });
+      $("au-count").textContent = `(${F.length} shown)`;
+      table("au-atlas-table", [
+        { key: "university", label: "University", tip: "The university that awards the degree." },
+        { key: "campus", label: "Campus", tip: "Campus of teaching as the program page states it." },
+        { key: "state", label: "State", tip: "State or territory of the campus." },
+        { key: "program", label: "Program", fmt: (v, r) => esc(progName(r)), tip: "Award and program title as the program page states them." },
+        { key: "years", label: "Full-time length", num: true, fmt: (v) => yearsTxt(v), tip: "Normal length of the full-time degree, as the page states it." },
+        { key: "honours", label: "Honours", fmt: (v) => esc(v || NS), tip: "Embedded in the degree, a separate year after it, or none, as the page states it." },
+        { key: "credit_points", label: "Credit points", num: true, fmt: (v, r) => cpTxt(r), tip: "Total credit points in the university’s own units; units differ between universities, so the totals do not compare." },
+        { key: "work", label: "Industry experience", fmt: (v) => esc(v), tip: "The work experience the degree requires, as the program page or handbook states it." },
+        { key: "accreditation", label: "Accreditation stated", fmt: (v) => esc(v || NS), tip: "Professional bodies the program page names: AIB (Australian Institute of Building), AIQS (Australian Institute of Quantity Surveyors), CIOB, RICS and others." },
+        { key: "fee_dom", label: "Domestic fee a year (A$)", fmt: (v) => feeTxt(v), tip: "Annual fee for a domestic student as the university states it, with its year; for a Commonwealth supported place, the student contribution." },
+        { key: "fee_int", label: "International fee a year (A$)", fmt: (v) => feeTxt(v), tip: "Annual tuition fee for international students as the university publishes it, with its year." },
+        { key: "url", label: "Sources", fmt: (v, r) => [link(v, "program page"), link(r.handbook, "handbook")].filter(Boolean).join(" "), tip: "Links to the program page and the handbook read for this atlas." },
+      ], F, { onRow: card, sortKey: "university" });
+    }
+    function card(p) {
+      const cs = p.course_list || [];
+      const years = Array.from(new Set(cs.map((m) => m[0]))).sort();
+      const fee = (f) => (f.amount != null ? `${aud(f.amount)}${f.year ? ` (${esc(f.year)})` : ""}${f.note ? `; ${esc(f.note)}` : ""}` : `${NS}${f.note ? `; ${esc(f.note)}` : ""}`);
+      openCard(`<h2>${esc(p.university)}</h2><div class="muted">${esc(progName(p))}${p.campus ? `, ${esc(p.campus)}` : ""}${p.state ? `, ${esc(p.state)}` : ""}</div>
+        <div class="links">${link(p.url, "Program page")}${link(p.handbook, "Handbook")}</div>
+        <dl><dt>CRICOS code</dt><dd>${esc(p.cricos || NS)}</dd>
+          <dt>Full-time length</dt><dd>${yearsTxt(p.years)}</dd><dt>Honours</dt><dd>${esc(p.honours || NS)}</dd>
+          <dt>Credit points</dt><dd>${p.credit_points != null ? n(p.credit_points) : NS}${p.credit_system ? `; ${esc(p.credit_system)}` : ""}${p.units != null ? `; ${n(p.units)} units` : ""}</dd>
+          <dt>Industry experience</dt><dd>${esc(p.work)}${p.work_detail ? `<br><span class="muted small">${esc(p.work_detail)}</span>` : ""}</dd>
+          <dt>Breadth or general education</dt><dd>${esc(p.breadth || NS)}</dd>
+          <dt>Accreditation stated</dt><dd>${esc(p.accreditation || NS)}</dd><dt>AIB list entry</dt><dd>${esc(p.aib_entry || "not on the June 2024 list")}</dd>
+          ${p.other_lists ? `<dt>Other lists</dt><dd>${esc(p.other_lists)}</dd>` : ""}
+          <dt>Domestic fee a year</dt><dd>${fee(p.fee_dom)}</dd><dt>International fee a year</dt><dd>${fee(p.fee_int)}</dd>
+          <dt>Confidence of the record</dt><dd>${esc(p.confidence || NS)}</dd><dt>Read on</dt><dd>${esc(p.read_on)}</dd></dl>
+        ${cs.length ? `<h4>Course structure${p.course_list_complete ? "" : " (partial)"}</h4>` + years.map((y) => `<h4 class="sub">${esc(yearLabel(y))}</h4><table class="data"><thead><tr><th>Unit</th><th class="n">Credit points</th></tr></thead><tbody>${cs.filter((m) => m[0] === y).map((m) => `<tr><td>${esc((m[1] ? m[1] + " " : "") + m[2])}</td><td class="n">${m[3] ?? NS}</td></tr>`).join("")}</tbody></table>`).join("") : "<p class=\"muted\">No course list read.</p>"}
+        ${p.notes ? `<h4>Notes</h4><p class="muted">${esc(p.notes)}</p>` : ""}
+        <p class="note">${p.map_note ? esc(p.map_note) + "." : `Map point: ${esc(p.place || "not located")} (OpenStreetMap).`}</p>`);
+    }
+    draw();
+  }
+  return { uk, hk, au };
 })();

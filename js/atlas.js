@@ -1,12 +1,12 @@
 /* Page 1: the atlas of U.S. construction bachelor's programs. */
 window.Atlas = (function () {
   const { load, $, esc, n, money, k, share, dec, median, rows, table, plot, ACC, accTag, isNum } = window.U;
-  // the state’s verified action on bachelor’s degrees below 120 credits, 6 November 2026 (Online Resource 1 of the article)
+  // the state’s verified action on bachelor’s degrees below 120 credits, 6 November 2026 (Table S1 of the article)
   const STATUS = { programs: ["a reduced-credit program approved at a public university", "#3182BD"], rule: ["a rule or pilot policy, no public program found", "#9ECAE1"],
                    proposal: ["a proposal, bill or study", "#EFF3FF"], none: ["no action found", "#FFFFFF"] };
   const TYPE_LABEL = { technical: "technical foundations", judgment: "professional judgment", digital_tool: "digital tool operation", field_procedure: "field procedures",
                        math_science: "mathematics and science", breadth: "communication and breadth", integrative: "capstone or work-integrated", other: "elective or other" };
-  let P = [], S = [], C = null, sel = { acc: new Set(), group: new Set(), control: new Set(), state: "", q: "" }, stateIdx = {};
+  let P = [], S = [], C = null, CLS = [], NMOD = 0, sel = { acc: new Set(), group: new Set(), control: new Set(), state: "", q: "" }, stateIdx = {};
 
   function chips(el, values, set, colorOf) {
     $(el).innerHTML = values.map(([v, lab, col]) => `<span class="chip" data-v="${esc(v)}">${col ? `<span class="dot" style="background:${col}"></span>` : ""}${esc(lab)}</span>`).join("");
@@ -75,11 +75,10 @@ window.Atlas = (function () {
       { key: "major", label: "Major", num: true, fmt: (v) => n(v), tip: "Semester hours of the major or professional block as the catalog publishes it: construction, business and other required courses of the program. Blank where the catalog does not state it." },
       { key: "free_electives", label: "Free electives", num: true, fmt: (v) => n(v), tip: "Semester hours the student may take in any subject, as the catalog publishes them. Zero means the plan has no free electives." },
       { key: "state_gen_ed_min", label: "State or system count", num: true, fmt: (v) => n(v), tip: "The semester hours of general education a state or university system asks of a public reduced-credit bachelor’s degree at this institution, as the article codes it (verified 6 November 2026). Transfer blocks are not bachelor’s minimums. Blank for private institutions and where no state or system count applies." },
-      { key: "binding_count", label: "Binding count", num: true, fmt: (v) => n(v), tip: "For accredited and applicant programs: the general education count a reduced-credit degree must carry here, the larger of the state or system count and the institutional accreditor’s, or the institution’s own core where neither applies (Module 14 of the study)." },
-      { key: "tuition_fees_in_state_2023_24", label: "In-state tuition and fees", num: true, fmt: money, tip: "Published in-state tuition and required fees for one full-time academic year, 2023-24 (IPEDS)." },
-      { key: "per_credit_in_state", label: "In-state charge per credit", num: true, fmt: money, tip: "In-state tuition charged per credit hour (IPEDS part-time rate, 2023-24): the price of each credit a shorter degree would remove." },
+      { key: "binding_count", label: "Binding count", num: true, fmt: (v) => n(v), tip: "For accredited and applicant programs: the general education count a reduced-credit degree must carry here, the larger of the state or system count and the institutional accreditor’s, or the institution’s own core where neither applies, as the article codes it." },
+      { key: "state_class", label: "State group, Fig. 1a", fmt: (v) => (v == null || !CLS[v] ? "" : esc(CLS[v].label)), tip: "The general education minimum that binds the state’s public universities, in the four groups of Fig. 1a of the article; institution-defined: no state or accreditor minimum." },
+      { key: "modeled", label: "Modeled", fmt: (v) => (v ? "yes" : ""), tip: "An accredited or applicant program whose course list was complete enough for the integer program of the article." },
       { key: "degrees_2024", label: "Bachelor’s degrees, 2023-24", num: true, fmt: (v) => n(v), tip: "Bachelor’s degrees the program conferred in 2023-24 (IPEDS Completions), under its classification codes." },
-      { key: "earn_1yr", label: "Median earnings, one year after", num: true, fmt: money, tip: "Median earnings of the program’s graduates one year after completion (College Scorecard field-of-study file, release of 15 October 2026)." },
     ], F, { onRow: card, sortKey: "institution" });
   }
   function update() { const F = filtered(); tiles(F); map(F); hist(F); blocks(F); tbl(F); }
@@ -101,6 +100,8 @@ window.Atlas = (function () {
         ${p.reduced_option ? `<dt>Shorter route mentioned</dt><dd>${esc(p.reduced_option)}</dd>` : ""}
       </dl>
       <h4>State rule (${esc(s.name || p.state)})</h4><dl>
+        <dt>State group, Fig. 1a</dt><dd>${CLS[p.state_class] ? esc(CLS[p.state_class].label) : "not grouped"}</dd>
+        <dt>In the integer program</dt><dd>${p.modeled ? "yes, one of the " + n(NMOD) + " modeled programs" : "no"}</dd>
         <dt>State or system count for a reduced-credit degree here</dt><dd>${p.state_gen_ed_min != null ? n(p.state_gen_ed_min) + " semester hours" : "none applies at this institution"}${s.basis ? `; ${esc(s.basis)}` : ""}</dd>
         ${p.binding_count != null ? `<dt>Count that binds this program</dt><dd>${n(p.binding_count)} semester hours; state group ${esc(p.state_group)}</dd>` : ""}
         <dt>Verified action, 6 November 2026</dt><dd>${esc(STATUS[s.class] ? STATUS[s.class][0] : "no action found")}${s.action ? `: ${esc(s.action)}` : ""}</dd></dl>
@@ -109,7 +110,7 @@ window.Atlas = (function () {
         <dt>Per-credit charge</dt><dd>in-state ${money(p.per_credit_in_state) || "n/a"}; out-of-state ${money(p.per_credit_out_state) || "n/a"}</dd>
         <dt>Bachelor’s degrees, 2024</dt><dd>${p.degrees_2024 ?? "not separately reported"}</dd>
         <dt>Median earnings</dt><dd>1 year ${money(p.earn_1yr) || "n/a"}; 4 years ${money(p.earn_4yr) || "n/a"}; median debt ${money(p.debt) || "n/a"}</dd>
-        <dt>At 90 credits, per graduate</dt><dd>${p.s_total_gain != null ? `student gains ${money(p.s_total_gain)} (tuition ${money(p.s_tuition_saved)}, earlier earnings ${money(p.s_earnings_earlier)}); pay ${share(p.s_breakeven_discount_10yr, 1)} lower for ten years would offset the gain; institution net ${money(p.i_net)}` : "no published total"}</dd></dl>
+</dl>
       <h4>Sources</h4><div class="links">${link(p.url_catalog, "Catalog page")} ${link(p.url_program, "Program page")} ${link(p.url_ipeds, "IPEDS College Navigator")} ${link(p.url_scorecard, "College Scorecard")} ${link(p.url_acce, "ACCE")} ${link(p.url_abet, "ABET")} ${link(p.url_state_gen_ed, "State general education rule")}</div>
       <p class="note">Catalog read ${esc(p.catalog_read_on || "29 October 2026")}; confidence ${esc(p.confidence || "")}.</p>
       <h4>Required courses (${cs.length})</h4><div class="tablewrap" style="max-height:none"><table class="data" id="card-courses"></table></div>`;
@@ -124,8 +125,8 @@ window.Atlas = (function () {
     const [A, ST] = await Promise.all([load("atlas"), load("states")]);
     P = rows(A); S = ST.states; S.forEach((s) => { stateIdx[s.state] = s; });
     const sm = A.summary;
-    const nprog = S.filter((s) => s.class === "programs").length;
-    $("atlas-lede").innerHTML = `${n(sm.programs)} bachelor’s programs at ${n(sm.institutions)} institutions in ${n(sm.states_only)} states${sm.territories.includes("PR") ? " and Puerto Rico" : ""}. A public university has a reduced-credit program approved in ${nprog} states, which hold ${n(P.filter((p) => p.state_reduced_credit_status === "programs").length)} of these programs, and every one of the ${n(sm.programs_with_total)} catalogs that state a total asks 120 credits or more (${n(sm.total_exactly_120)} exactly 120), so a 90-credit degree would remove ${n(sm.to_cut_for_90.min)} to ${n(sm.to_cut_for_90.max)} credits. Each program links to its catalog, IPEDS, the College Scorecard, its accreditor and its state’s rules.`;
+    CLS = ST.classes; NMOD = ST.summary.programs_modeled;
+    $("atlas-lede").innerHTML = `${n(sm.programs)} bachelor’s programs at ${n(sm.institutions)} institutions in ${n(sm.states_only)} states${sm.territories.includes("PR") ? " and Puerto Rico" : ""}; ${n(ST.summary.programs_accredited_or_applicant)} accredited or applicant programs, ${n(NMOD)} of them modeled.`;
     chips("f-acc", ACC.map(([g, lab, col]) => [g, lab, col]), sel.acc);
     chips("f-group", Object.keys(sm.by_group).map((g) => [g, g]), sel.group);
     chips("f-control", ["public", "private nonprofit", "private for-profit"].map((g) => [g, g]), sel.control);
