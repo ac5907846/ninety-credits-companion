@@ -261,7 +261,7 @@ window.World = (function () {
       const tr = (key, name, color, symbol) => ({ type: "scatter", mode: "markers", name, y: FF.map(lab), x: FF.map((p) => p[key].amount), marker: { size: 9, color, symbol },
         customdata: FF.map((p) => [p[key].year || "year not stated", p[key].basis.replace(/_/g, " ")]), hovertemplate: `<b>%{y}</b><br>${name}: A$%{x:,} (%{customdata[0]})<br>%{customdata[1]}<extra></extra>` });
       plot("au-fee", [tr("fee_dom", "domestic fee a year", "#0072B2", "circle"), tr("fee_int", "international fee a year", "#E69F00", "diamond")],
-        { showlegend: true, legend: { orientation: "h", y: 1.02, yanchor: "bottom" }, margin: { l: 230, r: 14, t: 30, b: 40 }, xaxis: { title: { text: "Australian dollars a year, as stated for 2026 or 2027" }, tickformat: ",", rangemode: "tozero" },
+        { showlegend: true, legend: { orientation: "h", y: 1.02, yanchor: "bottom" }, margin: { l: 230, r: 14, t: 30, b: 40 }, xaxis: { title: { text: "Australian dollars a year" }, tickformat: ",", rangemode: "tozero" },
           yaxis: { autorange: "reversed", tickfont: { size: 10.5 }, automargin: true }, height: Math.max(300, 22 * FF.length + 110) });
       $("au-count").textContent = `(${F.length} shown)`;
       table("au-atlas-table", [
