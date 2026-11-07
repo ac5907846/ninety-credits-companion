@@ -30,7 +30,7 @@ window.Model = (function () {
     const S = M.summary, al = S.all, ra = S.rule_arithmetic, N = S.programs_modeled, H = M.hours, st = PA.study;
     $("holders-lede").innerHTML = esc(st.abstract);
     $("study-rqs").innerHTML = st.rqs.map((q) => `<li>${esc(q)}</li>`).join("");
-    $("study-theory").innerHTML = st.theory.slice(0, 2).map((p) => `<p>${esc(p)}</p>`).join("");
+    $("study-theory").innerHTML = st.theory.slice(0, 4).map((p) => `<p>${esc(p)}</p>`).join("");
     const fg = (g, a, c, o) => S.fit_by_group[`${g}|${a}|${c}|${o}`];
     const OV = ra.overlap;
     const byGroup = M.group_order.map((g) => { const f = fg(g, "ACCE", "floor", 0); return `${of(f.fit, f.programs)} ${g === "No state or accreditor count" ? "where the institution’s core decides" : `at ${g}`}`; }).join(", ");
