@@ -1,17 +1,36 @@
-"""Build data/*.json for the version 2 companion site (construction bachelor's degrees only) from 02_analysis results
-and the raw files they cite. Every number on the site comes from here; nothing is typed into the pages.
+"""Build data/*.json for the companion site from 02_analysis results and the raw files they cite. Every number on the
+site comes from here; nothing is typed into the pages.
+
+Rewritten 6 November 2026 (night, decision 31) with the article: no program or institution is named outside the US, UK
+and Hong Kong atlases (the directories); the holders of the 120 credits, the state groups and the integer program of
+Module 14 (02_analysis/14_state_groups) replace the five programs read course by course, the decision tree and the
+routes by program. The earlier build is in _archive/before_state_groups_2026-11-06/.
 Run: python build_data.py   (from 05_web_app)
 """
 import csv
 import json
+import re
+import statistics
+import sys
+from collections import Counter, defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 A = ROOT / "02_analysis"
 RAW = ROOT / "01_raw_data"
+MS = ROOT / "03_manuscript" / "_source"
+M14 = A / "14_state_groups" / "results"
 OUT = HERE / "data"
 OUT.mkdir(exist_ok=True)
+
+GROUP_ORDER = ["30 or fewer", "31 to 36", "37 to 40", "41 to 43", "No state or accreditor count"]
+CLASS_LABEL = {"programs": "a reduced-credit program approved at a public university",
+               "rule": "a rule or pilot policy, no public program found",
+               "proposal": "a proposal, bill or study", "none": "no action found"}
+FAMILIES = ["estimating", "planning and control", "law and contracts", "safety", "materials and methods", "structures", "MEP systems",
+            "soils and foundations", "surveying", "drawings and BIM", "other construction", "capstone", "internship", "business courses",
+            "mathematics", "science"]
 
 
 def rcsv(p):
@@ -33,6 +52,11 @@ def num(v):
     return int(x) if x.is_integer() else round(x, 3)
 
 
+def curly(s):
+    """visible text uses the right single quote, never the straight apostrophe"""
+    return s.replace("'", "’") if isinstance(s, str) else s
+
+
 def clean(o):
     """drop control characters that some saved pages carried into the raw text"""
     if isinstance(o, str):
@@ -49,9 +73,54 @@ def dump(name, obj):
     print(f"data/{name}: {(OUT / name).stat().st_size / 1024:.0f} KB")
 
 
+def q(v, p):
+    v = sorted(v)
+    if not v:
+        return None
+    k = (len(v) - 1) * p
+    lo, hi = int(k), min(int(k) + 1, len(v) - 1)
+    return round(v[lo] + (v[hi] - v[lo]) * (k - lo), 1)
+
+
+def manuscript_modules():
+    """the manuscript builder and its tables, so that the site shows the article’s own rows and sentences"""
+    sys.path.insert(0, str(MS))
+    import _build_manuscript as B  # noqa: E402
+    import _tables as T  # noqa: E402
+    return B, T
+
+
+# ---------------------------------------------------------------- states: count, group, verified action
+def state_table():
+    st14 = {r["state"]: r for r in rcsv(M14 / "states.csv")}
+    old = {r["state_abbr"]: r for r in rcsv(RAW / "policy/state_gen_ed.csv")}
+    ver = {r["state_abbr"]: r for r in rcsv(RAW / "policy/state_reduced_credit_verified_2026-11-06.csv")}
+    corr = {r["state_abbr"]: r for r in rcsv(RAW / "policy/state_gen_ed_corrections_2026-11-06.csv")}
+    out = []
+    for ab, s in sorted(st14.items()):
+        o, v, c = old.get(ab, {}), ver.get(ab, {}), corr.get(ab, {})
+        smin = num(s["state_min"])
+        same = smin is not None and num(o.get("gen_ed_min_semester_credits")) == smin
+        cls = s["reduced_credit_class"] or "none"
+        out.append({"state": ab, "name": o.get("state", ab), "group": s["group"], "binding_count": num(s["binding_count"]),
+                    "count_source": s["count_source"], "state_min": smin, "institutional_accreditor": s["institutional_accreditor"],
+                    "accreditor_min": num(s["accreditor_min"]), "class": cls, "class_label": CLASS_LABEL[cls],
+                    "construction_named": s["construction_named"] == "yes", "programs": num(s["programs_accredited_or_applicant"]),
+                    "public": num(s["public"]), "modeled": num(s["modeled"]),
+                    "action": curly(v.get("action", "")), "date": v.get("date", ""), "note": curly(v.get("note", "")),
+                    "basis": curly(c.get("basis", "")), "overlap_rule": curly(c.get("overlap_rule", "")),
+                    "scope": "system institutions only" if c.get("institution_rx") else "",
+                    "url_gen_ed": (o.get("source_url_gen_ed", "") or "").split(" ; ")[0] if same else ""})
+    return out, corr
+
+
+# ---------------------------------------------------------------- the atlas (the directory) and the shared files
 def main():
     atlas = rcsv(A / "05_bachelor_atlas/results/atlas_programs.csv")
     s5 = rjson(A / "05_bachelor_atlas/results/summary.json")
+    states, corr = state_table()
+    sidx = {s["state"]: s for s in states}
+    m14p = {r["program_id"]: r for r in rcsv(M14 / "programs.csv")}
     hd = {}
     with open(RAW / "ipeds/extracted/HD2024.csv", encoding="utf-8-sig") as fh:
         for r in csv.DictReader(fh):
@@ -64,20 +133,37 @@ def main():
     cols = ["program_id", "unitid", "institution", "city", "state", "control", "program", "degree", "group", "catalog_year", "total_semester",
             "gen_ed", "major", "math_science", "business", "free_electives", "to_cut_for_90", "n_required_courses", "internship_required",
             "capstone_required", "online_option", "reduced_option", "acce", "acce_since", "abet_ansac", "abet_since", "accreditation_group",
-            "state_gen_ed_min", "state_reduced_credit_status", "tuition_fees_in_state_2023_24", "tuition_fees_out_state_2023_24",
+            "state_gen_ed_min", "state_reduced_credit_status", "binding_count", "state_group", "tuition_fees_in_state_2023_24", "tuition_fees_out_state_2023_24",
             "per_credit_in_state", "per_credit_out_state", "degrees_2024", "earn_1yr", "earn_4yr", "debt", "confidence",
             "url_catalog", "url_program", "url_ipeds", "url_scorecard", "url_acce", "url_abet", "url_state_gen_ed", "url_state_reduced_credit",
             "catalog_read_on", "lat", "lon", "s_total_gain", "s_tuition_saved", "s_earnings_earlier", "s_breakeven_discount_10yr", "i_net"]
+    text_cols = ("program_id", "unitid", "institution", "city", "state", "control", "program", "degree", "group", "catalog_year", "acce",
+                 "accreditation_group", "state_reduced_credit_status", "state_group", "confidence", "reduced_option", "online_option",
+                 "internship_required", "capstone_required", "catalog_read_on")
     rows = []
     for r in atlas:
         lat, lon, web = hd.get(r["unitid"], (None, None, ""))
         L = ledger.get(r["program_id"], {})
         rec = {**r, "lat": lat, "lon": lon, **{k: L.get(k) for k in ("s_total_gain", "s_tuition_saved", "s_earnings_earlier", "s_breakeven_discount_10yr", "i_net")}}
+        # the state or system count for a reduced-credit degree as the article codes it (public universities, within the
+        # system a rule names), and the verified action of the state
+        s = sidx.get(r["state"], {})
+        smin = s.get("state_min")
+        rx = corr.get(r["state"], {}).get("institution_rx") or ""
+        if r["control"] != "public" or smin is None or (rx and not re.search(rx, r["institution"], re.I)):
+            smin = None
+        rec["state_gen_ed_min"] = smin
+        rec["state_reduced_credit_status"] = s.get("class", "none")
+        rec["url_state_gen_ed"] = s.get("url_gen_ed", "") if smin is not None else ""
+        rec["url_state_reduced_credit"] = ""
+        m = m14p.get(r["program_id"])
+        rec["binding_count"] = num(m["binding_count"]) if m else None
+        rec["state_group"] = m["group"] if m else ""
         if r["abet_ansac"] == "True":
             rec["abet_ansac"] = True
         elif r["abet_ansac"] == "False":
             rec["abet_ansac"] = False
-        rows.append([rec[c] if c in ("abet_ansac",) else num(rec[c]) if c not in ("program_id", "unitid", "institution", "city", "state", "control", "program", "degree", "group", "catalog_year", "acce", "accreditation_group", "state_reduced_credit_status", "confidence", "reduced_option", "online_option", "internship_required", "capstone_required") and not str(c).startswith("url") and c != "catalog_read_on" else rec[c] for c in cols])
+        rows.append([rec[c] if c == "abet_ansac" else rec[c] if (c in text_cols or str(c).startswith("url")) else num(rec[c]) for c in cols])
     courses = {}
     for c in rcsv(A / "05_bachelor_atlas/results/atlas_courses.csv"):
         courses.setdefault(c["program_id"], []).append([c["code"], c["title"], num(c["credits"]), c["block"], types.get((c["program_id"], c["code"], c["title"]), "other")])
@@ -87,83 +173,240 @@ def main():
                                                        "total_below_120", "total_exactly_120", "total_above_120", "to_cut_for_90", "gen_ed", "free_electives",
                                                        "free_electives_zero", "free_electives_reported", "tuition_in_state", "per_credit_in_state_public",
                                                        "earn_1yr", "earn_4yr", "debt", "degrees_2024_sum", "states_with_programs", "states_only", "territories", "read_on")}})
+    S14 = rjson(M14 / "summary.json")
+    dump("states.json", {"states": states, "class_label": CLASS_LABEL, "group_order": GROUP_ORDER,
+                         "summary": {k: S14[k] for k in ("states_count_by_group", "states_count_by_class", "programs_by_class", "programs_by_group",
+                                                          "count_range_states", "core_median", "programs_accredited_or_applicant", "programs_modeled")}})
 
-    # states
-    st4 = rcsv(A / "04_national_landscape/results/states.csv")
-    stt = {r["state_abbr"]: r for r in rcsv(RAW / "policy/state_gen_ed.csv")}
-    for o in rcsv(RAW / "case_study_2026-11-05/state_status_overlay_2026-11-05.csv"):
-        stt[o["state_abbr"]].update({"reduced_credit_action": o["reduced_credit_action"], "source_url_reduced_credit": o["source_url_reduced_credit"], "retrieved": o["retrieved"]})
-    states = []
-    for r in st4:
-        s = stt.get(r["state"], {})
-        states.append({"state": r["state"], "name": r["state_name"], "status": r["reduced_credit_status"], "label": r["status_label"],
-                       "gen_ed_min": num(r["gen_ed_min_semester_credits"]), "acce": num(r["acce_bachelors_accredited"]),
-                       "applicant": num(r["acce_applicant"]) + num(r["acce_candidate"]), "ansac": num(r.get("abet_ansac_cm")),
-                       "action": s.get("reduced_credit_action", ""), "framework": s.get("gen_ed_framework", ""),
-                       "url_gen_ed": s.get("source_url_gen_ed", ""), "url_reduced": (s.get("source_url_reduced_credit", "") or "").split(" ; ")[0], "retrieved": s.get("retrieved", "")})
-    dump("states.json", {"states": states, "events": rcsv(A / "04_national_landscape/results/events.csv"), "summary": rjson(A / "04_national_landscape/results/summary.json")})
-
-    # rules, case, budget calculator
-    progs = {}
-    names = rjson(A / "01_case_and_peers_floors/results/program_names.json")
-    for fp in sorted((RAW / "case_study_2026-11-05/programs").glob("*.json")):
-        p = rjson(fp)
-        progs[p["code"]] = {"label": names[p["code"]]["label"], "institution": p["institution"], "program": p["program_name"], "catalog_url": p["catalog_url"],
-                            "gen_ed_core": p["general_education_min_hours_estimate"],
-                            "courses": [[c["code"], c["title"], c["credits"], c["category"], bool(c.get("gen_ed_flag")), bool(c.get("earth_science"))] for c in p["courses"]]}
+    # the programmatic accreditors’ texts and practice (all accredited programs; no program named)
     dump("rules.json", {"acce": rjson(RAW / "case_study_2026-11-05/rules.json")["acce"],
                         "criteria": rcsv(A / "06_abet_ansac/results/criteria_comparison.csv"),
-                        "practice": rcsv(A / "06_abet_ansac/results/practice_comparison.csv"),
-                        "floors": rjson(A / "01_case_and_peers_floors/results/summary.json"),
-                        "budget": rjson(A / "02_whole_course_ledger/results/summary.json")["headline"],
-                        "programs": progs})
+                        "practice": rcsv(A / "06_abet_ansac/results/practice_comparison.csv")})
 
-    # ledger
     s8 = rjson(A / "08_stakeholder_ledger/results/summary.json")
-    dump("ledger.json", {"summary": rcsv(A / "08_stakeholder_ledger/results/ledger_summary.csv"), "case": s8["case"], "employers": s8["employers"], "assumptions": s8["assumptions"]})
+    dump("ledger.json", {"summary": rcsv(A / "08_stakeholder_ledger/results/ledger_summary.csv"), "employers": s8["employers"], "assumptions": s8["assumptions"]})
 
-    # routes and AI
-    dump("routes.json", {"ladder": rcsv(A / "09_pathways/results/ladder.csv"), "pairs": rcsv(A / "09_pathways/results/merge_pairs.csv"),
-                         "national": rcsv(A / "09_pathways/results/national_levers.csv"), "summary": rjson(A / "09_pathways/results/summary.json"),
-                         "ai_hours": rcsv(A / "10_ai_curriculum/results/program_type_hours.csv"), "task_mix": rcsv(A / "10_ai_curriculum/results/task_mix.csv"),
-                         "ai_summary": {k: v for k, v in rjson(A / "10_ai_curriculum/results/summary.json").items() if k != "exposure"}})
+    s10 = rjson(A / "10_ai_curriculum/results/summary.json")
+    dump("ai.json", {"ai_hours": [{k: (v if k == "accreditation_group" else num(v)) for k, v in r.items() if k not in ("program_id", "institution")}
+                                  for r in rcsv(A / "10_ai_curriculum/results/program_type_hours.csv")],
+                     "task_mix": rcsv(A / "10_ai_curriculum/results/task_mix.csv"),
+                     "ai_summary": {k: v for k, v in s10.items() if k not in ("exposure", "case", "case_tool_courses")},
+                     "exposure": s10["exposure"], "content_types": S14["content_types"], "programs_modeled": S14["programs_modeled"]})
 
-    # abroad
     s7 = rjson(A / "07_international/results/summary.json")
     comp = rcsv(A / "07_international/results/composition.csv") if (A / "07_international/results/composition.csv").exists() else []
-    dump("abroad.json", {"programs": rcsv(A / "07_international/results/international_programs.csv"), "composition": comp, "summary": s7,
+    s7_site = dict(s7)
+    s7_site["composition_shares"] = [r for r in s7["composition_shares"] if not r["system"].startswith("United States")]  # the U.S. row was the five programs
+    dump("abroad.json", {"programs": rcsv(A / "07_international/results/international_programs.csv"), "composition": comp, "summary": s7_site,
                          "frameworks": rjson(RAW / "international/uk/uk_frameworks.json"),
                          "hk_reform": rjson(RAW / "international/hk/hk_reform.json") if (RAW / "international/hk/hk_reform.json").exists() else None})
 
-    # sources
     sources = [
         {"what": "ACCE member directory (accredited, applicant and candidate programs)", "date": "29 October 2026", "url": "https://www.acce.edu/bachelor-programs"},
         {"what": "ACCE Document 103, Standards and Criteria (rev. 2026.10.19)", "date": "19 October 2026", "url": "https://www.acce.edu/"},
-        {"what": "ACCE notices of accreditation actions, 2026 Midyear and Annual", "date": "28 February and 24 July 2026", "url": "https://www.acce.edu/notice-of-accreditation"},
         {"what": "ABET accredited programs search (ANSAC, construction management criteria)", "date": "6 November 2026", "url": "https://amspub.abet.org/aps/name-search?searchType=program&keyword=construction%20management"},
         {"what": "ABET Criteria for Accrediting Applied and Natural Science Programs, 2026-27", "date": "2026", "url": "https://www.abet.org/2026-2027_ansac_criteria"},
-        {"what": "Institution catalogs (one page per program, linked in each program card)", "date": "29 October to 6 November 2026", "url": ""},
+        {"what": "Institution catalogs (one page per program, linked in each program card of the US Atlas)", "date": "29 October to 6 November 2026", "url": ""},
         {"what": "IPEDS Completions 2024, Institutional Characteristics 2023-24, Directory 2024 (NCES)", "date": "2024 releases", "url": "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx"},
-        {"what": "College Scorecard, field of study and institution files", "date": "15 October 2026 release", "url": "https://collegescorecard.ed.gov/data/"},
+        {"what": "College Scorecard, field of study and institution files (institutional accreditor of each institution)", "date": "15 October 2026 release", "url": "https://collegescorecard.ed.gov/data/"},
         {"what": "BLS Employment Projections 2025-35", "date": "27 August 2026", "url": "https://www.bls.gov/emp/tables.htm"},
-        {"what": "State general education and reduced-credit rules (one source per state in the map)", "date": "29 October and 5 November 2026", "url": ""},
-        {"what": "U.S. Department of Education proposed rule on accreditation (Federal Register 2026-17001)", "date": "20 August 2026", "url": "https://www.federalregister.gov/documents/2026/08/20/2026-17001/accreditation-innovation-and-modernization-the-secretarys-recognition-of-accrediting-agencies"},
+        {"what": "State and system general education rules for a reduced-credit bachelor’s degree, coded from their texts (Online Resource 2 of the article)", "date": "verified 6 November 2026", "url": ""},
+        {"what": "State actions on bachelor’s degrees below 120 credits, verified against primary documents and news reports (Online Resource 1 of the article)", "date": "verified 6 November 2026", "url": ""},
+        {"what": "Institutional accreditors’ reduced-credit rules: SACSCOC policy and guidelines, NECHE guidelines, HLC guidelines, NWCCU, MSCHE and WSCUC statements", "date": "2024 to 2026", "url": ""},
+        {"what": "U.S. Department of Education final rule on the recognition of accrediting agencies (Federal Register 2026-22174)", "date": "30 October 2026", "url": "https://www.federalregister.gov/documents/2026/10/30/2026-22174/accreditation-innovation-and-modernization-the-secretarys-recognition-of-accrediting-agencies"},
         {"what": "34 CFR 600.2, definition of a credit hour", "date": "current", "url": "https://www.ecfr.gov/current/title-34/subtitle-B/chapter-VI/part-600/subpart-A/section-600.2"},
         {"what": "CIOB UK Accredited Institutions 2026; QAA FHEQ 2024 and Credit Framework 2021", "date": "27 March 2026; 2024; 2021", "url": "https://www.ciob.org/learning-providers/education-framework"},
         {"what": "O*NET 31.0 tasks with AI exposure (Eloundou et al., 2024) for construction managers and cost estimators", "date": "30 October 2026", "url": "https://github.com/openai/GPTs-are-GPTs"},
     ]
     refs = cited_references()
     dump("sources.json", {"data": sources, "references": refs})
-    dump("headline.json", {"atlas": {k: s5[k] for k in ("programs", "institutions", "programs_with_total", "total_below_120", "total_exactly_120", "to_cut_for_90")},
-                           "acce_accredited": s5["acce_accredited_bachelors_in_atlas"], "ansac": s5["abet_ansac_in_atlas"],
-                           "states_any_action": rjson(A / "04_national_landscape/results/summary.json")["states_any_action"],
-                           "budget_min": rjson(A / "02_whole_course_ledger/results/summary.json")["headline"]["budget_min"],
-                           "budget_max": rjson(A / "02_whole_course_ledger/results/summary.json")["headline"]["budget_max"]})
-    deep(refs)
+    paper(refs)
+    balance()
+    model()
     world()
 
 
-# ---------------------------------------------------------------- 6 November 2026: UK and Hong Kong atlases
+# ---------------------------------------------------------------- the article: references, sentences and tables
+def cited_references():
+    """every reference the manuscript cites, with its APA entry and first link"""
+    B, _ = manuscript_modules()
+    body = (MS / "_content.md").read_text(encoding="utf-8")
+    out = []
+    for r in B.load_references():
+        if B.is_cited(r["cite"], body):
+            m = re.search(r"https?://\S+", r["apa"])
+            out.append({"cite": r["cite"], "apa": r["apa"], "url": m.group(0).rstrip(".") if m else ""})
+    for m in json.load(open(MS / "masked_references.json", encoding="utf-8")):
+        if ("{{M:" + m["key"] + "}}") in body:
+            u = re.search(r"https?://\S+", m["apa"])
+            out.append({"cite": m["cite"], "apa": m["apa"], "url": u.group(0).rstrip(".") if u else ""})
+    out.sort(key=lambda r: re.sub(r"[^a-z0-9 ]", "", r["apa"].lower()))
+    return out
+
+
+def study_text(B, vals):
+    """the title, abstract, questions, theory and hypotheses as the article prints them, numbers filled by the builder"""
+    lines = (MS / "_content.md").read_text(encoding="utf-8").splitlines()
+    for ln in lines:  # the builder’s own pre-pass, so that Table and Fig. numbers resolve
+        if ln.startswith("[[TABLE:"):
+            B.TABLE_NO.setdefault(ln.strip()[8:-2], sum(1 for v in B.TABLE_NO.values() if isinstance(v, int)) + 1)
+        if ln.startswith("[[FIGURE:"):
+            B.FIG_NO.setdefault(ln.strip()[9:-2].split("|")[0], len(B.FIG_NO) + 1)
+    f = lambda s: B.fill(s, vals).strip()  # noqa: E731
+    i = lines.index("## Abstract")
+    abstract = next(f(x) for x in lines[i + 1:] if x.strip())
+    kw = next((f(x) for x in lines if x.startswith("**Keywords:**")), "").replace("**Keywords:**", "").strip()
+    j = next(k for k, x in enumerate(lines) if x.startswith("## 3 "))
+    theory = []
+    for x in lines[j + 1:]:
+        if x.startswith("## "):
+            break
+        if x.strip() and not x.startswith("- "):
+            theory.append(f(x))
+    return {"title": f(lines[0][2:]), "abstract": abstract, "keywords": kw,
+            "rqs": [f(x[2:]) for x in lines if x.startswith("- RQ")],
+            "hypotheses": [f(x[2:]) for x in lines if re.match(r"- H\d\.", x)],
+            "theory": theory, "theory_heading": lines[j][5:].strip()}
+
+
+def paper(refs):
+    B, T = manuscript_modules()
+    vals = B.load_values()
+    link = {r["cite"]: r["url"] for r in refs}
+
+    def ev(text, cite):
+        return {"text": text, "cite": cite, "url": link.get(cite, "")}
+
+    s12 = rjson(A / "12_skills_at_risk/results/summary.json")
+    inputs = []
+    for r in rcsv(A / "08_stakeholder_ledger/results/ledger_by_program.csv"):
+        g, e1, gr = num(r["s_total_gain"]), num(r["earn_1yr"]), num(r["growth_1_to_4"])
+        if isinstance(g, (int, float)) and g and isinstance(e1, (int, float)) and e1 and isinstance(gr, (int, float)):
+            inputs.append([e1, gr, g, r["accreditation_group"]])  # no program or institution names
+    dump("skills.json", {"transfer": s12["transfer"], "internships": s12["internships"], "level_threshold": s12["level_threshold"],
+                         "lifecycle_threshold": s12["lifecycle_threshold"], "thresholds_at_5pct": s12["thresholds_at_5pct"],
+                         "england_in_us_credits": s12["england_in_us_credits"], "threshold_inputs": inputs,
+                         "assumptions": rjson(A / "08_stakeholder_ledger/results/summary.json")["assumptions"]})
+
+    s11 = rjson(A / "11_advisor_survey/results/summary.json")
+    dump("survey.json", {"summary": s11, "counts": rcsv(A / "11_advisor_survey/results/answer_counts.csv"),
+                         "note": "Anonymous five-question survey of the industry advisors of one accredited construction management program, October 2026; answer counts only."})
+
+    ai_ev = [
+        ev("Endoscopists’ adenoma detection rate in colonoscopies without AI fell from 28.4% to 22.4% after routine exposure to AI (1,443 patients)", "Budzyń et al., 2025"),
+        ev("Outside the frontier of what AI does well, knowledge workers using it were correct about 19 percentage points less often; inside it they completed 12.2% more tasks", "Dell’Acqua et al., 2026"),
+        ev("Knowledge workers with more confidence in AI reported less critical thinking (319 workers)", "Lee et al., 2025"),
+        ev("Automation bias affects experts as well as novices, and training does not remove it", "Parasuraman & Manzey, 2010"),
+        ev("Operators who only monitor automation lose the skill to take over when it fails", "Bainbridge, 1983"),
+        ev("Three risks for learners: deskilling, the loss of previously acquired skills; mis-skilling, the reinforcement of incorrect behavior due to AI errors or bias; never-skilling, the failure to develop essential competencies", "Abdulnour et al., 2025"),
+        ev("Students using ChatGPT improved essay scores without more knowledge gain or transfer", "Fan et al., 2025"),
+        ev("AI raised productivity by 15% on average and by 30% for less skilled and less experienced workers", "Brynjolfsson et al., 2025"),
+        ev("Intelligent tutoring systems raise test performance by a median .66 standard deviations across 50 evaluations", "Kulik & Fletcher, 2016"),
+        ev("A tutor designed to give one step at a time rather than the full solution doubled learning gains in less time in a randomized crossover trial (median 49 minutes against a 60-minute class)", "Kestin et al., 2025"),
+        ev("Open access to GPT-4 raised practice grades by 48% but lowered grades on an exam taken without AI by 17%; a tutor that gave teacher-designed hints removed that loss", "Bastani et al., 2025"),
+        ev("ChatGPT produced construction schedules that were coherent but contained wrong tasks", "Prieto et al., 2023"),
+        ev("Model-based estimating still leaves the estimator substantial work", "Abioye et al., 2021"),
+        ev("Junior employment fell about 9% at firms adopting generative AI, through fewer hires (working paper)", "Hosseini & Lichtinger, 2025"),
+    ]
+    people = [
+        ev("Only 53.5% of employers rate new graduates proficient in communication and 55.9% in critical thinking", "National Association of Colleges and Employers [NACE], 2025"),
+        ev("The shortage contractors report is in experienced salaried roles such as superintendents and project managers", "Associated General Contractors of America & NCCER, 2026"),
+        ev("Lower-division credits cost less to teach than upper-division ones ($188 against $275 per credit hour in Florida’s public universities; Johnson, 2009)", "Romano et al., 2010"),
+        ev("High school graduates peak in 2025 and fall about 13% by 2041", "Lane et al., 2024"),
+        ev("Adults with credit for prior learning completed credentials at 49% against 27%, and generated more tuition", "Klein-Collins et al., 2020"),
+        ev("A department that embedded technical writing in five engineering courses ran it by co-teaching with a writing instructor", "McCall & Rayess, 2021"),
+    ]
+    # the site cites only what the article cites
+    ai_ev = [e for e in ai_ev if e["cite"] in link]
+    people = [e for e in people if e["cite"] in link]
+    rows_of = lambda t: {"title": t[0].split("<!--")[0].strip(), "rows": t[1], "notes": t[2]}  # noqa: E731
+    # the article’s tables, numbered as in the article: the order of their first appearance in the content file
+    order = re.findall(r"^\[\[TABLE:([a-z_]+)\]\]", (MS / "_content.md").read_text(encoding="utf-8"), re.M)
+    tables = {}
+    for i, name in enumerate(order, 1):
+        t = rows_of(T.TABLES[name](vals))
+        t["title"] = re.sub(r"^Table \d+\.", f"Table {i}.", t["title"])
+        t["number"] = i
+        tables[name] = t
+    tables["actions"] = rows_of(T.TABLES["actions"](vals))
+    dump("paper.json", {"study": study_text(B, vals), "tables": tables, "ai_evidence": ai_ev, "people": people})
+
+
+# ---------------------------------------------------------------- where the balance turns (no program named)
+def balance():
+    s12 = rjson(A / "12_skills_at_risk/results/summary.json")
+    led = {r["program_id"]: r for r in rcsv(A / "08_stakeholder_ledger/results/ledger_by_program.csv")}
+    inst = []
+    for r in rcsv(A / "12_skills_at_risk/results/institution_break_even.csv"):
+        inst.append([led.get(r["program_id"], {}).get("accreditation_group", ""), num(r["credits_removed"]), num(r["institution_net_per_graduate"]),
+                     num(r["net_margin_per_credit"]), num(r["break_even_new_share"]) if r["break_even_new_share"] else None])
+    dump("balance.json", {"curves": [{k: num(v) for k, v in r.items()} for r in rcsv(A / "12_skills_at_risk/results/threshold_curves.csv")],
+                          "institution_curve": [{k: num(v) for k, v in r.items()} for r in rcsv(A / "12_skills_at_risk/results/institution_curve.csv")],
+                          "institution_programs": {"columns": ["accreditation", "credits_removed", "net_per_graduate", "net_margin_per_credit", "break_even_new_share"], "rows": inst},
+                          "summary": {"institution_break_even": s12["institution_break_even"], "level_threshold": s12["level_threshold"],
+                                      "lifecycle_threshold": s12["lifecycle_threshold"], "thresholds_at_5pct": s12["thresholds_at_5pct"]}})
+
+
+# ---------------------------------------------------------------- Module 14: the holders and the integer program
+def model():
+    S = rjson(M14 / "summary.json")
+    sys.path.insert(0, str(A / "14_state_groups"))
+    sys.path.insert(0, str(A / "09_pathways"))
+    import outcome_rules as R  # noqa: E402
+    from ansac_rules import ANSAC  # noqa: E402
+
+    gs = [{k: (v if k in ("group", "accreditor", "choice", "count") else num(v)) for k, v in r.items()} for r in rcsv(M14 / "group_summary.csv")]
+    carry = [{"accreditor": r["accreditor"], "choice": r["choice"], "overlap": num(r["overlap"]), "count": num(r["count"]), "share_fit": num(r["share_fit"])}
+             for r in rcsv(M14 / "carry_curves.csv")]
+    # the check: ACCE’s outcomes and business topics without its hour floors (binding count only)
+    ao_rows = rcsv(M14 / "acce_outcomes_only.csv")
+    ao = []
+    for ov in ("0", "12"):
+        for grp in GROUP_ORDER + ["All"]:
+            rs = [r for r in ao_rows if r["overlap"] == ov and (grp == "All" or r["group"] == grp)]
+            if not rs:
+                continue
+            tot = [float(r["total"]) for r in rs]
+            ao.append({"group": grp, "overlap": int(ov), "programs": len(rs), "fit_90": sum(r["fits_90"] == "True" for r in rs),
+                       "total_median": q(tot, .5), "total_p25": q(tot, .25), "total_p75": q(tot, .75),
+                       "mean_construction": round(sum(float(r["construction"]) for r in rs) / len(rs), 1),
+                       "mean_business": round(sum(float(r["business"]) for r in rs) / len(rs), 1),
+                       "mean_total": round(sum(tot) / len(rs), 1)})
+    # which course family names each outcome in the 90-credit designs (share of the modeled programs), and how often
+    # the titles name it at all
+    n = S["programs_modeled"]
+    share, named = defaultdict(set), defaultdict(set)
+    for c in rcsv(M14 / "outcome_cover.csv"):
+        key = (c["framework"], int(c["outcome"]))
+        if c["family"] == "not named by a title":
+            continue
+        named[key].add(c["program_id"])
+        share[(key, c["family"])].add(c["program_id"])
+    blocks = [("ACCE", "ACCE: 17 student learning outcomes", [s[1] for s in R.ACCE_SLO]),
+              ("ANSAC topic", "ABET ANSAC: 12 program-criteria topics", [a[0] for a in ANSAC]),
+              ("ANSAC outcome", "ABET ANSAC: 6 student outcomes", [s[1] for s in R.ANSAC_SO])]
+    cover = []
+    for fw, title, labels in blocks:
+        for k, lab in enumerate(labels, 1):
+            cover.append({"framework": fw, "block": title, "outcome": k, "label": lab,
+                          "named": round(len(named[(fw, k)]) / n, 3),
+                          "families": [round(len(share[((fw, k), fam)]) / n, 3) for fam in FAMILIES]})
+    progs = [r for r in rcsv(M14 / "programs.csv") if r["modeled"] == "True"]
+    today = [float(r["construction_listed"]) + float(r["business_listed"]) for r in progs]
+    ofl = rcsv(M14 / "outcome_floor.csv")
+    hours = {"ACCE": [float(r["hours"]) for r in ofl if r["framework"] == "ACCE"], "ANSAC": [float(r["hours"]) for r in ofl if r["framework"] == "ANSAC"], "today": today}
+    keep = ("programs_accredited_or_applicant", "programs_modeled", "modeled_by_group", "modeled_public", "count_range_states", "core_median",
+            "carry_median", "fit_share_all", "fit_by_group", "outcome_floor", "slo_named_share", "ansac_topic_named_share", "today", "states_count_by_group",
+            "states_count_by_class", "programs_by_class", "programs_by_group", "all", "rule_arithmetic", "holder_claims", "keep_professional_median",
+            "acce_outcomes_only", "high_count_groups", "h3")
+    dump("model.json", {"summary": {k: S[k] for k in keep if k in S}, "group_order": GROUP_ORDER, "group_summary": gs, "carry": carry,
+                        "outcomes_only": ao, "families": FAMILIES, "cover": cover,
+                        "hours": {k: {"median": q(v, .5), "p25": q(v, .25), "p75": q(v, .75), "programs": len(v)} for k, v in hours.items()},
+                        "pairs": rcsv(A / "09_pathways/results/merge_pairs.csv"),
+                        "pairs_programs": rjson(A / "09_pathways/results/summary.json").get("accredited_programs_coded")})
+
+
+# ---------------------------------------------------------------- 6 November 2026: UK and Hong Kong atlases (directories)
 def amount(v, key="amount"):
     """a fee field may be a number or {amount, currency, academic_year, note}"""
     if isinstance(v, dict):
@@ -191,7 +434,7 @@ def hk_fee(v):
 def uk_credits(r, mods):
     """Credits of a UK honours degree: stated on the page, else read from a full module list (120 credits for each taught
     year), else the national minimum (QAA 2024, Annex C: 360 in England, Wales and Northern Ireland, 480 in Scotland).
-    Also the credits a year the module list shows (core and listed options) and the placement year's credits (the
+    Also the credits a year the module list shows (core and listed options) and the placement year’s credits (the
     largest single placement module where the list offers alternatives)."""
     years, place = {}, []
     for y, _code, _title, cr, ty in mods:
@@ -269,171 +512,5 @@ def world():
     dump("hk.json", {"programs": hk, "reform": s7.get("hku_reform"), "summary": {k: v for k, v in s7.items() if k.startswith("hk")}})
 
 
-# ---------------------------------------------------------------- 6 November 2026: the rebuilt paper (Modules 11 and 12)
-MS = ROOT / "03_manuscript" / "_source"
-
-
-def manuscript_modules():
-    """the manuscript builder and its tables, so that the site shows the paper's own rows"""
-    import sys
-    sys.path.insert(0, str(MS))
-    import _build_manuscript as B  # noqa: E402
-    import _tables as T  # noqa: E402
-    return B, T
-
-
-def cited_references():
-    """every reference the manuscript cites, with its APA entry and first link"""
-    import re
-    B, _ = manuscript_modules()
-    body = (MS / "_content.md").read_text(encoding="utf-8")
-    out = []
-    for r in B.load_references():
-        if B.is_cited(r["cite"], body):
-            m = re.search(r"https?://\S+", r["apa"])
-            out.append({"cite": r["cite"], "apa": r["apa"], "url": m.group(0).rstrip(".") if m else ""})
-    for m in json.load(open(MS / "masked_references.json", encoding="utf-8")):
-        if ("{{M:" + m["key"] + "}}") in body:
-            u = re.search(r"https?://\S+", m["apa"])
-            out.append({"cite": m["cite"], "apa": m["apa"], "url": u.group(0).rstrip(".") if u else ""})
-    out.sort(key=lambda r: re.sub(r"[^a-z0-9 ]", "", r["apa"].lower()))
-    return out
-
-
-def deep(refs):
-    B, T = manuscript_modules()
-    vals = B.load_values()
-    link = {r["cite"]: r["url"] for r in refs}
-
-    def ev(text, cite):
-        return {"text": text, "cite": cite, "url": link.get(cite, "")}
-
-    s12 = rjson(A / "12_skills_at_risk/results/summary.json")
-    names = rjson(A / "01_case_and_peers_floors/results/program_names.json")
-    moves = [r for r in rcsv(A / "12_skills_at_risk/results/moves_named.csv")]
-    inputs = []
-    for r in rcsv(A / "08_stakeholder_ledger/results/ledger_by_program.csv"):
-        g, e1, gr = num(r["s_total_gain"]), num(r["earn_1yr"]), num(r["growth_1_to_4"])
-        if isinstance(g, (int, float)) and g and isinstance(e1, (int, float)) and e1 and isinstance(gr, (int, float)):
-            inputs.append([r["program_id"], e1, gr, g, r["institution"], r["program"], r["accreditation_group"]])
-    dump("skills.json", {"by_order": s12["by_order"], "general_education_share_range": s12["general_education_share_range"],
-                         "gen_ed_course_hours": s12["gen_ed_course_hours"], "transfer": s12["transfer"], "internships": s12["internships"],
-                         "level_threshold": s12["level_threshold"], "lifecycle_threshold": s12["lifecycle_threshold"],
-                         "thresholds_at_5pct": s12["thresholds_at_5pct"], "england_in_us_credits": s12["england_in_us_credits"],
-                         "kept_by_redesign": s12["kept_by_redesign"], "first_step_at_or_under_90": s12["first_step_at_or_under_90"],
-                         "names": names, "moves": [[m["code"], m["variant"], m["step"], m["action"], m["family"], m["course"], m["title"], num(m["hours"])] for m in moves],
-                         "threshold_inputs": inputs, "assumptions": rjson(A / "08_stakeholder_ledger/results/summary.json")["assumptions"],
-                         "construction_above_floor": rjson(A / "01_case_and_peers_floors/results/summary.json")["headline"]["construction_above_floor"]})
-
-    s11 = rjson(A / "11_advisor_survey/results/summary.json")
-    dump("survey.json", {"summary": s11, "counts": rcsv(A / "11_advisor_survey/results/answer_counts.csv"),
-                         "note": "Anonymous five-question survey of the industry advisors of one accredited construction management program, October 2026; answer counts only."})
-
-    s7 = rjson(A / "07_international/results/summary.json")
-    ee = s12["england_in_us_credits"]
-    abroad_ctx = [
-        {"system": "England, Wales and Northern Ireland",
-         "before": [ev("Compulsory schooling ends at 16; students then study a narrow range of subjects, normally three or four, an outlier internationally", "Hodgen et al., 2010")],
-         "during": [ev(f"360 credits in three years; {s7['uk_three_year']} of {s7['uk_records']} CIOB-accredited construction programs take three years and {s7['uk_placement_available']} offer a placement year", "CIOB, 2026"),
-                    {"text": f"On paper, discipline modules and projects come to about {round(ee['discipline_and_projects'])} U.S.-credit equivalents of learning hours (10 notional hours a UK credit, 45 a U.S. credit)", "cite": "", "url": ""}],
-         "after": [ev("RICS: with less than five years of experience, 24 months (400 days) of structured training before the final assessment", "Royal Institution of Chartered Surveyors [RICS], 2026"),
-                   ev("CIOB chartership: at least three years of relevant experience after a built-environment degree", "Chartered Institute of Building [CIOB], n.d.")]},
-        {"system": "Continental Europe (Bologna)",
-         "before": [],
-         "during": [ev("180 ECTS (three years) is the most widespread first-cycle workload", "European Commission et al., 2024")],
-         "after": [ev("In Bavaria 81% of university bachelor’s graduates go on to a master’s", "Bayerisches Staatsinstitut für Hochschulforschung und Hochschulplanung [IHF], 2017"),
-                   ev("In the Netherlands 11% of graduates left with a university bachelor’s as the final award", "Centraal Bureau voor de Statistiek [CBS], 2019")]},
-        {"system": "Hong Kong",
-         "before": [ev("Under the old structure only about a third of students reached the last two school years; since 2012 all receive six years of secondary schooling", "Education and Manpower Bureau, 2005")],
-         "during": [ev(f"The University of Hong Kong’s BSc in Surveying grew from {s7['hku_reform']['three_year_credits']} to {s7['hku_reform']['four_year_credits']} credits: {s7['hku_reform']['added_common_core']} Common Core, {s7['hku_reform']['added_language']} language, {s7['hku_reform']['added_professional']} professional", "University of Hong Kong, 2012"),
-                    ev("In 2026-27 the same degree requires six credits of AI literacy beside 36 of Common Core", "University of Hong Kong, 2026")],
-         "after": []},
-        {"system": "United States",
-         "before": [ev("Nearly 2.5 million high school students took a dual enrollment course in 2022-23; Black students were 8% of dual enrollment against 13% of undergraduates", "Fink, 2024")],
-         "during": [{"text": "120 credits in four years for every construction program read, general education inside the degree", "cite": "", "url": ""},
-                    ev("Earlier three-year paths, mostly 120 credits compressed into three years, drew 2% to 19% of students", "Weinstein, 2018")],
-         "after": [ev("Certified Construction Manager: no degree required; an accredited construction degree accompanies 48 months of responsible-in-charge experience, any other four-year degree 72", "Construction Manager Certification Institute [CMCI], 2026"),
-                   ev("Graduate admissions officers almost unanimously would not take domestic applicants with fewer than 120 credits, though most were reconsidering; most employers in one university’s survey would treat three-year degrees as equal", "Marcus, 2026")]},
-    ]
-    ai_ev = [
-        ev("Endoscopists’ adenoma detection rate in colonoscopies without AI fell from 28.4% to 22.4% after routine exposure to AI (1,443 patients)", "Budzyń et al., 2025"),
-        ev("Outside the frontier of what AI does well, knowledge workers using it were correct about 19 percentage points less often; inside it they completed 12.2% more tasks", "Dell’Acqua et al., 2026"),
-        ev("Knowledge workers with more confidence in AI reported less critical thinking (319 workers)", "Lee et al., 2025"),
-        ev("Automation bias affects experts as well as novices, and training does not remove it", "Parasuraman & Manzey, 2010"),
-        ev("Operators who only monitor automation lose the skill to take over when it fails", "Bainbridge, 1983"),
-        ev("Three risks for learners: deskilling, the loss of previously acquired skills; mis-skilling, the reinforcement of incorrect behavior due to AI errors or bias; never-skilling, the failure to develop essential competencies", "Abdulnour et al., 2025"),
-        ev("Students using ChatGPT improved essay scores without more knowledge gain or transfer", "Fan et al., 2025"),
-        ev("AI raised productivity by 15% on average and by 30% for less skilled and less experienced workers", "Brynjolfsson et al., 2025"),
-        ev("Intelligent tutoring systems raise test performance by a median .66 standard deviations across 50 evaluations", "Kulik & Fletcher, 2016"),
-        ev("A tutor designed to give one step at a time rather than the full solution doubled learning gains in less time in a randomized crossover trial (median 49 minutes against a 60-minute class)", "Kestin et al., 2025"),
-        ev("Open access to GPT-4 raised practice grades by 48% but lowered grades on an exam taken without AI by 17%; a tutor that gave teacher-designed hints removed that loss", "Bastani et al., 2025"),
-        ev("ChatGPT produced construction schedules that were coherent but contained wrong tasks", "Prieto et al., 2023"),
-        ev("Model-based estimating still leaves the estimator substantial work", "Abioye et al., 2021"),
-        ev("Junior employment fell about 9% at firms adopting generative AI, through fewer hires (working paper)", "Hosseini & Lichtinger, 2025"),
-    ]
-    people = [
-        ev("Only 53.5% of employers rate new graduates proficient in communication and 55.9% in critical thinking", "National Association of Colleges and Employers [NACE], 2025"),
-        ev("Texas construction employers ranked ethics, teamwork, accountability, written and oral communication as graduates’ top five competencies", "Bigelow et al., 2015"),
-        ev("Recruiters in a national survey rated ethics highest and communication near the bottom of 14 competencies", "Ahn et al., 2012"),
-        ev("The shortage contractors report is in experienced salaried roles such as superintendents and project managers", "Associated General Contractors of America & NCCER, 2026"),
-        ev("Lower-division credits cost less to teach than upper-division ones ($188 against $275 per credit hour in Florida’s public universities; Johnson, 2009)", "Romano et al., 2010"),
-        ev("Instructional cost per credit ranges from mathematics at 25% below English to electrical engineering at 90% above", "Hemelt et al., 2021"),
-        ev("High school graduates peak in 2025 and fall about 13% by 2041", "Lane et al., 2024"),
-        ev("Adults with credit for prior learning completed credentials at 49% against 27%, and generated more tuition", "Klein-Collins et al., 2020"),
-        ev("A department that embedded technical writing in five engineering courses ran it by co-teaching with a writing instructor", "McCall & Rayess, 2021"),
-    ]
-    rows_of = lambda t: {"title": t[0].split("<!--")[0].strip(), "rows": t[1], "notes": t[2]}
-    # the site cites only what the article cites (6 Nov 2026: the rewritten article dropped a few sources)
-    ai_ev = [e for e in ai_ev if e["cite"] in link]
-    people = [e for e in people if e["cite"] in link]
-    for r in abroad_ctx:
-        for part in ("before", "during", "after"):
-            r[part] = [e for e in r[part] if e["cite"] in link]
-    # the article's tables, numbered as in the article: the order of their first appearance in the content file
-    import re as _re
-    order = [m for m in _re.findall(r"^\[\[TABLE:([a-z_]+)\]\]", (MS / "_content.md").read_text(encoding="utf-8"), _re.M)]
-    tables = {}
-    for i, name in enumerate(order, 1):
-        t = rows_of(T.TABLES[name](vals))
-        t["title"] = _re.sub(r"^Table \d+\.", f"Table {i}.", t["title"])
-        t["number"] = i
-        tables[name] = t
-    tables["actions"] = rows_of(T.TABLES["actions"](vals))
-    dump("paper.json", {"abroad": abroad_ctx, "ai_evidence": ai_ev, "people": people, "tables": tables,
-                        "ai_counts": {"tool_hours": s12["by_order"]["general education first"]["redesign first"]["tool_hours"],
-                                      "total_hours": s12["by_order"]["general education first"]["redesign first"]["total_hours"]},
-                        "exposure": rjson(A / "10_ai_curriculum/results/summary.json")["exposure"]})
-
-
-def refocus():
-    """6 Nov 2026, late evening: the dated actions as Figure 1b spells them, where the balance turns (Figure 2), the decision
-    tree (Figure 3)."""
-    labels = rjson(A / "04_national_landscape/event_labels.json")["labels"]
-    ev_rows = []
-    for e in rcsv(A / "04_national_landscape/results/events.csv"):
-        key = next(k for k in labels if k.startswith(e["date"] + "|") and e["actor"].startswith(k.split("|")[1]))
-        ev_rows.append({"date": e["date"], "level": e["level"], "state": e["state"], "actor": labels[key]["actor"], "action": labels[key]["action"],
-                        "actor_full": e["actor"], "construction_named": e["construction_named"] == "yes", "source": e["source"]})
-    ev_rows.sort(key=lambda r: r["date"])
-    s4 = rjson(A / "04_national_landscape/results/summary.json")
-    dump("timeline.json", {"events": ev_rows, "summary": {k: s4[k] for k in ("events", "events_2026", "events_construction_named", "events_by_level", "states_any_action")}})
-
-    s12 = rjson(A / "12_skills_at_risk/results/summary.json")
-    led = {r["program_id"]: r for r in rcsv(A / "08_stakeholder_ledger/results/ledger_by_program.csv")}
-    inst = []
-    for r in rcsv(A / "12_skills_at_risk/results/institution_break_even.csv"):
-        L = led.get(r["program_id"], {})
-        inst.append([r["program_id"], L.get("institution", ""), L.get("program", ""), L.get("accreditation_group", ""), num(r["credits_removed"]),
-                     num(r["institution_net_per_graduate"]), num(r["net_margin_per_credit"]), num(r["break_even_new_share"]) if r["break_even_new_share"] else None])
-    dump("balance.json", {"curves": [{k: num(v) for k, v in r.items()} for r in rcsv(A / "12_skills_at_risk/results/threshold_curves.csv")],
-                          "institution_curve": [{k: num(v) for k, v in r.items()} for r in rcsv(A / "12_skills_at_risk/results/institution_curve.csv")],
-                          "institution_programs": {"columns": ["program_id", "institution", "program", "accreditation", "credits_removed", "net_per_graduate",
-                                                               "net_margin_per_credit", "break_even_new_share"], "rows": inst},
-                          "summary": {"institution_break_even": s12["institution_break_even"], "level_threshold": s12["level_threshold"],
-                                      "lifecycle_threshold": s12["lifecycle_threshold"], "thresholds_at_5pct": s12["thresholds_at_5pct"]}})
-    dump("tree.json", rjson(A / "13_decision_tree/results/tree.json"))
-
-
 if __name__ == "__main__":
     main()
-    refocus()

@@ -137,3 +137,35 @@ ol.timeline li.tl-year { display: block; font-weight: 600; border-bottom: 0; pad
 .tbar span { display: block; height: 100%; border-right: 1px solid rgba(0,0,0,.25); }
 .tree-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; margin: 8px 0 0; color: var(--muted); }
 .tree-legend .sw { display: inline-block; width: 12px; height: 10px; border: 1px solid #8c8c8c; margin-right: 5px; vertical-align: -1px; }
+
+/* 6 November 2026, night: holders, state tiles, the integer program tool */
+.maplegend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12.5px; color: #333; margin: 6px 2px 0; }
+.maplegend > div { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+.lg { display: inline-flex; align-items: center; gap: 5px; }
+.sw { display: inline-block; width: 14px; height: 12px; border: 1px solid #9a9a9a; border-radius: 2px; }
+.mk { font-size: 13px; width: 14px; text-align: center; }
+ol.plain { margin: 4px 0 10px 18px; padding: 0; }
+ol.plain li { margin: 4px 0; font-size: 14px; line-height: 1.45; }
+.prose p { font-size: 14px; line-height: 1.5; margin: 6px 0; }
+ol.hyp { list-style: none; margin: 4px 0; padding: 0; }
+ol.hyp li { margin: 0 0 10px; padding: 0 0 8px; border-bottom: 1px solid #eceff2; }
+ol.hyp .hq { display: block; font-size: 14px; line-height: 1.45; }
+ol.hyp .hr { display: block; font-size: 13px; line-height: 1.45; color: #1F6F5C; margin-top: 3px; }
+.statecard h4 { margin: 2px 0 6px; font-size: 16px; }
+.statecard dl { display: grid; grid-template-columns: 210px 1fr; gap: 4px 12px; font-size: 13.5px; margin: 0; }
+.statecard dt { color: #555; }
+.statecard dd { margin: 0; }
+@media (max-width: 700px) { .statecard dl { grid-template-columns: 1fr; } .statecard dt { margin-top: 6px; } }
+.tool { display: grid; grid-template-columns: 3fr 2fr; gap: 18px; align-items: start; }
+@media (max-width: 900px) { .tool { grid-template-columns: 1fr; } }
+.tool .tree-in { grid-template-columns: 1fr; }
+.gcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-top: 10px; }
+.gcard { border: 1px solid #d9dee3; border-radius: 6px; padding: 7px 9px; background: #fff; }
+.gcard.all { background: #EAF4EF; border-color: #9cc9b5; }
+.gcard.none { background: #FBEDEF; border-color: #e3b3bb; }
+.gcard .gk { font-size: 12px; color: #555; }
+.gcard .gv { font-family: var(--serif); font-size: 20px; margin: 2px 0; }
+/* dense charts keep a readable width on phones and scroll sideways inside their panel */
+.scrollx { overflow-x: auto; overflow-y: hidden; }
+#cover-chart { min-width: 900px; }
+@media (max-width: 760px) { .scrollx > .chart { min-width: 640px; } .scrollx > #cover-chart { min-width: 900px; } }
