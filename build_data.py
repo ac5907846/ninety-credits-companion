@@ -223,6 +223,7 @@ def main():
     paper(refs)
     balance()
     model()
+    paths()
     world()
 
 
@@ -328,6 +329,10 @@ def paper(refs):
         t["title"] = re.sub(r"^Table \d+\.", f"Table {i}.", t["title"])
         t["number"] = i
         tables[name] = t
+    if "ai_table" not in tables:  # no longer an article table (decision 34): shown unnumbered
+        t = rows_of(T.TABLES["ai_table"](vals))
+        t["title"] = re.sub(r"^Table \d+\.\s*", "", t["title"])
+        tables["ai_table"] = t
     tables["actions"] = rows_of(T.TABLES["actions"](vals))
     dump("paper.json", {"study": study_text(B, vals), "tables": tables, "ai_evidence": ai_ev, "people": people})
 
@@ -404,6 +409,95 @@ def model():
                         "hours": {k: {"median": q(v, .5), "p25": q(v, .25), "p75": q(v, .75), "programs": len(v)} for k, v in hours.items()},
                         "pairs": rcsv(A / "09_pathways/results/merge_pairs.csv"),
                         "pairs_programs": rjson(A / "09_pathways/results/summary.json").get("accredited_programs_coded")})
+
+
+# ---------------------------------------------------------------- Module 15: course groups, merges, pathways (decision 34)
+GEN_AREAS = {"communication", "mathematics", "natural science", "humanities and social science", "social science"}  # as plot_groups.py
+PRACTICE_MIN = 5  # a merge fewer programs practice is a proposal (as plot_groups.py and Module 9)
+
+
+def paths():
+    M15 = A / "15_course_groups" / "results"
+    S15 = rjson(M15 / "summary.json")
+    S14 = rjson(M14 / "summary.json")
+    sys.path.insert(0, str(A / "14_state_groups"))
+    import outcome_rules as R  # noqa: E402
+
+    cnt = lambda v: int(float(v)) if v not in ("", None) else None  # noqa: E731
+    links = []
+    for lk in rcsv(M15 / "merge_links.csv"):
+        n1, nsep = cnt(lk["programs_one_course"]), cnt(lk["programs_separate"])
+        if lk["kind"].startswith("blocked"):
+            style = "blocked"
+        elif lk["kind"] == "general education into construction":
+            style = "gen" if (n1 or 0) >= PRACTICE_MIN else "proposal"
+        else:
+            style = "loop" if lk["group_a"] == lk["group_b"] else "con"
+        links.append({"merge": lk["merge"], "kind": lk["kind"], "style": style, "a": lk["group_a"], "b": lk["group_b"], "one_course": n1, "separate": nsep,
+                      "credits_saved": num(lk["credits_saved"]), "rule": lk["rule"], "ai_role": curly(lk["ai_role"])})
+    ring = {lk["b"] for lk in links if lk["style"] == "gen"}
+    groups = []
+    for g in rcsv(M15 / "group_summary.csv"):
+        parts = {p.strip() for p in g["serves"].split(";")}
+        groups.append({"group": g["course_group"], "part": g["part"], "serves": g["serves"], "content_type": g["content_type"],
+                       "gen": bool(parts & GEN_AREAS), "gen_overlap": g["course_group"] in ring, "bus": "ACCE business" in parts, "con": "ACCE construction" in parts,
+                       "programs_with": num(g["programs_with"]), "share_programs": num(g["share_programs"]), "median_where_present": num(g["median_hours_where_present"]),
+                       "mean_today": num(g["mean_hours_all"]), "mean_floor": num(g["mean_kept_acce_floor"]), "mean_merged_overlap": num(g["mean_kept_every_topic_merged_overlap"]),
+                       "ai_exposure": num(g["ai_exposure"]), "slos": [int(x) for x in g["slos_named"].split("; ") if x.strip()],
+                       "loops": [{"merge": lk["merge"], "one_course": lk["one_course"], "separate": lk["separate"]} for lk in links if lk["style"] == "loop" and lk["a"] == g["course_group"]]})
+    # each modeled program’s fit along the pathways, without its id (sorted by state group, then by its total at ACCE’s floors)
+    scen = defaultdict(dict)
+    for s in rcsv(M14 / "scenarios.csv"):
+        if s["count"] == "binding":
+            scen[s["program_id"]][f"{s['accreditor']}|{s['choice']}|{s['overlap']}"] = (s["fits_90"] == "True", float(s["total"]))
+    ao = defaultdict(dict)
+    for r in rcsv(M14 / "acce_outcomes_only.csv"):
+        ao[r["program_id"]][r["overlap"]] = r["fits_90"] == "True"
+    prog = []
+    for p in rcsv(M15 / "pathways.csv"):
+        sc, pid = scen[p["program_id"]], p["program_id"]
+        prog.append({"group": p["group"], "floor_total": sc["ACCE|floor|0"][1],
+                     "fits": {"keep_0": float(p["keep_0"]) <= 90, "keep_12": float(p["keep_12"]) <= 90,
+                              "merge_0": p["keep_merge_0_fits"] == "True", "merge_12": p["keep_merge_12_fits"] == "True",
+                              "floor_0": sc["ACCE|floor|0"][0], "floor_12": sc["ACCE|floor|12"][0], "ansac_0": sc["ANSAC|floor|0"][0],
+                              "outcomes_0": ao[pid]["0"], "outcomes_12": ao[pid]["12"]}})
+    prog.sort(key=lambda x: (GROUP_ORDER.index(x["group"]), x["floor_total"]))
+    keys = ["keep_0", "keep_12", "merge_0", "merge_12", "floor_0", "floor_12", "ansac_0", "outcomes_0", "outcomes_12"]
+    programs = {"keys": keys, "rows": [[GROUP_ORDER.index(x["group"])] + [int(x["fits"][k]) for k in keys] for x in prog]}
+    # the typical program, course group by course group (no program id, no course codes)
+    tp = rcsv(M15 / "typical_pathway.csv")
+    d0 = {r["course_group"]: r for r in tp if r["design"].endswith("overlap 0")}
+    d12 = {r["course_group"]: r for r in tp if r["design"].endswith("overlap 12")}
+    tc = rcsv(M15 / "typical_courses.csv")
+    floor_kept, merged_in = defaultdict(float), defaultdict(set)
+    for c in tc:
+        if c["acce_floor_overlap"] == "kept":
+            floor_kept[c["course_group"]] += float(c["hours"])
+        if c["every_topic_merged_overlap"].startswith("merged: "):
+            merged_in[c["course_group"]].add(c["every_topic_merged_overlap"][8:])
+    part = {g["group"]: g["part"] for g in groups}
+    ts = S15["typical_steps"]
+    added = "General education added to reach the count"
+    typical = []
+    for name, r in d0.items():
+        fl = ts["acce_floor_12_gen_ed_added"] if name == added else floor_kept.get(name, 0.0)
+        typical.append({"group": name, "part": part.get(name, "general education"), "today": num(r["hours_today"]), "merged_0": num(r["hours_design"]),
+                        "merged_12": num(d12[name]["hours_design"]), "floor_12": num(fl), "merges": sorted(merged_in.get(name, []))})
+    # where AI touches the construction groups and ACCE’s outcomes
+    con = sorted([g for g in groups if g["part"] == "construction" and g["ai_exposure"] is not None], key=lambda g: -g["ai_exposure"])
+    gs = defaultdict(dict)
+    for r in rcsv(M15 / "group_slo.csv"):
+        gs[r["course_group"]][int(r["slo"])] = num(r["share_programs"])
+    ai = {"groups": [{"group": g["group"], "ai_exposure": g["ai_exposure"], "mean_today": g["mean_today"], "shares": [gs[g["group"]].get(k, 0) for k in range(1, 18)]} for g in con],
+          "slo_names": [s[1] for s in R.ACCE_SLO], "slo_named_share": [S14["slo_named_share"][str(k)] for k in range(1, 18)]}
+    geo = [{"group": r["group"], "states": r["states"].split("; "), "programs": num(r["programs_accredited_or_applicant"]), "share_graduates": num(r["share_graduates_2024"]),
+            "share_jobs": num(r["share_construction_manager_jobs_2025"]), "modeled": num(r["modeled"]), "fit_floor": num(r["fit_acce_floor"]),
+            "fit_floor_overlap": num(r["fit_acce_floor_overlap"])} for r in rcsv(M15 / "geography.csv")]
+    keep = ("programs", "groups", "merge_pairs_evidence", "programs_with_a_merge", "merge_pairs_per_program_median", "merge_saving_median_where_any",
+            "merge_saving_max", "keep", "keep_merge", "general_education_added_mean", "geography", "state_line_effect", "typical_steps", "blocked_programs",
+            "into_construction_programs", "typical")
+    dump("paths.json", {"summary": {k: S15[k] for k in keep if k in S15}, "groups": groups, "links": links, "evidence": rcsv(M15 / "merge_evidence.csv"),
+                        "programs": programs, "typical": typical, "ai": ai, "geography": geo, "group_order": GROUP_ORDER, "practice_min": PRACTICE_MIN})
 
 
 # ---------------------------------------------------------------- 6 November 2026: UK and Hong Kong atlases (directories)

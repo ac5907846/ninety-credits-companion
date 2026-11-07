@@ -2,7 +2,7 @@
    education count a reduced-credit degree must carry, and the integer program of Module 14. Every number is read from
    data/model.json, data/states.json and data/paper.json; none is typed here. No program is named. */
 window.Model = (function () {
-  const { load, $, esc, n, share, plot } = window.U;
+  const { load, $, esc, n, share, dec, plot } = window.U;
   const GFILL = { "30 or fewer": "#F7E4ED", "31 to 36": "#E9BCD2", "37 to 40": "#D58FB2", "41 to 43": "#A64D79", "No state or accreditor count": "#FFFFFF" };
   const GSHORT = { "30 or fewer": "30 or fewer", "31 to 36": "31 to 36", "37 to 40": "37 to 40", "41 to 43": "41 to 43", "No state or accreditor count": "no count" };
   const GTEXT = { "41 to 43": "white" };
@@ -26,7 +26,7 @@ window.Model = (function () {
 
   /* ---------------------------------------------------------------- Who holds 120 */
   async function holders() {
-    const [M, ST, PA, R] = await Promise.all([load("model"), load("states"), load("paper"), load("rules")]);
+    const [M, ST, PA, R, P] = await Promise.all([load("model"), load("states"), load("paper"), load("rules"), load("paths")]);
     const S = M.summary, al = S.all, ra = S.rule_arithmetic, N = S.programs_modeled, H = M.hours, st = PA.study;
     $("holders-lede").innerHTML = esc(st.abstract);
     $("study-rqs").innerHTML = st.rqs.map((q) => `<li>${esc(q)}</li>`).join("");
@@ -34,12 +34,14 @@ window.Model = (function () {
     const fg = (g, a, c, o) => S.fit_by_group[`${g}|${a}|${c}|${o}`];
     const OV = ra.overlap;
     const byGroup = M.group_order.map((g) => { const f = fg(g, "ACCE", "floor", 0); return `${of(f.fit, f.programs)} ${g === "No state or accreditor count" ? "where the institution’s core decides" : `at ${g}`}`; }).join(", ");
+    const P15 = P.summary, sl = P15.state_line_effect;
+    const conHours = P.groups.filter((g) => g.part === "construction").reduce((a, g) => a + g.mean_today, 0);
+    const top = P.ai.groups.slice(0, 3);
     const result = [
-      `ACCE’s floors claim ${ra.acce_professional} hours; the courses that name ABET ANSAC’s topics and outcomes, a median ${n(H.ANSAC.median)}; the highest count a state asks, ${n(S.count_range_states[1])}; today’s construction and business courses, a median ${n(S.keep_professional_median)}.`,
-      `Cut to ACCE’s floors, ${of(al["ACCE|floor|0|binding"].fit, N)} programs fit 90: ${byGroup}. The median count a design at the floors can carry is ${n(S.carry_median["ACCE|floor|0"])}, against the ${ra.acce_threshold_count} the rules predict.`,
-      `With ${OV} major hours counted as general education, ${of(al[`ACCE|floor|${OV}|binding`].fit, N)} fit; the overlap brings in ${S.h3.brought_in_by_overlap} of the ${S.h3.outside_at_floor} programs that a cut to the floors leaves outside.`,
-      `The construction courses that name ACCE’s outcomes take a median ${n(H.ACCE.median)} hours against the floor of ${R.acce.construction_min}; held to the outcomes without the floors, ${of(S.acce_outcomes_only["0"].fit, N)} fit; at ABET ANSAC’s text, ${of(al["ANSAC|floor|0|binding"].fit, N)}.`,
-      `Keeping today’s courses, ${of(al["ACCE|keep|0|binding"].fit, N)} fit, ${al[`ACCE|keep|${OV}|binding`].fit} with the overlap; the same under either accreditor.`];
+      `The construction courses that name ACCE’s outcomes take a median ${n(H.ACCE.median)} hours (${n(S.outcome_floor.ACCE.courses_median)} courses) against its floor of ${R.acce.construction_min}; held to its outcomes without the hour floors, ${of(S.acce_outcomes_only["0"].fit, N)} programs fit 90, and at ABET ANSAC’s text, which counts no hours, ${of(al["ANSAC|floor|0|binding"].fit, N)}.`,
+      `Cut to ACCE’s floors, ${of(al["ACCE|floor|0|binding"].fit, N)} programs fit 90: ${byGroup}. The median count a design at the floors can carry is ${n(S.carry_median["ACCE|floor|0"])}, the threshold the rules predict; at the floors the typical program comes to ${sl.typical_floor} credits at a count of ${sl.typical_count} and ${sl.typical_floor_at_highest} at ${sl.highest_count}, so the state line adds ${sl.credits_added_by_the_state_line} credits, against the ${sl.credits_saved_by_merging} its merges save.`,
+      `${P15.programs_with_a_merge} of ${N} programs teach apart at least one pair the field teaches as one course, a median ${P15.merge_saving_median_where_any} credits where any. Keeping every topic, ${of(P15.keep["0"].fit, N)} fit as today and ${P15.keep_merge["0"].fit} with merges; with ${OV} major hours counted as general education, ${P15.keep["12"].fit} as today and ${P15.keep_merge["12"].fit} with merges, at a median of ${n(P15.keep_merge["12"].median)} credits.`,
+      `The three construction groups most exposed to AI, ${top.map((g) => `${g.group.toLowerCase()} (${dec(g.ai_exposure)})`).join(", ")}, carry a mean ${top.map((g) => n(g.mean_today, 1)).join(", ")} hours, ${n(top.reduce((a, g) => a + g.mean_today, 0), 1)} of the ${n(conHours, 1)} hours of construction courses.`];
     $("study-hyp").innerHTML = st.hypotheses.map((h, i) => `<li><span class="hq">${esc(h)}</span><span class="hr">Test: ${esc(result[i] || "")}</span></li>`).join("");
     tileMap(ST);
     claims(M);
@@ -112,19 +114,13 @@ window.Model = (function () {
 
   /* ---------------------------------------------------------------- Routes to 90: the integer program as a tool */
   async function routes() {
-    const [M, ST, R] = await Promise.all([load("model"), load("states"), load("rules")]);
-    const S = M.summary, al = S.all, N = S.programs_modeled, OV = S.rule_arithmetic.overlap;
-    $("routes-lede").innerHTML = `For each of the ${N} accredited or applicant programs with a usable course list, an integer program finds the smallest degree that satisfies every holder at once. Cut to ACCE’s floors, <b>${al["ACCE|floor|0|binding"].fit} of ${N}</b> fit 90; with up to ${OV} major hours counted as general education, <b>${al[`ACCE|floor|${OV}|binding`].fit}</b>; held to ACCE’s outcomes without its hour floors, <b>${S.acce_outcomes_only["0"].fit}</b>; keeping today’s courses, <b>${al["ACCE|keep|0|binding"].fit}</b>, and ${al[`ACCE|keep|${OV}|binding`].fit} with the overlap. The minimum is a lower bound, so the number that fits is an upper bound on the programs that could reach 90.`;
+    const [M, ST, R, P] = await Promise.all([load("model"), load("states"), load("rules"), load("paths")]);
+    const S = M.summary, al = S.all, N = S.programs_modeled, OV = S.rule_arithmetic.overlap, K = P.summary.keep, KM = P.summary.keep_merge;
+    $("routes-lede").innerHTML = `Two families of pathways lead to a 90-credit degree. A program can keep every topic it teaches, as it is or merged with the course it is often taught with: ${of(K["0"].fit, N)} programs fit 90 as today and <b>${KM["0"].fit}</b> with merges; with up to ${OV} major hours counted as general education, ${K["12"].fit} as today and <b>${KM["12"].fit}</b> with merges. Or it can cut to ACCE’s floors: <b>${al["ACCE|floor|0|binding"].fit} of ${N}</b> fit, <b>${al[`ACCE|floor|${OV}|binding`].fit}</b> with the overlap, and all ${S.acce_outcomes_only["0"].fit} if ACCE counted its outcomes rather than its hours. Each design is the smallest degree an integer program finds; the minimum is a lower bound, so the number that fits is an upper bound on the programs that could reach 90.`;
     tool(M, R);
     carry(M, ST);
     cover(M);
     hours(M, R);
-    window.U.table("pairs-table", [{ key: "topic_a", label: "Topic", tip: "A construction topic coded from course titles by written rules." },
-      { key: "topic_b", label: "Paired topic", tip: "The topic taught with it." },
-      { key: "programs_one_course", label: "Programs teaching both in one course", num: true, tip: "Accredited programs whose course list carries both topics in a single course." },
-      { key: "programs_separate", label: "Programs teaching them in two courses", num: true, tip: "Accredited programs that teach the two topics in separate courses." },
-      { key: "credits_saved", label: "Hours saved by merging", num: true, fmt: (v) => n(v, 1), tip: "Median credits of the two separate courses less the median credits of the single course." }], M.pairs);
-    $("pairs-note").textContent = `Pairs that at least five of the ${M.pairs_programs} accredited programs with course lists teach as one course (Online Resource 11). The integer program keeps courses whole, so it does not credit a merge.`;
   }
 
   function tool(M, R) {

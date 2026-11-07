@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Ninety credits in the age of AI: who holds American construction degrees at 120, what a cut would give and take, and how a program could reach 90</title>
-<meta name="description" content="Atlas of every U.S. construction bachelor’s program with its credits, courses, costs and state rules, linked to the source pages; who holds the 120 credits, state by state; an integer program that tests whether a 90-credit degree can satisfy every holder; who gains and who loses; what AI changes; what comes before and after the degree in England, Europe and Hong Kong; and what to do, in what order.">
+<title>Reimagining Construction Management Education in the Age of AI: Pathways to a 90-Credit Degree</title>
+<meta name="description" content="Atlas of every U.S. construction bachelor’s program with its credits, courses, costs and state rules, linked to the source pages; what a 90-credit degree must satisfy, state by state and course group by course group; pathways to 90 credits, from merging course pairs to counting major courses as general education; what AI changes by course group and learning outcome; who gains and who loses; and what to do first.">
 <link rel="icon" href="data:,">
-<link rel="preload" href="data/atlas.json?v=13" as="fetch" crossorigin>
-<link rel="preload" href="data/states.json?v=13" as="fetch" crossorigin>
-<link rel="stylesheet" href="css/app.css?v=13">
+<link rel="preload" href="data/atlas.json?v=14" as="fetch" crossorigin>
+<link rel="preload" href="data/states.json?v=14" as="fetch" crossorigin>
+<link rel="stylesheet" href="css/app.css?v=14">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 </head>
 <body>
@@ -20,9 +20,9 @@
       <a href="#atlas" data-view="atlas">US Atlas</a>
       <a href="#uk" data-view="uk">UK Atlas</a>
       <a href="#hk" data-view="hk">Hong Kong Atlas</a>
-      <a href="#holders" data-view="holders">Who holds 120</a>
+      <a href="#satisfy" data-view="satisfy">What 90 must satisfy</a>
       <a href="#ledger" data-view="ledger">Gains and losses</a>
-      <a href="#routes" data-view="routes">Routes to 90</a>
+      <a href="#routes" data-view="routes">Pathways to 90</a>
       <a href="#ai" data-view="ai">AI</a>
       <a href="#abroad" data-view="abroad">Compare</a>
       <a href="#strategies" data-view="strategies">What to do</a>
@@ -106,20 +106,23 @@
 </section>
 
 <!-- ============================================================ who holds 120 -->
-<section class="view" id="v-holders" hidden>
+<section class="view" id="v-satisfy" hidden>
   <div class="wrap">
-    <h1 class="title">Who holds a construction degree at 120</h1>
+    <h1 class="title">What a 90-credit construction degree must satisfy</h1>
     <p class="lede" id="holders-lede"></p>
     <div class="grid2 wide">
       <div class="panel"><h3>The questions</h3><ol class="plain" id="study-rqs"></ol><h3>The theory</h3><div class="prose" id="study-theory"></div></div>
-      <div class="panel"><h3>Five hypotheses, and what the integer program found</h3><ol class="hyp" id="study-hyp"></ol></div>
+      <div class="panel"><h3>Four hypotheses, and what the analysis found</h3><ol class="hyp" id="study-hyp"></ol></div>
     </div>
     <div class="grid2 wide">
       <div class="panel"><h3>The count a public reduced-credit degree must carry, and each state’s verified action</h3><div id="tile-map" class="chart tall"></div><div class="maplegend" id="tile-legend"></div></div>
       <div class="panel"><h3>The state</h3><div class="statecard" id="tile-card"></div></div>
     </div>
-    <div class="panel"><h3>The credits each holder claims of a 90-credit degree, by group of states</h3><div class="ctrl" id="claims-ctrl"></div><div class="scrollx"><div id="claims-chart" class="chart"></div></div><div class="maplegend" id="claims-legend"></div><p class="note" id="claims-note"></p></div>
+    <div class="panel"><h3>The credits each requirement claims of a 90-credit degree, by group of states</h3><div class="ctrl" id="claims-ctrl"></div><div class="scrollx"><div id="claims-chart" class="chart"></div></div><div class="maplegend" id="claims-legend"></div><p class="note" id="claims-note"></p></div>
+    <div class="panel"><h3>Where a 90-credit degree would matter most: construction degrees and construction manager jobs by group of states</h3><div class="scrollx"><div id="geo-chart" class="chart"></div></div><div class="tablewrap"><table class="data" id="geo-table"></table></div><p class="note" id="geo-note"></p></div>
     <div class="panel"><h3 id="holds-title"></h3><div class="tablewrap"><table class="data paper" id="holds-table"></table></div><p class="note" id="holds-note"></p></div>
+    <div class="panel"><h3>The course groups of a construction degree, the requirements each serves, and how they merge</h3><div class="scrollx"><div class="cg-wrap" id="cg-wrap"><svg class="cg-svg" id="cg-svg"></svg><table class="cg-table" id="cg-table"></table></div></div><div class="maplegend" id="cg-legend"></div></div>
+    <div class="panel"><h3 id="groups-title"></h3><div class="tablewrap"><table class="data paper" id="groups-table"></table></div><p class="note" id="groups-note"></p></div>
     <div class="grid2 wide">
       <div class="panel"><h3>What each programmatic accreditor’s text requires</h3><div class="tablewrap"><table class="data" id="criteria-table"></table></div></div>
       <div class="panel"><h3>What their accredited programs carry</h3><div class="tablewrap"><table class="data" id="practice-table"></table></div><div id="practice-chart" class="chart short"></div></div>
@@ -161,8 +164,11 @@
 <!-- ============================================================ routes to 90 -->
 <section class="view" id="v-routes" hidden>
   <div class="wrap">
-    <h1 class="title">Routes to 90: can a 90-credit degree satisfy every holder?</h1>
+    <h1 class="title">Pathways to a 90-credit degree</h1>
     <p class="lede" id="routes-lede"></p>
+    <div class="panel"><h3>The pathways, and the programs that fit 90 on each</h3><div class="scrollx"><div class="pt-tree" id="pt-tree"></div></div><p class="pt-msg" id="pt-msg"></p><div class="pt-waffle" id="pt-waffle"></div><p class="note">Each square is one of the modeled programs, grouped by the count its state asks; filled where the program fits 90 on the chosen pathway, faded where the pathway does not apply. Tags name who decides each step.</p></div>
+    <div class="panel"><h3>How the typical program reaches 90, course group by course group</h3><div class="tp-steps" id="tp-steps"></div><div class="scrollx"><div id="tp-chart" class="chart"></div></div><p class="note" id="tp-note"></p></div>
+    <div class="panel"><h3 id="merges-title"></h3><div class="tablewrap"><table class="data paper" id="merges-table"></table></div><p class="note" id="merges-note"></p></div>
     <div class="panel">
       <h3>The integer program, for every setting</h3>
       <div class="tool">
@@ -176,7 +182,7 @@
     <div class="panel"><h3>Programs that fit 90, by the count a state or accreditor asks</h3><div class="scrollx"><div id="carry-chart" class="chart"></div></div><p class="note">For each design, the share of the modeled programs whose largest count that still fits 90 is at least the count on the axis; shaded, the counts the four groups of states ask.</p></div>
     <div class="panel"><h3>How a 90-credit design meets the programmatic accreditors’ outcomes</h3><div class="scrollx"><div id="cover-chart" class="chart"></div></div><p class="note">Share of the modeled programs whose design (ACCE floors or ABET ANSAC text, binding count, with the overlap) keeps a course of each family whose title names the outcome; at right, the share whose course titles name it at all. An outcome no title names is taken as taught inside other courses and constrains nothing, so a review would ask more of a design than the model does (Online Resource 6 of the article).</p></div>
     <div class="panel"><h3>Hours of the courses that name the outcomes, against ACCE’s floor and today’s hours</h3><div class="scrollx"><div id="hours-chart" class="chart short"></div></div></div>
-    <div class="panel"><h3>Course pairs accredited programs already teach as one course</h3><div class="tablewrap"><table class="data" id="pairs-table"></table></div><p class="note" id="pairs-note"></p></div>
+
   </div>
 </section>
 
@@ -185,6 +191,7 @@
   <div class="wrap">
     <h1 class="title">What AI changes, and what it does not pay for</h1>
     <p class="lede" id="ai-lede"></p>
+    <div class="panel"><h3>Where AI touches the construction course groups and ACCE’s 17 learning outcomes</h3><div class="scrollx"><div id="ai-named" class="chart"></div><div id="ai-matrix" class="chart"></div></div><p class="note">Top: the share of programs whose course titles name each outcome at all. Below: each bubble is the share of programs with a course in the group whose title names the outcome; rows run from the group whose work is most exposed to AI (human-rated exposure in parentheses) to the least.</p></div>
     <div class="grid2 wide">
       <div class="panel"><h3>What each 90-credit design keeps, by content type</h3><div class="scrollx"><div id="ct-chart" class="chart"></div></div></div>
       <div class="panel"><h3>Where accredited programs spend their hours</h3><div id="ai-chart" class="chart"></div></div>
@@ -234,13 +241,14 @@
 </div>
 
 <footer class="foot"><div class="wrap">Companion to a study of reduced-credit construction bachelor’s degrees in the United States. Data read 29 October to 6 November 2026; every figure links to its source. No program is named outside the atlases.</div></footer>
-<script src="js/util.js?v=13"></script>
-<script src="js/atlas.js?v=13"></script>
-<script src="js/views.js?v=13"></script>
-<script src="js/deep.js?v=13"></script>
-<script src="js/world.js?v=13"></script>
-<script src="js/paper.js?v=13"></script>
-<script src="js/model.js?v=13"></script>
-<script src="js/app.js?v=13"></script>
+<script src="js/util.js?v=14"></script>
+<script src="js/atlas.js?v=14"></script>
+<script src="js/views.js?v=14"></script>
+<script src="js/deep.js?v=14"></script>
+<script src="js/world.js?v=14"></script>
+<script src="js/paper.js?v=14"></script>
+<script src="js/model.js?v=14"></script>
+<script src="js/paths.js?v=14"></script>
+<script src="js/app.js?v=14"></script>
 </body>
 </html>
