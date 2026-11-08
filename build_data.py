@@ -88,9 +88,10 @@ def dec(v, nd):
 
 
 def pct_hu(s, places=0):
-    """a share as a percent, rounded half up from its stored decimal value (Figure S1)"""
+    """a share as a percent, rounded half up from its stored decimal value, no leading zero below 1 (Figure S1: .4%)"""
     q = Decimal(1).scaleb(-places) if places else Decimal(1)
-    return f"{(Decimal(str(s)) * 100).quantize(q, rounding=ROUND_HALF_UP)}%"
+    t = f"{(Decimal(str(s)) * 100).quantize(q, rounding=ROUND_HALF_UP)}%"
+    return t[1:] if t.startswith("0.") else t
 
 
 def close(a, b):

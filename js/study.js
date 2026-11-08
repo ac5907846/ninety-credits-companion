@@ -5,7 +5,7 @@ window.Study = (function () {
   const { load, $, esc, md, n, plot, paperTable, CLASS_FILL } = window.U;
   const tile = ([v, k]) => `<div class="tile"><div class="v">${v}</div><div class="k">${k}</div></div>`;
   const rqText = (S, id) => { const r = S.rqs.find((x) => x.id === id); return r ? `${esc(r.id)}. ${esc(r.text)}` : ""; };
-  const figTitle = (S, stem) => { const f = S.figures[stem]; return f ? `<b>Fig. ${f.number}.</b> ${md(f.caption.split(":")[0])}` : ""; };
+  const figTitle = (S, stem) => { const f = S.figures[stem]; return f ? `<b>Fig. ${f.number}.</b> ${md(f.caption.split(/:|\. /)[0])}` : ""; };
 
   /* ---------------------------------------------------------------- RQ1: requirements */
   async function requirements() {
