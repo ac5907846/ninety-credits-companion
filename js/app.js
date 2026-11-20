@@ -4,7 +4,7 @@ window.App = { australia: false };
 (function () {
   const VIEWS = { atlas: () => window.Atlas.init(), uk: window.World.uk, hk: window.World.hk, au: window.World.au,
     requirements: window.Study.requirements, integration: window.Study.integration, content: window.Study.content,
-    beyond: window.Study.beyond, sources: window.Study.sources };
+    beyond: window.Study.beyond, jobs: window.Jobs.init, sources: window.Study.sources };
   const ALIAS = { satisfy: "requirements", holders: "requirements", rules: "requirements", strategies: "requirements",
     routes: "integration", removes: "integration", ledger: "beyond", ai: "beyond", abroad: "beyond" };
   const ATLASES = new Set(["atlas", "uk", "hk", "au"]);

@@ -230,7 +230,7 @@ window.Study = (function () {
     $("refs-list").innerHTML = D.references.map((r) => `<li>${md(r.apa).replace(/(https?:\/\/[^\s<]+)/g, (u) => `<a href="${u.replace(/\.$/, "")}" target="_blank" rel="noopener">${u}</a>`)}</li>`).join("");
     window.U.table("sources-table", [{ key: "what", label: "Source" }, { key: "date", label: "Read or released" },
       { key: "url", label: "Link", fmt: (v) => (v ? `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(v.replace(/^https?:\/\//, "").slice(0, 60))}</a>` : "linked per item") }], D.data);
-    const files = ["study", "atlas", "courses", "states", "rq1", "rq2", "rq3", "beyond", "uk", "hk"].concat(window.App && window.App.australia ? ["au"] : []).concat(["sources"]);
+    const files = ["study", "atlas", "courses", "states", "rq1", "rq2", "rq3", "beyond", "uk", "hk"].concat(window.App && window.App.australia ? ["au"] : []).concat(["jobs", "jobs_fingerprints", "sources"]);
     $("files-list").innerHTML = files.map((f) => `<li><a href="data/${f}.json" target="_blank">data/${f}.json</a></li>`).join("");
   }
 
