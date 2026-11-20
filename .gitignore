@@ -1,3 +1,4 @@
 __pycache__/
 *.pyc
 _archive/
+make_paper_site.py
