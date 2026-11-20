@@ -1,6 +1,6 @@
 /* Shared helpers: data loading, formatting, sortable tables, the article's tables, Plotly defaults. */
 window.U = (function () {
-  const V = 20;
+  const V = 21;
   const cache = {};
   function load(name) {
     if (!cache[name]) cache[name] = fetch(`data/${name}.json?v=${V}`).then((r) => { if (!r.ok) throw new Error(name); return r.json(); });
@@ -74,7 +74,35 @@ window.U = (function () {
   function plot(id, traces, layout = {}) {
     if (layout.height) { const el = document.getElementById(id); if (el) el.style.height = layout.height + "px"; }  // a computed height must size the box too
     const L = Object.assign({ font: FONT, paper_bgcolor: "white", plot_bgcolor: "white", margin: { l: 50, r: 14, t: 10, b: 40 }, showlegend: false, hoverlabel: { align: "left", font: { size: 12 }, namelength: -1 } }, layout);
-    return Plotly.react(id, traces, L, { responsive: true, displaylogo: false, displayModeBar: false });
+    const done = Plotly.react(id, traces, L, { responsive: true, displaylogo: false, displayModeBar: false, scrollZoom: false });
+    if (L.geo || L.map) done.then((el) => mapControls(el, L));
+    return done;
+  }
+  /* A map does not zoom on the mouse wheel, so the page scrolls past it. Three small buttons on the map zoom in, zoom
+     out and put the map back as it was drawn; dragging still moves it. */
+  const HOME = new WeakMap();
+  function mapControls(el, L) {
+    const kind = L.map ? "map" : "geo";
+    HOME.set(el, { kind, view: JSON.parse(JSON.stringify(L[kind])) });
+    if (el.querySelector(":scope > .mapctl")) return;
+    const box = document.createElement("div");
+    box.className = "mapctl " + kind;
+    box.innerHTML = '<button type="button" data-z="in" aria-label="Zoom in" title="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out" title="Zoom out">-</button><button type="button" data-z="reset" class="rs" aria-label="Reset the map" title="Reset the map">Reset</button>';
+    el.appendChild(box);
+    ["click", "dblclick", "mousedown", "touchstart", "wheel"].forEach((ev) => box.addEventListener(ev, (e) => e.stopPropagation()));
+    box.addEventListener("click", (e) => {
+      const b = e.target.closest("button"), h = HOME.get(el), F = el._fullLayout;
+      if (!b || !h || !F) return;
+      if (b.dataset.z === "reset") { h.asked = null; Plotly.relayout(el, { [h.kind]: JSON.parse(JSON.stringify(h.view)) }); return; }
+      const up = b.dataset.z === "in", now = Date.now();
+      /* quick presses add up: a press within a second and a half of the last one starts from the zoom that press asked for,
+         since the map may not have reached it yet */
+      const from = (cur) => (h.asked != null && now - h.at < 1500 ? h.asked : cur);
+      if (h.kind === "map") h.asked = Math.max(0, Math.min(18, from(F.map.zoom) + (up ? 1 : -1)));
+      else h.asked = Math.max(1, Math.min(16, from(F.geo.projection.scale || 1) * (up ? 1.6 : 1 / 1.6)));
+      h.at = now;
+      Plotly.relayout(el, { [h.kind === "map" ? "map.zoom" : "geo.projection.scale"]: h.asked });
+    });
   }
   /* one tooltip for every element with data-tip: shown at once, follows the pointer, kept inside the window */
   (function tips() {
