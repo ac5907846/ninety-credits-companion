@@ -56,10 +56,23 @@ window.World = (function () {
     }
     return tr.filter((t) => t.lat.length);
   }
+  /* The regions under an atlas map (data/regions.json, built by build_regions.py from official boundary files): each
+     outline is drawn, and filled by the number of the programs shown whose campus lies in it. */
+  function withRegions(RG, F, traces) {
+    const count = RG.names.map(() => 0);
+    F.forEach((p) => { const i = RG.assign[p.id]; if (i != null) count[i]++; });
+    const one = (k) => `${k} ${k === 1 ? "program" : "programs"} shown`;
+    return [{ type: "choroplethmap", geojson: RG.geojson, locations: RG.names.map((_, i) => i), z: count, zmin: 0, zmax: Math.max(1, ...count),
+      colorscale: [[0, "#FFFFFF"], [1, "#6BAED6"]], showscale: false, showlegend: false, name: "",
+      marker: { opacity: .45, line: { color: "#4b5563", width: 1.1 } },
+      text: RG.names.map((nm, i) => `<b>${esc(nm)}</b><br>${one(count[i])}`), hovertemplate: "%{text}<extra></extra>" }].concat(traces);
+  }
+  const regionNote = (RG) => `${RG.source} Each ${RG.unit} is shaded by the number of programs shown in it.`;
   function onPick(elId, P, cardFn, headOf) {
     const el = $(elId);
     if (el.removeAllListeners) el.removeAllListeners("plotly_click");
     el.on("plotly_click", (e) => {
+      if (e.points[0].customdata == null) return;   // a region, not a program
       const ids = String(e.points[0].customdata).split("|");
       const L = ids.map((id) => P.find((x) => x.id === id)).filter(Boolean);
       if (L.length === 1) { cardFn(L[0]); return; }
@@ -80,8 +93,9 @@ window.World = (function () {
 
   /* ---------------------------------------------------------------- UK */
   async function uk() {
-    const D = await load("uk");
+    const [D, RGS] = await Promise.all([load("uk"), load("regions")]);
     const P = D.programs, S = D.summary;
+    $("uk-map-note").textContent = regionNote(RGS.uk);
     const unis = new Set(P.map((p) => p.university)).size;
     $("uk-lede").innerHTML = `${P.length} construction management honours degrees at ${unis} universities appear on the Chartered Institute of Building’s list of accredited programmes (27 March 2026). ${S.uk_three_year} take three years full time; ${S.uk_placement_available} offer a placement year in industry, which makes the degree four years for students who take it. England, Wales and Northern Ireland award 360 credits of 10 notional hours each; Scotland’s honours degrees take four years. At Brighton and Coventry two list entries now lead to one current course under a new title; both records stay, and each card says so. Every program links to its course page and, where published, its programme specification.`;
     chips("uk-country", ["England", "Scotland", "Wales", "Northern Ireland"].map((c) => [c, c]), draw);
@@ -103,10 +117,10 @@ window.World = (function () {
         [n(cr), `median UK credits for the degree: ${n(10 * cr)} notional hours, about ${n(Math.round(10 * cr / 45))} U.S. semester credits`]];
       $("uk-tiles").innerHTML = t.map(([v, kk]) => `<div class="tile"><div class="v">${v || "n/a"}</div><div class="k">${kk}</div></div>`).join("");
       const dur = (p) => (p.years ? p.years + " years full time" : "duration not stated");
-      plot("uk-map", placeTraces(F, [[3, "three years full time", "#E69F00"], [4, "four years full time", "#0072B2"], [null, "duration not stated", "#8C8C8C"]],
+      plot("uk-map", withRegions(RGS.uk, F, placeTraces(F, [[3, "three years full time", "#E69F00"], [4, "four years full time", "#0072B2"], [null, "duration not stated", "#8C8C8C"]],
         (p) => p.years || null, (p) => p.university,
         (p) => `Campus: ${esc(p.campus || "not stated")}<br>${esc(progName(p))}<br>Duration: ${p.years ? p.years + " years full time" : "not stated"}${p.placement && p.years ? `, ${p.years_with_placement || p.years + 1} with a placement year` : ""}<br>Home fee: ${gbp(p.fee_home) || "not stated"} a year${p.fee_home_year ? ` (${esc(p.fee_home_year)})` : ""}<br>Accreditation stated: ${esc(p.accreditation || "not stated")}`,
-        (p) => `${dur(p)}, home fee ${gbp(p.fee_home) || "not stated"}`, 11),
+        (p) => `${dur(p)}, home fee ${gbp(p.fee_home) || "not stated"}`, 11)),
         { map: { style: "carto-positron", center: { lat: 54.1, lon: -3.0 }, zoom: 4.6 }, margin: { l: 0, r: 0, t: 0, b: 0 }, showlegend: true, legend: { orientation: "h", x: 0, y: 1, bgcolor: "rgba(255,255,255,.85)" } });
       onPick("uk-map", P, card, (p) => p.university);
       const base = (p) => `${p.university.replace(/ \(.*\)/, "")}${P.filter((x) => x.university === p.university).length > 1 ? ", " + campusShort(p) : ""}`;
@@ -158,8 +172,9 @@ window.World = (function () {
 
   /* ---------------------------------------------------------------- Hong Kong */
   async function hk() {
-    const D = await load("hk");
+    const [D, RGS] = await Promise.all([load("hk"), load("regions")]);
     const P = D.programs, R = D.reform;
+    $("hk-map-note").textContent = regionNote(RGS.hk);
     $("hk-lede").innerHTML = `${P.length} construction, surveying and building engineering bachelor’s degrees at ${new Set(P.map((p) => p.institution)).size} institutions. All take four years, since the 2012 reform replaced the three-year degree after seven years of secondary school with a four-year degree after six. General education is counted by each institution’s own definition (common core, university requirements, language), so the table gives each count as stated. Every program links to its programme page and, where published, its curriculum document.`;
     const fundGroup = (p) => (/^UGC/.test(p.funding) ? "government-funded (UGC)" : "self-financing");
     const tl = P.map((p) => p.fee_local).filter((v) => v != null);
@@ -173,10 +188,10 @@ window.World = (function () {
       [`${hkd(Math.min(...sf))} to ${hkd(Math.max(...sf))}`, "local fee a year, self-financing programs"],
       [n(P.filter((p) => (p.courses || []).length).length), "publish a course list"]];
     $("hk-tiles").innerHTML = t.map(([v, kk]) => `<div class="tile"><div class="v">${v || "n/a"}</div><div class="k">${kk}</div></div>`).join("");
-    plot("hk-map", placeTraces(P, [["government-funded (UGC)", "government-funded (UGC)", "#0072B2"], ["self-financing", "self-financing", "#E69F00"]],
+    plot("hk-map", withRegions(RGS.hk, P, placeTraces(P, [["government-funded (UGC)", "government-funded (UGC)", "#0072B2"], ["self-financing", "self-financing", "#E69F00"]],
       fundGroup, (p) => p.institution.replace(/ \(.*?\)/g, ""),
       (p) => `${esc(progName(p))}<br>Duration: ${p.years ? p.years + " years full time" : "not stated"}<br>Total credits: ${p.total_credits ?? "not stated"} (local units)<br>General education: ${p.gen_ed_credits ?? "not stated"} credits, as the institution counts it<br>Local fee: ${hkd(p.fee_local) || "not stated"} a year<br>Accreditation stated: ${esc(p.accreditation || "not stated")}`,
-      (p) => `${fundGroup(p)}, local fee ${hkd(p.fee_local) || "not stated"} a year`, 13),
+      (p) => `${fundGroup(p)}, local fee ${hkd(p.fee_local) || "not stated"} a year`, 13)),
       { map: { style: "carto-positron", center: { lat: 22.36, lon: 114.13 }, zoom: 9.7 }, margin: { l: 0, r: 0, t: 0, b: 0 }, showlegend: true, legend: { orientation: "h", x: 0, y: 1, bgcolor: "rgba(255,255,255,.85)" } });
     onPick("hk-map", P, card, (p) => p.institution.replace(/ \(.*?\)/g, ""));
     const short = (p) => `${p.institution.replace(/ \(.*?\)/g, "").replace("The ", "")}: ${p.program.replace(/Bachelor of (Science|Engineering) (\(Hons\) |\(Honours\) |with Honours )?in /, "").replace(/ \(.*\)/, "")}`;
@@ -228,8 +243,9 @@ window.World = (function () {
   const cpTxt = (p) => (p.credit_points == null ? `${NS}${p.credit_unit ? ` (${esc(p.credit_unit)})` : ""}` : `${n(p.credit_points)} ${esc(p.credit_unit)}`);
   const lenKey = (p) => (p.years == null ? "none" : p.years >= 4 ? "4" : "lt4");
   async function au() {
-    const D = await load("au");
+    const [D, RGS] = await Promise.all([load("au"), load("regions")]);
     const P = D.programs;
+    $("au-map-note").textContent = regionNote(RGS.au);
     const unis = new Set(P.map((p) => p.university)).size;
     const states = Array.from(new Set(P.map((p) => p.state).filter(Boolean))).sort();
     $("au-lede").innerHTML = `${P.length} construction management bachelor’s degrees at ${unis} universities in ${states.length} states and territories, from the Australian Institute of Building’s list of accredited courses (June 2024) and the AIQS and CIOB lists, read on their program pages and handbooks.`;
@@ -250,10 +266,10 @@ window.World = (function () {
         [n(F.filter(required).length), "require industry experience (days, hours or a placement course)"], [n(F.filter((p) => p.work === "not required").length), "state that none is required"],
         [n(F.filter((p) => p.fee_dom.amount != null).length), "state a domestic fee (2026 or 2027)"]];
       $("au-tiles").innerHTML = t.map(([v, kk]) => `<div class="tile"><div class="v">${v}</div><div class="k">${kk}</div></div>`).join("");
-      plot("au-map", placeTraces(F, [["4", "four years full time", "#0072B2"], ["lt4", "fewer than four years", "#E69F00"], ["none", "length not stated", "#8C8C8C"]],
+      plot("au-map", withRegions(RGS.au, F, placeTraces(F, [["4", "four years full time", "#0072B2"], ["lt4", "fewer than four years", "#E69F00"], ["none", "length not stated", "#8C8C8C"]],
         lenKey, (p) => p.university,
         (p) => `Campus: ${esc(p.campus || NS)}<br>${esc(progName(p))}<br>Full-time length: ${yearsTxt(p.years)}<br>Credit points: ${cpTxt(p)}<br>Industry experience: ${esc(p.work)}${p.map_note ? `<br>${esc(p.map_note)}` : ""}`,
-        (p) => `${yearsTxt(p.years)}, industry experience ${esc(p.work)}`, 11),
+        (p) => `${yearsTxt(p.years)}, industry experience ${esc(p.work)}`, 11)),
         { map: { style: "carto-positron", center: { lat: -28.5, lon: 134.5 }, zoom: 2.75 }, margin: { l: 0, r: 0, t: 0, b: 0 }, showlegend: true, legend: { orientation: "h", x: 0, y: 1, bgcolor: "rgba(255,255,255,.85)" } });
       onPick("au-map", P, card, (p) => p.university);
       const lab = (p) => `${p.university.replace(/ \(.*\)/, "")}, ${p.campus.replace(/ \(.*\)/, "").split(";")[0]}`;

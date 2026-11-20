@@ -80,7 +80,7 @@ window.Study = (function () {
     window.U.table("sources-table", [{ key: "what", label: "Source" }, { key: "date", label: "Read or released" },
       { key: "url", label: "Link", fmt: (v) => (v ? `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(v.replace(/^https?:\/\//, "").slice(0, 60))}</a>` : "linked per item") }],
       D.data.filter((d) => !/Figure S2/.test(d.what)));   // the source of a figure this site no longer shows
-    const files = ["study", "atlas", "courses", "states", "rq1", "uk", "hk"].concat(window.App && window.App.australia ? ["au"] : []).concat(["jobs", "jobs_fingerprints", "sources"]);
+    const files = ["study", "atlas", "courses", "states", "rq1", "uk", "hk"].concat(window.App && window.App.australia ? ["au"] : []).concat(["regions", "jobs", "jobs_fingerprints", "sources"]);
     $("files-list").innerHTML = files.map((f) => `<li><a href="data/${f}.json" target="_blank">data/${f}.json</a></li>`).join("");
   }
 
