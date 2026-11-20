@@ -24,7 +24,6 @@ window.App = { australia: false };
     window.App.australia = !!S.australia;
     document.querySelectorAll('[data-view="au"]').forEach((a) => { a.hidden = !S.australia; });
     document.querySelectorAll(".brand").forEach((b) => { b.textContent = S.short; });
-    document.getElementById("foot-title").textContent = S.title;
   }).catch((e) => console.error(e)).then(() => {
     window.addEventListener("hashchange", show);
     show();

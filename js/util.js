@@ -1,6 +1,6 @@
 /* Shared helpers: data loading, formatting, sortable tables, the article's tables, Plotly defaults. */
 window.U = (function () {
-  const V = 19;
+  const V = 20;
   const cache = {};
   function load(name) {
     if (!cache[name]) cache[name] = fetch(`data/${name}.json?v=${V}`).then((r) => { if (!r.ok) throw new Error(name); return r.json(); });
@@ -107,7 +107,7 @@ window.U = (function () {
     ["ACCE", "ACCE", "#0072B2", "acce"], ["ACCE and ABET", "ACCE and ABET ANSAC", "#CC79A7", "both"], ["ABET ANSAC", "ABET ANSAC", "#E69F00", "ansac"],
     ["ACCE applicant or candidate", "ACCE applicant or candidate", "#9ECAE1", "appl"], ["neither", "neither", "#BDBDBD", "none"]];
   const accTag = (g) => { const a = ACC.find((x) => x[0] === g); return a ? `<span class="tag ${a[3]}">${esc(a[1])}</span>` : esc(g); };
-  /* Fig. 1a classes: the figure's fills, the institution-defined class hatched */
-  const CLASS_FILL = ["#F4DDE9", "#E2AECA", "#CF7FA7", "#FFFFFF"];
+  /* general education classes, lowest count first: yellow, green, blue; the institution-defined class white under its hatch */
+  const CLASS_FILL = ["#FFF3B0", "#A9DDB7", "#7FB8E6", "#FFFFFF"];
   return { load, $, esc, md, n, money, share, dec, median, rows, table, paperTable, plot, ACC, accTag, isNum, CLASS_FILL };
 })();

@@ -7,10 +7,10 @@
 <title>Beyond Credit Hours: Accreditation, Curriculum Integration, and Content Preservation in Professional Degrees</title>
 <meta name="description" content="Atlases of construction bachelor’s degrees in the United States, the United Kingdom, Hong Kong and Australia, the general education and accreditation requirements that shape a 90-credit degree, and job postings read from employers’ career sites, each with its source.">
 <link rel="icon" href="data:,">
-<link rel="preload" href="data/study.json?v=19" as="fetch" crossorigin>
-<link rel="preload" href="data/atlas.json?v=19" as="fetch" crossorigin>
-<link rel="preload" href="data/states.json?v=19" as="fetch" crossorigin>
-<link rel="stylesheet" href="css/app.css?v=19">
+<link rel="preload" href="data/study.json?v=20" as="fetch" crossorigin>
+<link rel="preload" href="data/atlas.json?v=20" as="fetch" crossorigin>
+<link rel="preload" href="data/states.json?v=20" as="fetch" crossorigin>
+<link rel="stylesheet" href="css/app.css?v=20">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 </head>
 <body>
@@ -49,7 +49,7 @@
     <div class="panel">
       <h3>Programs <span class="muted" id="table-count"></span></h3>
       <div class="tablewrap"><table class="data sortable" id="atlas-table"></table></div>
-      <p class="note">Credits are semester hours as published (quarter-hour catalogs converted at two thirds). State group: the general education minimum that binds the state’s public universities (Fig. 1a). Each row opens the program’s card with its required courses, its sources and its state’s rule.</p>
+      <p class="note">Credits are semester hours as published (quarter-hour catalogs converted at two thirds). State group: the general education minimum that binds the state’s public universities. Each row opens the program’s card with its required courses, its sources and its state’s rule.</p>
     </div>
   </div>
 </section>
@@ -126,21 +126,14 @@
   </div>
 </section>
 
-<!-- ============================================================ RQ1: requirements -->
+<!-- ============================================================ requirements -->
 <section class="view" id="v-requirements" hidden>
   <div class="wrap">
-    <h1 class="title">Requirements and the 90-credit threshold</h1>
-    <p class="lede rq" id="rq1-text"></p>
-    <div class="tiles four" id="rq1-tiles"></div>
-    <div class="panel"><h3 id="fig1-title"></h3>
-      <div class="fig1"><div><h4 class="sub">a) Minimum general education credits for public universities</h4><div class="tilemap" id="fig1-map"></div></div><div><h4 class="sub">b) Degree feasibility and national shares</h4><div class="f1rows" id="fig1-rows"></div></div></div>
-      <p class="note" id="fig1-note"></p></div>
-    <div class="grid2">
-      <div class="panel"><h3>ACCE and ANSAC: credit minima against outcomes</h3><div class="tablewrap free"><table class="data" id="acc-table"></table></div><p class="note" id="acc-note"></p></div>
-      <div class="panel"><h3>Credits the requirements claim</h3><div id="floors-chart" class="chart short"></div><div class="eq" id="eq"></div></div>
+    <h1 class="title">Minimum general education credits for public universities</h1>
+    <p class="lede" id="req-lede"></p>
+    <div class="panel">
+      <div class="reqwrap"><div class="tilemap" id="req-map"></div><div class="reqkey" id="req-key"></div></div>
     </div>
-    <div class="panel"><h3 id="t1-title"></h3><div class="tablewrap free"><table class="data paper" id="t1-table"></table></div><p class="note" id="t1-note"></p></div>
-    <div class="panel"><h3 id="ts1-title"></h3><div class="tablewrap free"><table class="data paper" id="ts1-table"></table></div><p class="note" id="ts1-note"></p></div>
   </div>
 </section>
 
@@ -179,10 +172,9 @@
 <section class="view" id="v-about" hidden>
   <div class="wrap">
     <h1 class="title">About</h1>
-    <div class="panel"><p class="about">This app was developed by Dr. Long Nguyen and Dr. Andy Chau in the Stock Development Department of Construction Management at Florida Gulf Coast University.</p></div>
-    <div class="panel"><h3>References cited in the article and its supplementary material</h3><ol class="refs" id="refs-list"></ol></div>
+    <div class="panel"><p class="about">This app was developed by <a href="https://www.fgcu.edu/directory/lnguyen" target="_blank" rel="noopener">Dr. Long Nguyen</a> and <a href="https://www.fgcu.edu/directory/adchau" target="_blank" rel="noopener">Dr. Andy Chau</a> in the <a href="https://www.fgcu.edu/eng/constructionmanagement/" target="_blank" rel="noopener">Stock Development Department of Construction Management</a> at <a href="https://www.fgcu.edu/" target="_blank" rel="noopener">Florida Gulf Coast University</a>.</p></div>
     <div class="panel"><h3>Data sources</h3><div class="tablewrap free"><table class="data" id="sources-table"></table></div></div>
-    <div class="panel"><h3>Data files behind this site</h3><ul id="files-list"></ul></div>
+    <div class="panel"><h3>References</h3><ol class="refs" id="refs-list"></ol></div>
   </div>
 </section>
 </main>
@@ -191,12 +183,11 @@
   <aside class="card" id="card" role="dialog" aria-modal="true"></aside>
 </div>
 
-<footer class="foot"><div class="wrap">Companion to <i id="foot-title"></i>. Data read 29 October to 8 November 2026; each program and each job posting links to its sources. No program is named outside the atlases.</div></footer>
-<script src="js/util.js?v=19"></script>
-<script src="js/atlas.js?v=19"></script>
-<script src="js/world.js?v=19"></script>
-<script src="js/study.js?v=19"></script>
-<script src="js/jobs.js?v=19"></script>
-<script src="js/app.js?v=19"></script>
+<script src="js/util.js?v=20"></script>
+<script src="js/atlas.js?v=20"></script>
+<script src="js/world.js?v=20"></script>
+<script src="js/study.js?v=20"></script>
+<script src="js/jobs.js?v=20"></script>
+<script src="js/app.js?v=20"></script>
 </body>
 </html>

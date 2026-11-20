@@ -320,3 +320,24 @@ i.deg { background: #BFBFBF; } i.job { background: #FFFFFF; }
 .pagerin { display: inline-flex; align-items: center; gap: 12px; }
 #j-csv { margin-left: auto; }
 .about { margin: 4px 0; font-size: 15.5px; max-width: 80ch; }
+
+/* Requirements: the tile map with its counts, as the slide figure draws it; a tile opens the state's rule */
+/* the whole map fits the height of the window; type scales with the width of the map */
+.reqwrap { position: relative; max-width: min(1180px, max(320px, calc((100vh - 235px) * 1.5))); margin: 8px auto 6px; container-type: inline-size; }
+.reqwrap .tilemap { max-width: none; }
+.reqwrap .tilemap .st { flex-direction: column; line-height: 1.08; font-size: clamp(8px, 1.85cqw, 21px); cursor: pointer; border-radius: 0; color: #000; }
+.reqwrap .tilemap .st b { font-weight: 700; }
+.reqwrap .tilemap .st span { font-weight: 400; }
+.reqwrap .tilemap .st.hi { border: 2.5px solid #222; }
+.reqwrap .tilemap .st.none b { background: #fff; padding: 0 .25em; }
+.reqwrap .tilemap .st:hover, .reqwrap .tilemap .st:focus-visible { outline: 2px solid #1f2a37; outline-offset: 1px; z-index: 2; }
+.reqwrap .tilemap .st.open { outline: 3px solid #1f2a37; outline-offset: 1px; z-index: 2; }
+.reqkey { display: flex; flex-direction: column; justify-content: space-evenly; gap: 6px; font-size: clamp(12px, 1.3cqw, 15px); line-height: 1.25; }
+.reqkey .k { display: flex; align-items: center; gap: .7em; }
+.reqkey .k.strong { font-weight: 700; }
+.reqkey .sw { flex: none; width: 1.9em; height: 1.9em; border-radius: 0; border: 1px solid #A6A6A6; }
+.reqkey .sw.hi { border: 2.5px solid #222; }
+@media (min-width: 901px) { .reqkey.in { position: absolute; padding-left: 1.4%; } }
+@media (max-width: 900px) { .reqkey { flex-direction: row; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; } }
+.card ul.docs { margin: 0; padding-left: 18px; }
+.card ul.docs li { word-break: break-all; }

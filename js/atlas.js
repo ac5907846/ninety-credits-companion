@@ -76,7 +76,7 @@ window.Atlas = (function () {
       { key: "free_electives", label: "Free electives", num: true, fmt: (v) => n(v), tip: "Semester hours the student may take in any subject, as the catalog publishes them. Zero means the plan has no free electives." },
       { key: "state_gen_ed_min", label: "State or system count", num: true, fmt: (v) => n(v), tip: "The semester hours of general education a state or university system asks of a public reduced-credit bachelor’s degree at this institution, as the article codes it (verified 6 November 2026). Transfer blocks are not bachelor’s minimums. Blank for private institutions and where no state or system count applies." },
       { key: "binding_count", label: "Binding count", num: true, fmt: (v) => n(v), tip: "For accredited and applicant programs: the general education count a reduced-credit degree must carry here, the larger of the state or system count and the institutional accreditor’s, or the institution’s own core where neither applies, as the article codes it." },
-      { key: "state_class", label: "State group, Fig. 1a", fmt: (v) => (v == null || !CLS[v] ? "" : esc(CLS[v].label)), tip: "The general education minimum that binds the state’s public universities, in the four groups of Fig. 1a of the article; institution-defined: no state or accreditor minimum." },
+      { key: "state_class", label: "General education group", fmt: (v) => (v == null || !CLS[v] ? "" : esc(CLS[v].label)), tip: "The general education minimum that binds the state’s public universities, in the four groups of the Requirements tab; institution-defined: no state or accreditor minimum." },
       { key: "modeled", label: "Modeled", fmt: (v) => (v ? "yes" : ""), tip: "An accredited or applicant program whose course list was complete enough for the integer program of the article." },
       { key: "degrees_2024", label: "Bachelor’s degrees, 2023-24", num: true, fmt: (v) => n(v), tip: "Bachelor’s degrees the program conferred in 2023-24 (IPEDS Completions), under its classification codes." },
     ], F, { onRow: card, sortKey: "institution" });
@@ -100,7 +100,7 @@ window.Atlas = (function () {
         ${p.reduced_option ? `<dt>Shorter route mentioned</dt><dd>${esc(p.reduced_option)}</dd>` : ""}
       </dl>
       <h4>State rule (${esc(s.name || p.state)})</h4><dl>
-        <dt>State group, Fig. 1a</dt><dd>${CLS[p.state_class] ? esc(CLS[p.state_class].label) : "not grouped"}</dd>
+        <dt>General education group</dt><dd>${CLS[p.state_class] ? esc(CLS[p.state_class].label) : "not grouped"}</dd>
         <dt>In the integer program</dt><dd>${p.modeled ? "yes, one of the " + n(NMOD) + " modeled programs" : "no"}</dd>
         <dt>State or system count for a reduced-credit degree here</dt><dd>${p.state_gen_ed_min != null ? n(p.state_gen_ed_min) + " semester hours" : "none applies at this institution"}${s.basis ? `; ${esc(s.basis)}` : ""}</dd>
         ${p.binding_count != null ? `<dt>Count that binds this program</dt><dd>${n(p.binding_count)} semester hours; state group ${esc(p.state_group)}</dd>` : ""}
