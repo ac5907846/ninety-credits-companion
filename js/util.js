@@ -1,6 +1,6 @@
 /* Shared helpers: data loading, formatting, sortable tables, the article's tables, Plotly defaults. */
 window.U = (function () {
-  const V = 17;
+  const V = 18;
   const cache = {};
   function load(name) {
     if (!cache[name]) cache[name] = fetch(`data/${name}.json?v=${V}`).then((r) => { if (!r.ok) throw new Error(name); return r.json(); });

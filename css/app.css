@@ -319,3 +319,4 @@ i.deg { background: #BFBFBF; } i.job { background: #FFFFFF; }
 #v-jobs select { max-width: 100%; }
 .pagerin { display: inline-flex; align-items: center; gap: 12px; }
 #j-csv { margin-left: auto; }
+.about { margin: 4px 0; font-size: 15.5px; max-width: 80ch; }

@@ -1,12 +1,12 @@
-/* Hash router: one view at a time; each view builds once, on first visit. Hashes of earlier versions of the site lead
-   to the views that replaced them. The Australia atlas shows only when its data file was built. */
+/* Hash router: one view at a time; each view builds once, on first visit. Since 20 November 2026 the site holds the
+   atlases, the requirements, the job postings and About; hashes of earlier versions lead to the views that replaced them. The Australia atlas shows only when its data file was built. */
 window.App = { australia: false };
 (function () {
   const VIEWS = { atlas: () => window.Atlas.init(), uk: window.World.uk, hk: window.World.hk, au: window.World.au,
-    requirements: window.Study.requirements, integration: window.Study.integration, content: window.Study.content,
-    beyond: window.Study.beyond, jobs: window.Jobs.init, sources: window.Study.sources };
+    requirements: window.Study.requirements, jobs: window.Jobs.init, about: window.Study.about };
   const ALIAS = { satisfy: "requirements", holders: "requirements", rules: "requirements", strategies: "requirements",
-    routes: "integration", removes: "integration", ledger: "beyond", ai: "beyond", abroad: "beyond" };
+    routes: "requirements", removes: "requirements", integration: "requirements", content: "requirements",
+    ledger: "atlas", ai: "atlas", abroad: "atlas", beyond: "atlas", sources: "about" };
   const ATLASES = new Set(["atlas", "uk", "hk", "au"]);
   const built = {};
   function show() {
